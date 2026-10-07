@@ -1,0 +1,24 @@
+/* 3. 그림자를 지우고 반경을 줄인다: 카드 26→18px, 안쪽 12px, 버튼만 알약형, 1px 옅은 선 */
+:root { --radius-card: 18px; --radius-inner: 12px; --shadow-float: 0 8px 30px rgba(0, 0, 0, 0.12); }
+.panel { padding: clamp(18px, 2.4vw, 28px); }
+button:hover:not(:disabled) { transform: none; box-shadow: inset 0 0 0 1px #b8b8bd; }
+button.primary:hover:not(:disabled), button.active:hover:not(:disabled), .bubble-add:hover:not(:disabled) { box-shadow: none; }
+.segmented button:hover:not(:disabled) { background: rgba(0, 0, 0, 0.05); box-shadow: none; }
+.segmented button.active:hover:not(:disabled) { background: #fff; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14); }
+.stage { border-radius: 8px; box-shadow: 0 0 0 1px var(--line); }
+.stage canvas { border-radius: 8px; }
+.stage .badge { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+.stage .badge:hover:not(:disabled), .stage .badge.open { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); }
+textarea { border: 1px solid var(--line); border-radius: 12px; }
+textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.25); }
+.api-key-controls input { border: 1px solid var(--line); border-radius: 12px; }
+.bubble { border-radius: 16px; box-shadow: var(--shadow-float), 0 0 0 1px rgba(0, 0, 0, 0.08); }
+.bubble::before { box-shadow: -1px -1px 0 rgba(0, 0, 0, 0.08); }
+.bubble textarea { border-radius: 10px; box-shadow: none; }
+.bubble-ref img { border-radius: 8px; box-shadow: 0 0 0 1px var(--line); }
+.result { border-radius: 12px; box-shadow: 0 0 0 1px var(--line); }
+.tour-card { border-radius: 16px; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22); }
+.tour-spotlight { border-radius: 10px; }
+.tour-video-dialog, .lighting-dialog { border-radius: var(--radius-card); }
+.lighting-stage { border-radius: 8px; box-shadow: 0 0 0 1px var(--line); }
+@media (max-width: 760px) { .panel { border-radius: 14px; } }
