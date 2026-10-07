@@ -1,0 +1,51 @@
+/* E. A안 + 지정 팔레트: 카드 #D2B3DB, 포인트 #4A315B. 배경 메시도 같은 계열에서 뽑는다. */
+:root {
+  --bg: #f6f2f8;
+  --ink: #221826; --ink-soft: #4a3f50; --muted: #6b5f72; --line: #d9cfe0;
+  --accent: #4a315b; --accent-strong: #5c3f70;
+  --tint: #d2b3db;
+  --card-sketch: var(--tint); --card-prompt: var(--tint); --card-results: var(--tint);
+}
+body { position: relative; }
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(900px 620px at 4% -6%, rgba(210, 179, 219, 0.85), transparent 62%),
+    radial-gradient(820px 600px at 100% 6%, rgba(247, 200, 182, 0.55), transparent 62%),
+    radial-gradient(1000px 720px at 55% 112%, rgba(74, 49, 91, 0.22), transparent 62%),
+    var(--bg);
+}
+/* Cards: a visible lavender wash that settles toward white at the bottom, so controls inside still read as white objects. */
+.panel { background: linear-gradient(180deg, rgba(210, 179, 219, 0.62), rgba(210, 179, 219, 0.30)); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45); }
+.card-sketch, .card-prompt, .card-results { background: linear-gradient(180deg, rgba(210, 179, 219, 0.62), rgba(210, 179, 219, 0.30)); }
+.toolbar.tray, .stage-wrap, .run, .lighting-stage-wrap { background: rgba(255, 255, 255, 0.55); }
+.result { background: #fff; box-shadow: 0 0 0 1px rgba(74, 49, 91, 0.12); }
+.step { background: var(--accent); }
+.logo-dot { background: var(--accent); }
+button, select { box-shadow: inset 0 0 0 1px rgba(74, 49, 91, 0.18); }
+button:hover:not(:disabled) { box-shadow: inset 0 0 0 1px rgba(74, 49, 91, 0.45); }
+button.primary, .tour-next, .tour-next:hover:not(:disabled), .bubble-add { background: var(--accent); color: #fff; box-shadow: none; }
+button.primary:hover:not(:disabled), .bubble-add:hover:not(:disabled) { background: var(--accent-strong); box-shadow: none; }
+button.active { background: var(--accent); box-shadow: none; }
+.segmented { background: rgba(74, 49, 91, 0.10); }
+.segmented button { box-shadow: none; }
+.segmented button.active, .segmented button.active:hover:not(:disabled) { background: #fff; color: var(--ink); box-shadow: 0 1px 3px rgba(34, 24, 38, 0.18); }
+textarea, .api-key-controls input { border-color: rgba(74, 49, 91, 0.18); }
+textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(74, 49, 91, 0.22); }
+select:focus-visible, button:focus-visible, input:focus-visible { outline-color: var(--accent); }
+input[type="range"], .tour-optout input { accent-color: var(--accent); }
+a, .link-button { color: var(--accent); }
+.stage .badge.filled::after { background: var(--accent); color: #fff; }
+.stage { box-shadow: 0 0 0 1px rgba(74, 49, 91, 0.14); }
+.spinner { border-top-color: var(--accent); }
+.tour-spotlight { border-color: var(--accent); }
+.tour-card { background: rgba(255, 255, 255, 0.9); }
+.tour-shade { fill: rgba(34, 24, 38, 0.55); }
+@keyframes tour-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(74, 49, 91, 0), 0 0 0 rgba(74, 49, 91, 0); }
+  50% { box-shadow: 0 0 0 6px rgba(74, 49, 91, 0.22), 0 0 28px rgba(74, 49, 91, 0.6); }
+}
+@media (prefers-reduced-motion: reduce) { .tour-next { box-shadow: 0 0 0 4px rgba(74, 49, 91, 0.35); } }
+.app-header { background: rgba(255, 255, 255, 0.58); border-bottom-color: rgba(255, 255, 255, 0.55); }
+.bubble { background: rgba(255, 255, 255, 0.82); box-shadow: 0 8px 30px rgba(34, 24, 38, 0.16), 0 0 0 1px rgba(74, 49, 91, 0.10); }
+.bubble::before { box-shadow: -1px -1px 0 rgba(74, 49, 91, 0.10); }

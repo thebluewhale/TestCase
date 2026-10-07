@@ -46,3 +46,15 @@
 
 각 시트는 전체 화면, 230px 스크롤(헤더 유리에 색이 비치는 모습), 사용 가이드 순서입니다.
 CSS는 `stages/v-*.css`에 있고, 원본 PNG는 `raw/v<후보>-<뷰>.png`입니다.
+
+## palette/ 지정 팔레트 적용 (2026-10-07 추가)
+
+A안(메시 배경) 위에 카드 #D2B3DB, 포인트 #4A315B를 적용한 것입니다. 2~5번 포함.
+
+| 파일 | 내용 |
+|---|---|
+| pal-overview.jpg | E와 E2를 나란히 |
+| pal-e-palette.jpg | E. 카드 세 장 모두 #D2B3DB 워시 (위 62% → 아래 30%) |
+| pal-e2-variation.jpg | E2. 스케치 #D2B3DB, 프롬프트 라벤더블루 #BABAE4, 결과 로즈 #E4B7C9 |
+
+CSS: `stages/v-e-palette.css` (+ `v-e2-variation.css`).
