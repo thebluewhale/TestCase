@@ -18,6 +18,12 @@
 - **inner**: outer보다 5% 넘게 작고 둘레 ≥ 0.7인 링 가운데 가장 잘 보이는 것
 - **신뢰도 high**: outer·inner 둘레 모두 ≥ 0.7, 스펙 지름 3% 안에 뚜렷한 링이 하나뿐, 같은 크기 렌즈끼리
   간격 차이 ≤ 2%. 이웃이 여럿인 가운데 렌즈는 이웃 방향 구간을 빼면 링이 안 잡혀 구간을 빼지 않고 다시 찾았다
+- **신뢰도 medium (A37·A57)**: 검은 섬 위 검은 렌즈라 바깥 테두리가 얇은 금속 하이라이트로만, 둘레 일부에만
+  보인다(공식 이미지에서 둘레 0.3~0.67). 하이라이트 띠의 두 가장자리(A57 0.1707·0.1757)가 렌즈마다 번갈아
+  잡혀 그 값은 흔들리지만, **스펙 지름이 하이라이트 위치와 일치**한다(확대해 확인). 그래서 스펙 지름 ±4% 안에
+  하이라이트 링(둘레 ≥ 0.3)이 확인되면 **outer = 스펙 지름**, inner = 스펙보다 4~12% 작고 둘레 ≥ 0.7인 가장
+  뚜렷한 링으로 둔다. 같은 픽셀의 BetaTest A57 사진에서 잰 바깥/안쪽 비율 1.08~1.09가 스펙 지름 ÷ 공식 안쪽
+  링 1.083~1.10과 맞는다. 이 경로는 island_raised 제품에만 쓴다
 
 결과: `rings.json`(렌즈별 링 목록·outer/inner·신뢰도·사유), `images/<제품>.png`(초록 outer, 파랑 inner,
 회색 그 밖·섬 테두리 링, 오른쪽에 값).
@@ -29,9 +35,12 @@
 | galaxy-a27-5g | cam1 | 0.1730 | 0.1746 (0.96) | 0.1606 (0.86) | 1.087 | high | |
 | galaxy-a27-5g | cam2 | 0.1730 | 0.1746 (0.95) | 0.1608 (0.90) | 1.086 | high | |
 | galaxy-a27-5g | cam3 | 0.1730 | 0.1747 (0.86) | 0.1612 (0.96) | 1.084 | high | |
-| galaxy-a37 | cam1~3 | 0.1746 | 0.171~0.177 (0.32~0.60) | 0.161~0.166 | 1.06~1.07 | low | 공식 이미지에서 바깥 링이 흐림 |
-| galaxy-a57 | cam1·3 | 0.1777 | — | — | — | low | 스펙 지름 3% 안 링 없음 |
-| galaxy-a57 | cam2 | 0.1777 | 0.1734 (0.55) | 0.1614 (0.95) | 1.074 | low | 바깥 링 흐림 |
+| galaxy-a37 | cam1 | 0.1746 | 0.1746 = 스펙 (하이라이트 0.1711, 0.36) | 0.1609 (0.86) | 1.085 | medium | 바깥 테두리가 하이라이트로만 |
+| galaxy-a37 | cam2 | 0.1746 | 0.1746 = 스펙 (하이라이트 0.1764, 0.67) | 0.1662 (0.86) | 1.051 | medium | 〃 |
+| galaxy-a37 | cam3 | 0.1746 | 0.1746 = 스펙 (하이라이트 0.1773, 0.32) | 0.1662 (0.82) | 1.051 | medium | 〃 (cam1과 안쪽 링이 다름 — 두 실행 모두 같은 값) |
+| galaxy-a57 | cam1 | 0.1777 | 0.1777 = 스펙 (하이라이트 0.1707, 0.36) | 0.1640 (0.82) | 1.083 | medium | 〃 |
+| galaxy-a57 | cam2 | 0.1777 | 0.1777 = 스펙 (하이라이트 0.1734, 0.55) | 0.1614 (0.95) | 1.101 | medium | 〃 |
+| galaxy-a57 | cam3 | 0.1777 | 0.1777 = 스펙 (하이라이트 0.1710, 0.47) | 0.1636 (0.81) | 1.086 | medium | 〃 (이웃 구간을 빼면 중심이 섬 끝으로 끌려 빼지 않고 찾음) |
 | galaxy-s24 | cam1~3 | 0.191 | 0.188~0.191 | (cam3만 0.1665) | 1.13 | low | 안쪽 링 없음 / 스펙 근처 링 둘(0.1949·0.188) |
 | galaxy-s24-plus | cam1 | 0.1905 | 0.1889 (1.0) | 0.1681 (1.0) | 1.124 | high | |
 | galaxy-s24-plus | cam2·3 | 0.1906 | 0.189 (1.0) | 0.168 (1.0) | 1.125 | low | 스펙 근처 링 둘(0.196·0.189) |
@@ -49,20 +58,23 @@
 
 ## 스펙 수정본 (`make_drafts.py`, 변경 내역 `spec_drafts.diff`)
 
-신뢰도 high 렌즈에만 `back.cameras[].rings = {"outer": …, "inner": …}`를 넣고, minor 버전을 올려
-`status: draft`로 두었다. 스키마(`schemas/product_spec.schema.json` Camera.rings)도 함께 고쳤다.
+신뢰도 high·medium 렌즈와 사용자가 넣기로 한 렌즈(S24+ cam2·3)에 `back.cameras[].rings = {"outer": …,
+"inner": …}`를 넣고, minor 버전을 올려 `status: draft`로 두었다. 스키마(`schemas/product_spec.schema.json`
+Camera.rings)도 함께 고쳤다.
 
 | 제품 | 버전 | rings를 넣은 렌즈 | 그 밖 |
 |---|---|---|---|
 | galaxy-a27-5g | 1.3.0 → 1.4.0 | cam1·2·3 | |
-| galaxy-s24-plus | 1.3.0 → 1.4.0 | cam1 | cam2·3은 같은 구조지만 스펙 근처 링이 둘이라 low — 빼거나 넣거나 선택 |
+| galaxy-a37 | 1.3.0 → 1.4.0 | cam1·2·3 | medium — outer = 스펙 지름 |
+| galaxy-a57 | 1.3.0 → 1.4.0 | cam1·2·3 | medium — outer = 스펙 지름 |
+| galaxy-s24-plus | 1.3.0 → 1.4.0 | cam1·2·3 | cam2·3은 cam1과 같은 구조·간격(1.125), 스펙 근처 링이 둘이라 low였으나 넣음(사용자 2026-10-28) |
 | galaxy-s24-ultra | 1.3.0 → 1.4.0 | cam3 | **결정 42 Tier B 선명도 0.6 → 0.3 포함** (1.3.0 승인 때 빠짐) |
 | galaxy-s25 | 1.5.0 → 1.6.0 | cam1·2 | |
 | galaxy-s25-ultra | 1.4.0 → 1.5.0 | cam1·2·4 | |
 | galaxy-s26 | 1.4.0 → 1.5.0 | cam1·2·3 | |
 | galaxy-s26-plus | 1.4.0 → 1.5.0 | cam1·2·3 | |
 | galaxy-s26-ultra | 1.4.0 → 1.5.0 | cam1·2·3·4 | |
-| galaxy-a37·a57·s24 | 변경 없음 | — | 신뢰도 high 렌즈 없음 |
+| galaxy-s24 | 변경 없음 | — | 안쪽 링 없음·스펙 근처 링 둘 |
 
 ## 승인 (사람)
 
@@ -71,11 +83,17 @@
 ```bash
 cd backend/review_product_consistency_v3
 P=".venv/bin/python -m review_product_consistency_v3.cli"
-for s in galaxy-a27-5g galaxy-s24-plus galaxy-s24-ultra galaxy-s25 galaxy-s25-ultra \
-         galaxy-s26 galaxy-s26-plus galaxy-s26-ultra; do
+for s in galaxy-a27-5g galaxy-a37 galaxy-a57 galaxy-s24-plus galaxy-s24-ultra galaxy-s25 \
+         galaxy-s25-ultra galaxy-s26 galaxy-s26-plus galaxy-s26-ultra; do
   $P onboard validate $s --by <이름>
 done
 ```
 
 승인 뒤 측정 코드에 간격 판단을 넣고(4단계), 사진 147장 비교를 다시 돌려 잘못된 검토 2건이 사라지는지·
 늘어난 판정이 줄지 않는지 확인한다(5단계).
+
+## 4단계에서 함께 볼 것
+
+A57 아래 렌즈는 링 중심을 스펙 반지름 0.7~1.3배의 가장 뚜렷한 링으로 정하면 섬 둥근 끝 링(0.20~0.22)에
+중심이 끌린다(공식 이미지, 이웃 구간을 뺐을 때). 0.8~1.1배로 좁히면 맞게 잡힌다 — 운영 측정에서도 같은
+일이 생길 수 있어 4단계에서 `measure.lens_rings.center_band`를 다시 본다.

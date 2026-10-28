@@ -1,5 +1,5 @@
 diff --git a/backend/review_product_consistency_v3/product_library/galaxy-a27-5g/product_spec.json b/backend/review_product_consistency_v3/product_library/galaxy-a27-5g/product_spec.json
-index d88d782..6779c97 100644
+index d88d782..6964338 100644
 --- a/backend/review_product_consistency_v3/product_library/galaxy-a27-5g/product_spec.json
 +++ b/backend/review_product_consistency_v3/product_library/galaxy-a27-5g/product_spec.json
 @@ -1,8 +1,8 @@
@@ -61,11 +61,143 @@ index d88d782..6779c97 100644
 -    "notes": "back.cameras: material+geometry 경로로 3개 검출, role은 크기순 임시 부여(main만) — 담당자 확인; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/corner_radius_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/text, /sides/buttons; 새 GLB의 렌즈 부품에 대응하는 바깥 링을 실측; Ultra AF 센서는 카메라에서 제외.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: user-provided 2026-09-29; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); 2026-10-19 사용자 확인: 렌즈 안쪽 모양 모두 원형(공식 이미지 기준) → back.cameras[].inner_shape=round (SDP 결정 36, 값만 추가·재승인 없음 — 사용자 지시); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음)"
 +    "validated_by": null,
 +    "validated_at": null,
-+    "notes": "back.cameras: material+geometry 경로로 3개 검출, role은 크기순 임시 부여(main만) — 담당자 확인; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/corner_radius_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/text, /sides/buttons; 새 GLB의 렌즈 부품에 대응하는 바깥 링을 실측; Ultra AF 센서는 카메라에서 제외.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: user-provided 2026-09-29; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); 2026-10-19 사용자 확인: 렌즈 안쪽 모양 모두 원형(공식 이미지 기준) → back.cameras[].inner_shape=round (SDP 결정 36, 값만 추가·재승인 없음 — 사용자 지시); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음); back.cameras[].rings: 공식 후면 렌즈 링 구조(SDP 결정 43 ①, 2026-10-28, benchmarks/reports/lens-ring-structure-20261028) — 신뢰도 high 렌즈만"
++    "notes": "back.cameras: material+geometry 경로로 3개 검출, role은 크기순 임시 부여(main만) — 담당자 확인; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/corner_radius_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/text, /sides/buttons; 새 GLB의 렌즈 부품에 대응하는 바깥 링을 실측; Ultra AF 센서는 카메라에서 제외.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: user-provided 2026-09-29; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); 2026-10-19 사용자 확인: 렌즈 안쪽 모양 모두 원형(공식 이미지 기준) → back.cameras[].inner_shape=round (SDP 결정 36, 값만 추가·재승인 없음 — 사용자 지시); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음); back.cameras[].rings: 공식 후면 렌즈 링 구조(SDP 결정 43 ①, 2026-10-28, benchmarks/reports/lens-ring-structure-20261028) — 신뢰도 high·medium 렌즈(medium은 outer=스펙 지름)"
+   }
+ }
+diff --git a/backend/review_product_consistency_v3/product_library/galaxy-a37/product_spec.json b/backend/review_product_consistency_v3/product_library/galaxy-a37/product_spec.json
+index a4069cc..fbd37c2 100644
+--- a/backend/review_product_consistency_v3/product_library/galaxy-a37/product_spec.json
++++ b/backend/review_product_consistency_v3/product_library/galaxy-a37/product_spec.json
+@@ -1,8 +1,8 @@
+ {
+   "schema_version": "1.0",
+   "spec_id": "galaxy-a37",
+-  "spec_version": "1.3.0",
+-  "status": "validated",
++  "spec_version": "1.4.0",
++  "status": "draft",
+   "display_name": "Galaxy A37 5G",
+   "form_factor": "bar",
+   "geometry_class": "galaxy-a37",
+@@ -75,7 +75,11 @@
+         ],
+         "diameter_ratio": 0.17462,
+         "ring_style": "island_raised",
+-        "inner_shape": "round"
++        "inner_shape": "round",
++        "rings": {
++          "outer": 0.17462,
++          "inner": 0.1609
++        }
+       },
+       {
+         "id": "cam2",
+@@ -86,7 +90,11 @@
+         ],
+         "diameter_ratio": 0.17462,
+         "ring_style": "island_raised",
+-        "inner_shape": "round"
++        "inner_shape": "round",
++        "rings": {
++          "outer": 0.17462,
++          "inner": 0.1662
++        }
+       },
+       {
+         "id": "cam3",
+@@ -97,7 +105,11 @@
+         ],
+         "diameter_ratio": 0.17462,
+         "ring_style": "island_raised",
+-        "inner_shape": "round"
++        "inner_shape": "round",
++        "rings": {
++          "outer": 0.17462,
++          "inner": 0.1662
++        }
+       }
+     ],
+     "camera_layout": "vertical_column",
+@@ -914,8 +926,8 @@
+     "extracted_from": "glb+official_images",
+     "tool_version": "onboard-0.1.0",
+     "extracted_at": "2026-10-02T04:26:08+00:00",
+-    "validated_by": "marc",
+-    "validated_at": "2026-10-02T07:04:26+00:00",
+-    "notes": "back.cameras: geometry 경로로 3개 검출, role은 크기순 임시 부여(main만) — 담당자 확인; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/aspect_hw, /body/depth_ratio, /body/corner_radius_ratio, /front/display/edge_type, /front/display/bezel_ratio/left, /front/display/bezel_ratio/right, /front/display/bezel_ratio/top, /front/display/bezel_ratio/bottom, /front/punch_hole/present, /front/punch_hole/center, /front/punch_hole/diameter_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/present, /back/logo/center, /back/logo/orientation, /back/logo/text, /sides/buttons, /sides/s_pen_slot/present, /sides/s_pen_slot/side, /sides/s_pen_slot/position; 명시한 CAD 부품 ID의 기하 실측; 색상·재질 일치 검사는 수행하지 않음.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: https://news.samsung.com/uk/samsung-unveils-galaxy-a57-5g-and-galaxy-a37-5g-packing-pro-level-features-at-awesome-price; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); 2026-10-19 사용자 확인: 렌즈 안쪽 모양 모두 원형(공식 이미지 기준) → back.cameras[].inner_shape=round (SDP 결정 36, 값만 추가·재승인 없음 — 사용자 지시); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음)"
++    "validated_by": null,
++    "validated_at": null,
++    "notes": "back.cameras: geometry 경로로 3개 검출, role은 크기순 임시 부여(main만) — 담당자 확인; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/aspect_hw, /body/depth_ratio, /body/corner_radius_ratio, /front/display/edge_type, /front/display/bezel_ratio/left, /front/display/bezel_ratio/right, /front/display/bezel_ratio/top, /front/display/bezel_ratio/bottom, /front/punch_hole/present, /front/punch_hole/center, /front/punch_hole/diameter_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/present, /back/logo/center, /back/logo/orientation, /back/logo/text, /sides/buttons, /sides/s_pen_slot/present, /sides/s_pen_slot/side, /sides/s_pen_slot/position; 명시한 CAD 부품 ID의 기하 실측; 색상·재질 일치 검사는 수행하지 않음.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: https://news.samsung.com/uk/samsung-unveils-galaxy-a57-5g-and-galaxy-a37-5g-packing-pro-level-features-at-awesome-price; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); 2026-10-19 사용자 확인: 렌즈 안쪽 모양 모두 원형(공식 이미지 기준) → back.cameras[].inner_shape=round (SDP 결정 36, 값만 추가·재승인 없음 — 사용자 지시); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음); back.cameras[].rings: 공식 후면 렌즈 링 구조(SDP 결정 43 ①, 2026-10-28, benchmarks/reports/lens-ring-structure-20261028) — 신뢰도 high·medium 렌즈(medium은 outer=스펙 지름)"
+   }
+ }
+diff --git a/backend/review_product_consistency_v3/product_library/galaxy-a57/product_spec.json b/backend/review_product_consistency_v3/product_library/galaxy-a57/product_spec.json
+index ef80c48..2f3071f 100644
+--- a/backend/review_product_consistency_v3/product_library/galaxy-a57/product_spec.json
++++ b/backend/review_product_consistency_v3/product_library/galaxy-a57/product_spec.json
+@@ -1,8 +1,8 @@
+ {
+   "schema_version": "1.0",
+   "spec_id": "galaxy-a57",
+-  "spec_version": "1.3.0",
+-  "status": "validated",
++  "spec_version": "1.4.0",
++  "status": "draft",
+   "display_name": "Galaxy A57 5G",
+   "form_factor": "bar",
+   "geometry_class": "galaxy-a57",
+@@ -75,7 +75,11 @@
+         ],
+         "diameter_ratio": 0.17767,
+         "ring_style": "island_raised",
+-        "inner_shape": "round"
++        "inner_shape": "round",
++        "rings": {
++          "outer": 0.17767,
++          "inner": 0.164
++        }
+       },
+       {
+         "id": "cam2",
+@@ -86,7 +90,11 @@
+         ],
+         "diameter_ratio": 0.17767,
+         "ring_style": "island_raised",
+-        "inner_shape": "round"
++        "inner_shape": "round",
++        "rings": {
++          "outer": 0.17767,
++          "inner": 0.1614
++        }
+       },
+       {
+         "id": "cam3",
+@@ -97,7 +105,11 @@
+         ],
+         "diameter_ratio": 0.17767,
+         "ring_style": "island_raised",
+-        "inner_shape": "round"
++        "inner_shape": "round",
++        "rings": {
++          "outer": 0.17767,
++          "inner": 0.1636
++        }
+       }
+     ],
+     "camera_layout": "vertical_column",
+@@ -894,8 +906,8 @@
+     "extracted_from": "glb+official_images",
+     "tool_version": "onboard-0.1.0",
+     "extracted_at": "2026-10-01T10:26:01+00:00",
+-    "validated_by": "jh_marc.kim",
+-    "validated_at": "2026-10-06T08:16:44+00:00",
+-    "notes": "back.cameras: geometry 경로로 5개 검출, role은 크기순 임시 부여(main만) — 담당자 확인; back.logo: 자동 추출 실패 — manual (overrides로 지정); overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/aspect_hw, /body/depth_ratio, /body/corner_radius_ratio, /front/display/edge_type, /front/display/bezel_ratio/left, /front/display/bezel_ratio/right, /front/display/bezel_ratio/top, /front/display/bezel_ratio/bottom, /front/punch_hole/present, /front/punch_hole/center, /front/punch_hole/diameter_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/present, /back/logo/center, /back/logo/orientation, /back/logo/text, /sides/buttons, /sides/s_pen_slot/present, /sides/s_pen_slot/side, /sides/s_pen_slot/position; 명시한 CAD 부품 ID의 기하 실측; 색상·재질 일치 검사는 수행하지 않음.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: https://news.samsung.com/uk/samsung-unveils-galaxy-a57-5g-and-galaxy-a37-5g-packing-pro-level-features-at-awesome-price; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); 2026-10-19 사용자 확인: 렌즈 안쪽 모양 모두 원형(공식 이미지 기준) → back.cameras[].inner_shape=round (SDP 결정 36, 값만 추가·재승인 없음 — 사용자 지시); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음)"
++    "validated_by": null,
++    "validated_at": null,
++    "notes": "back.cameras: geometry 경로로 5개 검출, role은 크기순 임시 부여(main만) — 담당자 확인; back.logo: 자동 추출 실패 — manual (overrides로 지정); overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/aspect_hw, /body/depth_ratio, /body/corner_radius_ratio, /front/display/edge_type, /front/display/bezel_ratio/left, /front/display/bezel_ratio/right, /front/display/bezel_ratio/top, /front/display/bezel_ratio/bottom, /front/punch_hole/present, /front/punch_hole/center, /front/punch_hole/diameter_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/present, /back/logo/center, /back/logo/orientation, /back/logo/text, /sides/buttons, /sides/s_pen_slot/present, /sides/s_pen_slot/side, /sides/s_pen_slot/position; 명시한 CAD 부품 ID의 기하 실측; 색상·재질 일치 검사는 수행하지 않음.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: https://news.samsung.com/uk/samsung-unveils-galaxy-a57-5g-and-galaxy-a37-5g-packing-pro-level-features-at-awesome-price; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); 2026-10-19 사용자 확인: 렌즈 안쪽 모양 모두 원형(공식 이미지 기준) → back.cameras[].inner_shape=round (SDP 결정 36, 값만 추가·재승인 없음 — 사용자 지시); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음); back.cameras[].rings: 공식 후면 렌즈 링 구조(SDP 결정 43 ①, 2026-10-28, benchmarks/reports/lens-ring-structure-20261028) — 신뢰도 high·medium 렌즈(medium은 outer=스펙 지름)"
    }
  }
 diff --git a/backend/review_product_consistency_v3/product_library/galaxy-s24-plus/product_spec.json b/backend/review_product_consistency_v3/product_library/galaxy-s24-plus/product_spec.json
-index cb43cad..2eab301 100644
+index cb43cad..978d556 100644
 --- a/backend/review_product_consistency_v3/product_library/galaxy-s24-plus/product_spec.json
 +++ b/backend/review_product_consistency_v3/product_library/galaxy-s24-plus/product_spec.json
 @@ -1,8 +1,8 @@
@@ -92,7 +224,33 @@ index cb43cad..2eab301 100644
        },
        {
          "id": "cam2",
-@@ -683,8 +687,8 @@
+@@ -86,7 +90,11 @@
+         ],
+         "diameter_ratio": 0.19065,
+         "ring_style": "individual",
+-        "inner_shape": "round"
++        "inner_shape": "round",
++        "rings": {
++          "outer": 0.1891,
++          "inner": 0.168
++        }
+       },
+       {
+         "id": "cam3",
+@@ -97,7 +105,11 @@
+         ],
+         "diameter_ratio": 0.19065,
+         "ring_style": "individual",
+-        "inner_shape": "round"
++        "inner_shape": "round",
++        "rings": {
++          "outer": 0.1889,
++          "inner": 0.168
++        }
+       }
+     ],
+     "camera_layout": "vertical_column",
+@@ -683,8 +695,8 @@
      "extracted_from": "glb+official_images",
      "tool_version": "onboard-0.1.0",
      "extracted_at": "2026-09-29T11:05:08+00:00",
@@ -101,13 +259,13 @@ index cb43cad..2eab301 100644
 -    "notes": "back.cameras: material+geometry 경로로 3개 검출, role은 크기순 임시 부여(main만) — 담당자 확인; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/corner_radius_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/text; 새 GLB의 렌즈 부품에 대응하는 바깥 링을 실측; Ultra AF 센서는 카메라에서 제외.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: https://www.samsung.com/ph/support/mobile-devices/differences-between-the-galaxy-s24-models/; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); 2026-10-20 back.cameras[].inner_shape=round 추가(SDP 결정 36, overrides.json에도 반영 — 재추출 시 같은 값); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음)"
 +    "validated_by": null,
 +    "validated_at": null,
-+    "notes": "back.cameras: material+geometry 경로로 3개 검출, role은 크기순 임시 부여(main만) — 담당자 확인; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/corner_radius_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/text; 새 GLB의 렌즈 부품에 대응하는 바깥 링을 실측; Ultra AF 센서는 카메라에서 제외.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: https://www.samsung.com/ph/support/mobile-devices/differences-between-the-galaxy-s24-models/; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); 2026-10-20 back.cameras[].inner_shape=round 추가(SDP 결정 36, overrides.json에도 반영 — 재추출 시 같은 값); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음); back.cameras[].rings: 공식 후면 렌즈 링 구조(SDP 결정 43 ①, 2026-10-28, benchmarks/reports/lens-ring-structure-20261028) — 신뢰도 high 렌즈만"
++    "notes": "back.cameras: material+geometry 경로로 3개 검출, role은 크기순 임시 부여(main만) — 담당자 확인; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/corner_radius_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/text; 새 GLB의 렌즈 부품에 대응하는 바깥 링을 실측; Ultra AF 센서는 카메라에서 제외.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: https://www.samsung.com/ph/support/mobile-devices/differences-between-the-galaxy-s24-models/; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); 2026-10-20 back.cameras[].inner_shape=round 추가(SDP 결정 36, overrides.json에도 반영 — 재추출 시 같은 값); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음); back.cameras[].rings: 공식 후면 렌즈 링 구조(SDP 결정 43 ①, 2026-10-28, benchmarks/reports/lens-ring-structure-20261028) — 신뢰도 high·medium 렌즈(medium은 outer=스펙 지름)"
    }
 -}
 \ No newline at end of file
 +}
 diff --git a/backend/review_product_consistency_v3/product_library/galaxy-s24-ultra/product_spec.json b/backend/review_product_consistency_v3/product_library/galaxy-s24-ultra/product_spec.json
-index cf8204f..9352151 100644
+index cf8204f..b900d2d 100644
 --- a/backend/review_product_consistency_v3/product_library/galaxy-s24-ultra/product_spec.json
 +++ b/backend/review_product_consistency_v3/product_library/galaxy-s24-ultra/product_spec.json
 @@ -1,8 +1,8 @@
@@ -215,13 +373,13 @@ index cf8204f..9352151 100644
 -    "notes": "back.cameras: material+geometry 경로로 1개 검출, role은 크기순 임시 부여(main만) — 담당자 확인; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/corner_radius_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/text, /sides/buttons, /sides/s_pen_slot/present, /sides/s_pen_slot/side, /sides/s_pen_slot/position; 새 GLB의 렌즈 부품에 대응하는 바깥 링을 실측; Ultra AF 센서는 카메라에서 제외.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: https://www.samsung.com/ph/support/mobile-devices/differences-between-the-galaxy-s24-models/; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); 2026-10-26 사용자 확인: 오른쪽 위 링은 레이저 AF 센서 → back.sensors 추가(결정 34), 렌즈 안쪽 모양 1~3 round·4 rectangular — 공식 이미지 기준(결정 36). overrides에도 반영; 2026-10-27 사용자 결정: 4번 렌즈 inner_shape rectangular → round — VLM이 공식 이미지 4번 렌즈를 원형으로 판독(사각 기준이면 공식과 같은 광고도 판단 불가). 값만 변경·재승인 없음(사용자 지시)"
 +    "validated_by": null,
 +    "validated_at": null,
-+    "notes": "back.cameras: material+geometry 경로로 1개 검출, role은 크기순 임시 부여(main만) — 담당자 확인; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/corner_radius_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/text, /sides/buttons, /sides/s_pen_slot/present, /sides/s_pen_slot/side, /sides/s_pen_slot/position; 새 GLB의 렌즈 부품에 대응하는 바깥 링을 실측; Ultra AF 센서는 카메라에서 제외.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: https://www.samsung.com/ph/support/mobile-devices/differences-between-the-galaxy-s24-models/; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); 2026-10-26 사용자 확인: 오른쪽 위 링은 레이저 AF 센서 → back.sensors 추가(결정 34), 렌즈 안쪽 모양 1~3 round·4 rectangular — 공식 이미지 기준(결정 36). overrides에도 반영; 2026-10-27 사용자 결정: 4번 렌즈 inner_shape rectangular → round — VLM이 공식 이미지 4번 렌즈를 원형으로 판독(사각 기준이면 공식과 같은 광고도 판단 불가). 값만 변경·재승인 없음(사용자 지시); back.cameras[].rings: 공식 후면 렌즈 링 구조(SDP 결정 43 ①, 2026-10-28, benchmarks/reports/lens-ring-structure-20261028) — 신뢰도 high 렌즈만; Tier B min_sharpness 0.6→0.3 (SDP 결정 42)"
++    "notes": "back.cameras: material+geometry 경로로 1개 검출, role은 크기순 임시 부여(main만) — 담당자 확인; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/corner_radius_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/text, /sides/buttons, /sides/s_pen_slot/present, /sides/s_pen_slot/side, /sides/s_pen_slot/position; 새 GLB의 렌즈 부품에 대응하는 바깥 링을 실측; Ultra AF 센서는 카메라에서 제외.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: https://www.samsung.com/ph/support/mobile-devices/differences-between-the-galaxy-s24-models/; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); 2026-10-26 사용자 확인: 오른쪽 위 링은 레이저 AF 센서 → back.sensors 추가(결정 34), 렌즈 안쪽 모양 1~3 round·4 rectangular — 공식 이미지 기준(결정 36). overrides에도 반영; 2026-10-27 사용자 결정: 4번 렌즈 inner_shape rectangular → round — VLM이 공식 이미지 4번 렌즈를 원형으로 판독(사각 기준이면 공식과 같은 광고도 판단 불가). 값만 변경·재승인 없음(사용자 지시); back.cameras[].rings: 공식 후면 렌즈 링 구조(SDP 결정 43 ①, 2026-10-28, benchmarks/reports/lens-ring-structure-20261028) — 신뢰도 high·medium 렌즈(medium은 outer=스펙 지름); Tier B min_sharpness 0.6→0.3 (SDP 결정 42)"
    }
 -}
 \ No newline at end of file
 +}
 diff --git a/backend/review_product_consistency_v3/product_library/galaxy-s25-ultra/product_spec.json b/backend/review_product_consistency_v3/product_library/galaxy-s25-ultra/product_spec.json
-index b7b081e..cfa327b 100644
+index b7b081e..426787d 100644
 --- a/backend/review_product_consistency_v3/product_library/galaxy-s25-ultra/product_spec.json
 +++ b/backend/review_product_consistency_v3/product_library/galaxy-s25-ultra/product_spec.json
 @@ -1,8 +1,8 @@
@@ -283,11 +441,11 @@ index b7b081e..cfa327b 100644
 -    "notes": "back.cameras: geometry 경로로 6개 검출, role은 크기순 임시 부여(main만) — 담당자 확인; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/corner_radius_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/text, /sides/s_pen_slot/present, /sides/s_pen_slot/side, /sides/s_pen_slot/position; 새 GLB의 렌즈 부품에 대응하는 바깥 링을 실측; Ultra AF 센서는 카메라에서 제외.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: https://www.samsung.com/uk/smartphones/galaxy-s/galaxy-s25-ultra-titanium-black-256gb-certified-re-newed-sm5s938bzkdeub/; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); 2026-10-15 사용자 확인: 오른쪽 위 원은 레이저 AF 센서(카메라 아님) → back.sensors; 2026-10-19 사용자 확인: 네 렌즈 안쪽 모양 모두 원형(공식 이미지 기준) → back.cameras[].inner_shape=round (SDP 결정 36, 값만 추가·재승인 없음 — 사용자 지시); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음)"
 +    "validated_by": null,
 +    "validated_at": null,
-+    "notes": "back.cameras: geometry 경로로 6개 검출, role은 크기순 임시 부여(main만) — 담당자 확인; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/corner_radius_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/text, /sides/s_pen_slot/present, /sides/s_pen_slot/side, /sides/s_pen_slot/position; 새 GLB의 렌즈 부품에 대응하는 바깥 링을 실측; Ultra AF 센서는 카메라에서 제외.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: https://www.samsung.com/uk/smartphones/galaxy-s/galaxy-s25-ultra-titanium-black-256gb-certified-re-newed-sm5s938bzkdeub/; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); 2026-10-15 사용자 확인: 오른쪽 위 원은 레이저 AF 센서(카메라 아님) → back.sensors; 2026-10-19 사용자 확인: 네 렌즈 안쪽 모양 모두 원형(공식 이미지 기준) → back.cameras[].inner_shape=round (SDP 결정 36, 값만 추가·재승인 없음 — 사용자 지시); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음); back.cameras[].rings: 공식 후면 렌즈 링 구조(SDP 결정 43 ①, 2026-10-28, benchmarks/reports/lens-ring-structure-20261028) — 신뢰도 high 렌즈만"
++    "notes": "back.cameras: geometry 경로로 6개 검출, role은 크기순 임시 부여(main만) — 담당자 확인; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/corner_radius_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/text, /sides/s_pen_slot/present, /sides/s_pen_slot/side, /sides/s_pen_slot/position; 새 GLB의 렌즈 부품에 대응하는 바깥 링을 실측; Ultra AF 센서는 카메라에서 제외.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: https://www.samsung.com/uk/smartphones/galaxy-s/galaxy-s25-ultra-titanium-black-256gb-certified-re-newed-sm5s938bzkdeub/; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); 2026-10-15 사용자 확인: 오른쪽 위 원은 레이저 AF 센서(카메라 아님) → back.sensors; 2026-10-19 사용자 확인: 네 렌즈 안쪽 모양 모두 원형(공식 이미지 기준) → back.cameras[].inner_shape=round (SDP 결정 36, 값만 추가·재승인 없음 — 사용자 지시); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음); back.cameras[].rings: 공식 후면 렌즈 링 구조(SDP 결정 43 ①, 2026-10-28, benchmarks/reports/lens-ring-structure-20261028) — 신뢰도 high·medium 렌즈(medium은 outer=스펙 지름)"
    }
  }
 diff --git a/backend/review_product_consistency_v3/product_library/galaxy-s25/product_spec.json b/backend/review_product_consistency_v3/product_library/galaxy-s25/product_spec.json
-index b6a5108..68ec95e 100644
+index b6a5108..d45aa56 100644
 --- a/backend/review_product_consistency_v3/product_library/galaxy-s25/product_spec.json
 +++ b/backend/review_product_consistency_v3/product_library/galaxy-s25/product_spec.json
 @@ -1,8 +1,8 @@
@@ -336,11 +494,11 @@ index b6a5108..68ec95e 100644
 -    "notes": "back.cameras: geometry 경로로 3개 검출, role은 크기순 임시 부여(main만) — 담당자 확인; back.logo: 자동 추출 실패 — manual (overrides로 지정); overrides 적용: /back/cameras/cam1/role, /back/cameras/cam2/role, /back/cameras/cam3/role, /back/logo/present, /back/logo/center, /back/logo/orientation, /back/logo/text, /sides/sim_tray/present, /sides/sim_tray/side, /sides/sim_tray/position; tolerance from calibration 2026-09-21 사용자 지시: 모서리 R ±20% 임시 허용(D16 기대값 확정 전) approved by Jihwan Kim; 2026-09-29 사용자 요청: Tier B 15도 일괄 제한 제거(max_tilt_deg=90); 기타 품질 조건·허용오차 유지, 고정 추론 재측정 보고서 TILT_AUDIT_2026-09-29.md 참조; 2026-09-29 사용자 결정 변경: official 이미지 모서리 기준 우선. overrides 적용: /body/corner_radius_ratio. 기존 공식 렌더 알파 실루엣 측정 기록 r/W≈0.1165 채택(이번 신규 실측 아님), GLB 기존 기준 0.14233; corner checks.expected 및 body.silhouette ROI 재생성. 허용오차 0.20/0.40 유지. OFFICIAL_CORNER_2026-09-29.md 참조; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음)"
 +    "validated_by": null,
 +    "validated_at": null,
-+    "notes": "back.cameras: geometry 경로로 3개 검출, role은 크기순 임시 부여(main만) — 담당자 확인; back.logo: 자동 추출 실패 — manual (overrides로 지정); overrides 적용: /back/cameras/cam1/role, /back/cameras/cam2/role, /back/cameras/cam3/role, /back/logo/present, /back/logo/center, /back/logo/orientation, /back/logo/text, /sides/sim_tray/present, /sides/sim_tray/side, /sides/sim_tray/position; tolerance from calibration 2026-09-21 사용자 지시: 모서리 R ±20% 임시 허용(D16 기대값 확정 전) approved by Jihwan Kim; 2026-09-29 사용자 요청: Tier B 15도 일괄 제한 제거(max_tilt_deg=90); 기타 품질 조건·허용오차 유지, 고정 추론 재측정 보고서 TILT_AUDIT_2026-09-29.md 참조; 2026-09-29 사용자 결정 변경: official 이미지 모서리 기준 우선. overrides 적용: /body/corner_radius_ratio. 기존 공식 렌더 알파 실루엣 측정 기록 r/W≈0.1165 채택(이번 신규 실측 아님), GLB 기존 기준 0.14233; corner checks.expected 및 body.silhouette ROI 재생성. 허용오차 0.20/0.40 유지. OFFICIAL_CORNER_2026-09-29.md 참조; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음); back.cameras[].rings: 공식 후면 렌즈 링 구조(SDP 결정 43 ①, 2026-10-28, benchmarks/reports/lens-ring-structure-20261028) — 신뢰도 high 렌즈만"
++    "notes": "back.cameras: geometry 경로로 3개 검출, role은 크기순 임시 부여(main만) — 담당자 확인; back.logo: 자동 추출 실패 — manual (overrides로 지정); overrides 적용: /back/cameras/cam1/role, /back/cameras/cam2/role, /back/cameras/cam3/role, /back/logo/present, /back/logo/center, /back/logo/orientation, /back/logo/text, /sides/sim_tray/present, /sides/sim_tray/side, /sides/sim_tray/position; tolerance from calibration 2026-09-21 사용자 지시: 모서리 R ±20% 임시 허용(D16 기대값 확정 전) approved by Jihwan Kim; 2026-09-29 사용자 요청: Tier B 15도 일괄 제한 제거(max_tilt_deg=90); 기타 품질 조건·허용오차 유지, 고정 추론 재측정 보고서 TILT_AUDIT_2026-09-29.md 참조; 2026-09-29 사용자 결정 변경: official 이미지 모서리 기준 우선. overrides 적용: /body/corner_radius_ratio. 기존 공식 렌더 알파 실루엣 측정 기록 r/W≈0.1165 채택(이번 신규 실측 아님), GLB 기존 기준 0.14233; corner checks.expected 및 body.silhouette ROI 재생성. 허용오차 0.20/0.40 유지. OFFICIAL_CORNER_2026-09-29.md 참조; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음); back.cameras[].rings: 공식 후면 렌즈 링 구조(SDP 결정 43 ①, 2026-10-28, benchmarks/reports/lens-ring-structure-20261028) — 신뢰도 high·medium 렌즈(medium은 outer=스펙 지름)"
    }
  }
 diff --git a/backend/review_product_consistency_v3/product_library/galaxy-s26-plus/product_spec.json b/backend/review_product_consistency_v3/product_library/galaxy-s26-plus/product_spec.json
-index be641ff..40748f7 100644
+index be641ff..356d9bd 100644
 --- a/backend/review_product_consistency_v3/product_library/galaxy-s26-plus/product_spec.json
 +++ b/backend/review_product_consistency_v3/product_library/galaxy-s26-plus/product_spec.json
 @@ -1,8 +1,8 @@
@@ -402,11 +560,11 @@ index be641ff..40748f7 100644
 -    "notes": "back.cameras: 검출 실패 — overrides 필요; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/corner_radius_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/text; 새 GLB의 렌즈 부품에 대응하는 바깥 링을 실측; Ultra AF 센서는 카메라에서 제외.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: https://www.samsungsvc.co.kr/solution/4613052; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); 2026-10-15: 기존 검은 펀치홀 외곽 기준을 적용하여 공식 Front.png 독립 실측값 0.0478W로 보정. 허용오차·중심·ROI·3D 키포인트 유지. punch_hole_calibration.json 참조.; 2026-10-19 사용자 확인: 렌즈 안쪽 모양 모두 원형(공식 이미지 기준) → back.cameras[].inner_shape=round (SDP 결정 36, 값만 추가·재승인 없음 — 사용자 지시); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음)"
 +    "validated_by": null,
 +    "validated_at": null,
-+    "notes": "back.cameras: 검출 실패 — overrides 필요; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/corner_radius_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/text; 새 GLB의 렌즈 부품에 대응하는 바깥 링을 실측; Ultra AF 센서는 카메라에서 제외.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: https://www.samsungsvc.co.kr/solution/4613052; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); 2026-10-15: 기존 검은 펀치홀 외곽 기준을 적용하여 공식 Front.png 독립 실측값 0.0478W로 보정. 허용오차·중심·ROI·3D 키포인트 유지. punch_hole_calibration.json 참조.; 2026-10-19 사용자 확인: 렌즈 안쪽 모양 모두 원형(공식 이미지 기준) → back.cameras[].inner_shape=round (SDP 결정 36, 값만 추가·재승인 없음 — 사용자 지시); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음); back.cameras[].rings: 공식 후면 렌즈 링 구조(SDP 결정 43 ①, 2026-10-28, benchmarks/reports/lens-ring-structure-20261028) — 신뢰도 high 렌즈만"
++    "notes": "back.cameras: 검출 실패 — overrides 필요; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/corner_radius_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/text; 새 GLB의 렌즈 부품에 대응하는 바깥 링을 실측; Ultra AF 센서는 카메라에서 제외.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: https://www.samsungsvc.co.kr/solution/4613052; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); 2026-10-15: 기존 검은 펀치홀 외곽 기준을 적용하여 공식 Front.png 독립 실측값 0.0478W로 보정. 허용오차·중심·ROI·3D 키포인트 유지. punch_hole_calibration.json 참조.; 2026-10-19 사용자 확인: 렌즈 안쪽 모양 모두 원형(공식 이미지 기준) → back.cameras[].inner_shape=round (SDP 결정 36, 값만 추가·재승인 없음 — 사용자 지시); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음); back.cameras[].rings: 공식 후면 렌즈 링 구조(SDP 결정 43 ①, 2026-10-28, benchmarks/reports/lens-ring-structure-20261028) — 신뢰도 high·medium 렌즈(medium은 outer=스펙 지름)"
    }
  }
 diff --git a/backend/review_product_consistency_v3/product_library/galaxy-s26-ultra/product_spec.json b/backend/review_product_consistency_v3/product_library/galaxy-s26-ultra/product_spec.json
-index 60c5aee..df7f0b9 100644
+index 60c5aee..0333c3d 100644
 --- a/backend/review_product_consistency_v3/product_library/galaxy-s26-ultra/product_spec.json
 +++ b/backend/review_product_consistency_v3/product_library/galaxy-s26-ultra/product_spec.json
 @@ -1,8 +1,8 @@
@@ -481,11 +639,11 @@ index 60c5aee..df7f0b9 100644
 -    "notes": "back.cameras: material+geometry 경로로 3개 검출, role은 크기순 임시 부여(main만) — 담당자 확인; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/corner_radius_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/text, /sides/s_pen_slot/present, /sides/s_pen_slot/side, /sides/s_pen_slot/position; 새 GLB의 렌즈 부품에 대응하는 바깥 링을 실측; Ultra AF 센서는 카메라에서 제외.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: https://www.samsungsvc.co.kr/solution/4613052; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); 2026-10-08 사용자 확인: 섬 오른쪽 위 원은 센서(카메라 아님) → back.sensors, 펀치홀 지름은 공식 정면 이미지 기준 0.0285→0.0507; 2026-10-19 사용자 확인: 렌즈 안쪽 모양 모두 원형(공식 이미지 기준) → back.cameras[].inner_shape=round (SDP 결정 36, 값만 추가·재승인 없음 — 사용자 지시); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음)"
 +    "validated_by": null,
 +    "validated_at": null,
-+    "notes": "back.cameras: material+geometry 경로로 3개 검출, role은 크기순 임시 부여(main만) — 담당자 확인; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/corner_radius_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/text, /sides/s_pen_slot/present, /sides/s_pen_slot/side, /sides/s_pen_slot/position; 새 GLB의 렌즈 부품에 대응하는 바깥 링을 실측; Ultra AF 센서는 카메라에서 제외.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: https://www.samsungsvc.co.kr/solution/4613052; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); 2026-10-08 사용자 확인: 섬 오른쪽 위 원은 센서(카메라 아님) → back.sensors, 펀치홀 지름은 공식 정면 이미지 기준 0.0285→0.0507; 2026-10-19 사용자 확인: 렌즈 안쪽 모양 모두 원형(공식 이미지 기준) → back.cameras[].inner_shape=round (SDP 결정 36, 값만 추가·재승인 없음 — 사용자 지시); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음); back.cameras[].rings: 공식 후면 렌즈 링 구조(SDP 결정 43 ①, 2026-10-28, benchmarks/reports/lens-ring-structure-20261028) — 신뢰도 high 렌즈만"
++    "notes": "back.cameras: material+geometry 경로로 3개 검출, role은 크기순 임시 부여(main만) — 담당자 확인; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/corner_radius_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/text, /sides/s_pen_slot/present, /sides/s_pen_slot/side, /sides/s_pen_slot/position; 새 GLB의 렌즈 부품에 대응하는 바깥 링을 실측; Ultra AF 센서는 카메라에서 제외.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: https://www.samsungsvc.co.kr/solution/4613052; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); 2026-10-08 사용자 확인: 섬 오른쪽 위 원은 센서(카메라 아님) → back.sensors, 펀치홀 지름은 공식 정면 이미지 기준 0.0285→0.0507; 2026-10-19 사용자 확인: 렌즈 안쪽 모양 모두 원형(공식 이미지 기준) → back.cameras[].inner_shape=round (SDP 결정 36, 값만 추가·재승인 없음 — 사용자 지시); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음); back.cameras[].rings: 공식 후면 렌즈 링 구조(SDP 결정 43 ①, 2026-10-28, benchmarks/reports/lens-ring-structure-20261028) — 신뢰도 high·medium 렌즈(medium은 outer=스펙 지름)"
    }
  }
 diff --git a/backend/review_product_consistency_v3/product_library/galaxy-s26/product_spec.json b/backend/review_product_consistency_v3/product_library/galaxy-s26/product_spec.json
-index 70ae715..e6275e4 100644
+index 70ae715..2eb48c7 100644
 --- a/backend/review_product_consistency_v3/product_library/galaxy-s26/product_spec.json
 +++ b/backend/review_product_consistency_v3/product_library/galaxy-s26/product_spec.json
 @@ -1,8 +1,8 @@
@@ -547,6 +705,6 @@ index 70ae715..e6275e4 100644
 -    "notes": "back.cameras: 검출 실패 — overrides 필요; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/corner_radius_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/text; 새 GLB의 렌즈 부품에 대응하는 바깥 링을 실측; Ultra AF 센서는 카메라에서 제외.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: https://www.samsungsvc.co.kr/solution/4613052; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); S26 펀치홀 지름은 공식 Front.png의 검은 외곽 기준 0.0507W. 이전 0.0311W를 대체. punch_hole_calibration.json 참조; 중심·허용오차 유지. 사용자 대화 승인에 따라 기준값 보정.; 2026-10-19 사용자 확인: 렌즈 안쪽 모양 모두 원형(공식 이미지 기준) → back.cameras[].inner_shape=round (SDP 결정 36, 값만 추가·재승인 없음 — 사용자 지시); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음)"
 +    "validated_by": null,
 +    "validated_at": null,
-+    "notes": "back.cameras: 검출 실패 — overrides 필요; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/corner_radius_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/text; 새 GLB의 렌즈 부품에 대응하는 바깥 링을 실측; Ultra AF 센서는 카메라에서 제외.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: https://www.samsungsvc.co.kr/solution/4613052; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); S26 펀치홀 지름은 공식 Front.png의 검은 외곽 기준 0.0507W. 이전 0.0311W를 대체. punch_hole_calibration.json 참조; 중심·허용오차 유지. 사용자 대화 승인에 따라 기준값 보정.; 2026-10-19 사용자 확인: 렌즈 안쪽 모양 모두 원형(공식 이미지 기준) → back.cameras[].inner_shape=round (SDP 결정 36, 값만 추가·재승인 없음 — 사용자 지시); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음); back.cameras[].rings: 공식 후면 렌즈 링 구조(SDP 결정 43 ①, 2026-10-28, benchmarks/reports/lens-ring-structure-20261028) — 신뢰도 high 렌즈만"
++    "notes": "back.cameras: 검출 실패 — overrides 필요; overrides 적용: /body/width_mm, /body/height_mm, /body/depth_mm, /body/corner_radius_ratio, /back/cameras ($replace), /back/camera_layout, /back/camera_island ($replace), /back/flash/present, /back/flash/center, /back/logo/text; 새 GLB의 렌즈 부품에 대응하는 바깥 링을 실측; Ultra AF 센서는 카메라에서 제외.; 모서리 반경은 공식 이미지 우선. 측정법·선택 원호는 onboarding_review.json 참조.; 키포인트 표시 이미지는 GLB/스펙 투영이며 학습 모델의 검출 성능 평가가 아님.; 실물 치수 출처: https://www.samsungsvc.co.kr/solution/4613052; Tier A max_tilt_deg 45→61 (사용자 결정 2026-10-07, 값만 변경·재승인 없음); S26 펀치홀 지름은 공식 Front.png의 검은 외곽 기준 0.0507W. 이전 0.0311W를 대체. punch_hole_calibration.json 참조; 중심·허용오차 유지. 사용자 대화 승인에 따라 기준값 보정.; 2026-10-19 사용자 확인: 렌즈 안쪽 모양 모두 원형(공식 이미지 기준) → back.cameras[].inner_shape=round (SDP 결정 36, 값만 추가·재승인 없음 — 사용자 지시); Tier B min_sharpness 0.6→0.3 (SDP 결정 42, 사용자 결정 2026-10-27, 값만 변경·재승인 없음); back.cameras[].rings: 공식 후면 렌즈 링 구조(SDP 결정 43 ①, 2026-10-28, benchmarks/reports/lens-ring-structure-20261028) — 신뢰도 high·medium 렌즈(medium은 outer=스펙 지름)"
    }
  }

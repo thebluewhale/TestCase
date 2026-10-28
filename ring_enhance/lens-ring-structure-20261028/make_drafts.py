@@ -1,4 +1,7 @@
-"""rings.json → 스펙 수정본(draft) — 신뢰도 high 렌즈에만 back.cameras[].rings (SDP 결정 43 ①).
+"""rings.json → 스펙 수정본(draft) — 신뢰도 high·medium 렌즈에 back.cameras[].rings (SDP 결정 43 ①).
+
+medium은 바깥 테두리가 하이라이트로만 보이는 검은 섬 위 렌즈(A37·A57) — outer는 스펙 지름. INCLUDE는
+사용자가 넣기로 한 low 렌즈(2026-10-28: S24+ cam2·3 — cam1과 같은 구조·간격, 스펙 근처 링이 둘이라 low).
 
 스펙은 minor 버전을 올리고 status=draft로 둔다. 사람이 `onboard validate --by <이름>`으로 승인해야
 검수에 쓰인다(실행은 validated 스펙만). galaxy-s24-ultra는 결정 42(Tier B min_sharpness 0.3)도 함께.
@@ -15,13 +18,19 @@ HERE = Path(__file__).parent
 LIB = Path("product_library")
 NOTE = (
     "back.cameras[].rings: 공식 후면 렌즈 링 구조(SDP 결정 43 ①, 2026-10-28, "
-    "benchmarks/reports/lens-ring-structure-20261028) — 신뢰도 high 렌즈만"
+    "benchmarks/reports/lens-ring-structure-20261028) — 신뢰도 high·medium 렌즈(medium은 outer=스펙 지름)"
 )
 NOTE_42 = "Tier B min_sharpness 0.6→0.3 (SDP 결정 42)"
 
+INCLUDE = {"galaxy-s24-plus": {"cam2", "cam3"}}
+
 rings = json.loads((HERE / "rings.json").read_text(encoding="utf-8"))
 for sid, res in rings.items():
-    high = {c["id"]: c for c in res["cameras"] if c["confidence"] == "high"}
+    high = {
+        c["id"]: c
+        for c in res["cameras"]
+        if c["confidence"] in ("high", "medium") or c["id"] in INCLUDE.get(sid, ())
+    }
     p = LIB / sid / "product_spec.json"
     spec = json.loads(p.read_text(encoding="utf-8"))
     sharp = sid == "galaxy-s24-ultra" and any(
@@ -30,7 +39,7 @@ for sid, res in rings.items():
         if c.get("tier") == "B"
     )
     if not high and not sharp:
-        print(sid, "변경 없음 (신뢰도 high 렌즈 없음)")
+        print(sid, "변경 없음 (넣을 렌즈 없음)")
         continue
     notes = []
     for cam in spec["back"]["cameras"]:

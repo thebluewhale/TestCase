@@ -64,31 +64,34 @@ def extract(sid):
     for cam in cams:
         c = to_px(*cam["center"])
         others = [(*to_px(*o["center"]), o["diameter_ratio"] / 2 * W) for o in cams if o is not cam]
-        rings = lens_rings.find_rings(gray, c, cam["diameter_ratio"] / 2 * W, lc, alpha, others)
-        blocked = True
-        if not rings:
-            # 이웃이 여럿인 가운데 렌즈는 이웃 방향 구간을 빼면 보이는 둘레가 절반 아래다 — 공식 후면은
-            # 깨끗해 이웃 테두리와 헷갈리지 않으므로 구간을 빼지 않고 다시 찾는다
-            rings = lens_rings.find_rings(gray, c, cam["diameter_ratio"] / 2 * W, lc, alpha, None)
-            blocked = False
         expected = (
             clearance(outline, cam["center"], cam["diameter_ratio"])
             if isl["present"] and len(outline)
             else None
         )
-        rows = []
-        for g in rings:
-            d = 2 * g.r / W
-            q = clearance(outline, cam["center"], d) / expected if expected else math.inf
-            rows.append(
-                {
-                    "d": round(d, 4),
-                    "cover": g.cover,
-                    "q": None if math.isinf(q) else round(q, 2),
-                    "island": q < edge_ratio,
-                    "px": [round(g.cx, 1), round(g.cy, 1), round(g.r, 1)],
-                }
-            )
+
+        def rows_of(rings, expected=expected, cam=cam):
+            rows = []
+            for g in rings:
+                d = 2 * g.r / W
+                q = clearance(outline, cam["center"], d) / expected if expected else math.inf
+                rows.append(
+                    {
+                        "d": round(d, 4),
+                        "cover": g.cover,
+                        "q": None if math.isinf(q) else round(q, 2),
+                        "island": q < edge_ratio,
+                        "px": [round(g.cx, 1), round(g.cy, 1), round(g.r, 1)],
+                    }
+                )
+            return rows
+
+        r_exp = cam["diameter_ratio"] / 2 * W
+        rows_blocked = rows_of(lens_rings.find_rings(gray, c, r_exp, lc, alpha, others))
+        # 이웃이 여럿인 가운데 렌즈는 이웃 방향 구간을 빼면 보이는 둘레가 절반 아래다 — 공식 후면은
+        # 깨끗해 이웃 테두리와 헷갈리지 않으므로 구간을 빼지 않고도 찾는다
+        rows_all = rows_of(lens_rings.find_rings(gray, c, r_exp, lc, alpha, None))
+        rows, blocked = (rows_blocked, True) if rows_blocked else (rows_all, False)
         lens = [r for r in rows if not r["island"]]
         near = [r for r in lens if abs(r["d"] / cam["diameter_ratio"] - 1) <= 0.03]
         outer = min(near, key=lambda r: abs(r["d"] / cam["diameter_ratio"] - 1)) if near else None
@@ -107,9 +110,12 @@ def extract(sid):
                 "neighbor_sectors_blocked": blocked,
                 "strong_near_spec": [r["d"] for r in strong_near],
                 "rings": rows,
+                "rings_unblocked": rows_all,
             }
         )
-    # 신뢰도 — 바깥·안쪽 둘레, 같은 크기 렌즈끼리 간격 일관성
+    # 신뢰도 — 바깥·안쪽 둘레, 같은 크기 렌즈끼리 간격 일관성 (strict 결과끼리만 비교)
+    strict_ratio = {cam["id"]: cam["ratio"] for cam in out}
+    island_raised = all(c.get("ring_style") == "island_raised" for c in cams)
     for cam in out:
         o, i = cam["outer"], cam["inner"]
         why = []
@@ -122,15 +128,58 @@ def extract(sid):
         if len(cam["strong_near_spec"]) > 1:
             why.append(f"스펙 지름 3% 안에 뚜렷한 링이 둘 이상 {cam['strong_near_spec']}")
         same = [
-            x["ratio"]
+            strict_ratio[x["id"]]
             for x in out
-            if x["ratio"] and abs(x["spec_diameter"] / cam["spec_diameter"] - 1) < 0.05
+            if strict_ratio[x["id"]] and abs(x["spec_diameter"] / cam["spec_diameter"] - 1) < 0.05
         ]
         if cam["ratio"] and len(same) > 1 and (max(same) / min(same) - 1) > 0.02:
             why.append(f"같은 크기 렌즈 간격 불일치 {min(same):.3f}~{max(same):.3f}")
         cam["confidence"] = "low" if why else "high"
         cam["low_reason"] = why
+        # 하이라이트 경로는 검은 섬 위 렌즈(island_raised — A37·A57)에만. 렌즈마다 안쪽 링이 실제로
+        # 다를 수 있어(A37 cam1 0.1609 · cam2·3 0.1662, 두 실행 모두 같은 값) 간격 불일치는 막지 않는다
+        weak = ("바깥 링 둘레", "스펙 지름과 3% 안인 링 없음", "안쪽 링 없음")
+        only_weak_outer = (
+            why
+            and island_raised
+            and any(w.startswith(weak) for w in why)
+            and all(w.startswith((*weak, "같은 크기 렌즈 간격 불일치")) for w in why)
+        )
+        if only_weak_outer:
+            rim = _rim_path(cam)
+            if rim:
+                cam.update(rim)
+                cam["confidence"] = "medium"
     return {"spec_id": sid, "body_px_per_w": round(W, 1), "cameras": out}, im, rect
+
+
+def _rim_path(cam: dict) -> dict | None:
+    """바깥 테두리가 하이라이트로만 보이는 렌즈(검은 섬 위 검은 렌즈 — A37·A57) — 스펙 지름 ±4% 안에
+    둘레 ≥ 0.3인 링(하이라이트)이 있으면 outer = 스펙 지름, inner = 스펙보다 4~12% 작고 둘레 ≥ 0.7인
+    링 가운데 가장 잘 보이는 것. 하이라이트 띠의 두 가장자리가 렌즈마다 번갈아 잡혀 그 값은 흔들리지만
+    스펙 지름은 하이라이트 위치와 맞는다(확대 그림 확인). 이웃 구간을 뺀 결과로 먼저, 안 되면 전체로."""
+    d0 = cam["spec_diameter"]
+    for rows, blocked in (
+        (cam["rings"], cam["neighbor_sectors_blocked"]),
+        (cam["rings_unblocked"], False),
+    ):
+        lens = [r for r in rows if not r["island"]]
+        rims = [r for r in lens if abs(r["d"] / d0 - 1) <= 0.04 and r["cover"] >= 0.3]
+        inner = [r for r in lens if d0 * 0.88 <= r["d"] <= d0 * 0.96 and r["cover"] >= lc.min_cover]
+        if rims and inner:
+            rim = max(rims, key=lambda r: r["cover"])
+            i = max(inner, key=lambda r: (r["cover"], r["d"]))
+            return {
+                "outer": {"d": d0, "cover": rim["cover"], "px": rim["px"], "rim_ring": rim["d"]},
+                "inner": i,
+                "ratio": round(d0 / i["d"], 4),
+                "neighbor_sectors_blocked": blocked,
+                "medium_reason": [
+                    f"바깥 테두리가 하이라이트로만 보임 (링 {rim['d']}, 둘레 {rim['cover']:.2f}) — "
+                    "outer는 스펙 지름(하이라이트 위치와 일치)"
+                ],
+            }
+    return None
 
 
 def draw(sid, res, im, rect):
@@ -144,7 +193,8 @@ def draw(sid, res, im, rect):
     y0, y1 = int(max(0, min(ys) - pad)), int(min(im.shape[0], max(ys) + pad))
     img = im.copy()
     for cam, sc in zip(res["cameras"], spec["back"]["cameras"], strict=True):
-        for r in cam["rings"]:
+        # 실제로 쓴 실행(이웃 구간 뺌/안 뺌)의 링을 그린다
+        for r in cam["rings"] if cam["neighbor_sectors_blocked"] else cam["rings_unblocked"]:
             col = (170, 170, 170) if r["island"] else (200, 200, 200)
             cv2.circle(
                 img, (int(r["px"][0]), int(r["px"][1])), int(r["px"][2]), col, 1, cv2.LINE_AA
@@ -153,7 +203,9 @@ def draw(sid, res, im, rect):
             r = cam[key]
             if r:
                 c = (int(round(r["px"][0])), int(round(r["px"][1])))
-                cv2.circle(img, c, int(round(r["px"][2])), col, 3, cv2.LINE_AA)
+                # medium(하이라이트 경로)의 outer는 스펙 지름 — 그 크기로 그린다
+                rad = r["d"] / 2 * W if "rim_ring" in r else r["px"][2]
+                cv2.circle(img, c, int(round(rad)), col, 3, cv2.LINE_AA)
     crop = img[y0:y1, x0:x1]
     s = 900 / max(crop.shape[:2])
     crop = cv2.resize(crop, None, fx=s, fy=s, interpolation=cv2.INTER_AREA)
@@ -169,7 +221,8 @@ def draw(sid, res, im, rect):
     for cam in res["cameras"]:
         o, i = cam["outer"], cam["inner"]
         lines.append(f"{cam['id']}: spec {cam['spec_diameter']:.4f}  {cam['confidence'].upper()}")
-        lines.append(f"   outer {o['d']:.4f} ({o['cover']:.2f})" if o else "   outer -")
+        rim = f" = spec, rim {o['rim_ring']:.4f}" if o and "rim_ring" in o else ""
+        lines.append(f"   outer {o['d']:.4f} ({o['cover']:.2f}){rim}" if o else "   outer -")
         lines.append(
             f"   inner {i['d']:.4f} ({i['cover']:.2f})  ratio {cam['ratio']}" if i else "   inner -"
         )
