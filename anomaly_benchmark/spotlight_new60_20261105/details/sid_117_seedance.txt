@@ -1,0 +1,37 @@
+sid_117_seedance
+상태: hit
+시간: 시간도 일치
+
+원본 라벨 R
+R1 (easy, [1.8, 2.1]초): 스쿠터가 사라짐
+원문: disappearance of the scooter
+R2 (easy, [1, 4.2]초): 두 소년이 스쿠터에서 넘어지는 물리 법칙이 잘못되었으며, 첫 번째 소년의 스쿠터가 넘어진 후 사라짐
+원문: The physics in how the 2 boys fell off their scooters are incorrect.  Also, the scooter for the first boy disappears after he falls to the ground.
+
+검출 후보 C
+C1 (1.0–2.4166666666666665초): 영상 특징 및 픽셀 구조 변화에 따른 형태·존재 변화 가능성 감지
+원문: 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+C2 (2.75–2.8333333333333335초): 밝기 및 구조 변화 패턴에 따른 깜빡임·순간 변형 가능성 감지
+원문: 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+C3 (1.625–2.417초): 소년이 넘어지는 동안 스쿠터가 땅속으로 사라짐
+원문: The boy's scooter vanishes into the ground during his fall.
+C4 (2.25–3.125초): 두 번째 소년이 충돌할 때 스쿠터 구조와 바퀴 크기가 급격히 변함
+원문: The second boy's scooter abruptly changes structure and wheel size as he crashes.
+C5 (1.7–2.2초): 넘어진 후 전경에 있는 아이 아래의 스쿠터가 용해되어 땅속으로 사라짐
+원문: Scooter under the foreground child dissolves and vanishes into the ground after the fall.
+C6 (2.2–3.0초): 배경의 탈것이 똑바로 서 있는 스쿠터에서 넘어진 밸런스 자전거로 변형됨
+원문: The background vehicle transitions from an upright scooter into a fallen balance bicycle.
+
+자동 의미 대응
+R1 ↔ C3 / 시간도 일치
+스쿠터가 사라짐(vanish/disappear)
+두 설명 모두 스쿠터가 사라지는 이상 현상을 기술하고 있어 동일한 현상에 해당합니다.
+R1 ↔ C5 / 시간도 일치
+넘어진 후 스쿠터가 사라짐
+R1의 스쿠터 소실과 C5의 아이 아래 스쿠터가 녹아 사라지는 현상은 동일한 소실 결함을 가리킵니다.
+R2 ↔ C3 / 시간도 일치
+넘어지는 과정 또는 넘어진 후 소년의 스쿠터가 사라짐
+R2의 첫 번째 소년 스쿠터 소실 클레임(R2.S2)과 C3의 소년의 스쿠터가 땅속으로 사라진다는 기술이 동일한 현상을 설명합니다.
+R2 ↔ C5 / 시간도 일치
+아이가 넘어진 후 스쿠터가 땅으로 사라짐
+C5의 전경 아이의 스쿠터 소실은 R2.S2의 첫 번째 소년이 넘어진 후 스쿠터가 사라진다는 기술과 동일한 소실 현상을 설명합니다.
