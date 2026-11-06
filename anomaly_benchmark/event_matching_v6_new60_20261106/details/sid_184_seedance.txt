@@ -1,0 +1,58 @@
+sid_184_seedance
+프롬프트 포함 v5 판정: pending → v6 판정: pending
+검출 완료: False / 평가: completed
+기존 검출 미완료: 의미 대응이 있어도 최종 성공 집계는 보류합니다.
+시간: 시간도 일치
+검출 후보·원본 라벨은 동일하며 의미 평가기만 변경했습니다.
+
+생성 프롬프트
+A person's hands shape dough, place it in a bowl with vegetables, and fold the dough over the filling.
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 사람의 손이 반죽을 빚는 동작
+프롬프트 근거: A person's hands shape dough
+관측: 손으로 반죽 덩어리를 굴리며 모양을 잡음
+판단 근거: 영상 초반에 반죽을 손으로 다듬는 모습이 관찰됨
+P2 · 충족 · 기대: 야채가 담긴 볼에 반죽을 넣는 동작
+프롬프트 근거: place it in a bowl with vegetables
+관측: 야채가 들어있는 볼 위에 반죽을 올려놓음
+판단 근거: 손으로 빚은 반죽을 채소가 담긴 그릇 안으로 넣음
+P3 · 불일치 · 기대: 속재료 위로 반죽을 접어 감싸는 동작
+프롬프트 근거: fold the dough over the filling
+관측: 반죽을 채소 위에 얹고 눌러 펼칠 뿐 접어서 소를 감싸지 않음
+판단 근거: 반죽을 속재료 위로 접는 과정이 수행되지 않음
+
+원본 라벨 R
+R1 (easy, [2.800, 5.000]초): 도우를 소 위로 접지 않고 볼 안에서 그냥 반죽함
+원문: The person does not fold the dough over the filling, instead just kneads it inside the bowl
+R1.S1 · 핵심 지적 / specific: 도우를 소 위로 접지 않고 볼 안에서 반죽만 함
+근거: The person does not fold the dough over the filling, instead just kneads it inside the bowl
+R2 (easy, [0.000, 2.600]초): 반죽이 사람의 손 움직임과 동기화되어 움직이지 않아 동작이 부자연스럽게 보임
+원문: The dough doesn't move in sync with the person's hands, making the action look unnatural
+R2.S1 · 핵심 지적 / specific: 반죽이 사람의 손과 동기화되어 움직이지 않아 부자연스러움
+근거: The dough doesn't move in sync with the person's hands, making the action look unnatural
+R3 (hard, [2.900, 3.800]초): 더 먼 쪽의 엄지와 검지 사이에 처진 살점이 존재함.
+원문: There is a sagging flap of flesh between the more distant thumb and index finger.
+R3.S1 · 핵심 지적 / specific: 더 먼 쪽의 엄지와 검지 사이에 살점이 처져 있음
+근거: There is a sagging flap of flesh between the more distant thumb and index finger.
+
+검출 후보 C
+C1 (2.750–5.042초): [프롬프트 불일치] 반죽을 접어 소를 감싸지 않고 위에서 누르기만 함
+원문: 반죽을 접어 소를 감싸는 동작이 나타나지 않고 반죽을 위에서 누르기만 함
+
+자동 의미 대응
+R1 ↔ C1 / 의미 대응 / 시간도 일치
+최초: equivalent → 최종: equivalent / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+반죽을 접어 소를 감싸지 않고 다른 반죽/누르기 동작만 한다는 동일한 핵심 불만을 가리키고 있습니다.
+공통 사건: 반죽을 접어 소를 감싸야 하는 동작이 수행되지 않고 단순 반죽/누르기만 하는 현상
+R2 ↔ C1 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 반죽과 사람의 손이 동기화되어 움직이지 않는 물리적/모션 왜곡 결함을 지적하는 반면, 후보는 반죽을 접어 소를 감싸는 특정 조리 동작을 수행하지 않고 누르기만 한다는 행동 미수행 결함을 설명하고 있어 서로 다른 상호작용 및 결함을 기술하고 있습니다.
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 반죽과 사람의 손이 동기화되어 움직이지 않는 물리적/모션 왜곡 결함을 지적하는 반면, 후보는 반죽을 접어 소를 감싸는 특정 조리 동작을 수행하지 않고 누르기만 한다는 행동 미수행 결함을 설명하고 있어 서로 다른 상호작용 및 결함을 기술하고 있습니다.
+R3 ↔ C1 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 레퍼런스는 손가락 사이의 처진 살점이라는 신체 해부학적 형태 결함을 지적하고 있는 반면, 후보는 반죽을 접어 소를 감싸지 않고 누르기만 한다는 조리 동작의 결함을 다루고 있어 대상 개체와 결함의 성격이 완전히 다릅니다.
+근거 검토: explicit_separation / different_entity / 레퍼런스는 손가락 사이의 처진 살점이라는 신체 해부학적 형태 결함을 지적하고 있는 반면, 후보는 반죽을 접어 소를 감싸지 않고 누르기만 한다는 조리 동작의 결함을 다루고 있어 대상 개체와 결함의 성격이 완전히 다릅니다.

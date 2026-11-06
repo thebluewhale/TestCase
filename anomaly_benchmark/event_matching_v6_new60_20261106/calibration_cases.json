@@ -1,0 +1,249 @@
+[
+  {
+    "row": {
+      "asset_id": "synthetic_absence",
+      "generator": "synthetic",
+      "media_sha256": "no-video",
+      "execution_complete": true,
+      "annotations": [
+        {
+          "annotation_id": "s1",
+          "interval_valid": true,
+          "original": {
+            "reason": "Nobody drinks wine.",
+            "type": "adherence",
+            "segment": [
+              0,
+              1
+            ]
+          }
+        }
+      ],
+      "candidates": [
+        {
+          "id": "s1",
+          "description": "The people hold glasses without drinking wine.",
+          "target": "unknown",
+          "kind": "model_proposal",
+          "start_seconds": 10,
+          "end_seconds": 11
+        }
+      ]
+    },
+    "expected": [
+      "hit"
+    ]
+  },
+  {
+    "row": {
+      "asset_id": "synthetic_different_people",
+      "generator": "synthetic",
+      "media_sha256": "no-video",
+      "execution_complete": true,
+      "annotations": [
+        {
+          "annotation_id": "s1",
+          "interval_valid": true,
+          "original": {
+            "reason": "A wine glass suddenly appears in the second woman's hand.",
+            "type": "visual",
+            "segment": [
+              0,
+              1
+            ]
+          }
+        }
+      ],
+      "candidates": [
+        {
+          "id": "s1",
+          "description": "A glass held by a different man disappears while the second woman and her glass remain unchanged.",
+          "target": "unknown",
+          "kind": "model_proposal",
+          "start_seconds": 10,
+          "end_seconds": 11
+        }
+      ]
+    },
+    "expected": [
+      "no_hit"
+    ]
+  },
+  {
+    "row": {
+      "asset_id": "synthetic_opposite",
+      "generator": "synthetic",
+      "media_sha256": "no-video",
+      "execution_complete": true,
+      "annotations": [
+        {
+          "annotation_id": "s1",
+          "interval_valid": true,
+          "original": {
+            "reason": "The woman's glass disappears.",
+            "type": "visual",
+            "segment": [
+              0,
+              1
+            ]
+          }
+        }
+      ],
+      "candidates": [
+        {
+          "id": "s1",
+          "description": "The same glass remains continuously visible and unchanged in the woman's hand.",
+          "target": "unknown",
+          "kind": "model_proposal",
+          "start_seconds": 10,
+          "end_seconds": 11
+        }
+      ]
+    },
+    "expected": [
+      "no_hit"
+    ]
+  },
+  {
+    "row": {
+      "asset_id": "synthetic_context",
+      "generator": "synthetic",
+      "media_sha256": "no-video",
+      "execution_complete": true,
+      "annotations": [
+        {
+          "annotation_id": "s1",
+          "interval_valid": true,
+          "original": {
+            "reason": "The woman in pink has a malformed hand.",
+            "type": "visual",
+            "segment": [
+              0,
+              1
+            ]
+          }
+        }
+      ],
+      "candidates": [
+        {
+          "id": "s1",
+          "description": "The woman is wearing pink clothes.",
+          "target": "unknown",
+          "kind": "model_proposal",
+          "start_seconds": 10,
+          "end_seconds": 11
+        }
+      ]
+    },
+    "expected": [
+      "no_hit",
+      "pending"
+    ]
+  },
+  {
+    "row": {
+      "asset_id": "synthetic_process_result",
+      "generator": "synthetic",
+      "media_sha256": "no-video",
+      "execution_complete": true,
+      "annotations": [
+        {
+          "annotation_id": "s1",
+          "interval_valid": true,
+          "original": {
+            "reason": "An extra cup appears in the woman's right hand during her toast.",
+            "type": "visual",
+            "segment": [
+              0,
+              1
+            ]
+          }
+        }
+      ],
+      "candidates": [
+        {
+          "id": "s1",
+          "description": "During that toast, the cup in the woman's right hand splits into two cups.",
+          "target": "unknown",
+          "kind": "model_proposal",
+          "start_seconds": 10,
+          "end_seconds": 11
+        }
+      ]
+    },
+    "expected": [
+      "hit"
+    ]
+  },
+  {
+    "row": {
+      "asset_id": "synthetic_unrelated_change",
+      "generator": "synthetic",
+      "media_sha256": "no-video",
+      "execution_complete": true,
+      "annotations": [
+        {
+          "annotation_id": "s1",
+          "interval_valid": true,
+          "original": {
+            "reason": "The man's left hand gains extra fingers while he waves.",
+            "type": "visual",
+            "segment": [
+              0,
+              1
+            ]
+          }
+        }
+      ],
+      "candidates": [
+        {
+          "id": "s1",
+          "description": "His right shoe changes color while he waves.",
+          "target": "unknown",
+          "kind": "model_proposal",
+          "start_seconds": 10,
+          "end_seconds": 11
+        }
+      ]
+    },
+    "expected": [
+      "no_hit"
+    ]
+  },
+  {
+    "row": {
+      "asset_id": "synthetic_broad",
+      "generator": "synthetic",
+      "media_sha256": "no-video",
+      "execution_complete": true,
+      "annotations": [
+        {
+          "annotation_id": "s1",
+          "interval_valid": true,
+          "original": {
+            "reason": "The ball moves unnaturally.",
+            "type": "visual",
+            "segment": [
+              0,
+              1
+            ]
+          }
+        }
+      ],
+      "candidates": [
+        {
+          "id": "s1",
+          "description": "The ball keeps morphing between a round soccer ball and an elongated football as it rolls.",
+          "target": "unknown",
+          "kind": "model_proposal",
+          "start_seconds": 10,
+          "end_seconds": 11
+        }
+      ]
+    },
+    "expected": [
+      "pending",
+      "hit"
+    ]
+  }
+]

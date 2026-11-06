@@ -1,0 +1,106 @@
+sid_157_ltx2
+프롬프트 포함 v5 판정: pending → v6 판정: hit
+검출 완료: True / 평가: completed
+시간: 시간 차이 있음 / 시간도 일치
+검출 후보·원본 라벨은 동일하며 의미 평가기만 변경했습니다.
+
+생성 프롬프트
+A potted plant with lush green foliage is shown against a neutral background. A hand reaches towards the plant. The camera zooms in, showing the plant's health and the hand's precise movements.
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 풍성한 초록색 잎이 있는 화분 식물 등장
+프롬프트 근거: A potted plant with lush green foliage
+관측: 화분에 담긴 건강하고 푸른 잎을 가진 식물이 화면 중앙에 보임
+판단 근거: 요구사항과 완벽하게 일치함
+P2 · 충족 · 기대: 중립적인 단색/무채색 배경
+프롬프트 근거: against a neutral background
+관측: 회색조의 깔끔한 중립 배경 확인됨
+판단 근거: 요구사항과 일치함
+P3 · 충족 · 기대: 손이 식물을 향해 뻗어오는 동작
+프롬프트 근거: A hand reaches towards the plant
+관측: 손이 화면 우측에서 나타나 식물의 잎으로 다가감
+판단 근거: 요구사항과 일치함
+P4 · 충족 · 기대: 카메라가 피사체로 줌인하는 연출
+프롬프트 근거: The camera zooms in
+관측: 초반 미디엄 샷에서 잎과 손에 매우 가깝게 줌인(접근) 후 다시 물러남
+판단 근거: 요구사항과 일치함
+P5 · 충족 · 기대: 식물의 건강한 상태와 손의 정밀한 움직임 묘사
+프롬프트 근거: showing the plant's health and the hand's precise movements
+관측: 클로즈업으로 잎의 결 및 손가락이 잎을 섬세하게 만지는 동작이 관찰됨
+판단 근거: 요구사항과 일치함
+
+원본 라벨 R
+R1 (medium, [0.000, 0.800]초): 손이 나뭇잎을 비현실적으로 통과하여 움직이고, 식물의 색상이 약간 변하며, 카메라가 너무 빠르게 줌인되고, 조명이 일정하게 유지되지 않고 깜빡거립니다.
+원문: The hand moves through the leaves unrealistically. The plant’s color shifts slightly, the camera zooms too quickly, and the lighting flickers instead of staying neutral.
+R1.S1 · 핵심 지적 / broad: 손이 나뭇잎을 비현실적으로 통과하여 움직임
+근거: The hand moves through the leaves unrealistically.
+R1.S2 · 핵심 지적 / specific: 식물의 색상이 약간 변함
+근거: The plant’s color shifts slightly
+R1.S3 · 핵심 지적 / specific: 카메라가 너무 빠르게 줌인됨
+근거: the camera zooms too quickly
+R1.S4 · 핵심 지적 / specific: 조명이 일정하게 유지되지 않고 깜빡거림
+근거: the lighting flickers instead of staying neutral
+R2 (easy, [4.400, 7.100]초): 영상 끝에서 식물에 작용하는 외력이 없음에도 식물 전체가 흔들림
+원문: Whole plant shakes at the end, doesn't make sense, nothing acting on it 
+R2.S1 · 핵심 지적 / specific: 작용하는 외력이 없는데도 영상 끝에서 식물 전체가 흔들림
+근거: Whole plant shakes at the end, doesn't make sense, nothing acting on it
+R3 (medium, [4.100, 7.700]초): 영상 끝에서 프롬프트에 없는 줌아웃이 발생하고, 해당 구간 동안 손이 지시와 달리 이상하게 움직임.
+원문: Zooms out at end, not in prompt. And the hand just moves around weirdly during this part, not as instructed
+R3.S1 · 핵심 지적 / specific: 끝부분에서 프롬프트에 지시되지 않은 줌아웃이 발생함
+근거: Zooms out at end, not in prompt.
+R3.S2 · 핵심 지적 / broad: 해당 구간 동안 손이 지시와 다르게 이상하게 움직임
+근거: And the hand just moves around weirdly during this part, not as instructed
+
+검출 후보 C
+C1 (5.080–7.120초): [기존 측정 제안·미확정] 영상 특징과 픽셀 구조 변화에 따른 형태·존재 변화 가능성 측정 제안
+원문: 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+C2 (4.500–5.400초): [기존 시각 후보] 카메라 줌/블러 시 나뭇잎 중심 잎맥이 갑자기 사라졌다 다시 나타남
+원문: The prominent central leaf vein abruptly disappears and reappears as the camera zooms/blurs.
+C3 (5.400–6.800초): [기존 시각 후보] 급격한 줌인 및 줌아웃 전환 중 중심 나뭇잎과 배경 잎들의 뒤틀림, 부자연스러운 블러 및 모핑 발생
+원문: The central leaf and background plant foliage exhibit warping, unnatural blurring, and morphing during the rapid zoom-in and zoom-out transitions.
+
+자동 의미 대응
+R1 ↔ C1 / 판단 보류 / 시간 차이 있음
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: C1은 단순 측정 및 확인을 제안하는 일반적 제안으로 구체적인 결함 대상과 증상을 명시하지 않아 매칭 여부를 판단할 수 없습니다.
+R1 ↔ C2 / 미대응 / 시간 차이 있음
+최초: related_only → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: R1.S3는 카메라 줌 속도가 너무 빠르다는 카메라 움직임 자체에 대한 불만인 반면, C2는 카메라 줌/블러 시점에 나뭇잎 중앙 잎맥이 사라졌다가 다시 나타나는 물체 구조의 깜빡임/소멸 현상에 대한 불만으로, 대상 엔티티와 오류 현상이 명확히 구분되는 별개의 사건입니다.
+공통 사건: 카메라의 줌 동작
+근거 검토: explicit_separation / different_entity / R1.S3는 카메라 줌 속도가 너무 빠르다는 카메라 움직임 자체에 대한 불만인 반면, C2는 카메라 줌/블러 시점에 나뭇잎 중앙 잎맥이 사라졌다가 다시 나타나는 물체 구조의 깜빡임/소멸 현상에 대한 불만으로, 대상 엔티티와 오류 현상이 명확히 구분되는 별개의 사건입니다.
+R1 ↔ C3 / 의미 대응 / 시간 차이 있음
+최초: same_event_different_aspect → 최종: same_event_different_aspect / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+R1의 빠른 줌인 현상과 C3의 빠른 줌 전환 중 발생하는 왜곡 현상은 동일한 카메라 줌 급변 이벤트를 다르게 기술한 측면입니다.
+공통 사건: 빠른 카메라 줌 동작 및 그에 수반된 잎/화면 왜곡
+R2 ↔ C1 / 판단 보류 / 시간도 일치
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: C1은 일반적인 측정 제안으로 식물이 흔들리는 구체적인 문제 현상과 연관성을 확인할 수 없습니다.
+R2 ↔ C2 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 영상 끝부분에서 외력 없이 식물 전체가 흔들리는 물리적 모션 이상을 지적하는 반면, 후보 C2는 카메라 줌/블러 시 주요 잎맥이 사라졌다가 다시 나타나는 시각적 소멸 및 재출현 현상을 다루고 있어 서로 명확히 구분되는 별개의 상호작용 및 현상입니다.
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 영상 끝부분에서 외력 없이 식물 전체가 흔들리는 물리적 모션 이상을 지적하는 반면, 후보 C2는 카메라 줌/블러 시 주요 잎맥이 사라졌다가 다시 나타나는 시각적 소멸 및 재출현 현상을 다루고 있어 서로 명확히 구분되는 별개의 상호작용 및 현상입니다.
+R2 ↔ C3 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 영상 끝에서 아무런 외력이 작용하지 않음에도 식물 전체가 흔들리는 동작 문제를 지적하고 있으나, 후보 C3는 급격한 줌 전환 과정에서 잎과 배경 잎들의 형태 워핑, 블러링, 모핑 현상을 다루고 있어 지적하는 이상 현상과 발생 기제가 명확히 다릅니다.
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 영상 끝에서 아무런 외력이 작용하지 않음에도 식물 전체가 흔들리는 동작 문제를 지적하고 있으나, 후보 C3는 급격한 줌 전환 과정에서 잎과 배경 잎들의 형태 워핑, 블러링, 모핑 현상을 다루고 있어 지적하는 이상 현상과 발생 기제가 명확히 다릅니다.
+R3 ↔ C1 / 판단 보류 / 시간도 일치
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: C1은 일반적인 측정 제안으로 구체적인 줌아웃이나 손의 이상 움직임과 비교할 수 없습니다.
+R3 ↔ C2 / 미대응 / 시간도 일치
+최초: related_only → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 레퍼런스는 지시되지 않은 줌아웃과 손의 비정상적인 움직임을 지적하는 반면, 후보는 카메라 줌/블러 중에 식물 잎맥이 갑자기 사라졌다 다시 나타나는 물리적 소멸/재등장 현상을 지적하므로 서로 다른 대상(손/카메라 지시 불이행 vs 잎맥의 결함)에 관한 명확히 분리된 사건입니다.
+공통 사건: 카메라 줌 동작
+근거 검토: explicit_separation / different_entity / 레퍼런스는 지시되지 않은 줌아웃과 손의 비정상적인 움직임을 지적하는 반면, 후보는 카메라 줌/블러 중에 식물 잎맥이 갑자기 사라졌다 다시 나타나는 물리적 소멸/재등장 현상을 지적하므로 서로 다른 대상(손/카메라 지시 불이행 vs 잎맥의 결함)에 관한 명확히 분리된 사건입니다.
+R3 ↔ C3 / 의미 대응 / 시간도 일치
+최초: same_event_different_aspect → 최종: same_event_different_aspect / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+R3.S1의 줌아웃 발생 불만과 C3의 빠른 줌인/줌아웃 전환 중 잎들의 왜곡 현상은 동일한 카메라 줌아웃 전환 구간의 결함을 서로 다른 측면에서 기술한 것입니다.
+공통 사건: 급격한 줌 전환(줌아웃) 동작

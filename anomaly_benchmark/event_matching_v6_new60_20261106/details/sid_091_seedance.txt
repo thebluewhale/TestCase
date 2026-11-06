@@ -1,0 +1,88 @@
+sid_091_seedance
+프롬프트 포함 v5 판정: no_hit → v6 판정: no_hit
+검출 완료: True / 평가: completed
+시간: 보조 정보 없음
+검출 후보·원본 라벨은 동일하며 의미 평가기만 변경했습니다.
+
+생성 프롬프트
+grass swinging with wind, dew, twilight, light from faraway, strategic blur, camera position at the groud level  
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 바람에 흔들리는 풀
+프롬프트 근거: grass swinging with wind
+관측: 바람에 흔들리는 풀잎과 이삭 확인됨
+판단 근거: 풀이 바람에 따라 미세하게 흔들림
+P2 · 충족 · 기대: 이슬방울
+프롬프트 근거: dew
+관측: 풀잎과 이삭에 맺힌 물방울 확인됨
+판단 근거: 이슬방울이 명확히 보임
+P3 · 충족 · 기대: 황혼 또는 일몰/일출 시각의 하늘
+프롬프트 근거: twilight
+관측: 해질녘 혹은 새벽 하늘과 태양빛 확인됨
+판단 근거: 황혼 시간대의 분위기가 연출됨
+P4 · 충족 · 기대: 멀리서 비추는 빛
+프롬프트 근거: light from faraway
+관측: 지평선 근처 먼 곳에서 빛이 비침
+판단 근거: 원경에서 오는 태양광이 보임
+P5 · 충족 · 기대: 의도적인 블러 처리 (아웃포커스 등)
+프롬프트 근거: strategic blur
+관측: 배경 및 일부 피사체에 심도 블러 효과 적용됨
+판단 근거: 초점 외 영역에 블러가 존재함
+P6 · 충족 · 기대: 지면 높이에 위치한 카메라 시점
+프롬프트 근거: camera position at the groud level
+관측: 지면에 밀착된 로우 앵글 구도
+판단 근거: 카메라가 지면 수준에 위치함
+
+원본 라벨 R
+R1 (medium, [1.100, 2.000]초): 물방울이 바람 속에서 떨어지지 않음
+원문: the water droplets dont fall in the wind
+R1.S1 · 핵심 지적 / specific: 물방울이 바람 속에서 떨어지지 않음
+근거: the water droplets dont fall in the wind
+R2 (medium, [0.500, 4.500]초): 바람의 세기로 볼 때 나뭇잎에 맺힌 이슬방울이 식물 잎에서 떨어져야 함에도 떨어지지 않는 물리적 오류 지적.
+원문: Based upon the wind strength, the dew drops on the leaves should be dripping from the plant leaves.
+R2.S1 · 핵심 지적 / specific: 바람의 세기를 고려했을 때 잎에 맺힌 이슬방울이 식물 잎에서 떨어져야 함
+근거: Based upon the wind strength, the dew drops on the leaves should be dripping from the plant leaves.
+
+검출 후보 C
+C1 (1.250–4.875초): [기존 시각 후보] 카메라가 이동함에 따라 전경 풀 줄기의 이슬방울이 이동하고 깜빡이며 왜곡됨
+원문: Dewdrops on the prominent foreground grass stalk shift, flicker, and warp intermittently as the camera tracks.
+C2 (0.000–4.880초): [기존 시각 후보] 풀잎이 흔들릴 때 전경 밀 이삭의 이슬방울이 변형되고 크기가 변하며 깜빡임
+원문: Dewdrops on the foreground horizontal wheat spike morph, change size, and flicker erratically as the blade sways.
+C3 (0.500–4.500초): [기존 시각 후보] 배경의 풀 줄기와 까락이 프레임에 걸쳐 깜빡이고 두께가 왜곡됨
+원문: Background grass stalks and awns along the horizon flicker and warp in thickness inconsistently across frames.
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 바람이 부는데도 물방울이 떨어지지 않는 물리 법칙 위반을 지적하는 반면, 후보는 카메라 이동에 따라 이슬방울이 깜빡이고 뒤틀리는 렌더링/시각적 왜곡 현상을 지적하여 서로 다른 상호작용 및 결함을 설명합니다.
+공통 사건: 풀에 맺힌 물방울(이슬방울)의 거동
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 바람이 부는데도 물방울이 떨어지지 않는 물리 법칙 위반을 지적하는 반면, 후보는 카메라 이동에 따라 이슬방울이 깜빡이고 뒤틀리는 렌더링/시각적 왜곡 현상을 지적하여 서로 다른 상호작용 및 결함을 설명합니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 물방울이 바람 속에서 낙하하지 않는 결함을 지적하지만, 후보는 풀잎이 흔들릴 때 이슬방울의 크기가 변하고 형태가 모핑되며 깜빡이는 현상을 다루어 명확히 다른 상호작용 결함입니다.
+공통 사건: 이삭/풀에 맺힌 물방울(이슬방울)의 거동
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 물방울이 바람 속에서 낙하하지 않는 결함을 지적하지만, 후보는 풀잎이 흔들릴 때 이슬방울의 크기가 변하고 형태가 모핑되며 깜빡이는 현상을 다루어 명확히 다른 상호작용 결함입니다.
+R1 ↔ C3 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 레퍼런스의 대상은 물방울인 반면, 후보의 대상은 지평선의 배경 풀 줄기와 까락으로 문제 제기 대상 자체가 완전히 다릅니다.
+근거 검토: explicit_separation / different_entity / 레퍼런스의 대상은 물방울인 반면, 후보의 대상은 지평선의 배경 풀 줄기와 까락으로 문제 제기 대상 자체가 완전히 다릅니다.
+R2 ↔ C1 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 강한 바람에도 불구하고 이슬방울이 잎에서 떨어지지 않는다는 물리 법칙 위반을 지적하지만, 후보는 카메라 이동에 따라 이슬방울이 깜빡이고 왜곡되는 렌더링 결함을 지적하므로 상호작용 및 현상이 명확히 다릅니다.
+공통 사건: 식물 위의 이슬방울 거동
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 강한 바람에도 불구하고 이슬방울이 잎에서 떨어지지 않는다는 물리 법칙 위반을 지적하지만, 후보는 카메라 이동에 따라 이슬방울이 깜빡이고 왜곡되는 렌더링 결함을 지적하므로 상호작용 및 현상이 명확히 다릅니다.
+R2 ↔ C2 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 바람에 의해 이슬방울이 떨어져야 한다는 물리적 낙하 부재를 문제 삼고 있으나, 후보는 이슬방울의 크기 변화 및 모핑, 깜빡임을 지적하고 있어 문제되는 현상 자체가 서로 다릅니다.
+공통 사건: 식물 위의 이슬방울 거동
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 바람에 의해 이슬방울이 떨어져야 한다는 물리적 낙하 부재를 문제 삼고 있으나, 후보는 이슬방울의 크기 변화 및 모핑, 깜빡임을 지적하고 있어 문제되는 현상 자체가 서로 다릅니다.
+R2 ↔ C3 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 레퍼런스는 나뭇잎에 맺힌 이슬방울을 대상으로 결함을 지적하는 반면, 후보는 지평선 부근의 배경 풀 줄기 및 까끄라기를 대상으로 삼고 있어 문제의 주체(엔티티)가 완전히 다릅니다.
+근거 검토: explicit_separation / different_entity / 레퍼런스는 나뭇잎에 맺힌 이슬방울을 대상으로 결함을 지적하는 반면, 후보는 지평선 부근의 배경 풀 줄기 및 까끄라기를 대상으로 삼고 있어 문제의 주체(엔티티)가 완전히 다릅니다.

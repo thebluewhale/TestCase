@@ -1,0 +1,96 @@
+sid_117_ltx2
+프롬프트 포함 v5 판정: hit → v6 판정: hit
+검출 완료: True / 평가: completed
+시간: 시간도 일치
+검출 후보·원본 라벨은 동일하며 의미 평가기만 변경했습니다.
+
+생성 프롬프트
+The boy slides rides into the dirt face first, then another small child rides a bike on a sidewalk and falls face first into the dirt.
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 남자아이가 미끄럼틀을 타고 내려와 흙바닥으로 주행함
+프롬프트 근거: boy slides rides into the dirt
+관측: 소년이 미끄럼틀을 타고 흙바닥으로 주행함
+판단 근거: 요구사항이 영상에서 확인됨
+P2 · 충족 · 기대: 첫 번째 아이가 앞으로 엎어지며 넘어짐
+프롬프트 근거: face first
+관측: 아이가 미끄러져 엎어짐
+판단 근거: 요구사항과 일치함
+P3 · 충족 · 기대: 다른 어린 아이가 보도 위에서 자전거를 탐
+프롬프트 근거: another small child rides a bike on a sidewalk
+관측: 노란 헬멧을 쓴 다른 아이가 보도 근처에서 자전거를 탐
+판단 근거: 요구사항과 대체로 일치함
+P4 · 불일치 · 기대: 두 번째 아이가 흙바닥으로 앞으로 넘어짐
+프롬프트 근거: falls face first into the dirt
+관측: 두 번째 아이는 넘어지지 않고 계속 주행함
+판단 근거: 두 번째 아이가 넘어지는 장면이 확인되지 않음
+
+원본 라벨 R
+R1 (easy, [3.300, 6.000]초): 추락하는 소년의 몸이 부자연스러운 형태로 변형됨.
+원문: falling boy's body morphed into unnatural shapes
+R1.S1 · 핵심 지적 / specific: 추락하는 소년의 신체가 부자연스러운 형태로 왜곡/변형됨
+근거: falling boy's body morphed into unnatural shapes
+R2 (easy, [3.300, 4.000]초): 넘어지는 소년의 자전거가 사라짐
+원문: falling boy's bike disappeared
+R2.S1 · 핵심 지적 / specific: 넘어지는 소년의 자전거가 사라짐
+근거: falling boy's bike disappeared
+
+검출 후보 C
+C1 (0.280–0.400초): [기존 측정 제안·미확정] 밝기 및 구조 변화 패턴에 따른 깜빡임 및 순간 변형 확인 제안
+원문: 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+C2 (0.360–1.600초): [기존 측정 제안·미확정] 영상 특징과 픽셀 구조 변화에 따른 형태 및 존재 변화 확인 제안
+원문: 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+C3 (3.300–3.800초): [기존 시각 후보] 아이가 넘어질 때 빨간 자전거가 먼지와 보도 속으로 사라짐
+원문: Child's red bicycle vanishes into dust and sidewalk upon falling.
+C4 (3.200–4.100초): [기존 시각 후보] 파란 옷을 입은 소년이 보도로 미끄러지면서 빨간 자전거가 사라짐
+원문: The red bicycle ridden by the boy in blue disappears into dust and ground surfaces as he slides onto the sidewalk.
+C5 (3.000–6.000초): [프롬프트 불일치] 두 번째 아이가 넘어지지 않고 주행을 지속함
+원문: 두 번째 아이가 흙바닥으로 넘어지지 않고 주행을 지속함
+
+자동 의미 대응
+R1 ↔ C1 / 판단 보류 / 시간 차이 있음
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: C1은 구체적 대상 없이 화면 변화 측정을 제안하는 일반적 진술로 소년의 신체 변형 현상과의 연관성을 검증할 수 없습니다.
+R1 ↔ C2 / 판단 보류 / 시간 차이 있음
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: C2는 단순 픽셀 구조 변화 제안으로 R1의 신체 형태 변형 결함과 대상 및 사건 연관성을 파악하기 불충분합니다.
+R1 ↔ C3 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 참조는 넘어지는 소년의 신체가 부자연스러운 형태로 변형되는 이상 현상을 기술하고 있는 반면, 후보는 아이의 붉은 자전거가 먼지와 보도 속으로 사라지는 이상 현상을 기술하여 대상 개체(소년의 신체 vs 자전거)와 발생 양상이 서로 명확히 구분됩니다.
+근거 검토: explicit_separation / different_entity / 참조는 넘어지는 소년의 신체가 부자연스러운 형태로 변형되는 이상 현상을 기술하고 있는 반면, 후보는 아이의 붉은 자전거가 먼지와 보도 속으로 사라지는 이상 현상을 기술하여 대상 개체(소년의 신체 vs 자전거)와 발생 양상이 서로 명확히 구분됩니다.
+R1 ↔ C4 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 참조는 넘어지는 소년의 신체 변형 문제를 지적하는 반면, 후보는 파란 옷을 입은 소년이 타던 빨간 자전거가 지면으로 사라지는 현상을 지적하여 결함이 발생한 대상(소년의 신체 vs 자전거)이 다릅니다.
+근거 검토: explicit_separation / different_entity / 참조는 넘어지는 소년의 신체 변형 문제를 지적하는 반면, 후보는 파란 옷을 입은 소년이 타던 빨간 자전거가 지면으로 사라지는 현상을 지적하여 결함이 발생한 대상(소년의 신체 vs 자전거)이 다릅니다.
+R1 ↔ C5 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 참조는 넘어지는 소년의 신체가 왜곡되는 현상에 관한 것이나, 후보는 넘어지지 않고 주행을 지속하는 완전히 다른 '두 번째 아이'에 대한 서술이므로 대상 개체와 사건이 명백히 상이합니다.
+근거 검토: explicit_separation / different_entity / 참조는 넘어지는 소년의 신체가 왜곡되는 현상에 관한 것이나, 후보는 넘어지지 않고 주행을 지속하는 완전히 다른 '두 번째 아이'에 대한 서술이므로 대상 개체와 사건이 명백히 상이합니다.
+R2 ↔ C1 / 판단 보류 / 시간 차이 있음
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: C1은 자전거 소멸 현상과의 연관성을 확인할 수 없는 일반적 계측 제안입니다.
+R2 ↔ C2 / 판단 보류 / 시간 차이 있음
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: C2는 단순 픽셀 구조 변화 확인 제안으로 특정 객체 소멸 결함과의 연관성을 입증하기 부족합니다.
+R2 ↔ C3 / 의미 대응 / 시간도 일치
+최초: equivalent → 최종: equivalent / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+넘어지는 소년의 자전거가 사라졌다는 참조와 아이가 넘어지며 자전거가 사라진다는 후보는 동일한 사건과 결함을 정확히 설명합니다.
+공통 사건: 아이가 넘어질 때 자전거가 사라지는 현상
+R2 ↔ C4 / 의미 대응 / 시간도 일치
+최초: equivalent → 최종: equivalent / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+넘어지는 소년의 자전거가 사라진다는 참조의 불만과, 소년이 미끄러지면서 타고 있던 빨간 자전거가 사라진다는 후보 설명은 동일한 소멸 사건을 기술합니다.
+공통 사건: 넘어지는 소년의 자전거가 바닥으로 미끄러지며 사라지는 현상
+R2 ↔ C5 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 참조는 넘어지는 소년의 자전거가 사라지는 이상 현상을 명시하고 있으나, 후보는 두 번째 아이가 넘어지지 않고 주행을 지속하는 상황을 기술하고 있어 대상 개체와 일어나는 상호작용 및 사건 자체가 명확히 구분됩니다.
+근거 검토: explicit_separation / different_entity / 참조는 넘어지는 소년의 자전거가 사라지는 이상 현상을 명시하고 있으나, 후보는 두 번째 아이가 넘어지지 않고 주행을 지속하는 상황을 기술하고 있어 대상 개체와 일어나는 상호작용 및 사건 자체가 명확히 구분됩니다.

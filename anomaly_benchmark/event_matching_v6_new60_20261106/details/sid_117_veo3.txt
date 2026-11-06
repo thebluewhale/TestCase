@@ -1,0 +1,229 @@
+sid_117_veo3
+프롬프트 포함 v5 판정: pending → v6 판정: hit
+검출 완료: True / 평가: completed
+시간: 시간 차이 있음 / 시간도 일치
+검출 후보·원본 라벨은 동일하며 의미 평가기만 변경했습니다.
+
+생성 프롬프트
+The boy slides rides into the dirt face first, then another small child rides a bike on a sidewalk and falls face first into the dirt.
+
+프롬프트 요구사항 검사
+P1 · 불일치 · 기대: 소년이 흙 위로 얼굴부터 미끄러지듯 넘어짐
+프롬프트 근거: boy slides rides into the dirt face first
+관측: 소년이 달리다 앉아 넘어지며 얼굴부터 슬라이딩하지 않음
+판단 근거: 소년이 얼굴부터 흙에 슬라이딩하는 동작이 관찰되지 않음
+P2 · 충족 · 기대: 다른 아이가 보도에서 자전거를 탐
+프롬프트 근거: another small child rides a bike on a sidewalk
+관측: 자전거를 탄 아이가 보도 위에서 주행함
+판단 근거: 보도 위에서 자전거를 타는 아이가 확인됨
+P3 · 불일치 · 기대: 자전거를 탄 아이가 흙 쪽으로 얼굴부터 넘어짐
+프롬프트 근거: falls face first into the dirt
+관측: 아이가 자전거에서 발을 딛고 내릴 뿐 흙으로 얼굴부터 넘어지지 않음
+판단 근거: 얼굴부터 넘어지는 낙상 동작이 발생하지 않음
+
+원본 라벨 R
+R1 (easy, [0.000, 5.000]초): 첫 번째 아이와 자전거를 탄 두 번째 아이 모두 흙바닥에 얼굴부터 처박히며 '타지' 않음.
+원문: The first child does not "ride" face first into the dirt, and neither does the second child on the bike.
+R1.S1 · 핵심 지적 / specific: 첫 번째 아이가 흙바닥에 얼굴부터 처박히며 타지 않음
+근거: The first child does not "ride" face first into the dirt
+R1.S2 · 핵심 지적 / specific: 자전거를 탄 두 번째 아이도 흙바닥에 얼굴부터 처박히지 않음
+근거: neither does the second child on the bike
+R2 (hard, [3.000, 5.000]초): 자전거의 타이어 트레드가 움직이지 않음.
+원문: The tire tread on the bicycle doesn't move.
+R2.S1 · 핵심 지적 / specific: 자전거의 타이어 트레드가 움직이지 않음
+근거: The tire tread on the bicycle doesn't move.
+R3 (easy, [2.000, 3.000]초): 소년이 흙으로 미끄러져 들어가지(슬라이딩하지) 않고 뛰어듦
+원문: The boy jumps into the dirt not slides
+R3.S1 · 핵심 지적 / specific: 소년이 슬라이딩하지 않고 흙 속으로 뛰어듦
+근거: The boy jumps into the dirt not slides
+R4 (easy, [6.000, 8.000]초): 어린 아이가 흙이 아닌 잔디 쪽으로 뛰어든다는 지적.
+원문: The small child jumps into the grass not the dirt.
+R4.S1 · 핵심 지적 / specific: 아이가 흙이 아닌 잔디밭으로 뛰어듦
+근거: The small child jumps into the grass not the dirt.
+
+검출 후보 C
+C1 (1.042–1.250초): [기존 측정 제안·미확정] 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+원문: 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+C2 (1.583–2.542초): [기존 측정 제안·미확정] 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+원문: 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+C3 (2.458–2.542초): [기존 측정 제안·미확정] 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+원문: 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+C4 (2.792–3.292초): [기존 측정 제안·미확정] 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+원문: 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+C5 (3.000–3.250초): [기존 시각 후보] 소년의 유령 같은 잔상이 잔디 영역에 희미하게 나타남.
+원문: A ghostly residual double of the boy appears faintly in the grass area.
+C6 (3.100–3.400초): [기존 시각 후보] 두 장면이 겹치는 디졸브/블렌딩 결함이 발생함.
+원문: Around 00:03.125 to 00:03.375, a cross-dissolve/blending artifact appears overlapping two distinct scenes (boy kneeling on ground and girl riding bicycle).
+C7 (7.000–7.800초): [기존 시각 후보] 자전거를 내리거나 페달을 밟을 때 소녀의 다리와 발이 부자연스럽게 미끄러지고 변형됨.
+원문: The girl's left leg and foot exhibit unnatural sliding and morphing motion around the pedal and frame while dismounting or pedaling the bicycle.
+C8 (1.750–3.125초): [프롬프트 불일치] 소년이 얼굴부터 흙 위로 미끄러지지 않고 웅크려 멈춤.
+원문: 소년이 얼굴부터 흙 위로 미끄러지지 않고 웅크려 멈춤
+C9 (6.875–7.875초): [프롬프트 불일치] 아이가 자전거에서 내리며 서 있을 뿐 얼굴부터 넘어지지 않음.
+원문: 아이가 자전거에서 내리며 서 있을 뿐 얼굴부터 넘어지지 않음
+
+자동 의미 대응
+R1 ↔ C1 / 판단 보류 / 시간 차이 있음
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: 단순 측정 제안으로 구체적인 대상이나 행동을 특정할 수 없습니다.
+R1 ↔ C2 / 판단 보류 / 시간도 일치
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: 단순 측정 제안으로 대상을 특정할 수 없습니다.
+R1 ↔ C3 / 판단 보류 / 시간 차이 있음
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: 단순 측정 제안입니다.
+R1 ↔ C4 / 판단 보류 / 시간도 일치
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: 단순 측정 제안입니다.
+R1 ↔ C5 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: distinct_occurrence
+명시적 별개 사건: 레퍼런스는 첫 번째 아이가 흙바닥에 얼굴부터 넘어지지 않는다는 동작 불이행 문제인 반면, C5는 잔디 영역에 소년의 잔상 잔여물이 희미하게 나타나는 결함으로 서로 전혀 다른 현상을 다룹니다.
+근거 검토: explicit_separation / distinct_occurrence / 레퍼런스는 첫 번째 아이가 흙바닥에 얼굴부터 넘어지지 않는다는 동작 불이행 문제인 반면, C5는 잔디 영역에 소년의 잔상 잔여물이 희미하게 나타나는 결함으로 서로 전혀 다른 현상을 다룹니다.
+R1 ↔ C6 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: distinct_occurrence
+명시적 별개 사건: 레퍼런스는 아이가 흙바닥으로 얼굴부터 처박히지 않는다는 동작 지시 미준수에 대한 지적이며, C6는 서로 다른 두 장면이 겹치는 크로스디졸브/블렌딩 결함에 관한 것이므로 대상 현상이 명백히 구분됩니다.
+근거 검토: explicit_separation / distinct_occurrence / 레퍼런스는 아이가 흙바닥으로 얼굴부터 처박히지 않는다는 동작 지시 미준수에 대한 지적이며, C6는 서로 다른 두 장면이 겹치는 크로스디졸브/블렌딩 결함에 관한 것이므로 대상 현상이 명백히 구분됩니다.
+R1 ↔ C7 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 자전거를 탄 두 번째 아이가 흙바닥으로 얼굴부터 처박히지 않는다는 지적이고, C7은 자전거 페달과 프레임 부근에서 소녀의 다리와 발이 부자연스럽게 미끄러지며 형태가 변형된다는 물리적 결함에 대한 지적으로 서로 다른 상호작용 및 결함입니다.
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 자전거를 탄 두 번째 아이가 흙바닥으로 얼굴부터 처박히지 않는다는 지적이고, C7은 자전거 페달과 프레임 부근에서 소녀의 다리와 발이 부자연스럽게 미끄러지며 형태가 변형된다는 물리적 결함에 대한 지적으로 서로 다른 상호작용 및 결함입니다.
+R1 ↔ C8 / 의미 대응 / 시간도 일치
+최초: equivalent → 최종: equivalent / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+R1의 첫 번째 아이가 얼굴부터 흙에 박히며 타지 않는다는 불만과 C8의 관찰이 정확히 일치합니다.
+공통 사건: 첫 번째 아이(소년)가 흙 위로 얼굴부터 미끄러지듯 처박히지 않음
+R1 ↔ C9 / 의미 대응 / 시간 차이 있음
+최초: equivalent → 최종: equivalent / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+자전거를 탄 두 번째 아이가 얼굴부터 처박히지 않는다는 점을 정확히 공유합니다.
+공통 사건: 자전거의 두 번째 아이가 얼굴부터 넘어지지 않음
+R2 ↔ C1 / 판단 보류 / 시간 차이 있음
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: 측정 제안입니다.
+R2 ↔ C2 / 판단 보류 / 시간 차이 있음
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: 측정 제안입니다.
+R2 ↔ C3 / 판단 보류 / 시간 차이 있음
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: 측정 제안입니다.
+R2 ↔ C4 / 판단 보류 / 시간도 일치
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: 측정 제안입니다.
+R2 ↔ C5 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 참조는 자전거 타이어 트레드의 무회전 현상을 지적하는 반면, 후보는 풀밭에 나타난 소년의 잔상 잔류 문제를 다루고 있어 대상과 현상이 명확히 분리됩니다.
+근거 검토: explicit_separation / different_entity / 기준 참조는 자전거 타이어 트레드의 무회전 현상을 지적하는 반면, 후보는 풀밭에 나타난 소년의 잔상 잔류 문제를 다루고 있어 대상과 현상이 명확히 분리됩니다.
+R2 ↔ C6 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 참조는 자전거 타이어 트레드가 움직이지 않는 물체 부위의 움직임 결함을 지적하고 있으나, 후보는 장면 간 크로스 디졸브/블렌딩으로 인한 화면 전반의 아티팩트를 다루므로 대상과 발생 현상이 서로 다릅니다.
+근거 검토: explicit_separation / different_entity / 기준 참조는 자전거 타이어 트레드가 움직이지 않는 물체 부위의 움직임 결함을 지적하고 있으나, 후보는 장면 간 크로스 디졸브/블렌딩으로 인한 화면 전반의 아티팩트를 다루므로 대상과 발생 현상이 서로 다릅니다.
+R2 ↔ C7 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 동일한 자전거 탑승 상황이지만 기준 참조는 타이어 트레드가 움직이지 않는 것을 지적하며, 후보는 페달 및 프레임 부근에서 소녀의 다리와 발이 비정상적으로 미끄러지고 모핑되는 현상을 지적하여 구체적인 부위와 상호작용/동작 결함이 분리됩니다.
+근거 검토: explicit_separation / different_interaction / 동일한 자전거 탑승 상황이지만 기준 참조는 타이어 트레드가 움직이지 않는 것을 지적하며, 후보는 페달 및 프레임 부근에서 소녀의 다리와 발이 비정상적으로 미끄러지고 모핑되는 현상을 지적하여 구체적인 부위와 상호작용/동작 결함이 분리됩니다.
+R2 ↔ C8 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 참조는 자전거 타이어 트레드의 움직임 부재를 지적하는 반면, 후보는 소년이 흙 위로 미끄러지지 않고 웅크리는 행동을 다루어 대상 개체와 동작이 완전히 다릅니다.
+근거 검토: explicit_separation / different_entity / 기준 참조는 자전거 타이어 트레드의 움직임 부재를 지적하는 반면, 후보는 소년이 흙 위로 미끄러지지 않고 웅크리는 행동을 다루어 대상 개체와 동작이 완전히 다릅니다.
+R2 ↔ C9 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 참조는 자전거 부품인 타이어 트레드가 움직이지 않는 이상을 다루는 반면, 후보는 아이가 자전거에서 내릴 때 넘어지지 않고 서 있는 행동을 다루고 있어 대상 및 문제가 완전히 분리됩니다.
+근거 검토: explicit_separation / different_entity / 기준 참조는 자전거 부품인 타이어 트레드가 움직이지 않는 이상을 다루는 반면, 후보는 아이가 자전거에서 내릴 때 넘어지지 않고 서 있는 행동을 다루고 있어 대상 및 문제가 완전히 분리됩니다.
+R3 ↔ C1 / 판단 보류 / 시간 차이 있음
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: 측정 제안입니다.
+R3 ↔ C2 / 판단 보류 / 시간도 일치
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: 측정 제안입니다.
+R3 ↔ C3 / 판단 보류 / 시간 차이 있음
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: 측정 제안입니다.
+R3 ↔ C4 / 판단 보류 / 시간도 일치
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: 측정 제안입니다.
+R3 ↔ C5 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: distinct_occurrence
+명시적 별개 사건: 레퍼런스는 소년이 흙 속으로 슬라이딩하지 않고 점프한다는 동작 불일치를 지적하는 반면, 후보는 풀밭에 소년의 유령 잔상이 나타나는 아티팩트를 지적하여 문제 현상과 상호작용이 전혀 다른 별개의 발생입니다.
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 소년이 흙 속으로 슬라이딩하지 않고 점프한다는 동작 불일치를 지적하는 반면, 후보는 풀밭에 소년의 유령 잔상이 나타나는 아티팩트를 지적하여 문제 현상과 상호작용이 전혀 다른 별개의 발생입니다.
+R3 ↔ C6 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: distinct_occurrence
+명시적 별개 사건: 레퍼런스는 소년의 점프/슬라이딩 동작에 관한 것이고, 후보는 두 장면이 겹치는 화면 전환 블렌딩 아티팩트를 다루므로 서로 완전히 별개의 현상입니다.
+근거 검토: explicit_separation / distinct_occurrence / 레퍼런스는 소년의 점프/슬라이딩 동작에 관한 것이고, 후보는 두 장면이 겹치는 화면 전환 블렌딩 아티팩트를 다루므로 서로 완전히 별개의 현상입니다.
+R3 ↔ C7 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 레퍼런스는 소년의 점프 동작을 다루고 있는 반면, 후보는 자전거를 타는 소녀의 다리와 발에 나타난 부자연스러운 모핑/슬라이딩 현상을 다루어 대상 개체와 상호작용이 모두 상이합니다.
+근거 검토: explicit_separation / different_entity / 레퍼런스는 소년의 점프 동작을 다루고 있는 반면, 후보는 자전거를 타는 소녀의 다리와 발에 나타난 부자연스러운 모핑/슬라이딩 현상을 다루어 대상 개체와 상호작용이 모두 상이합니다.
+R3 ↔ C8 / 의미 대응 / 시간도 일치
+최초: same_event_different_aspect → 최종: same_event_different_aspect / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+소년이 흙 위로 슬라이딩하지 않는다는 핵심 상황을 공유하며 각기 점프하거나 웅크려 멈춘 것으로 서술했습니다.
+공통 사건: 소년이 흙 위로 미끄러져 들어가지 않는 동일한 착지/정지 동작
+R3 ↔ C9 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 레퍼런스는 소년이 흙으로 뛰어드는 동작을 지적하는 반면, 후보는 자전거에서 내리는 아이가 얼굴부터 넘어지지 않는다는 점을 지적하여 동작과 상황이 서로 다른 별개의 사건입니다.
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 소년이 흙으로 뛰어드는 동작을 지적하는 반면, 후보는 자전거에서 내리는 아이가 얼굴부터 넘어지지 않는다는 점을 지적하여 동작과 상황이 서로 다른 별개의 사건입니다.
+R4 ↔ C1 / 판단 보류 / 시간 차이 있음
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: 측정 제안입니다.
+R4 ↔ C2 / 판단 보류 / 시간 차이 있음
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: 측정 제안입니다.
+R4 ↔ C3 / 판단 보류 / 시간 차이 있음
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: 측정 제안입니다.
+R4 ↔ C4 / 판단 보류 / 시간 차이 있음
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: 측정 제안입니다.
+R4 ↔ C5 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: distinct_occurrence
+명시적 별개 사건: R4는 어린 아이가 흙이 아닌 잔디밭으로 뛰어든다는 동작/지시 불이행에 대한 지적이며, C5는 잔디 영역에 소년의 유령 같은 잔상(ghostly residual double)이 나타난다는 시각적 결함 지적입니다. 단순히 잔디라는 배경이 겹칠 뿐 동작과 시각 결함이라는 완전히 별개의 발생 현상입니다.
+근거 검토: explicit_separation / distinct_occurrence / R4는 어린 아이가 흙이 아닌 잔디밭으로 뛰어든다는 동작/지시 불이행에 대한 지적이며, C5는 잔디 영역에 소년의 유령 같은 잔상(ghostly residual double)이 나타난다는 시각적 결함 지적입니다. 단순히 잔디라는 배경이 겹칠 뿐 동작과 시각 결함이라는 완전히 별개의 발생 현상입니다.
+R4 ↔ C6 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: distinct_occurrence
+명시적 별개 사건: R4는 어린 아이가 잔디밭으로 뛰어드는 착지 행동에 관한 지적이며, C6는 두 장면이 겹쳐지는 크로스 디졸브/블렌딩 전환 결함에 대한 지적으로 전혀 다른 상호작용 및 결함 현상입니다.
+근거 검토: explicit_separation / distinct_occurrence / R4는 어린 아이가 잔디밭으로 뛰어드는 착지 행동에 관한 지적이며, C6는 두 장면이 겹쳐지는 크로스 디졸브/블렌딩 전환 결함에 대한 지적으로 전혀 다른 상호작용 및 결함 현상입니다.
+R4 ↔ C7 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: R4는 아이가 잔디밭으로 뛰어드는 동작을 다루는 반면, C7은 자전거를 탄 소녀의 왼쪽 다리와 발의 모핑/슬라이딩 왜곡을 다루고 있어 대상 인물 및 상호작용이 명확히 다릅니다.
+근거 검토: explicit_separation / different_entity / R4는 아이가 잔디밭으로 뛰어드는 동작을 다루는 반면, C7은 자전거를 탄 소녀의 왼쪽 다리와 발의 모핑/슬라이딩 왜곡을 다루고 있어 대상 인물 및 상호작용이 명확히 다릅니다.
+R4 ↔ C8 / 미대응 / 시간 차이 있음
+최초: related_only → 최종: different / 설명: insufficient
+사건 연결: partial_event / 비교 단계 분리 근거: contradictory_claim
+명시적 별개 사건: R4는 아이가 '흙이 아닌 잔디(grass not the dirt)'로 뛰어든다고 명시하는 반면, C8은 소년이 '흙 위로(onto the dirt)' 미끄러지지 않고 웅크려 멈춘다고 기술하여 동작이 이루어지는 지면 위치에 대해 상충되는 주장을 하고 있습니다.
+공통 사건: 아이의 착지 동작
+근거 검토: explicit_contradiction / contradictory_claim / R4는 아이가 '흙이 아닌 잔디(grass not the dirt)'로 뛰어든다고 명시하는 반면, C8은 소년이 '흙 위로(onto the dirt)' 미끄러지지 않고 웅크려 멈춘다고 기술하여 동작이 이루어지는 지면 위치에 대해 상충되는 주장을 하고 있습니다.
+R4 ↔ C9 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: R4는 잔디밭으로 뛰어드는 아이의 행동에 관한 지적인 반면, C9는 자전거에서 내리며 서 있는 아이의 동작에 관한 설명으로 상호작용 및 정황이 다릅니다.
+근거 검토: explicit_separation / different_interaction / R4는 잔디밭으로 뛰어드는 아이의 행동에 관한 지적인 반면, C9는 자전거에서 내리며 서 있는 아이의 동작에 관한 설명으로 상호작용 및 정황이 다릅니다.

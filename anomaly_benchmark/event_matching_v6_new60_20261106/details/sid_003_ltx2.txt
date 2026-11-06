@@ -1,0 +1,183 @@
+sid_003_ltx2
+프롬프트 포함 v5 판정: hit → v6 판정: hit
+검출 완료: True / 평가: completed
+시간: 시간 차이 있음 / 시간도 일치
+검출 후보·원본 라벨은 동일하며 의미 평가기만 변경했습니다.
+
+생성 프롬프트
+A bicycle pedals itself down the street, stops at a red light, and then continues when it turns green.
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 탑승자 없이 스스로 페달을 밟으며 주행하는 자전거
+프롬프트 근거: A bicycle pedals itself down the street
+관측: 자전거가 탑승자 없이 홀로 도로를 주행함
+판단 근거: 자전거가 스스로 주행하는 모습이 확인됨
+P2 · 충족 · 기대: 빨간 신호등 앞에서 자전거가 정지함
+프롬프트 근거: stops at a red light
+관측: 자전거가 빨간불 신호 앞에서 멈추어 정지 상태를 유지함
+판단 근거: 적색 신호 중 자전거가 멈춰 섬
+P3 · 충족 · 기대: 신호등이 녹색으로 바뀐 후 자전거가 다시 주행을 시작함
+프롬프트 근거: continues when it turns green
+관측: 녹색 불로 바뀐 후 자전거가 방향을 틀어 앞으로 주행을 재개함
+판단 근거: 신호 전환 후 다시 이동함
+
+원본 라벨 R
+R1 (easy, [1.200, 2.000]초): 자전거가 스스로 길을 따라 페달을 밟아 나아가지 않고 동일한 위치에 머물러 있음.
+원문: The bicycle does not pedal itself down the street. Rather it is being stationed at the same place.
+R1.S1 · 핵심 지적 / specific: 자전거가 거리를 따라 스스로 나아가지 않고 같은 장소에 고정되어 있음
+근거: The bicycle does not pedal itself down the street. Rather it is being stationed at the same place.
+R2 (easy, [1.800, 5.900]초): 자전거가 페달을 밟지 않고 흔들거리며 길을 가고, 초록불일 때 교차로를 지나면서도 페달을 밟지 않음
+원문: Bicycle wiggling around not pedaling down the street. Doesn't pedal through intersection when green
+R2.S1 · 핵심 지적 / specific: 자전거가 페달을 밟지 않은 채 흔들거리며 도로를 따라 이동함
+근거: Bicycle wiggling around not pedaling down the street
+R2.S2 · 핵심 지적 / specific: 신호등이 초록불일 때 교차로를 지나가며 페달을 밟지 않음
+근거: Doesn't pedal through intersection when green
+R3 (easy, [3.500, 7.600]초): 차량들이 이미 적색 신호에 주행 중이며, 주행하고 있는 도중에 신호가 녹색으로 바뀜.
+원문: Cars already driving through the red light and it turns green as they're already going
+R3.S1 · 핵심 지적 / specific: 차량들이 이미 적색 신호를 위반하여 지나가고 있음
+근거: Cars already driving through the red light
+R3.S2 · 핵심 지적 / specific: 차량들이 이미 지나가는 중에 신호가 녹색으로 바뀜
+근거: it turns green as they're already going
+R4 (easy, [3.700, 7.200]초): 우측 신호등이 중간 전구로 전환됨에도 초록색이 아닌 빨간색 상태를 유지함.
+원문: The traffic light on the right stays red not green though it switches to the middle bulb.
+R4.S1 · 핵심 지적 / specific: 우측 신호등이 중간 전구로 바뀌었음에도 초록색이 되지 않고 빨간색으로 유지됨
+근거: The traffic light on the right stays red not green though it switches to the middle bulb.
+
+검출 후보 C
+C1 (0.000–2.250초): [기존 시각 후보] 자전거가 탑승자나 물리적 접촉 없이 부자연스럽게 회전 및 진동하며 형태와 원근이 왜곡됨.
+원문: The bicycle spins and oscillates unnaturally without a rider or physical contact, repeatedly warping shape and perspective.
+C2 (2.125–3.750초): [기존 시각 후보] 검은 차량이 좌측 전경에서 프레임으로 들어와 시점이 급격히 변하며 자전거 근처에서 급정지함.
+원문: Car enters the frame from the left foreground, rapidly shifts perspective, and stops abruptly near the bike.
+C3 (0.000–2.250초): [기존 시각 후보] 자전거가 탑승자나 지지대 없이 제자리에서 부드럽게 회전하며 형태/방향이 변경됨.
+원문: Bicycle rotates and changes shape/orientation smoothly in place without a rider or physical support.
+C4 (2.100–4.500초): [기존 시각 후보] 어두운 차량이 좌측 가장자리에서 갑자기 들어와 교차로를 통과하며 형태가 약간 변함.
+원문: A dark car enters abruptly from the left edge and changes shape slightly while passing through the intersection.
+C5 (2.100–4.500초): [기존 시각 후보] 어두운 차량이 우측에서 빠르게 나타나며 앞으로 주행하는 동안 윤곽이 미세하게 변형됨.
+원문: A dark car appears quickly on the right and subtly morphs in contour as it drives ahead.
+C6 (6.000–8.040초): [기존 시각 후보] 자전거가 6.0~8.0초 사이에 제자리에서 계속 회전하며 부자연스러운 균형과 프레임 기하 변형을 보임.
+원문: Bicycle turns continuously on the spot between 6.0 and 8.0 seconds with unnatural balance and shifting frame geometry.
+
+자동 의미 대응
+R1 ↔ C1 / 의미 대응 / 시간도 일치
+최초: same_event_different_aspect → 최종: same_event_different_aspect / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+자전거가 페달을 밟아 나아가지 않고 제자리에 머문다는 관찰과 탑승자 없이 제자리에서 회전 및 진동한다는 관찰은 동일 대상의 비정상적 거동에 대한 상호보완적 기술입니다.
+공통 사건: 도로 상의 동일한 자전거가 탑승자 없이 나아가지 않고 제자리에서 머무르며 부자연스러운 움직임을 보이는 현상
+R1 ↔ C2 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 내용은 자전거가 스스로 움직이지 않고 한 장소에 고정되어 있다는 점을 다루는 반면, 후보 내용은 왼쪽 전경에서 진입하여 급정거하는 자동차의 동적 움직임에 대한 불만을 제기하므로 대상과 사건이 완전히 다른 별개의 현상입니다.
+근거 검토: explicit_separation / different_entity / 기준 내용은 자전거가 스스로 움직이지 않고 한 장소에 고정되어 있다는 점을 다루는 반면, 후보 내용은 왼쪽 전경에서 진입하여 급정거하는 자동차의 동적 움직임에 대한 불만을 제기하므로 대상과 사건이 완전히 다른 별개의 현상입니다.
+R1 ↔ C3 / 의미 대응 / 시간도 일치
+최초: same_event_different_aspect → 최종: same_event_different_aspect / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+자전거가 같은 위치에 머무르고 있다는 불만과 제자리(in place)에서 탑승자 없이 회전한다는 관찰은 동일 대상의 동일한 제자리 거동을 다룹니다.
+공통 사건: 자전거가 전진하지 않고 제자리에서 머무르거나 회전하는 이상 거동
+R1 ↔ C4 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 대상은 자전거이며 그 동작 유무에 관한 서술인 반면, 후보 대상은 교차로를 지나며 형태가 변형되는 어두운 자동차이므로 서로 전혀 다른 객체에 대한 내용입니다.
+근거 검토: explicit_separation / different_entity / 기준 대상은 자전거이며 그 동작 유무에 관한 서술인 반면, 후보 대상은 교차로를 지나며 형태가 변형되는 어두운 자동차이므로 서로 전혀 다른 객체에 대한 내용입니다.
+R1 ↔ C5 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 내용은 자전거가 제자리에 고정되어 있는 상태를 설명하지만 후보 내용은 우측에서 나타나 주행 중 형태가 변형되는 어두운 자동차를 설명하므로 대상 객체와 상호작용이 명백히 다릅니다.
+근거 검토: explicit_separation / different_entity / 기준 내용은 자전거가 제자리에 고정되어 있는 상태를 설명하지만 후보 내용은 우측에서 나타나 주행 중 형태가 변형되는 어두운 자동차를 설명하므로 대상 객체와 상호작용이 명백히 다릅니다.
+R1 ↔ C6 / 의미 대응 / 시간 차이 있음
+최초: same_event_different_aspect → 최종: same_event_different_aspect / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+제자리(same place)에 머물러 있다는 기준 내용과 제자리(on the spot)에서 계속 회전한다는 후보 내용은 동일 대상의 이상 거동을 나타냅니다.
+공통 사건: 자전거가 거리를 주행하지 않고 제자리에서 머물며 회전하는 현상
+R2 ↔ C1 / 의미 대응 / 시간 차이 있음
+최초: same_event_different_aspect → 최종: same_event_different_aspect / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+자전거가 페달 없이 흔들거리며 거동한다는 점과 탑승자 없이 부자연스럽게 진동하고 회전한다는 기술은 동일한 비정상 움직임에 대한 상호보완적 표현입니다.
+공통 사건: 자전거가 탑승자 없이 페달을 밟지 않고 부자연스럽게 진동/흔들거리는 현상
+R2 ↔ C2 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 불만은 자전거가 페달을 밟지 않고 흔들거리며 이동하는 문제인 반면, 후보는 프레임 좌측에서 진입하여 자전거 근처에 급정지하는 차량의 움직임에 관한 내용으로 대상 및 상호작용이 명확히 다릅니다.
+근거 검토: explicit_separation / different_entity / 기준 불만은 자전거가 페달을 밟지 않고 흔들거리며 이동하는 문제인 반면, 후보는 프레임 좌측에서 진입하여 자전거 근처에 급정지하는 차량의 움직임에 관한 내용으로 대상 및 상호작용이 명확히 다릅니다.
+R2 ↔ C3 / 의미 대응 / 시간 차이 있음
+최초: same_event_different_aspect → 최종: same_event_different_aspect / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+페달을 밟지 않고 제멋대로 흔들거린다는 내용과 탑승자/지지 없이 방향과 형태를 바꾸며 회전한다는 기술은 동일 자전거의 이상 거동을 다룹니다.
+공통 사건: 자전거가 정상적인 페달 주행 없이 회전하거나 이상하게 움직이는 거동
+R2 ↔ C4 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 불만은 자전거가 교차로를 지날 때 페달을 밟지 않는 현상을 지적하지만, 후보는 어두운 색 차량이 교차로를 통과하며 변형되는 현상을 설명하고 있어 대상과 불만 내용이 전혀 다릅니다.
+근거 검토: explicit_separation / different_entity / 기준 불만은 자전거가 교차로를 지날 때 페달을 밟지 않는 현상을 지적하지만, 후보는 어두운 색 차량이 교차로를 통과하며 변형되는 현상을 설명하고 있어 대상과 불만 내용이 전혀 다릅니다.
+R2 ↔ C5 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준은 자전거의 페달링 및 주행 이상을 다루는 반면, 후보는 우측에 나타난 어두운 차량의 윤곽 변형을 다루고 있어 서로 다른 대상의 독립적인 사건입니다.
+근거 검토: explicit_separation / different_entity / 기준은 자전거의 페달링 및 주행 이상을 다루는 반면, 후보는 우측에 나타난 어두운 차량의 윤곽 변형을 다루고 있어 서로 다른 대상의 독립적인 사건입니다.
+R2 ↔ C6 / 의미 대응 / 시간 차이 있음
+최초: same_event_different_aspect → 최종: same_event_different_aspect / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+페달 없이 흔들거리며 거동한다는 불만과 부자연스러운 균형으로 회전한다는 관찰은 동일 대상의 비정상 거동을 나타냅니다.
+공통 사건: 자전거가 정상 주행하지 않고 부자연스러운 균형으로 흔들리거나 회전하는 현상
+R3 ↔ C1 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 주장은 교차로에서 적색 신호에 주행 중인 차량들에 대한 불만인 반면, 후보는 탑승자 없이 회전하고 왜곡되는 자전거에 대한 기술이므로 대상과 상호작용이 전혀 다른 별개의 현상입니다.
+근거 검토: explicit_separation / different_entity / 기준 주장은 교차로에서 적색 신호에 주행 중인 차량들에 대한 불만인 반면, 후보는 탑승자 없이 회전하고 왜곡되는 자전거에 대한 기술이므로 대상과 상호작용이 전혀 다른 별개의 현상입니다.
+R3 ↔ C2 / 판단 보류 / 시간 차이 있음
+최초: related_only → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: different_interaction
+동일 사건 여부/불일치 확정 보류: 후보의 차량이 기준의 주행 차량 중 하나일 가능성은 배제할 수 없으나, 신호 위반이나 신호등 전환에 대한 언급이 전혀 없어 동일 사건인지 판단하기에 정보가 부족합니다.
+공통 사건: 도로 상에 진입하는 차량
+근거 검토: insufficient / insufficient / 후보의 차량이 기준의 주행 차량 중 하나일 가능성은 배제할 수 없으나, 신호 위반이나 신호등 전환에 대한 언급이 전혀 없어 동일 사건인지 판단하기에 정보가 부족합니다.
+R3 ↔ C3 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 주장은 차량들의 신호 주행에 관한 것이고, 후보는 교차로에서 회전하며 형태가 변하는 자전거에 관한 것으로 대상 자체가 완전히 다릅니다.
+근거 검토: explicit_separation / different_entity / 기준 주장은 차량들의 신호 주행에 관한 것이고, 후보는 교차로에서 회전하며 형태가 변하는 자전거에 관한 것으로 대상 자체가 완전히 다릅니다.
+R3 ↔ C4 / 판단 보류 / 시간도 일치
+최초: related_only → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: different_interaction
+동일 사건 여부/불일치 확정 보류: 교차로를 통과하는 차량이라는 점에서 기준의 차량 중 하나일 수 있으나, 신호등 상태나 신호 전환 관련 정보가 전혀 기술되어 있지 않아 동일한 결함 여부를 확정할 수 없습니다.
+공통 사건: 교차로를 주행하여 통과하는 차량
+근거 검토: insufficient / insufficient / 교차로를 통과하는 차량이라는 점에서 기준의 차량 중 하나일 수 있으나, 신호등 상태나 신호 전환 관련 정보가 전혀 기술되어 있지 않아 동일한 결함 여부를 확정할 수 없습니다.
+R3 ↔ C5 / 판단 보류 / 시간도 일치
+최초: related_only → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: different_interaction
+동일 사건 여부/불일치 확정 보류: 앞으로 주행하는 차량이라는 점 외에 신호 위반이나 신호등 변경과의 연관성이 기술되지 않아 두 설명이 동일 불만을 다루는지 판단하기 부족합니다.
+공통 사건: 도로를 주행하는 차량
+근거 검토: insufficient / insufficient / 앞으로 주행하는 차량이라는 점 외에 신호 위반이나 신호등 변경과의 연관성이 기술되지 않아 두 설명이 동일 불만을 다루는지 판단하기 부족합니다.
+R3 ↔ C6 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준은 신호를 무시하고 주행하는 차량들에 대한 내용이며, 후보는 제자리에서 회전하는 자전거의 기하학적 왜곡에 대한 설명으로 대상 및 사건이 명확히 다릅니다.
+근거 검토: explicit_separation / different_entity / 기준은 신호를 무시하고 주행하는 차량들에 대한 내용이며, 후보는 제자리에서 회전하는 자전거의 기하학적 왜곡에 대한 설명으로 대상 및 사건이 명확히 다릅니다.
+R4 ↔ C1 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 설명은 우측 신호등의 점등 색상 결함에 관한 것이나, 후보 설명은 자전거의 비정상적인 회전 및 형태 왜곡에 관한 것으로 대상과 발생 현상이 완전히 분리됩니다.
+근거 검토: explicit_separation / different_entity / 기준 설명은 우측 신호등의 점등 색상 결함에 관한 것이나, 후보 설명은 자전거의 비정상적인 회전 및 형태 왜곡에 관한 것으로 대상과 발생 현상이 완전히 분리됩니다.
+R4 ↔ C2 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 설명은 우측 신호등의 점등 문제인 반면, 후보 설명은 좌측 전방에서 진입하는 차량의 움직임에 관한 것으로 대상 자체가 완전히 다릅니다.
+근거 검토: explicit_separation / different_entity / 기준 설명은 우측 신호등의 점등 문제인 반면, 후보 설명은 좌측 전방에서 진입하는 차량의 움직임에 관한 것으로 대상 자체가 완전히 다릅니다.
+R4 ↔ C3 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 설명의 우측 신호등 오류와 후보 설명의 탑승자 없는 자전거 회전 현상은 전혀 다른 개체에서 발생하는 별개의 사건입니다.
+근거 검토: explicit_separation / different_entity / 기준 설명의 우측 신호등 오류와 후보 설명의 탑승자 없는 자전거 회전 현상은 전혀 다른 개체에서 발생하는 별개의 사건입니다.
+R4 ↔ C4 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 설명은 신호등의 점등 색상 이상을 다루는 반면, 후보 설명은 좌측에서 진입하는 어두운 차량의 형태 변화를 다루므로 대상 개체와 사건이 다릅니다.
+근거 검토: explicit_separation / different_entity / 기준 설명은 신호등의 점등 색상 이상을 다루는 반면, 후보 설명은 좌측에서 진입하는 어두운 차량의 형태 변화를 다루므로 대상 개체와 사건이 다릅니다.
+R4 ↔ C5 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 설명은 우측 신호등의 비정상적 점등을 지적하나, 후보 설명은 우측에 나타나는 어두운 차량의 윤곽 변형을 기술하므로 대상이 명확히 다릅니다.
+근거 검토: explicit_separation / different_entity / 기준 설명은 우측 신호등의 비정상적 점등을 지적하나, 후보 설명은 우측에 나타나는 어두운 차량의 윤곽 변형을 기술하므로 대상이 명확히 다릅니다.
+R4 ↔ C6 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 설명은 신호등 전구 및 색상 결함에 관한 것이며, 후보 설명은 제자리에서 회전하는 자전거의 기하학적 형태 변화에 관한 것으로 완전히 별개의 사건입니다.
+근거 검토: explicit_separation / different_entity / 기준 설명은 신호등 전구 및 색상 결함에 관한 것이며, 후보 설명은 제자리에서 회전하는 자전거의 기하학적 형태 변화에 관한 것으로 완전히 별개의 사건입니다.

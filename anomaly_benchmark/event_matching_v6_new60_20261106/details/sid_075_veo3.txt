@@ -1,0 +1,106 @@
+sid_075_veo3
+프롬프트 포함 v5 판정: pending → v6 판정: hit
+검출 완료: True / 평가: completed
+시간: 시간 차이 있음 / 시간도 일치
+검출 후보·원본 라벨은 동일하며 의미 평가기만 변경했습니다.
+
+생성 프롬프트
+Penny&#39;s Penny the Peacock curious gaze as she overhears talk of the Jeweled Lake In a lush and vibrant forest nestled between rolling hills and meandering streams
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 공작새 등장
+프롬프트 근거: Peacock
+관측: 숲 바닥을 걷는 공작새 확인됨
+판단 근거: 공작새가 명확히 관찰됨
+P2 · 충족 · 기대: 호기심 어린 시선/표정
+프롬프트 근거: curious gaze
+관측: 공작새가 고개를 돌리며 주변을 바라보는 모습이 나타남
+판단 근거: 호기심을 표현하는 듯한 시선 처리가 관찰됨
+P3 · 판단 불가 · 기대: 'Jeweled Lake'에 대한 대화를 엿듣는 상황
+프롬프트 근거: she overhears talk of the Jeweled Lake
+관측: 대화 소리나 엿듣는 서사적 상황은 시각적으로 명확히 판별 불가
+판단 근거: 시각적 단서만으로는 특정 대화를 엿듣는 여부를 온전히 평가할 수 없음
+P4 · 충족 · 기대: 무성하고 생동감 있는 숲 배경
+프롬프트 근거: lush and vibrant forest
+관측: 푸른 나무와 식물이 가득한 숲 환경이 확인됨
+판단 근거: 울창한 숲의 시각적 묘사와 일치함
+P5 · 불일치 · 기대: 완만한 언덕과 굽이치는 개울
+프롬프트 근거: rolling hills and meandering streams
+관측: 숲속 지면과 수풀만 보이며 언덕과 개울은 확인되지 않음
+판단 근거: 언덕이나 개울의 시각적 요소가 나타나지 않음
+
+원본 라벨 R
+R1 (hard, [0.000, 4.500]초): 프롬프트에 명시된 완만한 언덕과 개울이 나타나지 않음
+원문: No rolling hills as specified in the prompt, or streams as well
+R1.S1 · 핵심 지적 / specific: 프롬프트에 지정된 완만한 언덕이 없음
+근거: No rolling hills as specified in the prompt
+R1.S2 · 핵심 지적 / specific: 개울 또한 존재하지 않음
+근거: or streams as well
+R2 (hard, [6.800, 7.800]초): 공작새가 전면에 있는 다리를 들자마자 해당 다리가 배경 쪽 다리로 바뀜.
+원문: The peacock lifts its foreground-most leg, but upon doing so, it immediately becomes the background leg. 
+R2.S1 · 핵심 지적 / specific: 전면에 있던 다리를 들자마자 즉시 배경에 있는 다리로 바뀜
+근거: The peacock lifts its foreground-most leg, but upon doing so, it immediately becomes the background leg.
+
+검출 후보 C
+C1 (1.000–2.500초): [기존 시각 후보] 공작새 머리의 볏 깃털이 1-2초경 부자연스럽게 용해, 왜곡, 깜빡거림.
+원문: The crest feathers on the peacock's head briefly dissolve, distort, and flicker unnaturally around 1-2 seconds.
+C2 (3.750–7.875초): [기존 시각 후보] 카메라가 이동함에 따라 공작새의 꼬리 깃털이 급격히 길어지고 추가 눈 무늬가 생성됨.
+원문: The peacock's train feathers elongate rapidly and spawn additional eye-patterns unnaturally as the camera moves.
+C3 (1.000–4.500초): [기존 시각 후보] 공작새가 머리를 돌릴 때 볏 깃털이 왜곡, 납작해지고 부분적으로 페이드되거나 형태가 변함.
+원문: The crest feathers on the peacock's head distort, flatten, and partially fade or change shape as the bird turns its head.
+C4 (2.000–5.000초): [기존 시각 후보] 지면의 낙엽 대비 다리 움직임에 부자연스러운 미끄러짐과 구조적 왜곡이 나타남.
+원문: The leg movement exhibits unnatural sliding and slight structural warping relative to the ground leaves.
+C5 (0.000–8.000초): [프롬프트 불일치] 완만한 언덕과 개울이 나타나지 않고 평탄한 숲속 지면만 나타남.
+원문: 완만한 언덕과 굽이치는 개울이 화면에 등장하지 않고 평탄한 숲속 지면만 나타납니다.
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 제기는 프롬프트에 명시된 완만한 언덕(rolling hills)이 존재하지 않는다는 환경 요소 누락 문제인 반면, 후보는 공작새 머리 볏 깃털의 일시적 왜곡 및 깜빡임을 지적하고 있어 문제의 대상(엔티티)과 현상이 완전히 상이합니다.
+근거 검토: explicit_separation / different_entity / 기준 제기는 프롬프트에 명시된 완만한 언덕(rolling hills)이 존재하지 않는다는 환경 요소 누락 문제인 반면, 후보는 공작새 머리 볏 깃털의 일시적 왜곡 및 깜빡임을 지적하고 있어 문제의 대상(엔티티)과 현상이 완전히 상이합니다.
+R1 ↔ C2 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 제기는 지형 요소(언덕)의 부재를 문제 삼고 있으나, 후보는 공작새 꼬리 깃털이 비정상적으로 늘어나고 무늬가 증식하는 변형 현상을 다루므로 대상 엔티티가 명확히 분리됩니다.
+근거 검토: explicit_separation / different_entity / 기준 제기는 지형 요소(언덕)의 부재를 문제 삼고 있으나, 후보는 공작새 꼬리 깃털이 비정상적으로 늘어나고 무늬가 증식하는 변형 현상을 다루므로 대상 엔티티가 명확히 분리됩니다.
+R1 ↔ C3 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 제기는 프롬프트에 제시된 완만한 언덕의 미생성을 지적하는 반면, 후보는 공작새 머리 볏 깃털의 왜곡 및 형태 변화를 설명하므로 서로 다른 대상에 관한 명확히 분리된 불만입니다.
+근거 검토: explicit_separation / different_entity / 기준 제기는 프롬프트에 제시된 완만한 언덕의 미생성을 지적하는 반면, 후보는 공작새 머리 볏 깃털의 왜곡 및 형태 변화를 설명하므로 서로 다른 대상에 관한 명확히 분리된 불만입니다.
+R1 ↔ C4 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 제기는 개울(streams)과 같은 배경 환경 요소의 누락에 관한 지적인 반면, 후보는 공작새 다리의 미끄러짐 및 구조적 뒤틀림 현상을 설명하고 있어 문제의 대상과 발생 현상이 서로 완전히 다릅니다.
+근거 검토: explicit_separation / different_entity / 기준 제기는 개울(streams)과 같은 배경 환경 요소의 누락에 관한 지적인 반면, 후보는 공작새 다리의 미끄러짐 및 구조적 뒤틀림 현상을 설명하고 있어 문제의 대상과 발생 현상이 서로 완전히 다릅니다.
+R1 ↔ C5 / 의미 대응 / 시간도 일치
+최초: equivalent → 최종: equivalent / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+참조와 후보 모두 프롬프트에 명시된 언덕과 개울이 나타나지 않은 결함을 동일하게 보고하고 있습니다.
+공통 사건: 프롬프트에 제시된 완만한 언덕과 개울이 영상에 생성되지 않고 누락된 현상
+R2 ↔ C1 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 설명은 공작새의 전면 다리가 배경 다리로 반전되는 다리 부위의 이상 동작을 지적하는 반면, 후보 설명은 머리의 볏 깃털이 깜빡이고 왜곡되는 현상을 지적하여 결함이 발생한 대상 부위가 명확히 분리됩니다.
+근거 검토: explicit_separation / different_entity / 기준 설명은 공작새의 전면 다리가 배경 다리로 반전되는 다리 부위의 이상 동작을 지적하는 반면, 후보 설명은 머리의 볏 깃털이 깜빡이고 왜곡되는 현상을 지적하여 결함이 발생한 대상 부위가 명확히 분리됩니다.
+R2 ↔ C2 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 설명은 공작새 다리의 전후 위치 반전 문제를 다루고 있는 반면, 후보 설명은 꼬리 깃털(train feathers)의 급격한 신장 및 무늬 생성 현상을 다루어 대상 부위가 상이합니다.
+근거 검토: explicit_separation / different_entity / 기준 설명은 공작새 다리의 전후 위치 반전 문제를 다루고 있는 반면, 후보 설명은 꼬리 깃털(train feathers)의 급격한 신장 및 무늬 생성 현상을 다루어 대상 부위가 상이합니다.
+R2 ↔ C3 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 설명은 공작새가 다리를 들 때 발생하는 다리의 위치 반전 오류를 설명하는 반면, 후보 설명은 머리를 돌릴 때 머리의 볏 깃털이 변형되는 결함을 지적하므로 대상 부위와 동작이 서로 다릅니다.
+근거 검토: explicit_separation / different_entity / 기준 설명은 공작새가 다리를 들 때 발생하는 다리의 위치 반전 오류를 설명하는 반면, 후보 설명은 머리를 돌릴 때 머리의 볏 깃털이 변형되는 결함을 지적하므로 대상 부위와 동작이 서로 다릅니다.
+R2 ↔ C4 / 의미 대응 / 시간 차이 있음
+최초: same_event_different_aspect → 최종: same_event_different_aspect / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+공작새의 다리 동작 이상을 다루고 있으며, 전면 다리가 배경 다리로 반전되는 현상과 미끄러짐 및 구조적 왜곡은 동일한 다리 움직임 결함의 다른 측면을 설명합니다.
+공통 사건: 공작새 다리 움직임 과정에서 발생하는 구조적 및 위치적 이상 현상
+R2 ↔ C5 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 설명은 공작새 다리의 모션 결함에 관한 것이며, 후보 설명은 배경 지형 요소(언덕과 개울)의 부재에 관한 것으로 지적 대상이 완전히 다릅니다.
+근거 검토: explicit_separation / different_entity / 기준 설명은 공작새 다리의 모션 결함에 관한 것이며, 후보 설명은 배경 지형 요소(언덕과 개울)의 부재에 관한 것으로 지적 대상이 완전히 다릅니다.

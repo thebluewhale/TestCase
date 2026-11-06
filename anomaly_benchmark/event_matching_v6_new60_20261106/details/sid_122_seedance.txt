@@ -1,0 +1,105 @@
+sid_122_seedance
+프롬프트 포함 v5 판정: hit → v6 판정: hit
+검출 완료: True / 평가: completed
+시간: 시간 차이 있음
+검출 후보·원본 라벨은 동일하며 의미 평가기만 변경했습니다.
+
+생성 프롬프트
+The two boys run until they get to the last table.  One boy jumps off the table but twists his ankle as he lands, falling to the ground.  The other boy lands on his feet and stares down at the other boy.
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 두 소년이 달리는 모습
+프롬프트 근거: The two boys run
+관측: 영상 초반 두 소년이 함께 달리는 동작을 수행함
+판단 근거: 초반부에 두 소년이 뛰는 모습이 관찰됨
+P2 · 충족 · 기대: 한 소년이 테이블 위에서 뛰어내림
+프롬프트 근거: One boy jumps off the table
+관측: 한 소년이 달린 후 테이블 위를 넘거나 뛰어내리듯 점프함
+판단 근거: 테이블 상단을 거쳐 점프하여 바닥으로 착지함
+P3 · 충족 · 기대: 소년이 바닥에 쓰러짐
+프롬프트 근거: falling to the ground
+관측: 점프한 소년이 착지 후 바닥에 완전히 쓰러져 누움
+판단 근거: 테이블 아래 바닥으로 넘어져 드러눕는 동작이 확인됨
+P4 · 불일치 · 기대: 다른 소년이 발로 착지함 (점프 후 착지)
+프롬프트 근거: The other boy lands on his feet
+관측: 다른 소년은 테이블을 점프하지 않고 달리다가 서서 걸어옴
+판단 근거: 점프 후 두 발로 착지하는 동작이 없으며 계속 걸어 다님
+P5 · 충족 · 기대: 쓰러진 소년을 아래로 내려다봄
+프롬프트 근거: stares down at the other boy
+관측: 서 있는 소년이 바닥에 누운 소년을 내려다보고 있음
+판단 근거: 서서 바닥에 누운 소년을 응시함
+
+원본 라벨 R
+R1 (hard, [1.300, 3.100]초): 소년이 프롬프트 내용과 달리 테이블이 아닌 바닥에서 뛰어내리고, 발목을 삐지 않고 그냥 넘어짐.
+원문: The boy jumps off of the floor and not "off of the able" like the prompt says. The boy also doesn't twist his ankle, he just falls.
+R1.S1 · 핵심 지적 / specific: 소년이 프롬프트와 달리 테이블이 아닌 바닥에서 뛰어내림
+근거: The boy jumps off of the floor and not "off of the able" like the prompt says.
+R1.S2 · 핵심 지적 / specific: 소년이 발목을 삐지 않고 그냥 넘어짐
+근거: The boy also doesn't twist his ankle, he just falls.
+R2 (easy, [3.700, 5.000]초): 소년이 창가에 가장 가까운 테이블을 통과하여 걸어감
+원문: The boy walks through the table closest to the window
+R2.S1 · 핵심 지적 / specific: 소년이 창가 쪽 테이블을 뚫고 지나가며 걷는 현상
+근거: The boy walks through the table closest to the window
+R3 (easy, [2.300, 4.700]초): 첫 번째 소년이 벤치 사이를 뛸 때의 물리 현상이 올바르지 않아 보이고, 바닥에 평평하게 착지할 때 몸이 왜곡됨.
+원문: The physics when the first boy jumps between the benches doesn't look correct and his body gets distorted when he lands flat on the ground.
+R3.S1 · 핵심 지적 / broad: 첫 번째 소년이 벤치 사이를 점프할 때 물리 법칙이 비정상적으로 보임
+근거: The physics when the first boy jumps between the benches doesn't look correct
+R3.S2 · 핵심 지적 / specific: 바닥에 평평하게 착지할 때 신체가 왜곡됨
+근거: his body gets distorted when he lands flat on the ground.
+
+검출 후보 C
+C1 (1.750–2.500초): [기존 시각 후보] 소년이 점프하여 벤치와 테이블 표면을 그대로 통과해 바닥으로 떨어짐.
+원문: Boy jumps and passes directly through the solid cafeteria bench and table surface onto the floor.
+C2 (1.300–2.500초): [기존 시각 후보] 달리는 소년이 카페테리아 테이블로 점프하여 관통하며 왜곡되고 미끄러짐.
+원문: The running boy jumps onto and through the cafeteria table, morphing awkwardly and sliding smoothly under it without collision or normal interaction.
+C3 (1.500–3.000초): [프롬프트 불일치] 다른 소년이 점프 후 발로 착지하지 않고 걸어옴.
+원문: 다른 소년은 점프 후 발로 착지하지 않고 평지에서 멈추어 걸어옴
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: contradictory_claim
+명시적 별개 사건: 레퍼런스는 소년이 테이블이 아니라 바닥에서 뛰어내리는 프롬프트 미준수 문제를 지적하고 있으나, 후보는 소년이 벤치와 테이블 표면을 직접 뚫고 통과하여 바닥으로 착지하는 물리적 관통 이상 현상을 서술하여 핵심 주장이 상충합니다.
+근거 검토: explicit_contradiction / contradictory_claim / 레퍼런스는 소년이 테이블이 아니라 바닥에서 뛰어내리는 프롬프트 미준수 문제를 지적하고 있으나, 후보는 소년이 벤치와 테이블 표면을 직접 뚫고 통과하여 바닥으로 착지하는 물리적 관통 이상 현상을 서술하여 핵심 주장이 상충합니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: contradictory_claim
+명시적 별개 사건: 레퍼런스는 소년이 테이블 위가 아닌 바닥에서 점프한다는 점을 지적하는 반면, 후보는 소년이 테이블 위로 점프하여 테이블을 뚫고 지나가며 모핑되는 현상을 지적하여 두 서술의 상호작용 및 사실관계가 명백히 모순됩니다.
+근거 검토: explicit_contradiction / contradictory_claim / 레퍼런스는 소년이 테이블 위가 아닌 바닥에서 점프한다는 점을 지적하는 반면, 후보는 소년이 테이블 위로 점프하여 테이블을 뚫고 지나가며 모핑되는 현상을 지적하여 두 서술의 상호작용 및 사실관계가 명백히 모순됩니다.
+R1 ↔ C3 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 후보는 '다른 소년'을 대상으로 점프 후 멈추어 걸어오는 행위를 서술하는 반면, 레퍼런스는 발목을 삐지 않고 넘어지는 소년의 동작을 다루고 있어 대상 주체와 동작이 명확히 구별됩니다.
+근거 검토: explicit_separation / different_entity / 후보는 '다른 소년'을 대상으로 점프 후 멈추어 걸어오는 행위를 서술하는 반면, 레퍼런스는 발목을 삐지 않고 넘어지는 소년의 동작을 다루고 있어 대상 주체와 동작이 명확히 구별됩니다.
+R2 ↔ C1 / 판단 보류 / 시간 차이 있음
+최초: related_only → 최종: uncertain / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+동일 사건 여부/불일치 확정 보류: 레퍼런스는 소년이 테이블을 걸어서 통과한다고 기술하고 후보는 점프하여 벤치와 테이블을 관통한다고 기술하여 이동 방식(walk vs jump)의 차이가 있으나, 동일한 소년의 테이블 관통 오류를 서로 다른 주관적 관점에서 기술했을 가능성을 완전히 배제할 만한 명확한 분리 근거가 부족합니다.
+공통 사건: 소년이 테이블을 관통하여 지나가는 물리적 관통 현상
+근거 검토: insufficient / description_only / 레퍼런스는 소년이 테이블을 걸어서 통과한다고 기술하고 후보는 점프하여 벤치와 테이블을 관통한다고 기술하여 이동 방식(walk vs jump)의 차이가 있으나, 동일한 소년의 테이블 관통 오류를 서로 다른 주관적 관점에서 기술했을 가능성을 완전히 배제할 만한 명확한 분리 근거가 부족합니다.
+R2 ↔ C2 / 판단 보류 / 시간 차이 있음
+최초: related_only → 최종: uncertain / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+동일 사건 여부/불일치 확정 보류: 소년이 테이블을 관통한다는 핵심 현상은 공유되며, 걷기(walks)와 달리기/점프(running/jumps)의 동작 표현 차이만으로는 별개의 독립된 사건인지 아니면 동일 사건에 대한 상이한 세부 묘사인지 확정하기 어렵습니다.
+공통 사건: 테이블을 뚫고 지나가는 메쉬 관통 현상
+근거 검토: insufficient / description_only / 소년이 테이블을 관통한다는 핵심 현상은 공유되며, 걷기(walks)와 달리기/점프(running/jumps)의 동작 표현 차이만으로는 별개의 독립된 사건인지 아니면 동일 사건에 대한 상이한 세부 묘사인지 확정하기 어렵습니다.
+R2 ↔ C3 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 테이블을 관통하여 지나가는 현상을 기술하는 반면, 후보는 점프 후 발로 착지하지 않고 평지에서 멈추어 걸어오는 동작 오류를 지적하고 있어 상호작용 및 불만 사항의 본질이 서로 완전히 다릅니다.
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 테이블을 관통하여 지나가는 현상을 기술하는 반면, 후보는 점프 후 발로 착지하지 않고 평지에서 멈추어 걸어오는 동작 오류를 지적하고 있어 상호작용 및 불만 사항의 본질이 서로 완전히 다릅니다.
+R3 ↔ C1 / 의미 대응 / 시간 차이 있음
+최초: same_event_different_aspect → 최종: same_event_different_aspect / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+레퍼런스의 첫 번째 소년이 벤치 사이를 뛸 때 물리가 비정상적이라는 포괄적 지적을 후보가 벤치와 테이블을 관통하여 바닥으로 떨어지는 구체적 물리 현상으로 일치하게 묘사하고 있습니다.
+공통 사건: 첫 번째 소년이 벤치/테이블 사이에서 점프할 때 발생하는 비정상적인 물리 현상(통과 및 착지)
+R3 ↔ C2 / 의미 대응 / 시간 차이 있음
+최초: same_event_different_aspect → 최종: same_event_different_aspect / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+소년이 점프 후 바닥에 닿을 때 몸이 왜곡된다는 점과 후보의 점프 후 테이블 아래로 어색하게 모핑되며 미끄러진다는 설명이 동일한 신체 왜곡/비정상 착지 현상을 공유합니다.
+공통 사건: 점프 후 바닥/테이블 아래로 착지하면서 소년의 신체가 비정상적으로 왜곡(morphing)되는 현상
+R3 ↔ C3 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 레퍼런스는 '첫 번째 소년(the first boy)'이 벤치 사이를 뛸 때의 물리적 비정상성을 문제 삼고 있는 반면, 후보는 명시적으로 '다른 소년'의 동작(발로 착지하지 않고 걸어옴)을 언급하고 있어 대상 주체(entity)가 명백히 구분됩니다.
+근거 검토: explicit_separation / different_entity / 레퍼런스는 '첫 번째 소년(the first boy)'이 벤치 사이를 뛸 때의 물리적 비정상성을 문제 삼고 있는 반면, 후보는 명시적으로 '다른 소년'의 동작(발로 착지하지 않고 걸어옴)을 언급하고 있어 대상 주체(entity)가 명백히 구분됩니다.

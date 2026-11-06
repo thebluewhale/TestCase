@@ -1,0 +1,98 @@
+sid_042_ltx2
+프롬프트 포함 v5 판정: pending → v6 판정: hit
+검출 완료: True / 평가: completed
+시간: 시간도 일치
+검출 후보·원본 라벨은 동일하며 의미 평가기만 변경했습니다.
+
+생성 프롬프트
+A man is jumping.
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 남성이 등장해야 함.
+프롬프트 근거: A man
+관측: 빨간 티셔츠와 청바지를 입은 남성이 관찰됨.
+판단 근거: 남성 인물이 정상적으로 표시됨.
+P2 · 충족 · 기대: 남성이 점프하는 동작을 수행해야 함.
+프롬프트 근거: is jumping
+관측: 남성이 지면에서 도약하여 공중에 떴다가 착지하는 동작을 수행함.
+판단 근거: 점프 동작이 시각적으로 명확히 확인됨.
+
+원본 라벨 R
+R1 (hard, [0.700, 5.900]초): 벨트 버클의 모양이 변함.
+원문: Belt buckle changes shape.
+R1.S1 · 핵심 지적 / specific: 벨트 버클의 형태가 바뀜
+근거: Belt buckle changes shape.
+R2 (hard, [2.800, 4.400]초): 손의 형태가 어색하고 부자연스러움.
+원문: Shape of hand is awkward, unnatural.
+R2.S1 · 핵심 지적 / broad: 손의 형태가 어색하고 부자연스러움
+근거: Shape of hand is awkward, unnatural.
+R3 (medium, [7.700, 8.000]초): 소매가 팔 위에 걸쳐져 있는 것이 아니라 팔과 같은 높이에 있어 마치 팔 자체인 것처럼 보임.
+원문: Sleeves no longer appear as on the arm, but at the same level, as if they are the arm.
+R3.S1 · 핵심 지적 / specific: 소매가 팔 위에 있는 것이 아니라 팔과 동일한 층위에서 팔 자체처럼 보임
+근거: Sleeves no longer appear as on the arm, but at the same level, as if they are the arm.
+R4 (easy, [0.100, 8.000]초): 남자가 물리 법칙을 거스르고 슬로 모션 필터가 걸린 것처럼 비현실적인 방식으로 점프함
+원문: The man is jumping in a way that wouldn't happen in real life and defies the law of physics as some sort of slow motion filter was put on this video
+R4.S1 · 핵심 지적 / specific: 남자가 슬로 모션 필터가 적용된 것처럼 물리 법칙을 거스르며 비현실적으로 점프함
+근거: The man is jumping in a way that wouldn't happen in real life and defies the law of physics as some sort of slow motion filter was put on this video
+R5 (medium, [0.500, 3.500]초): 사람이 정지 상태에서 실제로는 불가능할 정도로 지나치게 높이 뛰어올라 물리 법칙을 위배함
+원문: The person jumps way higher from a stand still position then anyone could in real life so again it defies the law of physics
+R5.S1 · 핵심 지적 / specific: 정지 상태에서 사람이 현실적으로 불가능할 정도로 너무 높이 점프하여 물리 법칙을 위배함
+근거: The person jumps way higher from a stand still position then anyone could in real life so again it defies the law of physics
+
+검출 후보 C
+C1 (0.500–6.250초): [기존 시각 후보] 공중에 떠 있는 동안 사람의 형태가 부자연스럽게 변형되고 사지 역학이 일관되지 않음.
+원문: The person floats and shifts form unnaturally while airborne, displaying morphing proportions and inconsistent limb dynamics relative to the background.
+C2 (0.000–3.500초): [기존 시각 후보] 비행/공중 이동 중 손과 손가락이 변형, 번짐, 왜곡됨.
+원문: The person's hands and fingers morph, blur, and distort irregularly while flapping and moving during flight.
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 참조는 착용한 벨트 버클의 형태 변화를 지적하는 반면, 후보는 공중에 뜬 사람 전체의 신체 비율 및 팔다리 움직임 변형을 지적하여 문제의 대상 개체가 완전히 다릅니다.
+근거 검토: explicit_separation / different_entity / 참조는 착용한 벨트 버클의 형태 변화를 지적하는 반면, 후보는 공중에 뜬 사람 전체의 신체 비율 및 팔다리 움직임 변형을 지적하여 문제의 대상 개체가 완전히 다릅니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 참조의 대상은 벨트 버클인 반면 후보의 대상은 사람의 손과 손가락으로, 전혀 다른 신체 부위 및 물품에 관한 별개의 현상입니다.
+근거 검토: explicit_separation / different_entity / 참조의 대상은 벨트 버클인 반면 후보의 대상은 사람의 손과 손가락으로, 전혀 다른 신체 부위 및 물품에 관한 별개의 현상입니다.
+R2 ↔ C1 / 판단 보류 / 시간도 일치
+최초: different → 최종: uncertain / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+동일 사건 여부/불일치 확정 보류: 참조는 손의 형태가 어색하고 부자연스러움을 지적하며, 후보는 공중에서 신체 비율이 변형되고 사지 역학이 일관되지 않음을 설명합니다. 손은 사지(limb)의 일부에 해당하므로 후보의 광범위한 신체/사지 이상 기술이 참조의 손 형태 이상을 포함하거나 관련된 현상일 가능성을 배제하기 어렵습니다. 텍스트상 완전히 별개의 개체나 사건으로 확정할 만한 구체적 분리 증거가 부족하므로 불일치로 단정할 수 없습니다.
+근거 검토: insufficient / insufficient / 참조는 손의 형태가 어색하고 부자연스러움을 지적하며, 후보는 공중에서 신체 비율이 변형되고 사지 역학이 일관되지 않음을 설명합니다. 손은 사지(limb)의 일부에 해당하므로 후보의 광범위한 신체/사지 이상 기술이 참조의 손 형태 이상을 포함하거나 관련된 현상일 가능성을 배제하기 어렵습니다. 텍스트상 완전히 별개의 개체나 사건으로 확정할 만한 구체적 분리 증거가 부족하므로 불일치로 단정할 수 없습니다.
+R2 ↔ C2 / 의미 대응 / 시간도 일치
+최초: same_event_different_aspect → 최종: same_event_different_aspect / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+참조의 손 형태가 어색하고 부자연스럽다는 관찰과 후보의 손/손가락이 불규칙하게 변형·왜곡된다는 설명은 동일한 손 부위의 이상 변형 사건을 다룹니다.
+공통 사건: 사람의 손 부위가 부자연스럽게 일그러지고 형태가 왜곡되는 현상
+R3 ↔ C1 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 참조는 팔의 소매 의복이 팔 자체와 같은 레벨로 렌더링되는 이상을 명시하고 있는 반면, 후보 C1은 공중에 떠 있는 인물의 전신 비율 변형 및 사지 역학 불일치 문제를 다루고 있어 서로 다른 대상과 이상 현상을 가리킵니다.
+근거 검토: explicit_separation / different_entity / 참조는 팔의 소매 의복이 팔 자체와 같은 레벨로 렌더링되는 이상을 명시하고 있는 반면, 후보 C1은 공중에 떠 있는 인물의 전신 비율 변형 및 사지 역학 불일치 문제를 다루고 있어 서로 다른 대상과 이상 현상을 가리킵니다.
+R3 ↔ C2 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 참조는 팔 위의 소매가 팔과 동일한 층위로 표현되는 의복/팔 이상을 기술하는 반면, 후보 C2는 비행 중 손과 손가락이 왜곡되고 흐려지는 현상을 명시적으로 다루고 있어 대상 부위가 상이합니다.
+근거 검토: explicit_separation / different_entity / 참조는 팔 위의 소매가 팔과 동일한 층위로 표현되는 의복/팔 이상을 기술하는 반면, 후보 C2는 비행 중 손과 손가락이 왜곡되고 흐려지는 현상을 명시적으로 다루고 있어 대상 부위가 상이합니다.
+R4 ↔ C1 / 의미 대응 / 시간도 일치
+최초: same_event_different_aspect → 최종: same_event_different_aspect / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+참조의 슬로 모션 필터가 걸린 듯 물리 법칙을 거스르는 비현실적 점프와 후보의 공중에 뜬 채 부자연스럽게 떠다니며 사지 역학이 불일치하는 현상은 동일한 공중 이동 비정상 사건을 설명합니다.
+공통 사건: 인물이 공중에 떠 있는 동안 물리 법칙에 맞지 않게 부자연스러운 움직임을 보이는 현상
+R4 ↔ C2 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 참조는 남자의 전신 점프 동작이 물리 법칙을 거스르고 슬로 모션처럼 어색하게 이루어지는 비물리적 운동 이상을 지적하는 반면, 후보는 비행 중 손과 손가락 부위의 기괴한 형태 변형 및 왜곡(morph, blur, distort) 현상을 지적하고 있어 문제시되는 상호작용 및 현상이 명백히 다릅니다.
+근거 검토: explicit_separation / different_interaction / 참조는 남자의 전신 점프 동작이 물리 법칙을 거스르고 슬로 모션처럼 어색하게 이루어지는 비물리적 운동 이상을 지적하는 반면, 후보는 비행 중 손과 손가락 부위의 기괴한 형태 변형 및 왜곡(morph, blur, distort) 현상을 지적하고 있어 문제시되는 상호작용 및 현상이 명백히 다릅니다.
+R5 ↔ C1 / 의미 대응 / 시간도 일치
+최초: same_event_different_aspect → 최종: same_event_different_aspect / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+정지 상태에서 물리 법칙을 위배하며 과도하게 높이 점프했다는 참조의 내용과 공중에서 부자연스럽게 떠다니며 비정상적인 움직임을 보인다는 후보의 설명은 동일한 점프 비물리 현상의 측면들을 다룹니다.
+공통 사건: 사람이 비현실적인 높이로 점프하여 공중에서 비정상적인 체공/부유 상태를 보이는 현상
+R5 ↔ C2 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 참조는 사람이 제자리에서 비현실적으로 높이 점프하여 물리 법칙을 위배하는 동작을 지적하는 반면, 후보는 비행 중 사람의 손과 손가락이 불규칙하게 왜곡되고 뭉개지는 형상 변형을 지적하므로 문제 대상(신체 전체의 점프 궤적 대 손/손가락)과 상호작용 및 현상 자체가 완전히 다른 별개의 결함입니다.
+근거 검토: explicit_separation / different_interaction / 참조는 사람이 제자리에서 비현실적으로 높이 점프하여 물리 법칙을 위배하는 동작을 지적하는 반면, 후보는 비행 중 사람의 손과 손가락이 불규칙하게 왜곡되고 뭉개지는 형상 변형을 지적하므로 문제 대상(신체 전체의 점프 궤적 대 손/손가락)과 상호작용 및 현상 자체가 완전히 다른 별개의 결함입니다.

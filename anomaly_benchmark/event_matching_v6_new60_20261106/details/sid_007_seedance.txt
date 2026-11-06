@@ -1,0 +1,130 @@
+sid_007_seedance
+프롬프트 포함 v5 판정: pending → v6 판정: pending
+검출 완료: True / 평가: completed
+시간: 보조 정보 없음
+검출 후보·원본 라벨은 동일하며 의미 평가기만 변경했습니다.
+
+생성 프롬프트
+A robot stands on a table, lifts one foot, and then starts dancing by moving its arms up and down.
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 로봇이 테이블 위에 서 있는 모습
+프롬프트 근거: A robot stands on a table
+관측: 로봇이 나무 테이블 위에 위치함
+판단 근거: 테이블 위에 로봇이 서 있는 기본 상태가 일치함
+P2 · 충족 · 기대: 한쪽 발을 들어 올림
+프롬프트 근거: lifts one foot
+관측: 로봇이 한 발을 공중으로 들어 올리는 동작을 수행함
+판단 근거: 한 발을 들어 올리는 모션이 확인됨
+P3 · 불일치 · 기대: 팔을 위아래로 움직이며 춤추기 시작함
+프롬프트 근거: starts dancing by moving its arms up and down
+관측: 팔을 위아래로 흔들기보다는 발을 바꾸며 스텝 위주로 움직임
+판단 근거: 팔을 뚜렷하게 위아래로 움직이며 춤추는 동작이 부재함
+
+원본 라벨 R
+R1 (hard, [0.500, 2.100]초): 로봇이 한 발만 들지 않고 양발을 모두 들음.
+원문: The robot lifts both feet, not just one.
+R1.S1 · 핵심 지적 / specific: 한 발만 드는 것이 아니라 양발을 모두 들어올림
+근거: The robot lifts both feet, not just one.
+R2 (hard, [0.000, 1.000]초): 영상에서 로봇이 일어서는 모습이 보이지 않음
+원문: The prompt says the robot "stands on the table" as if it were sitting before. The video does not show the robot get up.
+R2.S1 · 핵심 지적 / specific: 로봇이 일어서는 동작이 영상에 나타나지 않음
+근거: The video does not show the robot get up.
+R3 (hard, [0.000, 0.200]초): 영상 시작 시 이미 발이 들려 있어 로봇이 발을 들어 올리지 않음
+원문: Robot doesn't lift his foot as his foot is already up to begin the video
+R3.S1 · 핵심 지적 / specific: 영상 시작 시점에 발이 이미 들려 있어 로봇이 발을 들어 올리지 못함
+근거: Robot doesn't lift his foot as his foot is already up to begin the video
+R4 (medium, [0.800, 5.000]초): 로봇이 한 발만 드는 것이 아니라 영상 내내 양발을 모두 듭니다.
+원문: The robot lifts both feet throughout the video and not just the one foot
+R4.S1 · 핵심 지적 / specific: 한 발만 드는 대신 양발을 모두 들어 올림
+근거: The robot lifts both feet throughout the video and not just the one foot
+
+검출 후보 C
+C1 (4.375–4.458초): [기존 측정 제안·미확정] 밝기 및 구조 변화에 따른 깜빡임 및 순간 변형 확인 제안
+원문: 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+C2 (4.300–4.500초): [기존 시각 후보] 로봇 가슴 엠블럼의 깜빡임 및 모핑
+원문: Flicker and morphing in the red emblem area on the robot's chest.
+C3 (0.250–4.950초): [기존 시각 후보] 로봇의 댄스 스텝에서 나타나는 동작 점프 및 부자연스러운 기계적 끊김
+원문: The robot's dance cycle consists of repetitive back-and-forth steps that exhibit slight motion jumps and unnatural mechanical jerking at transition phases.
+C4 (1.250–5.040초): [프롬프트 불일치] 팔을 위아래로 움직이지 않고 다리를 들고 좌우로 흔들리는 춤 동작 불일치
+원문: 프롬프트는 팔을 위아래로 움직이며 춤추는 동작을 요구했으나, 로봇은 주로 다리를 들고 좌우로 흔들릴 뿐 팔의 상하 움직임 중심의 춤을 추지 않음
+
+자동 의미 대응
+R1 ↔ C1 / 판단 보류 / 시간 차이 있음
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: C1은 단순 측정 제안이며 로봇의 발 동작 이상과 연관성이 불명확합니다.
+R1 ↔ C2 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 불만은 로봇의 발 움직임(양발을 듦)에 대한 문제인 반면, 후보는 로봇 가슴 부위 엠블럼의 깜빡임 및 변형(모핑)에 대한 결함으로 대상 개체 부위와 불만 내용이 명확히 다릅니다.
+근거 검토: explicit_separation / different_entity / 기준 불만은 로봇의 발 움직임(양발을 듦)에 대한 문제인 반면, 후보는 로봇 가슴 부위 엠블럼의 깜빡임 및 변형(모핑)에 대한 결함으로 대상 개체 부위와 불만 내용이 명확히 다릅니다.
+R1 ↔ C3 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 기준 불만은 한 발 대신 양발을 들어올리는 동작 결함에 관한 것이지만, 후보는 반복적인 스텝 동작 중 발생하는 모션 점프와 부자연스러운 기계적 덜컥거림을 지적하므로 상이한 상호작용 및 결함 현상입니다.
+근거 검토: explicit_separation / different_interaction / 기준 불만은 한 발 대신 양발을 들어올리는 동작 결함에 관한 것이지만, 후보는 반복적인 스텝 동작 중 발생하는 모션 점프와 부자연스러운 기계적 덜컥거림을 지적하므로 상이한 상호작용 및 결함 현상입니다.
+R1 ↔ C4 / 미대응 / 시간도 일치
+최초: related_only → 최종: different / 설명: insufficient
+사건 연결: partial_event / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 기준 불만은 한 발이 아닌 양발을 모두 들어올린다는 발 동작에 국한된 지적인 반면, 후보는 팔의 상하 움직임 부재를 주된 결함으로 지적하고 다리를 드는 동작은 단순 배경 상태로 언급할 뿐이므로 불만의 핵심 상호작용이 다릅니다.
+공통 사건: 로봇이 다리를 드는 동작을 공유합니다.
+근거 검토: explicit_separation / different_interaction / 기준 불만은 한 발이 아닌 양발을 모두 들어올린다는 발 동작에 국한된 지적인 반면, 후보는 팔의 상하 움직임 부재를 주된 결함으로 지적하고 다리를 드는 동작은 단순 배경 상태로 언급할 뿐이므로 불만의 핵심 상호작용이 다릅니다.
+R2 ↔ C1 / 판단 보류 / 시간 차이 있음
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: C1은 일반적인 측정 제안으로 로봇이 일어서지 않는 현상과 무관합니다.
+R2 ↔ C2 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 로봇이 일어서는 동작을 보이지 않는다는 내용인 반면, 후보는 로봇 가슴의 빨간 엠블럼 부위의 깜빡임 및 모핑 왜곡을 다루고 있어 서로 대상 부위 및 상호작용/동작이 완전히 다른 별개의 문제입니다.
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 로봇이 일어서는 동작을 보이지 않는다는 내용인 반면, 후보는 로봇 가슴의 빨간 엠블럼 부위의 깜빡임 및 모핑 왜곡을 다루고 있어 서로 대상 부위 및 상호작용/동작이 완전히 다른 별개의 문제입니다.
+R2 ↔ C3 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 로봇이 일어서지 않는다는 점을 지적하지만, 후보는 로봇의 댄스 스텝 사이클 중 모션 점프와 부자연스러운 기계적 튐 현상을 지적하고 있어 서로 완전히 다른 동작 및 결함 현상에 관한 설명입니다.
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 로봇이 일어서지 않는다는 점을 지적하지만, 후보는 로봇의 댄스 스텝 사이클 중 모션 점프와 부자연스러운 기계적 튐 현상을 지적하고 있어 서로 완전히 다른 동작 및 결함 현상에 관한 설명입니다.
+R2 ↔ C4 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 로봇이 일어서는 동작이 없다는 점을 문제 삼고 있으나, 후보는 팔을 위아래로 움직이며 춤추는 동작이 나타나지 않는다는 점을 지적하고 있어 문제로 삼는 동작과 상호작용 자체가 상이합니다.
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 로봇이 일어서는 동작이 없다는 점을 문제 삼고 있으나, 후보는 팔을 위아래로 움직이며 춤추는 동작이 나타나지 않는다는 점을 지적하고 있어 문제로 삼는 동작과 상호작용 자체가 상이합니다.
+R3 ↔ C1 / 판단 보류 / 시간 차이 있음
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: C1은 일반 측정 제안으로 R3과 연관성을 확인할 수 없습니다.
+R3 ↔ C2 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 기준 불만은 로봇의 발이 시작부터 들려 있어 발을 들어 올리지 않는다는 동작/상태 결함인 반면, 후보는 로봇 가슴의 엠블럼 부위에서 발생하는 깜빡임 및 모핑 현상을 다루므로 대상 부위와 문제 현상이 완전히 다릅니다.
+근거 검토: explicit_separation / different_entity / 기준 불만은 로봇의 발이 시작부터 들려 있어 발을 들어 올리지 않는다는 동작/상태 결함인 반면, 후보는 로봇 가슴의 엠블럼 부위에서 발생하는 깜빡임 및 모핑 현상을 다루므로 대상 부위와 문제 현상이 완전히 다릅니다.
+R3 ↔ C3 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 기준 불만은 영상 시작 시점에 이미 발이 올라가 있어 발을 드는 동작이 없다는 점을 지적하지만, 후보는 반복적인 앞뒤 스텝 댄스 사이클에서 발생하는 동작 점프와 기계적 끊김 현상을 지적하여 서로 다른 상호작용 및 동작 문제를 설명합니다.
+근거 검토: explicit_separation / different_interaction / 기준 불만은 영상 시작 시점에 이미 발이 올라가 있어 발을 드는 동작이 없다는 점을 지적하지만, 후보는 반복적인 앞뒤 스텝 댄스 사이클에서 발생하는 동작 점프와 기계적 끊김 현상을 지적하여 서로 다른 상호작용 및 동작 문제를 설명합니다.
+R3 ↔ C4 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 기준 불만은 발이 이미 들려 있어서 발을 들어 올리는 동작을 하지 못한다는 점에 대한 것이지만, 후보는 팔의 상하 움직임 중심의 춤을 추지 않고 다리를 들고 좌우로 흔들린다는 팔 동작 미이행 불만을 다루고 있어 지적하는 핵심 동작과 불만이 상이합니다.
+근거 검토: explicit_separation / different_interaction / 기준 불만은 발이 이미 들려 있어서 발을 들어 올리는 동작을 하지 못한다는 점에 대한 것이지만, 후보는 팔의 상하 움직임 중심의 춤을 추지 않고 다리를 들고 좌우로 흔들린다는 팔 동작 미이행 불만을 다루고 있어 지적하는 핵심 동작과 불만이 상이합니다.
+R4 ↔ C1 / 판단 보류 / 시간 차이 있음
+최초: uncertain → 최종: uncertain / 설명: insufficient
+사건 연결: unresolved / 비교 단계 분리 근거: insufficient
+동일 사건 여부/불일치 확정 보류: C1은 일반 측정 제안이며 R4와 구체적으로 연결되지 않습니다.
+R4 ↔ C2 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 참조 불만은 로봇의 양발을 드는 다리 동작에 대한 것이며, 후보 설명은 로봇 가슴 부위 엠블럼의 깜빡임 및 모핑 현상에 관한 것으로 대상 부위와 지적하는 이상 현상이 완전히 다릅니다.
+근거 검토: explicit_separation / different_entity / 참조 불만은 로봇의 양발을 드는 다리 동작에 대한 것이며, 후보 설명은 로봇 가슴 부위 엠블럼의 깜빡임 및 모핑 현상에 관한 것으로 대상 부위와 지적하는 이상 현상이 완전히 다릅니다.
+R4 ↔ C3 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 참조는 한 발 대신 양발을 모두 들어 올리는 지시 불이행/동작 문제를 지적하는 반면, 후보는 스텝 전환 시 모션 점프와 부자연스러운 기계적 튕김 등 움직임의 불연속성을 지적하고 있어 서로 다른 결함 현상입니다.
+근거 검토: explicit_separation / different_interaction / 참조는 한 발 대신 양발을 모두 들어 올리는 지시 불이행/동작 문제를 지적하는 반면, 후보는 스텝 전환 시 모션 점프와 부자연스러운 기계적 튕김 등 움직임의 불연속성을 지적하고 있어 서로 다른 결함 현상입니다.
+R4 ↔ C4 / 미대응 / 시간도 일치
+최초: related_only → 최종: different / 설명: insufficient
+사건 연결: partial_event / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 참조는 한 발 대신 양발을 모두 들어 올리는 동작을 지적하는 반면, 후보는 팔의 상하 움직임이 없다는 팔 동작 결여를 주요 결함으로 지적하고 있어 지적 대상 및 결함의 상호작용이 상이합니다.
+공통 사건: 로봇이 다리를 드는 동작을 공유합니다.
+근거 검토: explicit_separation / different_interaction / 참조는 한 발 대신 양발을 모두 들어 올리는 동작을 지적하는 반면, 후보는 팔의 상하 움직임이 없다는 팔 동작 결여를 주요 결함으로 지적하고 있어 지적 대상 및 결함의 상호작용이 상이합니다.

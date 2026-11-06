@@ -1,0 +1,87 @@
+sid_033_veo3
+프롬프트 포함 v5 판정: hit → v6 판정: hit
+검출 완료: True / 평가: completed
+시간: 시간도 일치
+검출 후보·원본 라벨은 동일하며 의미 평가기만 변경했습니다.
+
+생성 프롬프트
+A small burning match was thrown into a pile of dry paper towels.
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 불타는 성냥
+프롬프트 근거: burning match
+관측: 영상 초반에 성냥에 불이 붙어 있다가 점차 꺼짐
+판단 근거: 성냥에 불이 붙어 있는 모습이 확인됨
+P2 · 충족 · 기대: 마른 종이 타월 더미
+프롬프트 근거: pile of dry paper towels
+관측: 테이블 위에 쌓인 흰색 종이 타월 더미가 나타남
+판단 근거: 종이 타월 더미가 명확히 관찰됨
+P3 · 불일치 · 기대: 성냥이 종이 타월 더미 속으로 던져지는 동작
+프롬프트 근거: thrown into
+관측: 손으로 성냥을 든 채 종이 타월 위로 가까이 가져가기만 하고 던지지 않음
+판단 근거: 성냥을 던지는(thrown) 동작이 전혀 발생하지 않고 손에 쥔 채 유지됨
+
+원본 라벨 R
+R1 (medium, [0.100, 2.000]초): 불이 꺼진 직후 손이 쥐고 있던 또 다른 성냥이 사라지는 현상 지적
+원문: The hands appear to be holding another match before it dissapears once the flame goes out. Highly impossible to happen in real life.
+R1.S1 · 핵심 지적 / specific: 불이 꺼진 후 쥐고 있던 또 다른 성냥이 사라짐
+근거: The hands appear to be holding another match before it dissapears once the flame goes out.
+R2 (easy, [4.600, 7.500]초): 성냥에 불이 붙지 않았으며, 마른 종이 타월 안으로 던져지지 않음.
+원문: the match is not lit, and does not get thrown into the dry paper towels. 
+R2.S1 · 핵심 지적 / specific: 성냥에 불이 붙지 않음
+근거: the match is not lit
+R2.S2 · 핵심 지적 / specific: 성냥이 마른 종이 타월 안으로 던져지지 않음
+근거: does not get thrown into the dry paper towels
+
+검출 후보 C
+C1 (3.375–4.125초): [기존 시각 후보] 카메라가 아래로 기울어질 때 배경의 손이 갑자기 사라지고 프레임 밖으로 변형됨.
+원문: The background hand abruptly vanishes and morphs out of the frame as the camera tilts downwards.
+C2 (3.000–4.200초): [기존 시각 후보] 카메라가 뒤로 빠지고 구도를 다시 잡을 때 배경의 왼손/손가락이 점차 분해되며 사라짐.
+원문: The left hand/fingers in the background gradually dematerialize and vanish into the background as the camera pulls slightly back and reframes.
+C3 (3.800–4.600초): [기존 시각 후보] 손이 아래로 내려갈 때 성냥개비 아래에 흰색 종이 냅킨 더미가 갑자기 나타남.
+원문: A stack of white paper napkins abruptly materializes underneath the matchstick as the hand moves lower.
+C4 (0.000–8.000초): [프롬프트 불일치] 성냥을 종이 타월 더미로 던지는 동작이 요구되었으나 손으로 들고 가져가기만 함.
+원문: 성냥을 종이 타월 더미로 던지는 동작이 요구되었으나 손으로 들고 가져가기만 함
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 참조는 손이 쥐고 있던 또 다른 성냥(another match)이 사라지는 현상을 지적하는 반면, 후보는 배경에 있는 손(background hand) 자체가 사라지는 현상을 설명하므로 소실되는 대상 엔티티가 서로 명확히 구분됩니다.
+근거 검토: explicit_separation / different_entity / 참조는 손이 쥐고 있던 또 다른 성냥(another match)이 사라지는 현상을 지적하는 반면, 후보는 배경에 있는 손(background hand) 자체가 사라지는 현상을 설명하므로 소실되는 대상 엔티티가 서로 명확히 구분됩니다.
+R1 ↔ C2 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 참조는 들고 있던 성냥이 사라지는 현상에 대한 불만이지만, 후보는 배경의 왼손/손가락이 사라지는 현상을 다루고 있어 문제 대상 엔티티가 상이합니다.
+근거 검토: explicit_separation / different_entity / 참조는 들고 있던 성냥이 사라지는 현상에 대한 불만이지만, 후보는 배경의 왼손/손가락이 사라지는 현상을 다루고 있어 문제 대상 엔티티가 상이합니다.
+R1 ↔ C3 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 참조는 성냥이 소실되는 현상(dissapears)을 지적하는 반면, 후보는 성냥개비 아래에 종이 냅킨 더미가 돌연 나타나는 생성 현상(materializes)을 다루므로 대상 엔티티와 상호작용이 전혀 다릅니다.
+근거 검토: explicit_separation / different_entity / 참조는 성냥이 소실되는 현상(dissapears)을 지적하는 반면, 후보는 성냥개비 아래에 종이 냅킨 더미가 돌연 나타나는 생성 현상(materializes)을 다루므로 대상 엔티티와 상호작용이 전혀 다릅니다.
+R1 ↔ C4 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 참조는 불이 꺼진 후 쥐고 있던 성냥이 사라져 버리는 이상 현상을 제기하는 반면, 후보는 성냥을 던지지 않고 들고 이동한 동작 지침 미수행을 지적하므로 상호작용과 발생 사건 자체가 완전히 별개입니다.
+근거 검토: explicit_separation / different_interaction / 참조는 불이 꺼진 후 쥐고 있던 성냥이 사라져 버리는 이상 현상을 제기하는 반면, 후보는 성냥을 던지지 않고 들고 이동한 동작 지침 미수행을 지적하므로 상호작용과 발생 사건 자체가 완전히 별개입니다.
+R2 ↔ C1 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 참조는 성냥이 마른 종이 타월 안으로 던져지지 않았다는 행위 미수행을 지적하지만, 후보는 배경에 있는 손이 갑자기 사라지는 생성 왜곡을 설명하므로 대상과 상호작용이 전혀 다릅니다.
+근거 검토: explicit_separation / different_entity / 참조는 성냥이 마른 종이 타월 안으로 던져지지 않았다는 행위 미수행을 지적하지만, 후보는 배경에 있는 손이 갑자기 사라지는 생성 왜곡을 설명하므로 대상과 상호작용이 전혀 다릅니다.
+R2 ↔ C2 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 참조는 성냥이 종이 타월로 던져지지 않는 행동적 결함을 지적하는 반면, 후보는 배경에 있는 왼손 및 손가락이 점진적으로 소실되는 물리적 왜곡을 다루어 대상과 현상이 상이합니다.
+근거 검토: explicit_separation / different_entity / 참조는 성냥이 종이 타월로 던져지지 않는 행동적 결함을 지적하는 반면, 후보는 배경에 있는 왼손 및 손가락이 점진적으로 소실되는 물리적 왜곡을 다루어 대상과 현상이 상이합니다.
+R2 ↔ C3 / 미대응 / 시간 차이 있음
+최초: related_only → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 참조는 성냥이 종이 타월 안으로 던져지지 않는다는 점을 지적하나, 후보는 성냥개비 아래에 흰색 종이 냅킨 더미가 돌발적으로 생성/출현하는 이상 현상을 지적하여 서로 다른 상호작용 및 현상입니다.
+공통 사건: 성냥과 종이 타월/냅킨 간의 배치
+근거 검토: explicit_separation / different_interaction / 참조는 성냥이 종이 타월 안으로 던져지지 않는다는 점을 지적하나, 후보는 성냥개비 아래에 흰색 종이 냅킨 더미가 돌발적으로 생성/출현하는 이상 현상을 지적하여 서로 다른 상호작용 및 현상입니다.
+R2 ↔ C4 / 의미 대응 / 시간도 일치
+최초: same_event_different_aspect → 최종: same_event_different_aspect / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+참조의 성냥이 종이 타월로 던져지지 않았다는 불만과 후보의 던지는 동작 대신 들고 가져가기만 했다는 관찰이 동일한 미투척 결함을 기술합니다.
+공통 사건: 성냥을 종이 타월 안으로 던지지 않은 동작

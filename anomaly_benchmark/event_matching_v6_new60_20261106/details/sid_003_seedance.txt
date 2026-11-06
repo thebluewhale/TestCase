@@ -1,0 +1,55 @@
+sid_003_seedance
+프롬프트 포함 v5 판정: pending → v6 판정: pending
+검출 완료: True / 평가: invalid_response
+채점 미완료 사유: Entity separation requires explicitly different targets
+시간: 보조 정보 없음
+검출 후보·원본 라벨은 동일하며 의미 평가기만 변경했습니다.
+
+생성 프롬프트
+A bicycle pedals itself down the street, stops at a red light, and then continues when it turns green.
+
+프롬프트 요구사항 검사
+P1 · 불일치 · 기대: 자전거가 탑승자 없이 스스로 페달을 밟으며 도로를 주행함
+프롬프트 근거: A bicycle pedals itself down the street
+관측: 자전거는 도로 위에 서 있고 주행하거나 페달이 회전하지 않음
+판단 근거: 자전거의 페달링 및 자체 주행 동작이 영상 전체에서 확인되지 않음
+P2 · 불일치 · 기대: 적색 신호에서 주행을 멈춤
+프롬프트 근거: stops at a red light
+관측: 자전거가 적색 신호 아래 위치해 있으나 이동 중 멈추는 감속/정지 전환이 발생하지 않음
+판단 근거: 처음부터 정지 상태여서 정지 동작 전환이 발생하지 않음
+P3 · 충족 · 기대: 신호등이 녹색으로 바뀜
+프롬프트 근거: when it turns green
+관측: 적색 신호등이 약 3.5초에 녹색 신호로 변경됨
+판단 근거: 신호등 색상 변화가 시각적으로 명확히 표시됨
+P4 · 불일치 · 기대: 녹색 불이 된 후 자전거가 다시 주행을 재개함
+프롬프트 근거: then continues
+관측: 녹색 불로 변경된 후에도 자전거는 이동하지 않고 정지 상태를 유지함
+판단 근거: 신호 변경 후에도 주행 재개 동작이 없음
+
+원본 라벨 R
+R1 (medium, [0.500, 2.900]초): A bike is moving on its own which defies physics
+원문: A bike is moving on its own which defies physics
+R2 (medium, [3.800, 5.000]초): The bike went backwards and did not continue forward
+원문: The bike went backwards and did not continue forward
+R3 (easy, [0.000, 5.000]초): The bicycle's pedals are not moving at all.
+원문: The bicycle's pedals are not moving at all.
+R4 (medium, [0.000, 3.000]초): The bike stops on the crosswalk.
+원문: The bike stops on the crosswalk.
+
+검출 후보 C
+C1 (1.917–2.167초): [기존 측정 제안·미확정] 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+원문: 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+C2 (0.000–3.700초): [기존 시각 후보] The traffic light housing shifts position and morphs as the camera pans and tracks, detaching from a coherent stationary pole.
+원문: The traffic light housing shifts position and morphs as the camera pans and tracks, detaching from a coherent stationary pole.
+C3 (3.250–3.750초): [기존 시각 후보] The traffic light housing changes size and alignment relative to the bicycle frame while transitioning from red to green without smooth mechanical consistency.
+원문: The traffic light housing changes size and alignment relative to the bicycle frame while transitioning from red to green without smooth mechanical consistency.
+C4 (0.000–2.500초): [기존 시각 후보] Bicycle components including the handlebars, spokes, and drive train subtly distort, jitter, and drift in geometry across camera motion.
+원문: Bicycle components including the handlebars, spokes, and drive train subtly distort, jitter, and drift in geometry across camera motion.
+C5 (0.000–5.040초): [프롬프트 불일치] 자전거가 스스로 페달을 밟으며 주행하지 않고 정지 상태로 유지됨
+원문: 자전거가 스스로 페달을 밟으며 주행하지 않고 정지 상태로 유지됨
+C6 (0.000–3.500초): [프롬프트 불일치] 주행 중 정지하는 전환 없이 처음부터 멈춰 서 있음
+원문: 주행 중 정지하는 전환 없이 처음부터 멈춰 서 있음
+C7 (3.500–5.040초): [프롬프트 불일치] 신호가 녹색으로 바뀐 후에도 자전거가 출발하거나 움직이지 않음
+원문: 신호가 녹색으로 바뀐 후에도 자전거가 출발하거나 움직이지 않음
+
+자동 의미 대응

@@ -1,0 +1,166 @@
+sid_184_ltx2
+프롬프트 포함 v5 판정: hit → v6 판정: hit
+검출 완료: True / 평가: completed
+시간: 시간 차이 있음 / 시간도 일치
+검출 후보·원본 라벨은 동일하며 의미 평가기만 변경했습니다.
+
+생성 프롬프트
+A person's hands shape dough, place it in a bowl with vegetables, and fold the dough over the filling.
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 사람의 손이 반죽을 빚거나 모양을 잡는 모습
+프롬프트 근거: A person's hands shape dough
+관측: 사람 손이 반죽 덩어리를 둥글게 뭉치고 빚는 모습이 확인됨
+판단 근거: 요구된 동작이 영상 전체에 걸쳐 관찰됨
+P2 · 불일치 · 기대: 채소가 담긴 볼 안에 반죽을 집어넣거나 놓는 동작
+프롬프트 근거: place it in a bowl with vegetables
+관측: 반죽을 채소 볼 위에 들고 빚기만 할 뿐 볼 안에 넣지 않음
+판단 근거: 반죽을 볼 안에 내려놓는 동작이 전혀 발생하지 않음
+P3 · 불일치 · 기대: 반죽으로 소(filling/채소)를 감싸 접는 동작
+프롬프트 근거: fold the dough over the filling
+관측: 도우로 채소 등의 소를 감싸 접는 동작이 전혀 나타나지 않음
+판단 근거: 채소 위에 도우를 접는 동작이 수행되지 않음
+
+원본 라벨 R
+R1 (medium, [0.000, 0.800]초): 비디오가 프롬프트를 따르지 않으며 도우가 야채와 함께 놓이지 않았다는 불만 제기
+원문: The video does not follow the prompt, the dough is not placed in with the vegetables
+R1.S1 · 핵심 지적 / specific: 도우가 야채와 함께 놓이지 않음
+근거: The video does not follow the prompt, the dough is not placed in with the vegetables
+R2 (easy, [3.200, 5.100]초): 반죽이 채소가 담긴 그릇에 실제로 들어가지 않음.
+원문: The dough never actually gets put in the bowel with the vegetables. 
+R2.S1 · 핵심 지적 / specific: 반죽이 채소가 있는 그릇에 들어가지 않음
+근거: The dough never actually gets put in the bowel with the vegetables.
+R3 (easy, [5.500, 7.800]초): 반죽이 속재료 위로 접히지 않음.
+원문: The dough was never folded over the filling.
+R3.S1 · 핵심 지적 / specific: 반죽이 속재료 위로 접히는 동작이 전혀 수행되지 않음
+근거: The dough was never folded over the filling.
+R4 (hard, [0.900, 2.800]초): 영상 시작 부분부터 반죽의 양이 점점 줄어드는 것처럼 보임.
+원문: The amount of dough seems to become smaller from the start of the video.
+R4.S1 · 핵심 지적 / specific: 반죽의 양이 줄어듦
+근거: The amount of dough seems to become smaller from the start of the video.
+
+검출 후보 C
+C1 (1.620–7.880초): [기존 시각 후보] 반죽이 손 사이에서 부피 보존 없이 줄어들고 변형됨.
+원문: The dough transforms inconsistently, shrinking and reshaping abruptly between hands without coherent volume conservation.
+C2 (0.500–2.500초): [기존 시각 후보] 다뤄지는 동안 반죽이 납작한 판과 둥근 덩어리 사이로 불규칙하게 모양이 변함.
+원문: The dough morphs and shifts shape erratically between a flat sheet and rounded lumps while handled.
+C3 (3.000–7.800초): [기존 시각 후보] 반죽을 다루는 동안 손과 손가락이 녹아내리고 융합되며 변형됨.
+원문: Fingers and hand structure continuously melt, fuse, and change configuration while manipulating the dough.
+C4 (0.000–8.040초): [프롬프트 불일치] 반죽을 채소가 든 볼 안에 넣지 않고 위에서 만지기만 함.
+원문: 프롬프트에서는 반죽을 채소가 든 볼 안에 넣도록 요구했으나, 영상에서는 손으로 반죽을 볼 위에서 계속 빚기만 하고 볼 안에 넣지 않음.
+C5 (0.000–8.040초): [프롬프트 불일치] 반죽만 만질 뿐 소 위로 접어 감싸는 동작이 전혀 없음.
+원문: 프롬프트에서는 소 위로 반죽을 접어 감싸도록 요구했으나, 영상에서는 반죽만 만질 뿐 소를 감싸 접는 동작이 전혀 없음.
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 반죽을 야채와 함께 배치하지 않았다는 프롬프트 지시 미이행을 문제 삼는 반면, 후보 C1은 손 사이에서 반죽의 부피가 보존되지 않고 줄어들며 형태가 변형되는 물리적 외관 결함을 설명하고 있으므로 명확히 다른 상호작용 및 이상 현상입니다.
+공통 사건: 반죽을 다루는 상황
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 반죽을 야채와 함께 배치하지 않았다는 프롬프트 지시 미이행을 문제 삼는 반면, 후보 C1은 손 사이에서 반죽의 부피가 보존되지 않고 줄어들며 형태가 변형되는 물리적 외관 결함을 설명하고 있으므로 명확히 다른 상호작용 및 이상 현상입니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 반죽을 야채에 넣지 않았다는 동작의 누락을 지적하는 반면, 후보 C2는 반죽을 다루는 동안 평평한 판과 둥근 덩어리 사이에서 형태가 불규칙하게 왜곡되는 기형적 변형을 지적하므로 구별되는 별개의 사건입니다.
+공통 사건: 반죽을 다루는 상황
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 반죽을 야채에 넣지 않았다는 동작의 누락을 지적하는 반면, 후보 C2는 반죽을 다루는 동안 평평한 판과 둥근 덩어리 사이에서 형태가 불규칙하게 왜곡되는 기형적 변형을 지적하므로 구별되는 별개의 사건입니다.
+R1 ↔ C3 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 레퍼런스는 반죽이 야채와 함께 놓이지 않은 문제를 제기하지만, 후보 C3은 손과 손가락의 구조가 녹아내리고 융합되는 신체 기형 결함을 설명하므로 주체 엔티티와 상호작용이 전혀 다릅니다.
+근거 검토: explicit_separation / different_entity / 레퍼런스는 반죽이 야채와 함께 놓이지 않은 문제를 제기하지만, 후보 C3은 손과 손가락의 구조가 녹아내리고 융합되는 신체 기형 결함을 설명하므로 주체 엔티티와 상호작용이 전혀 다릅니다.
+R1 ↔ C4 / 의미 대응 / 시간 차이 있음
+최초: equivalent → 최종: equivalent / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+두 설명 모두 반죽을 채소가 있는 볼 안에 넣지 않았다는 동일한 프롬프트 지시 미이행 결함을 동일하게 가리킵니다.
+공통 사건: 채소가 든 볼에 반죽을 넣지 않고 프롬프트를 따르지 않은 결함
+R1 ↔ C5 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 반죽을 야채와 함께 놓는 동작의 부재를 지적하는 반면, 후보 C5는 소 위로 반죽을 접어 감싸는 특정 성형 동작이 없음을 지적하므로 프롬프트 미이행으로 언급된 구체적 동작 및 대상과의 상호작용이 서로 다릅니다.
+공통 사건: 프롬프트 지시 불이행
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 반죽을 야채와 함께 놓는 동작의 부재를 지적하는 반면, 후보 C5는 소 위로 반죽을 접어 감싸는 특정 성형 동작이 없음을 지적하므로 프롬프트 미이행으로 언급된 구체적 동작 및 대상과의 상호작용이 서로 다릅니다.
+R2 ↔ C1 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 반죽이 채소가 담긴 그릇에 들어가지 않는 동작 미발생을 다루는 반면, 후보 C1은 손 사이에서 반죽의 부피가 축소되고 형태가 급격히 변형되는 물리적 모핑 결함을 기술하므로 서로 다른 상호작용 및 현상입니다.
+공통 사건: 반죽 조작 상황
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 반죽이 채소가 담긴 그릇에 들어가지 않는 동작 미발생을 다루는 반면, 후보 C1은 손 사이에서 반죽의 부피가 축소되고 형태가 급격히 변형되는 물리적 모핑 결함을 기술하므로 서로 다른 상호작용 및 현상입니다.
+R2 ↔ C2 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 반죽을 채소 그릇에 넣지 않은 텍스트 불일치 문제를 지적하고 있으나, 후보 C2는 반죽이 다루어지는 동안 납작한 형태와 둥근 덩어리 사이에서 비정상적으로 모핑되는 형태 왜곡을 지적하므로 상호작용이 다릅니다.
+공통 사건: 반죽 조작 상황
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 반죽을 채소 그릇에 넣지 않은 텍스트 불일치 문제를 지적하고 있으나, 후보 C2는 반죽이 다루어지는 동안 납작한 형태와 둥근 덩어리 사이에서 비정상적으로 모핑되는 형태 왜곡을 지적하므로 상호작용이 다릅니다.
+R2 ↔ C3 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 레퍼런스는 반죽을 그릇에 넣는 동작의 미발생을 설명하지만, 후보 C3은 손가락과 손의 구조가 녹아내리고 융합되는 신체 왜곡을 기술하므로 대상 엔티티와 지적 내용이 명확히 다릅니다.
+근거 검토: explicit_separation / different_entity / 레퍼런스는 반죽을 그릇에 넣는 동작의 미발생을 설명하지만, 후보 C3은 손가락과 손의 구조가 녹아내리고 융합되는 신체 왜곡을 기술하므로 대상 엔티티와 지적 내용이 명확히 다릅니다.
+R2 ↔ C4 / 의미 대응 / 시간도 일치
+최초: equivalent → 최종: equivalent / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+두 설명 모두 반죽이 채소가 담긴 그릇/볼에 끝내 들어가지 않았다는 동일한 사건을 지적합니다.
+공통 사건: 채소가 든 그릇/볼에 반죽이 들어가지 않는 결함
+R2 ↔ C5 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 채소가 담긴 그릇에 반죽을 넣는 행위의 미수행을 지적하지만, 후보 C5는 소 위로 반죽을 접어 감싸는 만두/소 감싸기 동작의 미수행을 지적하고 있어 서로 요구된 동작과 상호작용이 다릅니다.
+공통 사건: 동작 미수행
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 채소가 담긴 그릇에 반죽을 넣는 행위의 미수행을 지적하지만, 후보 C5는 소 위로 반죽을 접어 감싸는 만두/소 감싸기 동작의 미수행을 지적하고 있어 서로 요구된 동작과 상호작용이 다릅니다.
+R3 ↔ C1 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 반죽을 속재료 위로 접는 특정 동작이 수행되지 않은 adherence 결함을 지적하지만, 후보는 반죽의 부피 보존 실패 및 비정상적인 수축/변형이라는 물리적 왜곡 결함을 지적하므로 상호작용 및 결함 내용이 명확히 다릅니다.
+공통 사건: 반죽 조작
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 반죽을 속재료 위로 접는 특정 동작이 수행되지 않은 adherence 결함을 지적하지만, 후보는 반죽의 부피 보존 실패 및 비정상적인 수축/변형이라는 물리적 왜곡 결함을 지적하므로 상호작용 및 결함 내용이 명확히 다릅니다.
+R3 ↔ C2 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 속재료를 감싸 접지 않은 조작 미수행을 다루는 반면, 후보는 반죽이 평평한 판과 둥근 덩어리 사이에서 비정상적으로 모핑되는 형태적 왜곡을 다루므로 서로 다른 상호작용 및 결함을 지적합니다.
+공통 사건: 반죽 조작
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 속재료를 감싸 접지 않은 조작 미수행을 다루는 반면, 후보는 반죽이 평평한 판과 둥근 덩어리 사이에서 비정상적으로 모핑되는 형태적 왜곡을 다루므로 서로 다른 상호작용 및 결함을 지적합니다.
+R3 ↔ C3 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 레퍼런스는 반죽과 속재료 사이의 접기 동작 미수행을 지적하는 반면, 후보는 손과 손가락이 녹고 융합되는 신체 구조 왜곡을 지적하여 주 대상과 현상이 완전히 다릅니다.
+근거 검토: explicit_separation / different_entity / 레퍼런스는 반죽과 속재료 사이의 접기 동작 미수행을 지적하는 반면, 후보는 손과 손가락이 녹고 융합되는 신체 구조 왜곡을 지적하여 주 대상과 현상이 완전히 다릅니다.
+R3 ↔ C4 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 반죽을 속재료 위로 접지 않은 미수행을 지적하는 반면, 후보는 반죽을 채소가 든 볼 안에 넣지 않은 미수행을 지적하여 요구된 상호작용의 내용 자체가 완전히 다릅니다.
+공통 사건: 반죽 관련 미수행
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 반죽을 속재료 위로 접지 않은 미수행을 지적하는 반면, 후보는 반죽을 채소가 든 볼 안에 넣지 않은 미수행을 지적하여 요구된 상호작용의 내용 자체가 완전히 다릅니다.
+R3 ↔ C5 / 의미 대응 / 시간도 일치
+최초: equivalent → 최종: equivalent / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+두 설명 모두 반죽을 소/속재료 위로 접어 감싸지 않았다는 동일한 미수행 결함을 설명합니다.
+공통 사건: 반죽을 소 위로 접어 감싸는 동작이 수행되지 않음
+R4 ↔ C1 / 의미 대응 / 시간도 일치
+최초: same_event_different_aspect → 최종: same_event_different_aspect / 설명: compatible
+사건 연결: same_observation / 비교 단계 분리 근거: none
+레퍼런스는 반죽의 양이 작아짐을 지적하고 후보는 반죽이 부피 보존 없이 줄어들고 변형됨을 지적하여 동일한 반죽 크기 감소 현상을 다룹니다.
+공통 사건: 영상 중 반죽의 크기/부피가 줄어드는 현상
+R4 ↔ C2 / 판단 보류 / 시간도 일치
+최초: related_only → 최종: uncertain / 설명: insufficient
+사건 연결: partial_event / 비교 단계 분리 근거: description_only
+동일 사건 여부/불일치 확정 보류: 레퍼런스는 반죽의 양(부피)이 줄어드는 현상을 지적하고 후보 C2는 반죽의 형태가 불규칙하게 변형되는 현상을 지적합니다. 동일한 반죽의 조작 과정에서 발생한 기형적 변화의 일환일 가능성이 있으나, 양의 감소와 형태 모핑이 동일한 오류 현상을 가리키는지 텍스트만으로는 확정할 수 없어 분리 근거가 불충분합니다.
+공통 사건: 반죽의 비정상적 변형
+근거 검토: insufficient / description_only / 레퍼런스는 반죽의 양(부피)이 줄어드는 현상을 지적하고 후보 C2는 반죽의 형태가 불규칙하게 변형되는 현상을 지적합니다. 동일한 반죽의 조작 과정에서 발생한 기형적 변화의 일환일 가능성이 있으나, 양의 감소와 형태 모핑이 동일한 오류 현상을 가리키는지 텍스트만으로는 확정할 수 없어 분리 근거가 불충분합니다.
+R4 ↔ C3 / 미대응 / 시간 차이 있음
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_entity
+명시적 별개 사건: 레퍼런스는 대상 엔티티인 '반죽(dough)'의 양이 줄어드는 물리적 이상을 문제 삼고 있는 반면, 후보 C3은 조작 주체인 '손과 손가락(Fingers and hand structure)'의 구조적 융합 및 용융 이상을 지적하므로 결함 대상 엔티티가 명확히 분리됩니다.
+근거 검토: explicit_separation / different_entity / 레퍼런스는 대상 엔티티인 '반죽(dough)'의 양이 줄어드는 물리적 이상을 문제 삼고 있는 반면, 후보 C3은 조작 주체인 '손과 손가락(Fingers and hand structure)'의 구조적 융합 및 용융 이상을 지적하므로 결함 대상 엔티티가 명확히 분리됩니다.
+R4 ↔ C4 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 반죽 자체의 양이 줄어드는 물리적 현상을 지적하는 반면, 후보 C4는 볼 안에 넣으라는 프롬프트 지시 동작을 수행하지 않고 빚기만 한다는 행동/상호작용 미수행을 문제 삼고 있어 지적하는 상호작용과 결함 양상이 명확히 다릅니다.
+공통 사건: 반죽 조작 상황
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 반죽 자체의 양이 줄어드는 물리적 현상을 지적하는 반면, 후보 C4는 볼 안에 넣으라는 프롬프트 지시 동작을 수행하지 않고 빚기만 한다는 행동/상호작용 미수행을 문제 삼고 있어 지적하는 상호작용과 결함 양상이 명확히 다릅니다.
+R4 ↔ C5 / 미대응 / 시간도 일치
+최초: different → 최종: different / 설명: insufficient
+사건 연결: distinct_events / 비교 단계 분리 근거: different_interaction
+명시적 별개 사건: 레퍼런스는 반죽 부피의 감소를 지적하고 있으나, 후보 C5는 소를 감싸 접는 특정 동작의 미수행을 지적하고 있어 상호작용 및 불만 내용이 전혀 다른 별개의 현상입니다.
+공통 사건: 반죽 조작 상황
+근거 검토: explicit_separation / different_interaction / 레퍼런스는 반죽 부피의 감소를 지적하고 있으나, 후보 C5는 소를 감싸 접는 특정 동작의 미수행을 지적하고 있어 상호작용 및 불만 내용이 전혀 다른 별개의 현상입니다.
