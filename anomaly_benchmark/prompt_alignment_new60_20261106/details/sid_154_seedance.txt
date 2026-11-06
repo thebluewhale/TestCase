@@ -1,0 +1,141 @@
+sid_154_seedance
+기존 시각 검사 판정: hit → 프롬프트 추가 v5 판정: hit
+시각 검사 완료: True / 프롬프트 검사: completed / 평가: completed
+새 프롬프트 C: 1개 · 라벨 의미 대응: False
+시간: 시간도 일치
+
+생성 프롬프트
+A group of people, dressed in casual clothing and holding flags or banners, stand in a line in an open outdoor area surrounded by trees and a fence. They then run towards the camera, with some individuals ahead of others.
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 여러 명의 사람 그룹 등장
+프롬프트 근거: A group of people
+관측: 여러 명의 사람들이 화면에 등장함
+판단 근거: 요구사항이 영상에서 명확히 확인됨
+P2 · 충족 · 기대: 캐주얼 복장 착용
+프롬프트 근거: dressed in casual clothing
+관측: 티셔츠와 운동복 바지 등 캐주얼 복장을 입음
+판단 근거: 요구사항에 맞게 캐주얼 복장을 착용함
+P3 · 충족 · 기대: 깃발 또는 배너를 들고 있음
+프롬프트 근거: holding flags or banners
+관측: 일부 사람들이 다양한 색상의 깃발을 들고 있음
+판단 근거: 여러 색상의 깃발을 들고 뛰는 모습이 관찰됨
+P4 · 불일치 · 기대: 처음에 일렬로 서 있는 상태
+프롬프트 근거: stand in a line
+관측: 영상 시작 시점(0초)부터 이미 달리고 있음
+판단 근거: 서 있는 초기 상태가 나타나지 않고 시작부터 달림
+P5 · 충족 · 기대: 나무와 펜스로 둘러싸인 야외 열린 공간
+프롬프트 근거: open outdoor area surrounded by trees and a fence
+관측: 배경에 나무와 나무 펜스가 있는 야외 도로 공간
+판단 근거: 나무와 펜스가 위치한 야외 배경이 확인됨
+P6 · 충족 · 기대: 카메라를 향해 달려옴
+프롬프트 근거: They then run towards the camera
+관측: 사람들이 카메라 방향으로 달림
+판단 근거: 사람들이 앞쪽(카메라 방향)을 향해 지속적으로 달려옴
+P7 · 충족 · 기대: 일부 인원이 다른 인원들보다 앞서서 달림
+프롬프트 근거: with some individuals ahead of others
+관측: 몇몇 인원이 선두에서 앞서 달리고 뒤이어 따름
+판단 근거: 선두와 후미의 간격 차이가 발생하며 달림
+
+원본 라벨 R
+R1 (medium, [3.000, 5.000]초): 주황색 셔츠를 입은 여성이 사람들 뒤로 달리다가 완전히 사라져 다시 나타나지 않는다.
+원문: the woman in the orange shirt completely disappears while running behind people and never shows up again
+R2 (easy, [1.000, 5.000]초): 가장 앞쪽에 있는 깃발이 파란색에서 결국 전체 빨간색으로 색상과 모양이 계속 변함
+원문: the flag that is the closest to the front keeps changing colors and shapes, between blue to eventually all red. it is distracting 
+R3 (hard, [3.500, 5.000]초): 흰색 셔츠와 검은색 바지를 입은 여성의 헤어스타일과 얼굴이 앞서 달리는 남성 뒤에서 다시 나타날 때 변경됨.
+원문: the hairstyle of the lady in white shirt and black pants changes. her face is different and her hair is different when she reappears from behind the man running in front of her.
+R4 (easy, [3.400, 4.100]초): 검은 옷을 입은 남자가 걸음/스텝을 건너뜀
+원문: one guy in all black skip his steps
+
+검출 후보 C
+C1 (0.000–4.880초): [기존 시각 후보] 러너들 뒤로 들려진 깃발들의 형태, 개수, 색상이 지속적으로 바뀜.
+원문: Flags carried behind runners continuously alter their shapes, counts, and colors.
+C2 (1.500–4.880초): [기존 시각 후보] 배경의 러너들이 다가오면서 정체성, 복장, 위치가 변형됨.
+원문: Background runners morph in identities, clothing, and positions as they approach.
+C3 (0.000–5.040초): [기존 시각 후보] 러너들 뒤로 들려진 깃발들이 형태, 크기, 색상 배열, 개수가 끊임없이 변형됨.
+원문: The flags carried behind the runners continuously morph in shape, size, color arrangement, and count, appearing to change dynamically rather than maintaining rigid physical fabric or flag structure.
+C4 (1.500–4.880초): [기존 시각 후보] 그룹이 전진함에 따라 배경 러너들의 정체성, 얼굴 세부정보, 옷 색상, 상대적 위치가 지속적으로 변함.
+원문: Background runners continuously change identities, facial details, clothing colors, and relative positions as the group advances.
+C5 (0.000–1.000초): [프롬프트 불일치] 초기에 일렬로 서 있지 않고 처음부터 뛰고 있음.
+원문: 초기에 일렬로 서 있지 않고 처음부터 뛰고 있음
+P4 기대: 처음에 일렬로 서 있는 상태
+관측: 영상 시작 시점(0초)부터 이미 달리고 있음
+프롬프트 근거: stand in a line
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+R1은 주황색 셔츠 러너의 완전한 소멸을 기술하고, C1은 깃발의 형태/색상 변화를 다루므로 대상과 현상이 완전히 다릅니다.
+근거 검증: explicit_separation / R1은 주황색 셔츠를 입은 특정 여성 러너가 완전히 사라지는 소멸 결함을 다루는 반면, C1은 주자들 뒤에서 들고 있는 깃발의 형태, 개수, 색상 변화 결함을 다루므로 대상과 결함 양상이 서로 다른 별개의 현상입니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+R1은 특정 러너가 사라진 후 나타나지 않는 현상을 다루며, C2는 배경 러너들의 외형 및 정체성 모핑을 다루므로 다릅니다.
+근거 검증: explicit_separation / R1은 주황색 셔츠를 입은 특정 여성이 완전히 사라져 다시 나타나지 않는 현상을 지칭하며, C2는 배경의 러너들이 다가오면서 정체성, 옷, 위치가 변형(morphing)되는 현상을 설명하므로 대상과 구체적 이상 현상이 분리됩니다.
+R1 ↔ C3 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+R1은 주황색 옷 러너의 소멸이고, C3는 깃발의 물리적 변형에 대한 기술입니다.
+근거 검증: explicit_separation / R1은 주황색 셔츠를 입은 여성 러너의 완전한 소멸을 기술하고, C3은 깃발의 모양, 크기, 색상, 개수가 변형되는 결함을 기술하므로 대상과 결함이 명확히 다릅니다.
+R1 ↔ C4 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+R1의 소멸 이상과 C4의 배경 러너들의 얼굴/외형 변화 현상은 다릅니다.
+근거 검증: explicit_separation / R1은 주황색 셔츠 러너 1인이 완전히 소멸하는 현상인 반면, C4는 배경 러너들의 얼굴 세부사항, 옷 색상, 상대적 위치가 지속적으로 변형되는 현상을 다루므로 구체적 결함과 대상이 다릅니다.
+R1 ↔ C5 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+R1의 인물 소멸과 C5의 달리기 대형/동작 설명은 무관합니다.
+근거 검증: explicit_separation / R1은 특정 인물이 사라지는 비정상적 소멸을 다루는 반면, C5는 사람들의 초기 대형 및 달리기 시작 상태를 기술하고 있어 서로 다른 사건 및 대상을 다룹니다.
+R2 ↔ C1 / 의미 대응 / 시간도 일치
+최초: same_event_different_aspect / compatible → 최종: same_event_different_aspect / compatible
+R2는 맨 앞쪽 깃발의 형태와 색상 변화를 특정하였고, C1은 러너들의 깃발들의 형태와 색상 변경을 포괄하여 동일한 깃발 변형 현상을 서로 다른 관점에서 기술합니다.
+R2 ↔ C2 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+R2는 깃발의 변화를 기술하고 C2는 인물들의 변형을 다룹니다.
+근거 검증: explicit_separation / 참조 설명은 가장 앞쪽에 위치한 깃발(the flag that is the closest to the front)의 색상 및 형태 변화를 다루는 반면, 후보 설명은 배경 주자들(Background runners)의 신원, 옷, 위치 모핑을 다루므로 대상이 명확히 구별됩니다.
+R2 ↔ C3 / 의미 대응 / 시간도 일치
+최초: same_event_different_aspect / compatible → 최종: same_event_different_aspect / compatible
+R2의 가장 앞쪽 깃발 형태/색상 변화와 C3의 깃발 형태, 크기, 색상 배열 변형은 같은 대상군의 변형 현상을 다루고 있습니다.
+R2 ↔ C4 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+R2는 깃발의 이상이고 C4는 주자들의 외형 변화입니다.
+근거 검증: explicit_separation / 참조 설명은 가장 앞쪽의 깃발(the flag that is the closest to the front)에 발생한 결함을 기술하고 있는 반면, 후보 설명은 배경 주자들(Background runners)의 외형 및 위치 변화를 기술하고 있어 대상이 서로 완전히 다릅니다.
+R2 ↔ C5 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+깃발의 색상/모양 변화와 주자들의 정렬 상태는 무관합니다.
+근거 검증: explicit_separation / 참조 설명의 대상은 전면의 깃발이며 깃발의 색상 및 모양 변화를 설명하지만, 후보 설명은 인물 집단(A group of people)의 달리기 행동 및 정렬 상태에 관한 것으로 대상과 결함 내용이 명확히 분리됩니다.
+R3 ↔ C1 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+R3는 여성 러너의 얼굴 및 헤어스타일 변경을 기술하며 C1은 깃발 변형을 다룹니다.
+근거 검증: explicit_separation / 참조 설명은 흰색 셔츠와 검은색 바지를 입은 여성 러너의 헤어스타일 및 얼굴 외형 변화를 다루는 반면, 후보 설명은 주자들 뒤에 들려 있는 깃발의 형태, 개수, 색상 변경을 다루므로 대상 엔티티와 결함 현상이 명확히 구분됩니다.
+R3 ↔ C2 / 의미 대응 / 시간도 일치
+최초: same_event_different_aspect / compatible → 최종: same_event_different_aspect / compatible
+R3는 특정 러너가 다른 주자 뒤에서 나타날 때 얼굴과 머리가 달라진다고 기술하며, C2는 배경 러너들의 정체성이 모핑되는 현상으로 포괄하여 동일한 인물 외형 변형 결함을 설명합니다.
+R3 ↔ C3 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+R3의 인물 외모 변화와 C3의 깃발 변형은 무관합니다.
+근거 검증: explicit_separation / 참조 설명은 여성 러너의 머리 스타일과 얼굴이 바뀌는 현상을 서술하는 반면, 후보 설명은 주자들 뒤에 들려 있는 깃발의 형태와 크기, 색상 및 개수 변형을 기술하므로 서로 다른 대상에 대한 별개의 결함입니다.
+R3 ↔ C4 / 의미 대응 / 시간도 일치
+최초: same_event_different_aspect / compatible → 최종: same_event_different_aspect / compatible
+R3는 러너의 얼굴과 헤어가 달라짐을 기술하고 C4는 배경 러너들의 정체성과 얼굴 세부사항(facial details)이 변경됨을 기술하여 동일한 외모 변형 현상을 설명합니다.
+R3 ↔ C5 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+R3의 외모 변화와 C5의 주행 시작 상태는 완전히 무관합니다.
+근거 검증: explicit_separation / 참조 설명은 특정 여성 주자의 얼굴 및 헤어스타일 변형을 지적하고 있으나, 후보 설명은 전체 인물 그룹의 초기 대기/주행 동작 상태에 관한 것이므로 대상과 결함 내용이 완전히 분리됩니다.
+R4 ↔ C1 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+R4는 남성의 보행/스텝 이상이고 C1은 깃발 변형입니다.
+근거 검증: explicit_separation / 참조 대상은 검은 옷을 입은 남자의 스텝 이상인 반면, 후보 대상은 러너들이 든 깃발의 외형/색상 변화이므로 대상 자체가 완전히 분리됩니다.
+R4 ↔ C2 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+R4는 발걸음 건너뜀에 대한 기술이며 C2는 외형/정체성 모핑에 대한 설명입니다.
+근거 검증: explicit_separation / 참조는 특정 검은 옷 남자의 보행 동작(스텝 건너뜀) 결함에 관한 것이며, 후보는 배경 러너들의 정체성, 의상, 위치가 모핑되는 현상으로 서로 다른 구체적 결함을 다루고 있습니다.
+R4 ↔ C3 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+R4는 보행 결함이고 C3는 깃발 변형입니다.
+근거 검증: explicit_separation / 참조는 검은 옷을 입은 남자의 걸음 이상이고, 후보는 깃발의 형태/크기/색상 모핑에 대한 것으로 대상이 명확히 다릅니다.
+R4 ↔ C4 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+R4의 발걸음 이상과 C4의 러너 정체성/얼굴/의상 색상 변화는 일치하지 않습니다.
+근거 검증: explicit_separation / 참조는 특정 남자의 스텝 이상을 다루는 반면, 후보는 배경 러너들의 얼굴 디테일, 의복 색상, 정체성 변화 등 외형적 모핑 결함을 다루고 있어 서로 다른 대상 및 결함입니다.
+R4 ↔ C5 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+R4는 특정 러너의 스텝 건너뜀이고 C5는 전반적인 대형/출발 동작에 관한 내용입니다.
+근거 검증: explicit_separation / 참조는 특정 남자의 걸음/스텝 이상 동작을 지적하는 반면, 후보는 집단 전체의 초기 정렬 및 출발 상태에 관한 것으로 결함과 사건이 서로 구분됩니다.

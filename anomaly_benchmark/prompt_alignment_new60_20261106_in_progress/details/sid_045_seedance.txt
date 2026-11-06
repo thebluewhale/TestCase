@@ -1,0 +1,79 @@
+sid_045_seedance
+기존 시각 검사 판정: hit → 프롬프트 추가 v5 판정: hit
+시각 검사 완료: True / 프롬프트 검사: completed / 평가: completed
+새 프롬프트 C: 0개 · 라벨 의미 대응: False
+시간: 시간도 일치
+
+생성 프롬프트
+A piece of sodium chloride is ignited, emitting a vivid and unique flame as it burns steadily.
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 염화나트륨(소금 결정/덩어리) 형태의 물체
+프롬프트 근거: A piece of sodium chloride
+관측: 중앙에 반투명한 결정 덩어리가 보임
+판단 근거: 소금 결정 형태로 보이는 덩어리가 존재함
+P2 · 판단 불가 · 기대: 불이 붙는 점화 과정
+프롬프트 근거: is ignited
+관측: 영상 시작부터 이미 불이 붙어 연소 중임
+판단 근거: 점화되는 순간의 동작 없이 이미 불타는 상태로 시작함
+P3 · 충족 · 기대: 선명하고 특이한 불꽃 방출
+프롬프트 근거: emitting a vivid and unique flame
+관측: 주황색 및 푸른빛의 선명한 불꽃이 결정을 감싸며 타오름
+판단 근거: 선명한 불꽃 효과가 관찰됨
+P4 · 충족 · 기대: 안정적으로 지속 연소
+프롬프트 근거: burns steadily
+관측: 영상 전체에 걸쳐 불꽃이 안정적으로 타오름
+판단 근거: 연소 상태가 지속적으로 유지됨
+
+원본 라벨 R
+R1 (easy, [0.100, 3.900]초): 염화나트륨 조각이 떠서 회전하는 방식이 비현실적임.
+원문: The way the piece of sodium chloride floats and rotates is unrealistic.
+R2 (easy, [0.000, 5.000]초): 불타는 물체가 영상 전체 시간 동안 떠다니며 회전한다.
+원문: The burning object floats and rotates for the whole duration of the clip.
+R3 (easy, [0.000, 4.000]초): 오른쪽에서 불꽃이 무작위로 날아다님.
+원문: Sparks fly around randomly on the right side.
+
+검출 후보 C
+C1 (0.000–5.042초): [기존 시각 후보] 스파크와 잔해가 멈추거나 불규칙하게 표류하거나 깜빡거리며 부자연스러운 움직임을 보임.
+원문: Sparks and embers freeze, drift erratically, or flicker without natural ballistic motion.
+C2 (1.750–5.042초): [기존 시각 후보] 광물을 감싸는 불길이 부자연스럽게 변형되거나 정적 구간을 보임.
+원문: Flame wrapping the mineral exhibits unnatural morphing and static sections despite simulated turbulent airflow.
+C3 (2.250–4.875초): [기존 시각 후보] 광물 결정의 오른쪽 부분이 점점 투명해지고 내부 균열 구조가 매끄러워짐.
+원문: Right portion of the mineral crystal gradually becomes more transparent and smooths out internal fracture structures.
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: R1은 대상 객체인 염화나트륨 조각(the piece of sodium chloride)의 부유 및 회전 이상을 지적하는 반면, C1은 불꽃과 불씨(Sparks and embers)의 움직임 및 깜빡임 이상을 지적하므로 결함 대상 객체가 명확히 분리됩니다.
+근거 검증: explicit_separation / R1은 대상 객체인 염화나트륨 조각(the piece of sodium chloride)의 부유 및 회전 이상을 지적하는 반면, C1은 불꽃과 불씨(Sparks and embers)의 움직임 및 깜빡임 이상을 지적하므로 결함 대상 객체가 명확히 분리됩니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: R1은 염화나트륨 조각 자체의 부유 및 회전 움직임을 문제 삼는 반면, C2는 광물을 감싸는 화염(Flame wrapping the mineral)의 비정상적 모핑과 정체 구역을 지적하므로 결함 대상과 현상이 명확히 분리됩니다.
+근거 검증: explicit_separation / R1은 염화나트륨 조각 자체의 부유 및 회전 움직임을 문제 삼는 반면, C2는 광물을 감싸는 화염(Flame wrapping the mineral)의 비정상적 모핑과 정체 구역을 지적하므로 결함 대상과 현상이 명확히 분리됩니다.
+R1 ↔ C3 / 판단 보류 / 시간도 일치
+최초: different / core_conflict → 최종: uncertain / insufficient
+불일치 확정 보류: 두 서술 모두 동일한 광물 결정을 대상으로 하지만, R1은 결정의 회전 및 부유 움직임 역학(floats and rotates)에 대한 결함인 반면, C3은 우측 결정의 투명도 증가 및 내부 균열 구조의 스무딩(becomes more transparent and smooths out internal fracture structures)이라는 구체적인 외형/구조적 결함을 서술하고 있어 명확히 서로 다른 결함입니다.
+근거 검증: explicit_separation / 두 서술 모두 동일한 광물 결정을 대상으로 하지만, R1은 결정의 회전 및 부유 움직임 역학(floats and rotates)에 대한 결함인 반면, C3은 우측 결정의 투명도 증가 및 내부 균열 구조의 스무딩(becomes more transparent and smooths out internal fracture structures)이라는 구체적인 외형/구조적 결함을 서술하고 있어 명확히 서로 다른 결함입니다.
+R2 ↔ C1 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+근거 검증: explicit_separation / 참조 설명은 불타는 물체 본체의 부유 및 회전 동작을 설명하는 반면, 후보 C1은 불꽃과 잔해(sparks and embers)의 불자연스러운 움직임 결함을 다루고 있어 서로 다른 대상에 관한 명확한 분리가 성립합니다.
+R2 ↔ C2 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+근거 검증: explicit_separation / 참조 설명은 물체 자체의 지속적인 부유 및 회전을 기술하는 반면, 후보 C2는 광물을 감싸는 불길(Flame)의 부자연스러운 변형 및 정적 구간 결함을 지적하므로 명시적으로 서로 다른 현상 및 대상에 대한 설명입니다.
+R2 ↔ C3 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+근거 검증: explicit_separation / 참조 설명은 불타는 물체의 전체적인 회전 및 부유 움직임을 나타내는 반면, 후보 C3은 광물 결정 우측 부위의 투명화 및 내부 균열 구조 소실이라는 구체적인 텍스처/구조 결함을 다루고 있어 서로 다른 결함/현상으로 명확히 구분됩니다.
+R3 ↔ C1 / 의미 대응 / 시간도 일치
+최초: same_event_different_aspect / compatible → 최종: same_event_different_aspect / compatible
+R3에서 불꽃이 무작위로 날아다닌다는 점과 C1에서 스파크/잔해가 자연스러운 탄도 운동 없이 불규칙하게 표류한다는 점은 동일한 스파크의 비정상적 운동 결함을 서로 다른 측면에서 기술한 것입니다.
+R3 ↔ C2 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조 설명은 오른쪽에서 무작위로 날아다니는 불꽃(Sparks)에 대한 현상을 설명하는 반면, 후보 설명은 광물을 감싸고 있는 화염(Flame)의 부자연스러운 변형 및 정적 구간을 다루고 있어 대상과 이상 현상이 명확히 구별됩니다.
+근거 검증: explicit_separation / 참조 설명은 오른쪽에서 무작위로 날아다니는 불꽃(Sparks)에 대한 현상을 설명하는 반면, 후보 설명은 광물을 감싸고 있는 화염(Flame)의 부자연스러운 변형 및 정적 구간을 다루고 있어 대상과 이상 현상이 명확히 구별됩니다.
+R3 ↔ C3 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조 설명은 오른쪽에 무작위로 날리는 불꽃(Sparks)을 명시하고 있으나, 후보 설명은 광물 결정(mineral crystal)의 투명화 및 내부 균열 구조 변화를 다루고 있어 서로 다른 대상에 대한 상이한 결함을 기술합니다.
+근거 검증: explicit_separation / 참조 설명은 오른쪽에 무작위로 날리는 불꽃(Sparks)을 명시하고 있으나, 후보 설명은 광물 결정(mineral crystal)의 투명화 및 내부 균열 구조 변화를 다루고 있어 서로 다른 대상에 대한 상이한 결함을 기술합니다.

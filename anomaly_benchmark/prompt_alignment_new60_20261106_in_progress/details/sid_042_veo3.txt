@@ -1,0 +1,68 @@
+sid_042_veo3
+기존 시각 검사 판정: no_hit → 프롬프트 추가 v5 판정: no_hit
+시각 검사 완료: True / 프롬프트 검사: completed / 평가: completed
+새 프롬프트 C: 0개 · 라벨 의미 대응: False
+시간: 보조 정보 없음
+
+생성 프롬프트
+A man is jumping.
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 남성이 등장해야 함
+프롬프트 근거: A man
+관측: 붉은 민소매 셔츠와 반바지를 입은 남성이 잔디밭에 서 있음
+판단 근거: 요구된 남성이 화면 중앙에 명확히 확인됨
+P2 · 충족 · 기대: 남성이 점프하는 동작을 수행해야 함
+프롬프트 근거: is jumping
+관측: 남성이 위로 점프하여 공중에 떴다가 착지함
+판단 근거: 점프 동작이 영상 전반에 걸쳐 명확히 나타남
+
+원본 라벨 R
+R1 (hard, [4.500, 6.000]초): 영상은 매우 현실적이나, 끝부분에서 오른손의 그림자가 어색함/이상함.
+원문: This was a very realistic video.  The only thing I noticed was that the right hand shadow at the end was off but had to look really closely to notice it.
+R2 (hard, [2.800, 3.300]초): 민소매 상의 하단과 검은 바지 상단 사이에 남자의 허리 대신 파란 하늘이 비쳐 보이는 구멍 현상.
+원문: see through hole between bottom of tank top and top of black pants, should see man's waist and not blue sky
+
+검출 후보 C
+C1 (3.000–3.880초): [기존 시각 후보] 사람의 신발과 발 아래쪽이 맨살 같은 그루터기 형태로 녹아 사라졌다가 운동화로 다시 나타남.
+원문: The person's shoes and lower feet dissolve and disappear into bare skin-like stumps between 00:03.000 and 00:03.875 before reappearing as sneakers around 00:04.000.
+C2 (1.500–2.250초): [기존 시각 후보] 도약 중 공중에 떠 있는 동안 사람의 왼팔이 급격히 왜곡되어 배경과 섞임.
+원문: The person's left arm rapidly distorts and blends into the background while floating in the air during the jump.
+C3 (1.400–2.600초): [기존 시각 후보] 도약 중 오른팔과 손이 손가락 형태 변형 및 급격한 회전과 함께 불규칙하게 변형됨.
+원문: Right arm and hand morph erratically during the jump, with fluctuating finger definition and sudden rotational jumps.
+C4 (2.800–3.700초): [기존 시각 후보] 착지 시 발과 신발이 잔디 표면에 맞닿으며 부분적으로 녹아내리고 왜곡됨.
+원문: Feet and shoes partially dissolve and distort against the grass surface upon landing.
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간 차이 있음
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조는 오른손 그림자의 결함을 지적하는 반면, 후보는 신발과 발 부위의 소멸 및 재등장을 설명하므로 명확히 서로 다른 대상을 다룹니다.
+근거 검증: explicit_separation / 참조는 오른손 그림자의 결함을 지적하는 반면, 후보는 신발과 발 부위의 소멸 및 재등장을 설명하므로 명확히 서로 다른 대상을 다룹니다.
+R1 ↔ C2 / 미대응 / 시간 차이 있음
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조는 오른손 그림자의 이상을 명시하고 있으며, 후보는 왼팔의 왜곡 현상을 지적하여 신체 부위와 대상이 명확히 다릅니다.
+근거 검증: explicit_separation / 참조는 오른손 그림자의 이상을 명시하고 있으며, 후보는 왼팔의 왜곡 현상을 지적하여 신체 부위와 대상이 명확히 다릅니다.
+R1 ↔ C3 / 미대응 / 시간 차이 있음
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조는 영상 끝부분의 '오른손 그림자'가 어색하다는 점을 명시하는 반면, 후보는 점프 도중 '오른팔과 손 자체'의 모핑 및 급격한 회전을 설명하므로 관찰 대상(그림자 vs 신체 부위 자체)과 시점/상태가 구별되는 서로 다른 결함입니다.
+근거 검증: explicit_separation / 참조는 영상 끝부분의 '오른손 그림자'가 어색하다는 점을 명시하는 반면, 후보는 점프 도중 '오른팔과 손 자체'의 모핑 및 급격한 회전을 설명하므로 관찰 대상(그림자 vs 신체 부위 자체)과 시점/상태가 구별되는 서로 다른 결함입니다.
+R1 ↔ C4 / 미대응 / 시간 차이 있음
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조는 오른손 그림자의 이상을 설명하고 후보는 발과 신발 부위의 왜곡을 다루므로 대상 부위가 명확히 분리됩니다.
+근거 검증: explicit_separation / 참조는 오른손 그림자의 이상을 설명하고 후보는 발과 신발 부위의 왜곡을 다루므로 대상 부위가 명확히 분리됩니다.
+R2 ↔ C1 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조는 상의 하단과 바지 상단 사이의 허리 부위 구멍 결함을 명시하고 있으며, 후보는 신발과 하부 발 부위의 소멸 및 변형을 다루므로 대상 부위와 결함이 명백히 분리됩니다.
+근거 검증: explicit_separation / 참조는 상의 하단과 바지 상단 사이의 허리 부위 구멍 결함을 명시하고 있으며, 후보는 신발과 하부 발 부위의 소멸 및 변형을 다루므로 대상 부위와 결함이 명백히 분리됩니다.
+R2 ↔ C2 / 미대응 / 시간 차이 있음
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조의 결함 대상은 상하의 사이의 허리 부위인 반면 후보는 도약 중의 왼팔 왜곡 및 배경 병합 현상을 설명하므로 명확히 구분되는 별개의 결함입니다.
+근거 검증: explicit_separation / 참조의 결함 대상은 상하의 사이의 허리 부위인 반면 후보는 도약 중의 왼팔 왜곡 및 배경 병합 현상을 설명하므로 명확히 구분되는 별개의 결함입니다.
+R2 ↔ C3 / 미대응 / 시간 차이 있음
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조는 허리 부위에 구멍이 뚫려 배경 하늘이 보이는 결함인 반면 후보는 오른팔과 손의 변형 및 손가락 해상도 변동을 명시하므로 서로 다른 부위의 상이한 이상 현상입니다.
+근거 검증: explicit_separation / 참조는 허리 부위에 구멍이 뚫려 배경 하늘이 보이는 결함인 반면 후보는 오른팔과 손의 변형 및 손가락 해상도 변동을 명시하므로 서로 다른 부위의 상이한 이상 현상입니다.
+R2 ↔ C4 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조는 상의와 바지 사이 허리 영역의 뚫림 현상을 다루는 반면 후보는 착지 시 잔디 표면에서의 발과 신발 용해 및 왜곡을 다루므로 대상과 결함이 명백히 구별됩니다.
+근거 검증: explicit_separation / 참조는 상의와 바지 사이 허리 영역의 뚫림 현상을 다루는 반면 후보는 착지 시 잔디 표면에서의 발과 신발 용해 및 왜곡을 다루므로 대상과 결함이 명백히 구별됩니다.

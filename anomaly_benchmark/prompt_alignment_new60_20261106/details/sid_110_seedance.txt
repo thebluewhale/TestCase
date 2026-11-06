@@ -1,0 +1,79 @@
+sid_110_seedance
+기존 시각 검사 판정: no_hit → 프롬프트 추가 v5 판정: no_hit
+시각 검사 완료: True / 프롬프트 검사: completed / 평가: completed
+새 프롬프트 C: 1개 · 라벨 의미 대응: False
+시간: 보조 정보 없음
+
+생성 프롬프트
+The man driving the golf cart loses control on the slippery ice and decides to get out, but slips on the ice immediately and falls down.
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 남성이 골프 카트를 운전하는 모습
+프롬프트 근거: The man driving the golf cart
+관측: 남성이 골프 카트 운전석에 앉아 운전하는 모습이 보임
+판단 근거: 남성이 골프 카트를 주행 중인 장면이 확인됨
+P2 · 불일치 · 기대: 미끄러운 얼음 위에서 골프 카트의 제어를 잃는 모습
+프롬프트 근거: loses control on the slippery ice
+관측: 카트가 미끄러지거나 통제를 잃는 거친 움직임 없이 부드럽게 멈춤
+판단 근거: 얼음 위에서 통제력을 상실하는 명확한 동작이 나타나지 않음
+P3 · 충족 · 기대: 남성이 카트에서 내리려는 행동
+프롬프트 근거: decides to get out
+관측: 남성이 카트 밖으로 발을 내딛으며 내리기 시작함
+판단 근거: 남성이 좌석에서 일어나 카트에서 하차함
+P4 · 충족 · 기대: 얼음 위에서 바로 미끄러져 넘어지는 동작
+프롬프트 근거: slips on the ice immediately and falls down
+관측: 얼음 위에 발을 딛자마자 미끄러져 엎어짐
+판단 근거: 얼음판 위에서 미끄러져 넘어지는 동작이 직접적으로 확인됨
+
+원본 라벨 R
+R1 (easy, [3.000, 4.100]초): 사람의 신발 위치에 물웅덩이가 난데없이 나타남.
+원문: A puddle of water appears out of nowhere at the person's shoes.
+R2 (medium, [2.100, 3.300]초): 골프 카트가 남성이 이전에 멈춘 것처럼 보였음에도 불구하고 후진하기 시작함
+원문: the golf cart starts to move in reverse despite the man seemingly stopping it earlier
+
+검출 후보 C
+C1 (2.375–4.500초): [기존 시각 후보] The man slips out of the golf cart and his legs stretch unnaturally under the cart frame while the seat bench splits into two bucket seats mid-motion.
+원문: The man slips out of the golf cart and his legs stretch unnaturally under the cart frame while the seat bench splits into two bucket seats mid-motion.
+C2 (2.200–4.500초): [기존 시각 후보] The driver abruptly transitions from sitting to sliding underneath the golf cart, with unnatural distortion and penetration through the vehicle frame and floorboard.
+원문: The driver abruptly transitions from sitting to sliding underneath the golf cart, with unnatural distortion and penetration through the vehicle frame and floorboard.
+C3 (2.500–3.800초): [기존 시각 후보] The seat backrest splits from a unified bench contour into two separate headrest-like cushions, accompanied by structural jitter of the steering column.
+원문: The seat backrest splits from a unified bench contour into two separate headrest-like cushions, accompanied by structural jitter of the steering column.
+C4 (0.000–2.200초): [프롬프트 불일치] 얼음 위에서 골프 카트의 통제를 잃는 대신 안정적으로 정지함
+원문: 얼음 위에서 골프 카트의 통제를 잃는 대신 안정적으로 정지함
+P2 기대: 미끄러운 얼음 위에서 골프 카트의 제어를 잃는 모습
+관측: 카트가 미끄러지거나 통제를 잃는 거친 움직임 없이 부드럽게 멈춤
+프롬프트 근거: loses control on the slippery ice
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조 설명은 사람 신발 부근에 물웅덩이가 갑자기 나타나는 현상을 다루는 반면, 후보 설명은 골프 카트에서 미끄러지는 남성의 다리 왜곡 및 시트 분할을 다루므로 대상과 결함 자체가 완전히 상이합니다.
+근거 검증: explicit_separation / 참조 설명은 사람 신발 부근에 물웅덩이가 갑자기 나타나는 현상을 다루는 반면, 후보 설명은 골프 카트에서 미끄러지는 남성의 다리 왜곡 및 시트 분할을 다루므로 대상과 결함 자체가 완전히 상이합니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조 설명의 물웅덩이 발생 현상과 후보 설명의 운전자가 골프 카트 프레임을 관통하여 왜곡되는 현상은 명확히 구별되는 별개의 결함 및 대상입니다.
+근거 검증: explicit_separation / 참조 설명의 물웅덩이 발생 현상과 후보 설명의 운전자가 골프 카트 프레임을 관통하여 왜곡되는 현상은 명확히 구별되는 별개의 결함 및 대상입니다.
+R1 ↔ C3 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조 설명은 물웅덩이 출현 현상이며 후보 설명은 골프 카트 시트 등받이 분할 및 스티어링 컬럼의 구조적 떨림을 다루어 완전히 다른 대상을 설명합니다.
+근거 검증: explicit_separation / 참조 설명은 물웅덩이 출현 현상이며 후보 설명은 골프 카트 시트 등받이 분할 및 스티어링 컬럼의 구조적 떨림을 다루어 완전히 다른 대상을 설명합니다.
+R1 ↔ C4 / 미대응 / 시간 차이 있음
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조 설명은 신발 위치에 나타나는 물웅덩이에 관한 것이고 후보 설명은 얼음 위 골프 카트의 안정적 정지에 관한 것으로 명확히 분리되는 다른 내용입니다.
+근거 검증: explicit_separation / 참조 설명은 신발 위치에 나타나는 물웅덩이에 관한 것이고 후보 설명은 얼음 위 골프 카트의 안정적 정지에 관한 것으로 명확히 분리되는 다른 내용입니다.
+R2 ↔ C1 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조 설명은 골프 카트가 멈춘 후 다시 후진하는 주행 궤적 결함을 기술하는 반면, 후보 설명은 남성의 다리가 프레임 아래로 비정상적으로 늘어나는 신체 변형 및 좌석이 분할되는 구조적 결함을 기술하므로 서로 완전히 구분되는 별개의 결함 현상입니다.
+근거 검증: explicit_separation / 참조 설명은 골프 카트가 멈춘 후 다시 후진하는 주행 궤적 결함을 기술하는 반면, 후보 설명은 남성의 다리가 프레임 아래로 비정상적으로 늘어나는 신체 변형 및 좌석이 분할되는 구조적 결함을 기술하므로 서로 완전히 구분되는 별개의 결함 현상입니다.
+R2 ↔ C2 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조 설명은 골프 카트 차량 자체의 후진 움직임 이상을 지칭하지만, 후보 설명은 운전자가 차체 프레임 및 바닥판을 관통하며 왜곡되는 신체 관통/변형 결함을 기술하므로 상이한 현상에 대한 명시적 분리가 성립합니다.
+근거 검증: explicit_separation / 참조 설명은 골프 카트 차량 자체의 후진 움직임 이상을 지칭하지만, 후보 설명은 운전자가 차체 프레임 및 바닥판을 관통하며 왜곡되는 신체 관통/변형 결함을 기술하므로 상이한 현상에 대한 명시적 분리가 성립합니다.
+R2 ↔ C3 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조 설명은 골프 카트의 예기치 않은 후진 주행 이상을 다루는 반면, 후보 설명은 시트 등받이 분할 및 스티어링 컬럼의 구조적 지터 결함을 다루고 있어 서로 공존할 수 있는 별개의 결함입니다.
+근거 검증: explicit_separation / 참조 설명은 골프 카트의 예기치 않은 후진 주행 이상을 다루는 반면, 후보 설명은 시트 등받이 분할 및 스티어링 컬럼의 구조적 지터 결함을 다루고 있어 서로 공존할 수 있는 별개의 결함입니다.
+R2 ↔ C4 / 미대응 / 시간 차이 있음
+최초: different / core_conflict → 최종: different / core_conflict
+R2는 카트가 멈춘 후 다시 후진하는 이상을 보고하는 반면, C4는 안정적으로 정지한다는 정상/반대 거동을 기술하므로 핵심 충돌이 발생합니다.
+근거 검증: explicit_contradiction / 참조 설명은 멈추었던 골프 카트가 후진으로 움직이기 시작한다고 기술하고 있으나, 후보 설명은 카트가 안정적으로 정지한다고 기술하여 차량의 거동(후진 이동 vs 안정적 정지)에 대해 양립할 수 없는 상반된 주장을 하고 있습니다.

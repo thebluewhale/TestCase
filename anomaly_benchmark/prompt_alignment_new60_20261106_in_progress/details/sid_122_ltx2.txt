@@ -1,0 +1,49 @@
+sid_122_ltx2
+기존 시각 검사 판정: hit → 프롬프트 추가 v5 판정: pending
+시각 검사 완료: True / 프롬프트 검사: completed / 평가: invalid_response
+새 프롬프트 C: 1개 · 라벨 의미 대응: False
+시간: 보조 정보 없음
+
+생성 프롬프트
+The two boys run until they get to the last table.  One boy jumps off the table but twists his ankle as he lands, falling to the ground.  The other boy lands on his feet and stares down at the other boy.
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 두 소년이 테이블까지 달림
+프롬프트 근거: The two boys run until they get to the last table.
+관측: 두 소년이 테이블을 향해 달려옴
+판단 근거: 요구된 달리기 동작이 확인됨
+P2 · 불일치 · 기대: 한 소년이 테이블에서 뛰어내리다 발목을 접질려 바닥에 쓰러짐
+프롬프트 근거: One boy jumps off the table but twists his ankle as he lands, falling to the ground.
+관측: 한 소년이 테이블 위로 올라갔다가 테이블 위로 미끄러져 누우며, 땅(ground)으로 떨어지지 않음
+판단 근거: 테이블 위로 넘어져 누워 있을 뿐 바닥으로 떨어져 발목을 접질리는 모습과 다름
+P3 · 충족 · 기대: 다른 소년이 발로 착지한 후 넘어진 소년을 내려다봄
+프롬프트 근거: The other boy lands on his feet and stares down at the other boy.
+관측: 다른 소년이 착지 후 서서 누워 있는 소년을 내려다봄
+판단 근거: 요구된 동작 및 시선이 일치함
+
+원본 라벨 R
+R1 (medium, [1.000, 3.000]초): The man in red shirt body completely contorts and turns around
+원문: The man in red shirt body completely contorts and turns around
+R2 (medium, [1.900, 3.000]초): The boy in black never makes contact with the table he just floats over it
+원문: The boy in black never makes contact with the table he just floats over it
+R3 (easy, [1.000, 4.000]초): the ankle is not twisted by jumping off the table so he is not on the ground at all
+원문: the ankle is not twisted by jumping off the table so he is not on the ground at all
+R4 (medium, [3.200, 5.000]초): boy did not fall to the ground, he fell on the table
+원문: boy did not fall to the ground, he fell on the table
+R5 (easy, [2.500, 3.000]초): left boy's body morphed and twisted unnaturally
+원문: left boy's body morphed and twisted unnaturally
+
+검출 후보 C
+C1 (0.400–0.560초): [기존 측정 제안·미확정] 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+원문: 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+C2 (1.920–4.200초): [기존 측정 제안·미확정] 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+원문: 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+C3 (2.750–3.750초): [기존 시각 후보] The feet and legs of the boy in red distort and partially blur/disintegrate while kicking across the bench before settling into position.
+원문: The feet and legs of the boy in red distort and partially blur/disintegrate while kicking across the bench before settling into position.
+C4 (2.500–8.000초): [프롬프트 불일치] 소년이 테이블 위에서 뛰어내려 바닥으로 넘어지는 대신 테이블 상판 위에 누워 있음
+원문: 소년이 테이블 위에서 뛰어내려 바닥으로 넘어지는 대신 테이블 상판 위에 누워 있음
+P2 기대: 한 소년이 테이블에서 뛰어내리다 발목을 접질려 바닥에 쓰러짐
+관측: 한 소년이 테이블 위로 올라갔다가 테이블 위로 미끄러져 누우며, 땅(ground)으로 떨어지지 않음
+프롬프트 근거: One boy jumps off the table but twists his ankle as he lands, falling to the ground.
+
+자동 의미 대응

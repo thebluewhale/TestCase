@@ -1,0 +1,129 @@
+sid_063_veo3
+기존 시각 검사 판정: no_hit → 프롬프트 추가 v5 판정: no_hit
+시각 검사 완료: True / 프롬프트 검사: completed / 평가: completed
+새 프롬프트 C: 1개 · 라벨 의미 대응: False
+시간: 보조 정보 없음
+
+생성 프롬프트
+creating a video camera backup slow motion teacher with her students in class room
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 교실 환경에서 교사와 학생들이 함께 있는 장면
+프롬프트 근거: teacher with her students in class room
+관측: 교실 책상에 앉아 있는 학생들과 서 있는 여교사의 모습이 나타남
+판단 근거: 교실 배경과 교사 및 학생들의 모습이 명확하게 확인됨
+P2 · 불일치 · 기대: 카메라가 뒤로 이동하는 후진(backup/dolly back) 움직임
+프롬프트 근거: camera backup
+관측: 카메라가 뒤로 물러나지 않고 제자리에서 고정되어 있거나 거의 변화가 없음
+판단 근거: 영상 전반에 걸쳐 후진하는 카메라 움직임이 관찰되지 않음
+P3 · 충족 · 기대: 슬로우 모션 효과가 적용된 동작
+프롬프트 근거: slow motion
+관측: 학생들이 손을 들고 내리는 등의 동작이 다소 느린 템포로 연출됨
+판단 근거: 슬로우 모션에 부합하는 속도로 장면이 전개됨
+
+원본 라벨 R
+R1 (hard, [2.200, 5.700]초): 사람들이 일제히 행동한다.
+원문: The people act in unison
+R2 (easy, [0.000, 8.000]초): 영상 내에 슬로 모션으로 진행되는 것은 아무것도 없음.
+원문: Nothing in this video is in slow motion
+R3 (easy, [0.400, 8.000]초): 카메라가 뒤로 물러나지 않고 영상이 진행됨에 따라 실제로 줌인되고 있음
+원문: The camera is not backing up but its actually zooming in as the video goes on
+R4 (easy, [1.700, 2.200]초): 모든 학생들이 정확히 동시에 손을 든다.
+원문: All the students raise their hand at exactly the same time
+R5 (easy, [1.900, 3.200]초): 모든 학생들이 정확히 동시에 손을 내림
+원문: All the students put their hands down at the exact same time
+
+검출 후보 C
+C1 (1.750–3.875초): [기존 시각 후보] 학생의 들어올린 팔이 갑자기 나타나며 팔을 올리고 내리는 동안 형태 변형(morphing)을 보임.
+원문: The student's raised arm appears abruptly and exhibits morphing contours while raising and lowering.
+C2 (1.200–3.500초): [기존 시각 후보] 학생들이 손을 드는 동안 교사의 자세와 팔 형태가 불연속적으로 바뀜.
+원문: Teacher's posture and arm configurations shift discontinuously while students raise hands.
+C3 (1.700–4.100초): [기존 시각 후보] 학생의 오른팔이 올라가고 내려가는 동안 뒤틀림 및 미세한 변형을 보임.
+원문: Student's right arm displays warping and slight deformation while raising and lowering.
+C4 (0.000–8.000초): [프롬프트 불일치] 카메라가 뒤로 물러나지 않고 제자리에 고정되어 있음.
+원문: 프롬프트에서는 카메라가 뒤로 물러나는 움직임을 요구했으나 영상 속 카메라는 제자리에 고정되어 있음
+P2 기대: 카메라가 뒤로 이동하는 후진(backup/dolly back) 움직임
+관측: 카메라가 뒤로 물러나지 않고 제자리에서 고정되어 있거나 거의 변화가 없음
+프롬프트 근거: camera backup
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간도 일치
+최초: different / compatible → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+근거 검증: insufficient / 레퍼런스 R1에는 이상 현상으로 분류된 클레임이 존재하지 않으며('is_anomaly': false), C1의 학생 팔 생성 및 모핑 이상 현상과 비교할 이상 현상 진술이 없어 판단이 불가능합니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+최초: different / compatible → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+근거 검증: insufficient / 레퍼런스 R1에는 이상 현상 클레임이 등록되어 있지 않아 교사의 자세 불연속성을 다루는 C2와 동일한 결함인지 비교할 근거가 부족합니다.
+R1 ↔ C3 / 미대응 / 시간도 일치
+최초: different / compatible → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+근거 검증: insufficient / 레퍼런스 R1은 이상 현상이 아닌 일반 진술만을 포함하고 있어 C3의 학생 팔 변형 결함과 일치 여부를 판단할 anomaly 근거가 없습니다.
+R1 ↔ C4 / 미대응 / 시간도 일치
+최초: different / compatible → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+근거 검증: insufficient / 레퍼런스 R1에는 이상 현상 클레임이 존재하지 않으므로 C4의 카메라 움직임 고정 결함과 비교할 수 있는 이상 현상 근거가 부족합니다.
+R2 ↔ C1 / 미대응 / 시간도 일치
+최초: different / compatible → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+근거 검증: explicit_separation / 참조 설명은 비디오 전체에서 슬로 모션이 없다는 비이상/속성 진술인 반면, 후보 설명은 학생의 팔이 갑자기 나타나고 윤곽이 변형되는 이상 현상을 기술하여 대상과 결함 내용이 완전히 분리됩니다.
+R2 ↔ C2 / 미대응 / 시간도 일치
+최초: different / compatible → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+근거 검증: explicit_separation / 참조 설명은 영상 내 슬로 모션의 부재를 언급하는 반면, 후보 설명은 교사의 자세 및 팔의 불연속적 변화를 기술하고 있어 서로 다른 주체와 현상을 명확하게 다룹니다.
+R2 ↔ C3 / 미대응 / 시간도 일치
+최초: different / compatible → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+근거 검증: explicit_separation / 참조 설명은 슬로 모션 효과 부재에 관한 일반적 진술인 반면, 후보 설명은 학생의 오른팔 워핑 및 변형 결함을 구체적으로 기술하므로 대상과 내용이 완전히 구분됩니다.
+R2 ↔ C4 / 미대응 / 시간도 일치
+최초: different / compatible → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+근거 검증: explicit_separation / 참조 설명은 영상의 재생 속도(슬로 모션 부재)에 대한 진술인 반면, 후보 설명은 카메라의 물리적 이동(후진 부재)에 관한 결함을 기술하고 있어 명확히 서로 다른 대상을 지칭합니다.
+R3 ↔ C1 / 미대응 / 시간도 일치
+최초: different / compatible → 최종: different / compatible
+R3은 카메라의 줌인 현상이고 C1은 학생 팔의 형태 변형 결함입니다.
+근거 검증: explicit_separation / R3은 카메라의 줌인 결함에 대해 기술하고 있는 반면, C1은 학생의 들어 올려진 팔의 윤곽 변형 결함을 기술하고 있어 대상과 결함이 완전히 서로 다릅니다.
+R3 ↔ C2 / 미대응 / 시간도 일치
+최초: different / compatible → 최종: different / compatible
+R3은 카메라 줌인에 관한 내용이고 C2는 교사의 자세 변화에 관한 내용입니다.
+근거 검증: explicit_separation / R3은 카메라 움직임(줌인)에 관한 결함인 반면, C2는 교사의 자세와 팔 형태 변화 결함을 기술하므로 대상과 결함이 명확히 구별됩니다.
+R3 ↔ C3 / 미대응 / 시간도 일치
+최초: different / compatible → 최종: different / compatible
+R3은 카메라 움직임 결함이며 C3은 학생 팔의 왜곡 현상입니다.
+근거 검증: explicit_separation / R3은 카메라의 줌인 결함을 기술하는 반면, C3은 학생의 오른팔 워핑 및 변형을 기술하고 있어 대상과 현상이 명확히 분리됩니다.
+R3 ↔ C4 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / core_conflict
+두 설명 모두 카메라가 뒤로 물러나지 않는 점을 언급하지만, R3은 실제로 줌인되고 있다고 주장하는 반면 C4는 제자리에 고정되어 있다고 주장하여 상충합니다.
+근거 검증: explicit_contradiction / R3은 카메라가 실제로 영상이 진행되면서 '줌인(zooming in)'되고 있다고 주장하는 반면, C4는 카메라가 '제자리에 고정되어 있음'이라고 주장하여 동일 카메라의 동작 상태에 대해 양립할 수 없는 모순된 진술을 하고 있습니다.
+R4 ↔ C1 / 미대응 / 시간도 일치
+최초: different / compatible → 최종: different / compatible
+R4는 모든 학생들이 완전히 동시에 손을 드는 동기화 결함을 지적하고, C1은 특정 학생 팔의 돌연한 등장 및 형태 변형을 지적하므로 서로 다른 사건입니다.
+근거 검증: explicit_separation / 레퍼런스는 모든 학생들의 손 들기 타이밍이 완벽히 일치한다는 동기화 결함을 지적하는 반면, 후보는 특정 학생 팔의 돌연한 출현 및 형태 왜곡(morphing)을 지적하므로 결함의 대상과 현상이 구별되는 별개의 결함입니다.
+R4 ↔ C2 / 미대응 / 시간도 일치
+최초: related_only / compatible → 최종: related_only / compatible
+C2는 학생들이 손을 드는 배경 시점을 언급하지만, 지적하는 결함은 교사의 불연속적인 자세 변화이므로 학생들의 동시 손들기 이상과 무관합니다.
+근거 검증: explicit_separation / 레퍼런스는 학생들 전체의 손 들기 동기화 문제를 다루는 반면, 후보는 교사의 자세와 팔 형태의 불연속적 변화를 지적하여 대상과 결함 양상이 서로 명확히 구분됩니다.
+R4 ↔ C3 / 미대응 / 시간도 일치
+최초: different / compatible → 최종: different / compatible
+R4는 전체 학생들의 비자연스러운 동시 손들기 동작을 지적하는 반면, C3은 특정 학생의 오른팔 기하학적 왜곡/변형을 설명합니다.
+근거 검증: explicit_separation / 레퍼런스는 전체 학생들이 동시에 손을 드는 현상을 문제 삼는 반면, 후보는 특정 학생 오른팔의 뒤틀림 및 변형이라는 신체 렌더링 결함을 지적하므로 명확히 분리되는 서로 다른 결함입니다.
+R4 ↔ C4 / 미대응 / 시간 차이 있음
+최초: different / compatible → 최종: different / compatible
+R4는 학생들의 손들기 동작에 대한 내용이고 C4는 카메라 움직임에 관한 내용입니다.
+근거 검증: explicit_separation / 레퍼런스는 학생들의 손 들기 동작 이상을 기술하지만, 후보는 카메라의 이동 부재(프롬프트 불일치)를 다루고 있어 대상과 사건이 완전히 다릅니다.
+R5 ↔ C1 / 미대응 / 시간도 일치
+최초: different / compatible → 최종: different / compatible
+R5는 학생들이 완전히 동시에 손을 내리는 집단 동기화 결함을 지적하고, C1은 개별 학생 팔의 모핑/변형을 지적합니다.
+근거 검증: explicit_separation / R5는 모든 학생들이 완전히 동시에 손을 내리는 집단적 동기화 이상을 지적하는 반면, C1은 개별 학생 팔의 돌연한 등장 및 형태 모핑 결함을 지적하여 서로 명확히 구분되는 별개의 결함 및 대상을 다룹니다.
+R5 ↔ C2 / 미대응 / 시간도 일치
+최초: different / compatible → 최종: different / compatible
+R5는 학생들이 동시에 손을 내리는 동작을 설명하고 C2는 교사의 자세 변화를 설명합니다.
+근거 검증: explicit_separation / R5는 학생들 전체의 손 내리기 동작 동기화 결함을 다루는 반면, C2는 교사의 자세 및 팔 구성이 불연속적으로 변화하는 결함을 다루어 대상 개체와 결함이 명확히 다릅니다.
+R5 ↔ C3 / 미대응 / 시간도 일치
+최초: different / compatible → 최종: different / compatible
+R5는 모든 학생이 동시에 손을 내리는 이상을 지적하고, C3은 특정 학생 팔의 왜곡/변형 결함을 설명합니다.
+근거 검증: explicit_separation / R5는 모든 학생들이 동시에 손을 내리는 타이밍 동기화 문제를 지적하지만, C3은 특정 학생의 오른팔에서 발생하는 워핑 및 변형 현상을 지적하여 결함의 성격과 대상이 구별됩니다.
+R5 ↔ C4 / 미대응 / 시간도 일치
+최초: different / compatible → 최종: different / compatible
+R5는 학생들의 손 내리기 동작이며 C4는 카메라의 위치 고정에 대한 내용입니다.
+근거 검증: explicit_separation / R5는 학생들의 동작 타이밍 이상을 다루는 반면, C4는 카메라의 이동 부재(프롬프트 불일치)를 다루므로 대상 개체와 결함 현상이 전혀 다릅니다.

@@ -1,0 +1,39 @@
+sid_184_seedance
+기존 시각 검사 판정: pending → 프롬프트 추가 v5 판정: pending
+시각 검사 완료: False / 프롬프트 검사: completed / 평가: not_run
+새 프롬프트 C: 1개 · 라벨 의미 대응: False
+시간: 보조 정보 없음
+
+생성 프롬프트
+A person's hands shape dough, place it in a bowl with vegetables, and fold the dough over the filling.
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 사람의 손이 반죽을 빚는 동작
+프롬프트 근거: A person's hands shape dough
+관측: 손으로 반죽 덩어리를 굴리며 모양을 잡음
+판단 근거: 영상 초반에 반죽을 손으로 다듬는 모습이 관찰됨
+P2 · 충족 · 기대: 야채가 담긴 볼에 반죽을 넣는 동작
+프롬프트 근거: place it in a bowl with vegetables
+관측: 야채가 들어있는 볼 위에 반죽을 올려놓음
+판단 근거: 손으로 빚은 반죽을 채소가 담긴 그릇 안으로 넣음
+P3 · 불일치 · 기대: 속재료 위로 반죽을 접어 감싸는 동작
+프롬프트 근거: fold the dough over the filling
+관측: 반죽을 채소 위에 얹고 눌러 펼칠 뿐 접어서 소를 감싸지 않음
+판단 근거: 반죽을 속재료 위로 접는 과정이 수행되지 않음
+
+원본 라벨 R
+R1 (easy, [2.800, 5.000]초): The person does not fold the dough over the filling, instead just kneads it inside the bowl
+원문: The person does not fold the dough over the filling, instead just kneads it inside the bowl
+R2 (easy, [0.000, 2.600]초): The dough doesn't move in sync with the person's hands, making the action look unnatural
+원문: The dough doesn't move in sync with the person's hands, making the action look unnatural
+R3 (hard, [2.900, 3.800]초): There is a sagging flap of flesh between the more distant thumb and index finger.
+원문: There is a sagging flap of flesh between the more distant thumb and index finger.
+
+검출 후보 C
+C1 (2.750–5.042초): [프롬프트 불일치] 반죽을 접어 소를 감싸는 동작이 나타나지 않고 반죽을 위에서 누르기만 함
+원문: 반죽을 접어 소를 감싸는 동작이 나타나지 않고 반죽을 위에서 누르기만 함
+P3 기대: 속재료 위로 반죽을 접어 감싸는 동작
+관측: 반죽을 채소 위에 얹고 눌러 펼칠 뿐 접어서 소를 감싸지 않음
+프롬프트 근거: fold the dough over the filling
+
+자동 의미 대응

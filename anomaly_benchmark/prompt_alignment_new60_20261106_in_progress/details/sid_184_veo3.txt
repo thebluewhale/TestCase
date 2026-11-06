@@ -1,0 +1,47 @@
+sid_184_veo3
+기존 시각 검사 판정: hit → 프롬프트 추가 v5 판정: pending
+시각 검사 완료: True / 프롬프트 검사: completed / 평가: not_run
+새 프롬프트 C: 1개 · 라벨 의미 대응: False
+시간: 보조 정보 없음
+
+생성 프롬프트
+A person's hands shape dough, place it in a bowl with vegetables, and fold the dough over the filling.
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 사람의 손이 반죽을 빚거나 모양을 잡는 동작
+프롬프트 근거: A person's hands shape dough
+관측: 손으로 반죽 가장자리를 다듬고 만지는 모습이 확인됨
+판단 근거: 요구된 동작이 확인됨
+P2 · 불일치 · 기대: 채소가 담긴 볼에 반죽을 넣는 동작
+프롬프트 근거: place it in a bowl with vegetables
+관측: 처음부터 볼에 채소와 반죽이 이미 올려진 상태에서 반죽을 들어 올리고 접는 동작 위주로 진행됨
+판단 근거: 외부에서 볼 안으로 반죽을 새로 넣는 과정은 나타나지 않음
+P3 · 충족 · 기대: 반죽을 속재료 위로 접는 동작
+프롬프트 근거: fold the dough over the filling
+관측: 손으로 반죽 가장자리를 들어 속재료 위로 접어 모으는 동작이 관찰됨
+판단 근거: 요구된 접기 동작이 명확히 수행됨
+
+원본 라벨 R
+R1 (easy, [0.010, 1.600]초): The person in the video places the dough before hand shaping it.
+원문: The person in the video places the dough before hand shaping it.
+R2 (easy, [0.500, 1.400]초): The dough is already inside the bowl 
+원문: The dough is already inside the bowl 
+R3 (easy, [1.600, 2.700]초): The vegetables are already inside the bowl, and the dough just gets removed back. 
+원문: The vegetables are already inside the bowl, and the dough just gets removed back. 
+R4 (easy, [3.700, 5.000]초): The way the dough was shaped and how it looked when putting it back over the vegetables does not match how the dough was in the first place. 
+원문: The way the dough was shaped and how it looked when putting it back over the vegetables does not match how the dough was in the first place. 
+
+검출 후보 C
+C1 (0.750–1.667초): [기존 측정 제안·미확정] 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+원문: 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+C2 (0.875–1.750초): [기존 시각 후보] Vegetable filling abruptly appears inside the dough bowl as the top dough layer is lifted, with no prior visual presence.
+원문: Vegetable filling abruptly appears inside the dough bowl as the top dough layer is lifted, with no prior visual presence.
+C3 (3.500–5.900초): [기존 시각 후보] The dough layer lifted reveals vegetable filling inside, but as it is replaced, the dough's form and rim morphology transform inconsistently with elastic deformation.
+원문: The dough layer lifted reveals vegetable filling inside, but as it is replaced, the dough's form and rim morphology transform inconsistently with elastic deformation.
+C4 (0.000–2.000초): [프롬프트 불일치] 볼 안에 채소와 반죽이 이미 배치된 채로 시작하여 반죽을 넣는 동작이 누락됨
+원문: 볼 안에 채소와 반죽이 이미 배치된 채로 시작하여 반죽을 넣는 동작이 누락됨
+P2 기대: 채소가 담긴 볼에 반죽을 넣는 동작
+관측: 처음부터 볼에 채소와 반죽이 이미 올려진 상태에서 반죽을 들어 올리고 접는 동작 위주로 진행됨
+프롬프트 근거: place it in a bowl with vegetables
+
+자동 의미 대응

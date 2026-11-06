@@ -1,0 +1,68 @@
+sid_042_ltx2
+이전 판정: hit → v5 판정: pending
+검출 완료: True / 평가 상태: completed
+시간: 보조 정보 없음
+
+원본 라벨 R
+R1 (hard, [0.7, 5.9]초): 벨트 버클의 모양이 변함.
+원문: Belt buckle changes shape.
+R1.S1 · specific · 벨트 버클의 형태가 변함
+R2 (hard, [2.8, 4.4]초): 손의 형태가 어색하고 부자연스러움.
+원문: Shape of hand is awkward, unnatural.
+R2.S1 · broad · 손의 형태가 어색하고 부자연스러움 / 미명시: 손 형태가 구체적으로 어떻게 어색하고 부자연스러운지(손가락 수, 뒤틀림, 기형 등) 명시되지 않음
+R3 (medium, [7.7, 8]초): 소매가 더 이상 팔 위에 있는 것처럼 보이지 않고, 마치 팔 자체인 것처럼 같은 층위에서 나타남.
+원문: Sleeves no longer appear as on the arm, but at the same level, as if they are the arm.
+R3.S1 · specific · 소매가 팔 위에 입혀진 형태가 아니라 팔과 동일한 층위에서 팔 자체처럼 보임.
+R4 (easy, [0.1, 8]초): 남자가 현실에서 일어날 수 없고 물리 법칙을 거스르는 방식으로 점프하며, 마치 영상에 슬로우 모션 필터를 적용한 것처럼 보임.
+원문: The man is jumping in a way that wouldn't happen in real life and defies the law of physics as some sort of slow motion filter was put on this video
+R4.S1 · specific · 남자가 물리 법칙을 거스르고 비현실적인 방식으로 점프하며 슬로우 모션 필터를 적용한 듯이 보임
+R5 (medium, [0.5, 3.5]초): 사람이 정지 상태에서 실제로는 불가능할 정도로 너무 높이 점프하여 물리 법칙을 위배함
+원문: The person jumps way higher from a stand still position then anyone could in real life so again it defies the law of physics
+R5.S1 · specific · 사람이 제자리 정지 상태에서 비현실적으로 너무 높이 점프함
+
+검출 후보 C
+C1 (0.5–6.25초): 공중에 떠 있는 동안 사람이 부자연스럽게 형태를 바꾸고 비율이 변형되며 팔다리 움직임이 불안정함.
+원문: The person floats and shifts form unnaturally while airborne, displaying morphing proportions and inconsistent limb dynamics relative to the background.
+C2 (0.0–3.5초): 비행/점프 중 손을 퍼덕이고 움직이는 동안 손과 손가락이 변형되고 흐려지며 일그러짐.
+원문: The person's hands and fingers morph, blur, and distort irregularly while flapping and moving during flight.
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+R1은 벨트 버클의 모양 변화를 설명하지만 C1은 사람 전체의 체형 변형 및 사지 움직임을 다루므로 대상과 이상 현상이 서로 다릅니다.
+근거 검증: explicit_separation / 레퍼런스는 벨트 버클(Belt buckle)의 형태 변화라는 특정 액세서리의 결함을 다루는 반면, 후보 C1은 공중에 뜬 사람 전체(The person)의 비율 및 사지 움직임 변형을 다루므로 대상과 결함이 명확히 구별됩니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+R1은 벨트 버클에 관한 결함인 반면 C2는 손과 손가락의 변형에 관한 결함으로 대상이 완전히 다릅니다.
+근거 검증: explicit_separation / 레퍼런스는 벨트 버클(Belt buckle)의 결함을 지적하고 있는 반면, 후보 C2는 사람의 손과 손가락(The person's hands and fingers)의 형태 왜곡을 다루고 있어 서로 다른 대상에 발생한 별개의 구체적 결함입니다.
+R2 ↔ C1 / 판단 보류 / 시간도 일치
+최초: related_only / insufficient → 최종: uncertain / insufficient
+불일치 확정 보류: R2는 손의 형태가 어색하고 부자연스럽다고 기술하고, C1은 공중에 뜬 인물의 비율 변형 및 사지(limb) 동역학 이상을 기술합니다. 사지 변형에 손이 포함될 가능성이 있으나, C1에서 손 자체의 형태 이상을 명시하지 않아 동일한 결함인지 명확히 판단하기에 텍스트 정보가 불충분합니다.
+근거 검증: insufficient / R2는 손의 형태가 어색하고 부자연스럽다고 기술하고, C1은 공중에 뜬 인물의 비율 변형 및 사지(limb) 동역학 이상을 기술합니다. 사지 변형에 손이 포함될 가능성이 있으나, C1에서 손 자체의 형태 이상을 명시하지 않아 동일한 결함인지 명확히 판단하기에 텍스트 정보가 불충분합니다.
+R2 ↔ C2 / 판단 보류 / 시간도 일치
+최초: underspecified / insufficient → 최종: underspecified / insufficient
+두 설명 모두 동일한 대상인 손의 부자연스러운 형태를 다루고 있으나, R2의 'Shape of hand is awkward, unnatural' 설명이 너무 포괄적이어서 C2의 구체적인 변형/일그러짐 현상과 정확히 동일한 증상을 지칭하는지 검토가 필요하여 underspecified로 보류합니다.
+R3 ↔ C1 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+R3은 소매가 팔과 동일한 층위로 합쳐져 보이는 현상을 다루며, C1은 사람 전체의 신체 비율 및 팔다리 역학 변형을 다루므로 대상과 이상 현상이 다릅니다.
+근거 검증: explicit_separation / R3은 옷 소매가 팔과 동일한 층위로 합쳐져 팔 자체처럼 보이는 의상/텍스처 레벨의 구체적 결함을 명시하는 반면, C1은 공중에 떠 있는 사람 전체의 비율 변형 및 배경 대비 불일치한 사지 동역학을 다루어 서로 다른 구체적 대상을 명확히 구별합니다.
+R3 ↔ C2 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+R3은 소매와 팔의 렌더링/형태 문제인 반면 C2는 손과 손가락의 변형을 설명하므로 서로 다릅니다.
+근거 검증: explicit_separation / R3은 소매가 팔 위에 입혀진 형태가 아닌 팔 자체처럼 보이는 소매와 팔의 결함을 명시하는 반면, C2는 사람의 손과 손가락이 펄럭이며 변형·블러·왜곡되는 현상을 다루어 손상 부위 및 구체적 결함 대상이 명확히 구별됩니다.
+R4 ↔ C1 / 판단 보류 / 시간도 일치
+최초: related_only / minor_discrepancy → 최종: uncertain / insufficient
+불일치 확정 보류: R4는 남자가 물리 법칙을 위배하며 슬로우 모션이 걸린 듯 비현실적으로 점프하는 현상을 묘사하고, C1은 공중에 떠 있는 동안 신체 형태 변형 및 불일치한 사지 역학을 묘사합니다. 두 서술 모두 공중에 떠 있는 비현실적 움직임(floats vs jumping defying physics/slow motion)을 포함하고 있으나, 텍스트만으로는 동일한 체공 이상 현상을 서로 다르게 표현한 것인지 별개의 결함인지 명확히 판별할 수 없으므로 insufficient로 분류합니다.
+근거 검증: insufficient / R4는 남자가 물리 법칙을 위배하며 슬로우 모션이 걸린 듯 비현실적으로 점프하는 현상을 묘사하고, C1은 공중에 떠 있는 동안 신체 형태 변형 및 불일치한 사지 역학을 묘사합니다. 두 서술 모두 공중에 떠 있는 비현실적 움직임(floats vs jumping defying physics/slow motion)을 포함하고 있으나, 텍스트만으로는 동일한 체공 이상 현상을 서로 다르게 표현한 것인지 별개의 결함인지 명확히 판별할 수 없으므로 insufficient로 분류합니다.
+R4 ↔ C2 / 미대응 / 시간도 일치
+최초: related_only / insufficient → 최종: related_only / insufficient
+R4는 남자의 물리 법칙을 거스르는 점프 동작을 다루고 있는 반면, C2는 손과 손가락의 변형을 다루므로 대상 부위와 이상 현상이 서로 다릅니다.
+근거 검증: explicit_separation / R4는 인물 전체의 점프 궤적 및 비현실적인 슬로우 모션과 같은 전신 움직임/물리 법칙 위배 이상 현상을 다루는 반면, C2는 공중에서 손과 손가락 부위가 일그러지고 흐릿해지는 구체적인 국소 형태 왜곡(morph, blur, distort) 결함을 명시하고 있으므로 두 텍스트가 지적하는 이상 현상이 명확히 구별됩니다.
+R5 ↔ C1 / 미대응 / 시간도 일치
+최초: related_only / minor_discrepancy → 최종: related_only / minor_discrepancy
+동일 인물의 점프를 다루고 있으나, R5는 높이 뛰는 비현실적 점프 높이에 집중하는 반면 C1은 공중에서의 형태 모핑 및 신체 비율 변화를 지적하여 이상 현상이 일치하지 않습니다.
+근거 검증: explicit_separation / R5는 정지 상태에서 비현실적으로 과도하게 높이 점프하는 궤적 및 물리 법칙 위배 결함을 구체적으로 명시하고 있는 반면, C1은 공중에 떠 있는 동안 신체 형태가 모핑되고 사지 비율이 불일치하는 형태학적 변형 결함을 명시하여 서로 구별되는 결함을 다룹니다.
+R5 ↔ C2 / 미대응 / 시간도 일치
+최초: related_only / insufficient → 최종: related_only / insufficient
+R5는 정지 상태에서 과도하게 높이 뛰는 점프에 관한 이상 현상인 반면, C2는 손과 손가락의 형태학적 왜곡을 다루므로 서로 다릅니다.
+근거 검증: explicit_separation / R5는 정지 상태에서 비현실적으로 높이 점프하는 전체 동작의 물리적 결함을 다루는 반면, C2는 인물의 손과 손가락이 변형되고 흐려지는 국소 부위의 형태 왜곡 결함을 기술하여 대상과 결함 양상이 명확히 구분됩니다.

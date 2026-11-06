@@ -1,0 +1,55 @@
+sid_063_seedance
+복구 전 판정: hit → v5 판정: hit
+검출 완료: True / 평가 상태: completed
+처리: 기존 v5 평가 재사용
+시간: 시간도 일치
+
+원본 라벨 R
+R1 (easy, [0.100, 5.000]초): 카메라에 후진(backup) 모션이 없음
+원문: There is no backup motion for the camera
+R1.S1 · specific · 카메라의 후진 움직임이 부재함
+R2 (easy, [0.500, 1.500]초): 교사가 손을 모으자 손에 들고 있던 책이 사라짐.
+원문: The book in the teacher's hands disappeared as she clasped them together.
+R2.S1 · specific · 교사가 손을 모으는 순간 들고 있던 책이 사라짐
+
+검출 후보 C
+C1 (1.000–1.700초): 교사가 박수를 치는 동안 들고 있던 흰색 물체/종이가 공중으로 사라짐.
+원문: White object/papers held by the teacher vanish into thin air while clapping.
+C2 (3.700–5.000초): 교사가 노트북을 만질 때 덮개와 바닥 부분이 왜곡되고 방향이 부자연스럽게 변경됨.
+원문: Laptop lid and base distort and change orientation unnaturally as the teacher touches it.
+C3 (0.800–1.700초): 교사가 강단에서 종이/책 묶음을 집어 들고 박수를 치려 할 때 손 사이에서 해당 물체가 공중으로 사라짐.
+원문: The teacher picks up a small stack of papers or books from the podium, but as she lifts it to clap, the object vanishes into thin air between her hands.
+C4 (4.200–5.000초): 교사가 다가갈 때 노트북 화면이 물리적 상호작용 없이 뒤로 기울어지고 크기가 약간 변함.
+원문: The laptop screen tilts backward and changes dimensions slightly without natural physical interaction as the teacher approaches.
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조 설명은 카메라의 후진 모션 결함을 다루고 있는 반면, 후보 설명은 교사가 들고 있는 흰색 물체/종이가 허공으로 사라지는 현상을 다루어 대상 엔티티와 결함 현상이 명확히 구별됩니다.
+근거 검증: explicit_separation / 참조 설명은 카메라의 후진 모션 결함을 다루고 있는 반면, 후보 설명은 교사가 들고 있는 흰색 물체/종이가 허공으로 사라지는 현상을 다루어 대상 엔티티와 결함 현상이 명확히 구별됩니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조 설명은 카메라 모션의 부재를 지적하지만, 후보 설명은 노트북 덮개와 본체의 왜곡 및 부자연스러운 방향 변경을 다루어 대상 객체와 결함 내용이 완전히 분리됩니다.
+근거 검증: explicit_separation / 참조 설명은 카메라 모션의 부재를 지적하지만, 후보 설명은 노트북 덮개와 본체의 왜곡 및 부자연스러운 방향 변경을 다루어 대상 객체와 결함 내용이 완전히 분리됩니다.
+R1 ↔ C3 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조 설명은 카메라의 움직임 결함을 기술하는 반면, 후보 설명은 교사가 집어든 종이나 책 묶음이 사라지는 현상을 다루어 전혀 다른 대상을 지정하고 있습니다.
+근거 검증: explicit_separation / 참조 설명은 카메라의 움직임 결함을 기술하는 반면, 후보 설명은 교사가 집어든 종이나 책 묶음이 사라지는 현상을 다루어 전혀 다른 대상을 지정하고 있습니다.
+R1 ↔ C4 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조 설명은 카메라의 후진 모션 부재에 관한 것이고, 후보 설명은 노트북 화면이 뒤로 기울어지며 치수가 변경되는 결함에 관한 것이므로 대상과 현상이 명확히 구분됩니다.
+근거 검증: explicit_separation / 참조 설명은 카메라의 후진 모션 부재에 관한 것이고, 후보 설명은 노트북 화면이 뒤로 기울어지며 치수가 변경되는 결함에 관한 것이므로 대상과 현상이 명확히 구분됩니다.
+R2 ↔ C1 / 의미 대응 / 시간도 일치
+최초: equivalent / compatible → 최종: equivalent / compatible
+R2의 책과 C1의 흰 물체/종이는 동일하게 교사가 손에 쥐고 있던 사물을 지칭하며, 손을 모으는/박수를 치는 동작 중에 흔적 없이 사라진다는 이상 현상의 핵심이 일치합니다.
+R2 ↔ C2 / 미대응 / 시간 차이 있음
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조는 교사의 손에 들려 있던 '책(book)'이 사라지는 소실 현상을 명시하고 있는 반면, 후보는 교사가 만지는 '노트북(Laptop lid and base)'이 왜곡되고 방향이 바뀌는 변형 결함을 기술하여 대상 객체와 이상 현상 자체가 명확히 구분됩니다.
+근거 검증: explicit_separation / 참조는 교사의 손에 들려 있던 '책(book)'이 사라지는 소실 현상을 명시하고 있는 반면, 후보는 교사가 만지는 '노트북(Laptop lid and base)'이 왜곡되고 방향이 바뀌는 변형 결함을 기술하여 대상 객체와 이상 현상 자체가 명확히 구분됩니다.
+R2 ↔ C3 / 의미 대응 / 시간도 일치
+최초: equivalent / compatible → 최종: equivalent / compatible
+교사가 손에 들고 있는 책(C3의 종이/책 묶음)이 손을 맞잡거나 박수를 치는 과정에서 갑자기 소실된다는 구체적인 이상 현상과 발생 맥락이 동일합니다.
+R2 ↔ C4 / 미대응 / 시간 차이 있음
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조는 교사의 손에 든 '책(book)'이 손을 모을 때 사라지는 이상 현상인 반면, 후보는 교사가 다가갈 때 '노트북 화면(laptop screen)'이 뒤로 기울어지고 크기가 변하는 결함으로 서로 다른 대상 및 결함에 해당하여 명확히 분리됩니다.
+근거 검증: explicit_separation / 참조는 교사의 손에 든 '책(book)'이 손을 모을 때 사라지는 이상 현상인 반면, 후보는 교사가 다가갈 때 '노트북 화면(laptop screen)'이 뒤로 기울어지고 크기가 변하는 결함으로 서로 다른 대상 및 결함에 해당하여 명확히 분리됩니다.

@@ -1,0 +1,115 @@
+sid_122_ltx2
+기존 시각 검사 판정: hit → 프롬프트 추가 v5 판정: hit
+시각 검사 완료: True / 프롬프트 검사: completed / 평가: completed
+새 프롬프트 C: 1개 · 라벨 의미 대응: True
+시간: 시간 차이 있음 / 시간도 일치
+
+생성 프롬프트
+The two boys run until they get to the last table.  One boy jumps off the table but twists his ankle as he lands, falling to the ground.  The other boy lands on his feet and stares down at the other boy.
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 두 소년이 테이블까지 달림
+프롬프트 근거: The two boys run until they get to the last table.
+관측: 두 소년이 테이블을 향해 달려옴
+판단 근거: 요구된 달리기 동작이 확인됨
+P2 · 불일치 · 기대: 한 소년이 테이블에서 뛰어내리다 발목을 접질려 바닥에 쓰러짐
+프롬프트 근거: One boy jumps off the table but twists his ankle as he lands, falling to the ground.
+관측: 한 소년이 테이블 위로 올라갔다가 테이블 위로 미끄러져 누우며, 땅(ground)으로 떨어지지 않음
+판단 근거: 테이블 위로 넘어져 누워 있을 뿐 바닥으로 떨어져 발목을 접질리는 모습과 다름
+P3 · 충족 · 기대: 다른 소년이 발로 착지한 후 넘어진 소년을 내려다봄
+프롬프트 근거: The other boy lands on his feet and stares down at the other boy.
+관측: 다른 소년이 착지 후 서서 누워 있는 소년을 내려다봄
+판단 근거: 요구된 동작 및 시선이 일치함
+
+원본 라벨 R
+R1 (medium, [1.000, 3.000]초): 빨간 셔츠를 입은 남자의 몸이 완전히 뒤틀리며 돌아간다.
+원문: The man in red shirt body completely contorts and turns around
+R2 (medium, [1.900, 3.000]초): 검은 옷을 입은 소년이 탁자에 전혀 접촉하지 않고 그 위로 떠다님
+원문: The boy in black never makes contact with the table he just floats over it
+R3 (easy, [1.000, 4.000]초): 탁자에서 뛰어내려도 발목이 꺾이지 않으며 바닥에 전혀 닿지 않음
+원문: the ankle is not twisted by jumping off the table so he is not on the ground at all
+R4 (medium, [3.200, 5.000]초): 소년이 바닥으로 넘어지지 않고 테이블 위로 넘어짐
+원문: boy did not fall to the ground, he fell on the table
+R5 (easy, [2.500, 3.000]초): 왼쪽 소년의 몸이 변형되고 부자연스럽게 뒤틀림
+원문: left boy's body morphed and twisted unnaturally
+
+검출 후보 C
+C1 (0.400–0.560초): [기존 측정 제안·미확정] 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+원문: 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+C2 (1.920–4.200초): [기존 측정 제안·미확정] 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+원문: 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+C3 (2.750–3.750초): [기존 시각 후보] 빨간 옷 소년의 발과 다리가 벤치를 차며 왜곡되고 부분적으로 흐려지거나 분해됨
+원문: The feet and legs of the boy in red distort and partially blur/disintegrate while kicking across the bench before settling into position.
+C4 (2.500–8.000초): [프롬프트 불일치] 소년이 테이블 위에서 뛰어내려 바닥으로 넘어지는 대신 테이블 상판 위에 누워 있음
+원문: 소년이 테이블 위에서 뛰어내려 바닥으로 넘어지는 대신 테이블 상판 위에 누워 있음
+P2 기대: 한 소년이 테이블에서 뛰어내리다 발목을 접질려 바닥에 쓰러짐
+관측: 한 소년이 테이블 위로 올라갔다가 테이블 위로 미끄러져 누우며, 땅(ground)으로 떨어지지 않음
+프롬프트 근거: One boy jumps off the table but twists his ankle as he lands, falling to the ground.
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+후보 C1은 단순 통계적 화면 변화 탐지 제안으로 특정 이상 현상이나 대상을 구체적으로 기술하지 않습니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+후보 C2는 단순 통계적 화면 변화 제안으로 특정 인물의 신체 뒤틀림 현상과 일치하지 않습니다.
+R1 ↔ C3 / 의미 대응 / 시간 차이 있음
+최초: same_event_different_aspect / compatible → 최종: same_event_different_aspect / compatible
+동일한 대상(빨간 옷 인물)의 신체 왜곡/뒤틀림 현상을 전신 vs 다리 및 세부 동작 관점에서 각각 서술하고 있습니다.
+R1 ↔ C4 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+R1은 빨간 옷 인물의 신체 뒤틀림을 다루고, C4는 소년이 테이블 위로 떨어져 누워 있는 착지 위치를 다루어 서로 다른 현상입니다.
+근거 검증: explicit_separation / 레퍼런스는 빨간 셔츠를 입은 남자의 신체가 완전히 뒤틀리고 돌아가는 결함을 기술하는 반면, 후보는 테이블 위에서 뛰어내린 소년이 바닥이 아닌 테이블 상판 위에 누워 있는 상황/위치 결함을 기술하여 대상과 결함 양상이 서로 다른 구체적인 이상 현상으로 명확히 구분됩니다.
+R2 ↔ C1 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+C1은 단순 화면 밝기/구조 변화 제안으로 특정 대상의 공중 부양 현상을 기술하지 않습니다.
+R2 ↔ C2 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+C2는 단순 픽셀 구조 변화 제안으로 검은 옷 소년의 탁자 위 부양 현상과 무관합니다.
+R2 ↔ C3 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조 설명은 '검은 옷을 입은 소년(The boy in black)'이 테이블 위로 떠다니는 현상을 명시하고 있는 반면, 후보 설명은 '빨간 옷을 입은 소년(The boy in red)'의 다리가 왜곡/붕괴되는 현상을 다루고 있어 대상 주체와 발생하는 이상 현상이 명백히 구분됩니다.
+근거 검증: explicit_separation / 참조 설명은 '검은 옷을 입은 소년(The boy in black)'이 테이블 위로 떠다니는 현상을 명시하고 있는 반면, 후보 설명은 '빨간 옷을 입은 소년(The boy in red)'의 다리가 왜곡/붕괴되는 현상을 다루고 있어 대상 주체와 발생하는 이상 현상이 명백히 구분됩니다.
+R2 ↔ C4 / 미대응 / 시간 차이 있음
+최초: related_only / minor_discrepancy → 최종: related_only / minor_discrepancy
+테이블 및 소년과 관련된 상호작용을 다루나, 테이블에 닿지 않고 떠다닌다는 설명과 상판 위에 누워 있다는 기술 사이에 접촉 여부의 불일치가 있습니다.
+근거 검증: explicit_contradiction / 참조 설명은 소년이 테이블에 전혀 접촉하지 않고 그 위로 떠다닌다('never makes contact with the table he just floats over it')고 명시하는 반면, 후보 설명은 소년이 '테이블 상판 위에 누워 있음'이라고 기술하여 물리적 접촉 상태에 대해 양립할 수 없는 상호 모순을 보입니다.
+R3 ↔ C1 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+C1은 일반적인 화면 변화 제안일 뿐 R3의 신체 및 위치 이상 현상과 무관합니다.
+R3 ↔ C2 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+C2는 단순 픽셀 변화 제안으로 특정 이상 현상을 담고 있지 않습니다.
+R3 ↔ C3 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+R3는 테이블에서 뛰어내린 후 착지/바닥 접촉 여부에 관한 내용이며 C3는 벤치 위에서 발/다리가 왜곡되는 현상입니다.
+근거 검증: explicit_separation / 레퍼런스는 탁자에서 뛰어내릴 때 발목이 꺾이지 않고 바닥에 닿지 않는 이상 현상을 기술하고 있는 반면, 후보는 빨간 옷을 입은 소년이 벤치를 차며 움직이는 동안 발과 다리가 왜곡되고 흐릿해지며 분해되는 별개의 구체적 이상 현상을 기술하므로 두 결함 간의 명확한 구분이 성립합니다.
+R3 ↔ C4 / 의미 대응 / 시간도 일치
+최초: same_event_different_aspect / compatible → 최종: same_event_different_aspect / compatible
+소년이 바닥에 닿지 않는다는 점(he is not on the ground at all)과 바닥으로 넘어지는 대신 테이블 위에 누워 있다는 C4의 기술이 동일한 착지 결과를 서로 다른 관점에서 기술하고 있습니다.
+R4 ↔ C1 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+C1은 일반 화면 변화 제안으로 소년의 낙하 위치 이상 현상을 다루지 않습니다.
+R4 ↔ C2 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+C2는 단순 측정 제안입니다.
+R4 ↔ C3 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+R4는 소년이 바닥 대신 테이블로 떨어지는 위치 이상이고, C3는 발과 다리의 왜곡/분해 현상입니다.
+근거 검증: explicit_separation / 참조 설명은 소년이 바닥이 아닌 테이블로 넘어지는 물리적 착지 위치/궤적 이상을 다루는 반면, 후보 설명은 벤치를 차는 동안 빨간 옷을 입은 소년의 발과 다리가 왜곡되고 흐려지거나 분해되는 형태적 결함을 다루고 있어 서로 명확히 구분되는 별개의 결함 및 동작을 설명합니다.
+R4 ↔ C4 / 의미 대응 / 시간도 일치
+최초: equivalent / compatible → 최종: equivalent / compatible
+소년이 바닥으로 넘어지지 않고 테이블 상판에 떨어진/누워 있다는 현상이 실질적으로 동일하게 기술되어 있습니다.
+R5 ↔ C1 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+C1은 단순 화면 변화 측정 제안입니다.
+R5 ↔ C2 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+C2는 형태·존재 변화 가능성에 대한 단순 측정 제안입니다.
+R5 ↔ C3 / 의미 대응 / 시간도 일치
+최초: same_event_different_aspect / compatible → 최종: same_event_different_aspect / compatible
+왼쪽 소년의 신체가 변형되고 뒤틀린다는 R5와 빨간 옷 소년의 다리가 왜곡/분해된다는 C3가 동일 인물의 신체 구조 왜곡을 포괄적/세부적 측면에서 기술하고 있습니다.
+R5 ↔ C4 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+R5는 소년 신체의 변형 및 뒤틀림이고 C4는 소년의 착지/누운 위치에 관한 설명입니다.
+근거 검증: explicit_separation / 레퍼런스는 왼쪽 소년의 신체가 부자연스럽게 변형되고 뒤틀리는 신체 왜곡 결함을 기술하고 있는 반면, 후보는 소년이 바닥에 넘어지는 대신 테이블 위에 누워 있는 상황/위치 오류를 기술하고 있어 서로 명확히 구분되는 별개의 결함 및 상태를 다루고 있습니다.

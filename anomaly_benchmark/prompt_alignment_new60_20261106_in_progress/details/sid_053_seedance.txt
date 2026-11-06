@@ -1,0 +1,82 @@
+sid_053_seedance
+기존 시각 검사 판정: pending → 프롬프트 추가 v5 판정: pending
+시각 검사 완료: True / 프롬프트 검사: completed / 평가: completed
+새 프롬프트 C: 1개 · 라벨 의미 대응: False
+시간: 보조 정보 없음
+
+생성 프롬프트
+A video showing a rugby ball flying in from the left foreground and hitting the ground on a sunny rugby field covered with green grass. The ball makes an irregular bounce towards the left background, highlighting the unpredictable nature of its movement. The scene is set on a bright, clear day, emphasizing the vibrancy of the green field and the dynamic motion of the rugby ball.  
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 럭비공이 왼쪽 전경에서 날아 들어옴
+프롬프트 근거: rugby ball flying in from the left foreground
+관측: 공이 왼쪽 전경에서 화면 안으로 튀어 들어옴
+판단 근거: 요구사항과 일치함
+P2 · 충족 · 기대: 푸른 잔디가 깔린 화창한 럭비 경기장 바닥에 닿음
+프롬프트 근거: hitting the ground on a sunny rugby field covered with green grass
+관측: 햇살이 비치는 푸른 잔디밭 위에 공이 닿아 튕김
+판단 근거: 요구사항과 일치함
+P3 · 불일치 · 기대: 공이 왼쪽 후경 방향으로 불규칙하게 튐
+프롬프트 근거: irregular bounce towards the left background
+관측: 공이 바닥에 닿은 뒤 오른쪽으로 튀어 나갔다가 멈추며, 왼쪽 후경으로 튀지 않음
+판단 근거: 공이 왼쪽 후경이 아닌 오른쪽 중간 영역으로 튕겨 나감
+P4 · 충족 · 기대: 밝고 맑은 날씨
+프롬프트 근거: bright, clear day
+관측: 맑은 푸른 하늘과 햇빛이 비치는 날씨 구현됨
+판단 근거: 요구사항과 일치함
+
+원본 라벨 R
+R1 (easy, [1.700, 4.200]초): 공이 자연스럽게 움직이지 않음
+원문: The ball doesn't move naturally
+R2 (hard, [4.200, 4.600]초): 공이 배경 쪽이 아닌 전경 쪽으로 튕김
+원문: Ball bounces to foreground, not background
+R3 (easy, [3.100, 5.000]초): 럭비공이 물리 법칙을 거스르며 던진 사람 쪽으로 부메랑처럼 되돌아옵니다.
+원문: The rugby ball boomerangs back towards the person throwing it defying the laws of physics.
+
+검출 후보 C
+C1 (0.500–4.500초): [기존 시각 후보] 공이 움직이고 구르는 동안 축구공 무늬와 미식축구공 레이스 사이에서 형태와 표면 패턴이 비일관되게 변형됨.
+원문: The ball shifts shape and surface patterns inconsistently between soccer ball markings and football laces while moving and rolling.
+C2 (0.500–4.500초): [기존 시각 후보] 잔디 위를 구르는 공이 럭비/미식축구공 형태와 둥근 축구공 형태 사이를 오가며 기하학적 형태와 표면 무늬를 지속적으로 모핑함.
+원문: The rolling ball continuously morphs its geometry and surface markings, changing between a rugby/American football shape and a round soccer ball shape while rolling along the grass.
+C3 (0.500–2.500초): [프롬프트 불일치] 공이 왼쪽 후경 쪽으로 불규칙하게 튀지 않고 오른쪽으로 이동함.
+원문: 공이 왼쪽 후경 쪽으로 불규칙하게 튀지 않고 오른쪽으로 이동함
+P3 기대: 공이 왼쪽 후경 방향으로 불규칙하게 튐
+관측: 공이 바닥에 닿은 뒤 오른쪽으로 튀어 나갔다가 멈추며, 왼쪽 후경으로 튀지 않음
+프롬프트 근거: irregular bounce towards the left background
+
+자동 의미 대응
+R1 ↔ C1 / 판단 보류 / 시간도 일치
+최초: different / insufficient → 최종: uncertain / insufficient
+불일치 확정 보류: 참조 설명은 '공의 움직임이 자연스럽지 않다'는 매우 포괄적인(broad) 결함만을 서술하고 있습니다. 후보는 공이 구르고 움직이는 동안 발생하는 구체적인 형태 및 표면 변형 현상을 설명하고 있으며, 참조의 포괄적 서술이 이 구체적인 현상을 포괄하는 것인지 아니면 별개의 물리적 궤적 결함을 의미하는지 텍스트만으로는 판별할 수 없어 보류(insufficient) 처리합니다.
+근거 검증: insufficient / 참조 설명은 '공의 움직임이 자연스럽지 않다'는 매우 포괄적인(broad) 결함만을 서술하고 있습니다. 후보는 공이 구르고 움직이는 동안 발생하는 구체적인 형태 및 표면 변형 현상을 설명하고 있으며, 참조의 포괄적 서술이 이 구체적인 현상을 포괄하는 것인지 아니면 별개의 물리적 궤적 결함을 의미하는지 텍스트만으로는 판별할 수 없어 보류(insufficient) 처리합니다.
+R1 ↔ C2 / 판단 보류 / 시간도 일치
+최초: different / insufficient → 최종: uncertain / insufficient
+불일치 확정 보류: 동일한 대상인 공에 대해 참조는 움직임이 부자연스럽다는 포괄적인 결함만 언급한 반면, 후보는 구르는 동안의 형상 변형(모핑)이라는 구체적인 결함을 제시하고 있습니다. 포괄적 참조와 구체적 후보 간의 범주 차이만으로는 배제할 수 없으며 명시적 모순이 없으므로 일치 여부를 판단하기에 정보가 부족합니다.
+근거 검증: insufficient / 동일한 대상인 공에 대해 참조는 움직임이 부자연스럽다는 포괄적인 결함만 언급한 반면, 후보는 구르는 동안의 형상 변형(모핑)이라는 구체적인 결함을 제시하고 있습니다. 포괄적 참조와 구체적 후보 간의 범주 차이만으로는 배제할 수 없으며 명시적 모순이 없으므로 일치 여부를 판단하기에 정보가 부족합니다.
+R1 ↔ C3 / 판단 보류 / 시간도 일치
+최초: underspecified / insufficient → 최종: underspecified / insufficient
+참조의 '공이 자연스럽게 움직이지 않음'은 매우 광범위한 표현이며, 후보가 제시한 특정 이동/바운스 방향에 관한 기술이 참조가 지적한 동일한 부자연스러운 움직임을 뜻하는지 텍스트만으로는 확정할 수 없습니다.
+R2 ↔ C1 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+참조는 공이 전경 쪽으로 튕기는 궤적 오류를 명시하고 있으나, 후보는 형태 및 표면 무늬의 변형을 설명하고 있어 보고된 현상이 다릅니다.
+근거 검증: explicit_separation / 참조는 공이 배경이 아닌 전경 쪽으로 튕기는 궤적 이상을 다루는 반면, 후보는 공의 형태와 표면 무늬가 축구공과 풋볼 사이에서 비일관되게 변형되는 외형적 결함을 구체적으로 기술하여 서로 다른 두 결함으로 구분됩니다.
+R2 ↔ C2 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+참조는 공이 전경으로 튕기는 현상을 지적하는 반면, 후보는 공의 기하 및 표면 모핑 현상을 다루고 있어 서로 다른 결함입니다.
+근거 검증: explicit_separation / 참조는 공의 바운스 궤적(전경으로 튕김)에 대한 결함인 반면, 후보는 공의 기하학적 형상과 표면 무늬가 럭비공과 축구공 사이에서 지속적으로 변형되는 현상을 다루어 서로 다른 구체적 결함으로 분리됩니다.
+R2 ↔ C3 / 미대응 / 시간 차이 있음
+최초: different / core_conflict → 최종: different / core_conflict
+참조와 후보 모두 공의 궤적/바운스 방향에 대해 구체적으로 기술하고 있으나, 참조는 전경으로의 바운스를 지적하는 반면 후보는 오른쪽으로의 이동을 기술하여 서로 상충하는 설명을 제공합니다.
+근거 검증: explicit_contradiction / 참조는 공이 전경 쪽으로 튕긴다(bounces to foreground)고 단언하는 반면, 후보는 공이 튀지 않고(불규칙하게 튀지 않고) 오른쪽으로 이동한다고 단언하여 튕김 여부 및 이동 방향에 대한 두 진술이 서로 양립할 수 없습니다.
+R3 ↔ C1 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+참조는 던진 공이 부메랑처럼 던진 사람에게 되돌아오는 비정상적 궤적을 설명하지만, 후보는 공의 형태 및 텍스처 변형을 설명하므로 서로 다릅니다.
+근거 검증: explicit_separation / 참조는 공이 던진 사람에게 부메랑처럼 되돌아오는 비정상적인 궤적 이상을 다루는 반면, 후보 C1은 공이 이동/구르는 동안 축구공과 미식축구공 사이에서 형태와 표면 무늬가 불일치하게 변형되는 형태적 이상을 다루므로 서로 공존 가능한 별개의 구체적 결함입니다.
+R3 ↔ C2 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+참조는 공이 던진 사람 쪽으로 되돌아오는 물리 위반 궤적을 다루며, 후보는 잔디 위를 구르며 형태가 모핑되는 현상을 다루므로 다른 결함입니다.
+근거 검증: explicit_separation / 참조는 공이 던진 사람을 향해 부메랑처럼 되돌아오는 물리 법칙 위반 궤적 이상을 명시하고 있으나, 후보 C2는 잔디밭을 구르며 기하학적 형태와 표면 표시가 지속적으로 모핑되는 기하학적 변형 이상을 명시하므로 서로 구분되는 별개의 결함입니다.
+R3 ↔ C3 / 미대응 / 시간 차이 있음
+최초: different / core_conflict → 최종: different / core_conflict
+참조의 핵심 결함인 던진 사람 쪽으로 부메랑처럼 되돌아오는 궤적과 후보의 오른쪽 이동 설명은 양립하지 않는 상충된 궤적 설명입니다.
+근거 검증: explicit_contradiction / 참조는 럭비공이 던진 사람을 향해 부메랑처럼 되돌아오는 궤적 이상을 명시하는 반면, 후보 C3은 공이 오른쪽으로 이동하는 정상적/다른 궤적을 설명하여 동일한 공의 이동 방향 및 비정상 궤적에 대해 양립할 수 없는 상충된 주장을 합니다.

@@ -1,0 +1,46 @@
+sid_122_seedance
+복구 전 판정: hit → v5 판정: hit
+검출 완료: True / 평가 상태: completed
+처리: 기존 v5 평가 재사용
+시간: 시간 차이 있음
+
+원본 라벨 R
+R1 (hard, [1.300, 3.100]초): 소년이 프롬프트 내용과 달리 테이블이 아닌 바닥에서 점프하며, 발목을 삐지 않고 그냥 넘어집니다.
+원문: The boy jumps off of the floor and not "off of the able" like the prompt says. The boy also doesn't twist his ankle, he just falls.
+R1.S1 · specific · 소년이 프롬프트 내용처럼 테이블에서 뛰는 것이 아니라 바닥에서 점프함
+R1.S2 · specific · 소년이 발목을 접지르지 않고 그냥 넘어짐
+R2 (easy, [3.700, 5.000]초): 소년이 창문에 가장 가까운 테이블을 뚫고 지나감
+원문: The boy walks through the table closest to the window
+R2.S1 · specific · 소년이 테이블을 관통하여 걸어감
+R3 (easy, [2.300, 4.700]초): 첫 번째 소년이 벤치 사이를 뛸 때의 물리적 움직임이 올바르지 않아 보이고 바닥에 납작하게 착지할 때 몸이 왜곡된다.
+원문: The physics when the first boy jumps between the benches doesn't look correct and his body gets distorted when he lands flat on the ground.
+R3.S1 · broad · 첫 번째 소년이 벤치 사이를 뛸 때의 물리 법칙/움직임이 올바르지 않아 보임
+R3.S2 · specific · 바닥에 납작하게 착지할 때 몸이 왜곡됨
+
+검출 후보 C
+C1 (1.750–2.500초): 소년이 점프하여 단단한 식당 벤치와 테이블 표면을 그대로 통과해 바닥으로 떨어진다.
+원문: Boy jumps and passes directly through the solid cafeteria bench and table surface onto the floor.
+C2 (1.300–2.500초): 달리는 소년이 식당 테이블 위로 점프하여 테이블을 뚫고 지나가며, 어색하게 변형되고 충돌 없이 그 아래로 미끄러진다.
+원문: The running boy jumps onto and through the cafeteria table, morphing awkwardly and sliding smoothly under it without collision or normal interaction.
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조는 소년이 테이블이 아닌 바닥에서 점프하여 넘어지는 프롬프트 불일치 결함을 다루는 반면, 후보는 소년이 단단한 카페테리아 벤치와 테이블 표면을 물리적으로 관통하여 바닥으로 통과하는 명백히 구별되는 물리적 결함을 구체적으로 명시하고 있으므로 분리됩니다.
+근거 검증: explicit_separation / 참조는 소년이 테이블이 아닌 바닥에서 점프하여 넘어지는 프롬프트 불일치 결함을 다루는 반면, 후보는 소년이 단단한 카페테리아 벤치와 테이블 표면을 물리적으로 관통하여 바닥으로 통과하는 명백히 구별되는 물리적 결함을 구체적으로 명시하고 있으므로 분리됩니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조는 바닥에서 점프하여 프롬프트와 불일치한다는 점을 지적하지만, 후보는 소년이 카페테리아 테이블을 뚫고 지나가며 모핑되고 테이블 아래로 부드럽게 미끄러진다는 구체적인 관통/형태 왜곡 결함을 다루고 있어 서로 다른 구체적 결함으로 명시적 분리가 성립합니다.
+근거 검증: explicit_separation / 참조는 바닥에서 점프하여 프롬프트와 불일치한다는 점을 지적하지만, 후보는 소년이 카페테리아 테이블을 뚫고 지나가며 모핑되고 테이블 아래로 부드럽게 미끄러진다는 구체적인 관통/형태 왜곡 결함을 다루고 있어 서로 다른 구체적 결함으로 명시적 분리가 성립합니다.
+R2 ↔ C1 / 의미 대응 / 시간 차이 있음
+최초: same_event_different_aspect / minor_discrepancy → 최종: same_event_different_aspect / minor_discrepancy
+소년이 식당 테이블을 관통해 지나간다는 핵심 충돌 무시 이상 현상은 동일하나, 이동 동작 방식(걷기 vs 점프)에 일부 차이가 있습니다.
+R2 ↔ C2 / 의미 대응 / 시간 차이 있음
+최초: same_event_different_aspect / minor_discrepancy → 최종: same_event_different_aspect / minor_discrepancy
+소년이 테이블을 뚫고 지나가는 동일한 객체 관통 충돌 오류를 서술하고 있으며, 이동 방식 및 세부 모핑 묘사에 차이가 있습니다.
+R3 ↔ C1 / 판단 보류 / 시간 차이 있음
+최초: underspecified / insufficient → 최종: underspecified / insufficient
+참조의 R3.S1(벤치 사이를 뛸 때 물리 법칙이 올바르지 않음)이 매우 포괄적이어서, 후보가 말한 벤치/테이블 표면 관통 현상을 의미하는 것인지 아니면 다른 점프 궤적/착지 물리 문제를 뜻하는지 텍스트만으로 단정할 수 없습니다.
+R3 ↔ C2 / 의미 대응 / 시간 차이 있음
+최초: same_event_different_aspect / compatible → 최종: same_event_different_aspect / compatible
+소년이 점프 및 착지하며 신체가 비정상적으로 왜곡(gets distorted / morphing awkwardly)된다는 구조적 변형 결함을 공통적으로 설명하고 있습니다.

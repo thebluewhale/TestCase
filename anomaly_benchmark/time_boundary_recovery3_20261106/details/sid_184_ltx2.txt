@@ -1,0 +1,76 @@
+sid_184_ltx2
+복구 전 판정: hit → v5 판정: hit
+검출 완료: True / 평가 상태: completed
+처리: 기존 v5 평가 재사용
+시간: 시간도 일치
+
+원본 라벨 R
+R1 (medium, [0.000, 0.800]초): 비디오가 프롬프트를 따르지 않으며, 반죽이 야채와 함께 놓이지 않음
+원문: The video does not follow the prompt, the dough is not placed in with the vegetables
+R1.S1 · specific · 반죽이 야채와 함께 놓이지 않아 프롬프트를 따르지 않음
+R2 (easy, [3.200, 5.100]초): 반죽이 채소가 담긴 그릇에 실제로 들어가지 않음.
+원문: The dough never actually gets put in the bowel with the vegetables. 
+R2.S1 · specific · 반죽이 채소가 있는 그릇에 실제로 들어가지 않음
+R3 (easy, [5.500, 7.800]초): 반죽이 속재료 위로 접히지 않았음.
+원문: The dough was never folded over the filling.
+R3.S1 · specific · 반죽이 속재료 위로 전혀 접히지 않음
+R4 (hard, [0.900, 2.800]초): 영상 시작부터 반죽의 양이 점점 줄어드는 것처럼 보임.
+원문: The amount of dough seems to become smaller from the start of the video.
+R4.S1 · specific · 반죽의 양이 영상 시작부터 점점 작아짐
+
+검출 후보 C
+C1 (1.620–7.880초): 반죽이 부피 보존 없이 손 사이에서 갑자기 줄어들고 변형되는 현상
+원문: The dough transforms inconsistently, shrinking and reshaping abruptly between hands without coherent volume conservation.
+C2 (0.500–2.500초): 반죽이 평평한 판과 둥근 덩어리 사이에서 불규칙하게 변형되는 현상
+원문: The dough morphs and shifts shape erratically between a flat sheet and rounded lumps while handled.
+C3 (3.000–7.800초): 반죽을 조작하는 동안 손가락과 손 구조가 녹아내리고 융합되는 현상
+원문: Fingers and hand structure continuously melt, fuse, and change configuration while manipulating the dough.
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간 차이 있음
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 레퍼런스는 반죽이 야채와 함께 배치되지 않았다는 프롬프트 불이행 결함을 명시하고 있는 반면, 후보는 반죽이 손 사이에서 급격히 축소 및 변형되어 부피가 보존되지 않는 형태적 변형 결함을 지적하고 있어 서로 구별되는 결함을 다룹니다.
+근거 검증: explicit_separation / 레퍼런스는 반죽이 야채와 함께 배치되지 않았다는 프롬프트 불이행 결함을 명시하고 있는 반면, 후보는 반죽이 손 사이에서 급격히 축소 및 변형되어 부피가 보존되지 않는 형태적 변형 결함을 지적하고 있어 서로 구별되는 결함을 다룹니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 레퍼런스는 반죽이 야채와 함께 놓이지 않았다는 배치상의 문제점을 다루는 반면, 후보는 반죽이 평평한 판과 둥근 덩어리 사이에서 불규칙하게 형태를 바꾸는 모핑 현상을 지적하여 서로 구별되는 독립된 결함입니다.
+근거 검증: explicit_separation / 레퍼런스는 반죽이 야채와 함께 놓이지 않았다는 배치상의 문제점을 다루는 반면, 후보는 반죽이 평평한 판과 둥근 덩어리 사이에서 불규칙하게 형태를 바꾸는 모핑 현상을 지적하여 서로 구별되는 독립된 결함입니다.
+R1 ↔ C3 / 미대응 / 시간 차이 있음
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 레퍼런스는 반죽이 야채와 함께 배치되지 않은 프롬프트 불이행을 지적하는 반면, 후보는 손과 손가락 구조가 녹아내리고 융합되는 신체 기형 결함을 다루고 있어 대상과 이상 현상이 명확히 구분됩니다.
+근거 검증: explicit_separation / 레퍼런스는 반죽이 야채와 함께 배치되지 않은 프롬프트 불이행을 지적하는 반면, 후보는 손과 손가락 구조가 녹아내리고 융합되는 신체 기형 결함을 다루고 있어 대상과 이상 현상이 명확히 구분됩니다.
+R2 ↔ C1 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 레퍼런스는 반죽이 채소가 있는 그릇에 들어가지 않는 행위/상호작용의 미발생을 구체적으로 지적하고 있으며, 후보 C1은 반죽 자체의 부피 보존 실패 및 급격한 변형/수축이라는 물리적 형태 왜곡 결함을 지적하고 있어 서로 구체적으로 구별되는 별개의 결함입니다.
+근거 검증: explicit_separation / 레퍼런스는 반죽이 채소가 있는 그릇에 들어가지 않는 행위/상호작용의 미발생을 구체적으로 지적하고 있으며, 후보 C1은 반죽 자체의 부피 보존 실패 및 급격한 변형/수축이라는 물리적 형태 왜곡 결함을 지적하고 있어 서로 구체적으로 구별되는 별개의 결함입니다.
+R2 ↔ C2 / 미대응 / 시간 차이 있음
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 레퍼런스는 반죽이 그릇에 최종적으로 투입되지 않는 경로/배치 상의 미완성 문제를 다루는 반면, 후보 C2는 손으로 다루어지는 동안 반죽의 형태가 판과 둥근 덩어리로 무작위 변형되는 형태 이상을 다루므로 명확히 분리되는 두 결함입니다.
+근거 검증: explicit_separation / 레퍼런스는 반죽이 그릇에 최종적으로 투입되지 않는 경로/배치 상의 미완성 문제를 다루는 반면, 후보 C2는 손으로 다루어지는 동안 반죽의 형태가 판과 둥근 덩어리로 무작위 변형되는 형태 이상을 다루므로 명확히 분리되는 두 결함입니다.
+R2 ↔ C3 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 레퍼런스의 주요 대상 및 결함은 반죽이 그릇에 들어가지 않는 동작 실패인 반면, C3의 결함 대상은 손가락과 손의 구조적 융합 및 용융 결함으로 주 대상과 결함 유형이 완전히 분리됩니다.
+근거 검증: explicit_separation / 레퍼런스의 주요 대상 및 결함은 반죽이 그릇에 들어가지 않는 동작 실패인 반면, C3의 결함 대상은 손가락과 손의 구조적 융합 및 용융 결함으로 주 대상과 결함 유형이 완전히 분리됩니다.
+R3 ↔ C1 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: R3은 반죽이 속재료 위로 접히는 특정 동작이 발생하지 않았음을 나타내는 반면, C1은 손 사이에서 반죽의 부피가 보존되지 않고 수축 및 급격하게 변형되는 물리적 형상 결함을 설명하므로 서로 구별되는 결함입니다.
+근거 검증: explicit_separation / R3은 반죽이 속재료 위로 접히는 특정 동작이 발생하지 않았음을 나타내는 반면, C1은 손 사이에서 반죽의 부피가 보존되지 않고 수축 및 급격하게 변형되는 물리적 형상 결함을 설명하므로 서로 구별되는 결함입니다.
+R3 ↔ C2 / 미대응 / 시간 차이 있음
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: R3은 반죽이 속재료 위로 접히지 않은 조리 동작 미수행을 구체적으로 지적하는 반면, C2는 반죽이 평평한 판과 둥근 덩어리 사이에서 불규칙하게 형태가 변한다는 시각적 모핑 결함을 지적하므로 두 결함은 명확히 구분됩니다.
+근거 검증: explicit_separation / R3은 반죽이 속재료 위로 접히지 않은 조리 동작 미수행을 구체적으로 지적하는 반면, C2는 반죽이 평평한 판과 둥근 덩어리 사이에서 불규칙하게 형태가 변한다는 시각적 모핑 결함을 지적하므로 두 결함은 명확히 구분됩니다.
+R3 ↔ C3 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: R3의 결함 대상은 반죽(속재료 위로 접히지 않음)인 반면, C3의 결함 대상은 조작 중인 손과 손가락 구조(녹아내리고 융합됨)로 서로 다른 대상의 독립적인 결함을 다루고 있습니다.
+근거 검증: explicit_separation / R3의 결함 대상은 반죽(속재료 위로 접히지 않음)인 반면, C3의 결함 대상은 조작 중인 손과 손가락 구조(녹아내리고 융합됨)로 서로 다른 대상의 독립적인 결함을 다루고 있습니다.
+R4 ↔ C1 / 의미 대응 / 시간도 일치
+최초: equivalent / compatible → 최종: equivalent / compatible
+R4는 반죽의 양이 점점 작아지는 현상을 지적하고 있으며, C1 역시 반죽이 부피 보존 없이 줄어든다고(shrinking without coherent volume conservation) 명시하고 있어 동일한 반죽 크기/부피 감소 결함을 다루고 있습니다.
+R4 ↔ C2 / 판단 보류 / 시간도 일치
+최초: related_only / minor_discrepancy → 최종: uncertain / insufficient
+불일치 확정 보류: 두 설명 모두 동일한 대상인 반죽(dough)의 변형 이상을 다루고 있습니다. 반죽의 형태가 불규칙하게 변형되는 현상과 양이 줄어드는 것처럼 보이는 현상이 동일한 시각적 결함에 대한 서로 다른 서술인지 아니면 별개의 현상인지 텍스트만으로는 단정할 수 없으므로 판단을 보류(insufficient)합니다.
+근거 검증: insufficient / 두 설명 모두 동일한 대상인 반죽(dough)의 변형 이상을 다루고 있습니다. 반죽의 형태가 불규칙하게 변형되는 현상과 양이 줄어드는 것처럼 보이는 현상이 동일한 시각적 결함에 대한 서로 다른 서술인지 아니면 별개의 현상인지 텍스트만으로는 단정할 수 없으므로 판단을 보류(insufficient)합니다.
+R4 ↔ C3 / 미대응 / 시간 차이 있음
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: R4는 반죽(dough)의 양이 줄어드는 결함을 지적하는 반면, C3는 손과 손가락(Fingers and hand structure)의 해부학적 구조 붕괴 및 융합 현상을 지적하여 서로 완전히 다른 대상에 발생한 별개의 결함을 명시적으로 다루고 있습니다.
+근거 검증: explicit_separation / R4는 반죽(dough)의 양이 줄어드는 결함을 지적하는 반면, C3는 손과 손가락(Fingers and hand structure)의 해부학적 구조 붕괴 및 융합 현상을 지적하여 서로 완전히 다른 대상에 발생한 별개의 결함을 명시적으로 다루고 있습니다.

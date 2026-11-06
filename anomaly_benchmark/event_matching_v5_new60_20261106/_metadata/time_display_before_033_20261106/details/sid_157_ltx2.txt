@@ -1,0 +1,62 @@
+sid_157_ltx2
+이전 판정: pending → v5 판정: pending
+검출 완료: True / 평가 상태: completed
+시간: 보조 정보 없음
+
+원본 라벨 R
+R1 (medium, [0, 0.8]초): 손이 나뭇잎 사이를 비현실적으로 지나가고, 식물 색상이 약간 변하며, 카메라 줌이 너무 빠르고 조명이 깜빡입니다.
+원문: The hand moves through the leaves unrealistically. The plant’s color shifts slightly, the camera zooms too quickly, and the lighting flickers instead of staying neutral.
+R1.S1 · broad · 손이 나뭇잎 사이를 비현실적으로 지나감 / 미명시: 손이 나뭇잎을 뚫고 지나가는지, 궤적이 이상한지 등 비현실적인 구체적 방식이 명시되지 않음
+R1.S2 · specific · 식물의 색상이 약간 바뀜
+R1.S3 · specific · 카메라 줌이 너무 빠르게 진행됨
+R1.S4 · specific · 조명이 일정하게 유지되지 않고 깜빡거림
+R2 (easy, [4.4, 7.1]초): 영상 마지막에 아무런 외력이 가해지지 않는데도 식물 전체가 흔들려 이치에 맞지 않는다.
+원문: Whole plant shakes at the end, doesn't make sense, nothing acting on it 
+R2.S1 · specific · 끝부분에서 아무런 작용이 없는데도 식물 전체가 흔들림
+R3 (medium, [4.1, 7.7]초): 끝부분에서 프롬프트에 없는 줌아웃이 발생하며, 이 부분 동안 손이 지시와 달리 이상하게 움직임.
+원문: Zooms out at end, not in prompt. And the hand just moves around weirdly during this part, not as instructed
+R3.S1 · specific · 끝부분에서 지시되지 않은 줌아웃이 발생함
+R3.S2 · broad · 해당 구간 동안 손이 이상하게 움직임 / 미명시: 손이 구체적으로 어떤 궤적이나 방식으로 이상하게 움직이는지 명시되지 않음
+
+검출 후보 C
+C1 (5.08–7.12초): 영상 특징과 픽셀 구조가 함께 변한 구간에 대한 측정 제안입니다.
+원문: 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+C2 (4.5–5.4초): 카메라가 줌/블러되는 동안 중심 잎맥이 갑자기 사라졌다가 다시 나타납니다.
+원문: The prominent central leaf vein abruptly disappears and reappears as the camera zooms/blurs.
+C3 (5.4–6.8초): 빠른 줌인 및 줌아웃 전환 동안 중앙 잎과 배경 식물 잎이 왜곡, 부자연스러운 블러 및 모핑을 보입니다.
+원문: The central leaf and background plant foliage exhibit warping, unnatural blurring, and morphing during the rapid zoom-in and zoom-out transitions.
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+C1은 일반적인 화면 변화 측정 제안에 불과하여 R1에 기술된 구체적 이상 현상들과 대응되지 않습니다.
+R1 ↔ C2 / 미대응 / 시간 차이 있음
+최초: related_only / minor_discrepancy → 최종: related_only / minor_discrepancy
+카메라 줌 상황을 공유하나 C2가 기술하는 잎맥 소실/재등장 결함은 R1의 이상 현상 주장과 서로 다른 결함을 다루고 있습니다.
+근거 검증: explicit_separation / R1.S3는 카메라의 줌 속도가 너무 빠르다는 카메라 움직임의 결함을 기술하는 반면, C2는 잎맥이 사라졌다가 다시 나타나는 식물 세부 구조의 깜빡임/소실 결함을 지목하고 있어 서로 구분되는 별개의 결함 현상입니다.
+R1 ↔ C3 / 미대응 / 시간 차이 있음
+최초: related_only / minor_discrepancy → 최종: related_only / minor_discrepancy
+빠른 줌 동작과 식물의 변화가 언급되지만, C3의 형태적 워핑/모핑은 R1의 색상 변화나 손의 비현실적 움직임과 동일한 결함으로 보기 어렵고 관련된 별개의 이상 현상입니다.
+근거 검증: explicit_separation / R1.S2는 식물의 색상 변화(color shifts)를 구체적으로 다루는 반면, C3는 잎과 배경 식물의 형태적 왜곡(warping, morphing) 및 부자연스러운 블러 현상을 기술하므로 두 텍스트는 명확히 구별되는 결함을 서술하고 있습니다.
+R2 ↔ C1 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+C1은 일반적인 측정 제안으로, R2의 외력 없이 식물이 흔들리는 현상과 대응되지 않습니다.
+R2 ↔ C2 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 레퍼런스는 영상 끝부분에서 아무런 외력 없이 식물 전체가 흔들리는 물리적 움직임 결함을 구체적으로 지적하는 반면, 후보는 카메라 줌/블러 시 중앙 잎맥 구조가 사라졌다 다시 나타나는 깜빡임 현상을 다루고 있어 서로 완전히 다른 구체적 결함을 설명합니다.
+근거 검증: explicit_separation / 레퍼런스는 영상 끝부분에서 아무런 외력 없이 식물 전체가 흔들리는 물리적 움직임 결함을 구체적으로 지적하는 반면, 후보는 카메라 줌/블러 시 중앙 잎맥 구조가 사라졌다 다시 나타나는 깜빡임 현상을 다루고 있어 서로 완전히 다른 구체적 결함을 설명합니다.
+R2 ↔ C3 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 레퍼런스는 영상 끝부분에서 외력 없이 발생하는 식물 전체의 흔들림을 지적하는 반면, 후보는 줌 인/아웃 전환 중 발생하는 잎 및 배경 식물의 워핑, 블러링, 모핑 결함을 지적하고 있어 서로 별개의 구체적 결함 현상으로 명확히 구분됩니다.
+근거 검증: explicit_separation / 레퍼런스는 영상 끝부분에서 외력 없이 발생하는 식물 전체의 흔들림을 지적하는 반면, 후보는 줌 인/아웃 전환 중 발생하는 잎 및 배경 식물의 워핑, 블러링, 모핑 결함을 지적하고 있어 서로 별개의 구체적 결함 현상으로 명확히 구분됩니다.
+R3 ↔ C1 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+C1은 일반적인 측정 제안에 불과하여 R3의 이상 현상과 대응되지 않습니다.
+R3 ↔ C2 / 미대응 / 시간도 일치
+최초: related_only / minor_discrepancy → 최종: related_only / minor_discrepancy
+줌 동작 상황이 일부 겹칠 수 있으나 결함의 주 대상(손/카메라 움직임 vs 잎맥 깜빡임)과 구체적 현상이 다릅니다.
+근거 검증: explicit_separation / 참조 설명은 끝부분의 줌아웃과 손의 이상한 움직임을 지적하는 반면, 후보 설명은 카메라 줌/블러 중 나뭇잎 중심 잎맥이 사라졌다가 다시 나타나는 결함을 기술하고 있어 결함의 대상(손 vs 잎맥)과 증상이 명확히 구분됩니다.
+R3 ↔ C3 / 미대응 / 시간도 일치
+최초: related_only / minor_discrepancy → 최종: related_only / minor_discrepancy
+줌아웃 전환 상황이 언급되나, R3의 핵심 결함(지시되지 않은 줌아웃 및 손의 움직임)과 C3의 결함(식물 잎의 워핑/모핑)은 다른 대상을 다루고 있습니다.
+근거 검증: explicit_separation / 참조 설명은 지시되지 않은 줌아웃 및 그 과정에서 손이 이상하게 움직이는 이상을 보고하는 반면, 후보 설명은 줌 전환 중 식물 잎과 배경 잎사귀들의 워핑, 블러, 모핑 현상을 명시하여 구체적인 결함 대상과 현상이 명확히 다릅니다.

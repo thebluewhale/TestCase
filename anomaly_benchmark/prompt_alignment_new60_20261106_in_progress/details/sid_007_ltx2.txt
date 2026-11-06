@@ -1,0 +1,62 @@
+sid_007_ltx2
+기존 시각 검사 판정: pending → 프롬프트 추가 v5 판정: pending
+시각 검사 완료: True / 프롬프트 검사: completed / 평가: completed
+새 프롬프트 C: 0개 · 라벨 의미 대응: False
+시간: 보조 정보 없음
+
+생성 프롬프트
+A robot stands on a table, lifts one foot, and then starts dancing by moving its arms up and down.
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 로봇이 테이블 위에 서 있음
+프롬프트 근거: A robot stands on a table
+관측: 메탈릭 로봇이 테이블 표면 위에 서 있음
+판단 근거: 요구된 위치와 객체가 일치함
+P2 · 충족 · 기대: 로봇이 한쪽 발을 들어 올림
+프롬프트 근거: lifts one foot
+관측: 초반에 한쪽 발을 들어 올린 뒤 움직임
+판단 근거: 한쪽 발을 들어 올리는 동작이 관찰됨
+P3 · 충족 · 기대: 팔을 위아래로 움직이며 춤을 추기 시작함
+프롬프트 근거: starts dancing by moving its arms up and down
+관측: 팔을 위아래 및 리드미컬하게 흔들며 춤을 춤
+판단 근거: 팔 동작을 포함한 춤 동작이 충족됨
+
+원본 라벨 R
+R1 (easy, [0.500, 6.100]초): 로봇이 테이블 위에서 춤을 추는 동안 팔을 위아래가 아닌 좌우로 움직이고 있습니다.
+원문: The robot is moving its arms side to side instead of up and down while dancing on the table.
+
+검출 후보 C
+C1 (2.040–2.320초): [기존 측정 제안·미확정] 밝기·구조가 바뀌었다가 돌아오는 패턴에 대한 깜빡임 및 순간 변형 확인 제안.
+원문: 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+C2 (2.840–2.920초): [기존 측정 제안·미확정] 밝기·구조가 바뀌었다가 돌아오는 패턴에 대한 깜빡임 및 순간 변형 확인 제안.
+원문: 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+C3 (3.320–3.400초): [기존 측정 제안·미확정] 밝기·구조가 바뀌었다가 돌아오는 패턴에 대한 깜빡임 및 순간 변형 확인 제안.
+원문: 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+C4 (3.720–3.800초): [기존 측정 제안·미확정] 밝기·구조가 바뀌었다가 돌아오는 패턴에 대한 깜빡임 및 순간 변형 확인 제안.
+원문: 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+C5 (2.000–6.120초): [기존 시각 후보] 로봇의 춤 및 달리기 동작 중 부자연스러운 반복 루핑과 지터링 모션 발생.
+원문: Repeated unnatural looping and jittering motions during the robot's dance/running routine.
+C6 (2.200–6.000초): [기존 시각 후보] 금속 인간형 로봇의 급격하고 불규칙한 달리기 및 춤 동작 중 프레임 루핑과 모션 지터 발생.
+원문: The metallic humanoid robot moves into an erratic, rapid running and dancing motion with visible temporal frame looping and motion jitter between frames.
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+C1은 구체적 대상이나 이상 증상이 명시되지 않은 단순 측정 제안문으로, 로봇의 팔 움직임 이상을 다루는 R1과 대응되지 않습니다.
+R1 ↔ C2 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+C2는 구체적 대상이나 이상 증상이 명시되지 않은 단순 측정 제안문으로, 로봇의 팔 움직임 이상을 다루는 R1과 대응되지 않습니다.
+R1 ↔ C3 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+C3은 구체적 대상이나 이상 증상이 명시되지 않은 단순 측정 제안문으로, 로봇의 팔 움직임 이상을 다루는 R1과 대응되지 않습니다.
+R1 ↔ C4 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+C4는 구체적 대상이나 이상 증상이 명시되지 않은 단순 측정 제안문으로, 로봇의 팔 움직임 이상을 다루는 R1과 대응되지 않습니다.
+R1 ↔ C5 / 미대응 / 시간도 일치
+최초: related_only / compatible → 최종: related_only / compatible
+두 설명 모두 춤추는 로봇의 움직임을 다루지만, R1은 팔을 위아래가 아닌 좌우로 흔드는 동작 방향의 이상을 서술하는 반면 C5는 모션 루핑 및 지터링 문제를 지적하여 서로 다른 증상입니다.
+근거 검증: explicit_separation / R1은 로봇이 팔을 위아래 대신 좌우로 움직이는 특정 동작 방향 오류를 구체적으로 서술하고 있는 반면, C5는 반복적인 비정상적 루핑 및 지터링 모션이라는 서로 다른 구체적인 이상 현상을 서술하고 있으므로 두 결함은 명확히 구분됩니다.
+R1 ↔ C6 / 미대응 / 시간도 일치
+최초: related_only / compatible → 최종: related_only / compatible
+두 설명 모두 춤추는 로봇의 이상 동작을 언급하지만, R1은 팔의 구체적인 움직임 방향 이상(좌우로 흔듦)에 국한되는 반면 C6은 프레임 루핑과 모션 지터링이라는 템포럴 결함을 기술하여 서로 다른 현상입니다.
+근거 검증: explicit_separation / R1은 춤추는 동안 팔이 위아래 대신 좌우로 움직이는 특정 신체 부위의 움직임 이상을 다루는 반면, C6은 프레임 간 템포럴 루핑 및 모션 지터링이라는 생성적 비디오 프레임 결함을 다루고 있어 서로 다른 구체적 증상으로 구분됩니다.

@@ -1,0 +1,50 @@
+sid_184_seedance
+기존 시각 검사 판정: pending → 프롬프트 추가 v5 판정: pending
+시각 검사 완료: False / 프롬프트 검사: completed / 평가: completed
+새 프롬프트 C: 1개 · 라벨 의미 대응: True
+시간: 시간도 일치
+
+생성 프롬프트
+A person's hands shape dough, place it in a bowl with vegetables, and fold the dough over the filling.
+
+프롬프트 요구사항 검사
+P1 · 충족 · 기대: 사람의 손이 반죽을 빚는 동작
+프롬프트 근거: A person's hands shape dough
+관측: 손으로 반죽 덩어리를 굴리며 모양을 잡음
+판단 근거: 영상 초반에 반죽을 손으로 다듬는 모습이 관찰됨
+P2 · 충족 · 기대: 야채가 담긴 볼에 반죽을 넣는 동작
+프롬프트 근거: place it in a bowl with vegetables
+관측: 야채가 들어있는 볼 위에 반죽을 올려놓음
+판단 근거: 손으로 빚은 반죽을 채소가 담긴 그릇 안으로 넣음
+P3 · 불일치 · 기대: 속재료 위로 반죽을 접어 감싸는 동작
+프롬프트 근거: fold the dough over the filling
+관측: 반죽을 채소 위에 얹고 눌러 펼칠 뿐 접어서 소를 감싸지 않음
+판단 근거: 반죽을 속재료 위로 접는 과정이 수행되지 않음
+
+원본 라벨 R
+R1 (easy, [2.800, 5.000]초): 사람이 속재료 위로 반죽을 접지 않고 그릇 안에서 그냥 주무르기만 함
+원문: The person does not fold the dough over the filling, instead just kneads it inside the bowl
+R2 (easy, [0.000, 2.600]초): 반죽이 사람의 손 움직임과 일치하지 않아 동작이 부자연스러워 보인다.
+원문: The dough doesn't move in sync with the person's hands, making the action look unnatural
+R3 (hard, [2.900, 3.800]초): 더 먼 쪽 엄지와 검지 손가락 사이에 처진 살점이 있음
+원문: There is a sagging flap of flesh between the more distant thumb and index finger.
+
+검출 후보 C
+C1 (2.750–5.042초): [프롬프트 불일치] 반죽을 접어 소를 감싸는 동작이 나타나지 않고 반죽을 위에서 누르기만 함
+원문: 반죽을 접어 소를 감싸는 동작이 나타나지 않고 반죽을 위에서 누르기만 함
+P3 기대: 속재료 위로 반죽을 접어 감싸는 동작
+관측: 반죽을 채소 위에 얹고 눌러 펼칠 뿐 접어서 소를 감싸지 않음
+프롬프트 근거: fold the dough over the filling
+
+자동 의미 대응
+R1 ↔ C1 / 의미 대응 / 시간도 일치
+최초: equivalent / compatible → 최종: equivalent / compatible
+두 설명 모두 소를 감싸도록 반죽을 접지 않고 단순히 반죽을 치대거나 누르는 동작만 반복하는 동일한 비정상적 동작 결함을 기술하고 있어 동등한 설명에 해당합니다.
+R2 ↔ C1 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+R2는 반죽과 손의 물리적 동기화 불일치를 기술하는 반면, C1은 반죽을 접어 소를 감싸지 않고 누르기만 하는 행위 자체의 부재/오류를 지적하므로 서로 다른 이상 현상입니다.
+근거 검증: explicit_separation / R2는 반죽과 손의 물리적 동기화 불일치(싱크가 맞지 않음)라는 렌더링/물리적 결함을 지적하는 반면, C1은 반죽을 접어 소를 감싸야 하는 동작 대신 누르기만 한다는 수행 행위의 오류를 지적하고 있어 서로 구별되는 구체적인 결함을 다루고 있습니다.
+R3 ↔ C1 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+R3은 손가락 사이의 처진 살점이라는 신체 형태학적 결함을 지적하지만, C1은 반죽을 다루는 동작 오류를 기술하고 있으므로 대상과 증상이 완전히 다릅니다.
+근거 검증: explicit_separation / R3은 엄지와 검지 손가락 사이에 존재하는 신체 형태적 결함(처진 살점)을 명시적으로 서술하고 있는 반면, C1은 반죽을 접어 소를 감싸지 않고 누르기만 하는 요리 조작 동작의 오류를 다루고 있어 서로 완전히 다른 대상을 다루는 별개의 결함으로 분리됩니다.

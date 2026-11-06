@@ -1,0 +1,60 @@
+sid_117_veo3
+기존 시각 검사 판정: pending → 프롬프트 추가 v5 판정: pending
+시각 검사 완료: True / 프롬프트 검사: completed / 평가: invalid_response
+새 프롬프트 C: 2개 · 라벨 의미 대응: False
+시간: 보조 정보 없음
+
+생성 프롬프트
+The boy slides rides into the dirt face first, then another small child rides a bike on a sidewalk and falls face first into the dirt.
+
+프롬프트 요구사항 검사
+P1 · 불일치 · 기대: 소년이 흙 위로 얼굴부터 미끄러지듯 넘어짐
+프롬프트 근거: boy slides rides into the dirt face first
+관측: 소년이 달리다 앉아 넘어지며 얼굴부터 슬라이딩하지 않음
+판단 근거: 소년이 얼굴부터 흙에 슬라이딩하는 동작이 관찰되지 않음
+P2 · 충족 · 기대: 다른 아이가 보도에서 자전거를 탐
+프롬프트 근거: another small child rides a bike on a sidewalk
+관측: 자전거를 탄 아이가 보도 위에서 주행함
+판단 근거: 보도 위에서 자전거를 타는 아이가 확인됨
+P3 · 불일치 · 기대: 자전거를 탄 아이가 흙 쪽으로 얼굴부터 넘어짐
+프롬프트 근거: falls face first into the dirt
+관측: 아이가 자전거에서 발을 딛고 내릴 뿐 흙으로 얼굴부터 넘어지지 않음
+판단 근거: 얼굴부터 넘어지는 낙상 동작이 발생하지 않음
+
+원본 라벨 R
+R1 (easy, [0.000, 5.000]초): The first child does not "ride" face first into the dirt, and neither does the second child on the bike.
+원문: The first child does not "ride" face first into the dirt, and neither does the second child on the bike.
+R2 (hard, [3.000, 5.000]초): The tire tread on the bicycle doesn't move.
+원문: The tire tread on the bicycle doesn't move.
+R3 (easy, [2.000, 3.000]초): The boy jumps into the dirt not slides
+원문: The boy jumps into the dirt not slides
+R4 (easy, [6.000, 8.000]초): The small child jumps into the grass not the dirt.
+원문: The small child jumps into the grass not the dirt.
+
+검출 후보 C
+C1 (1.042–1.250초): [기존 측정 제안·미확정] 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+원문: 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+C2 (1.583–2.542초): [기존 측정 제안·미확정] 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+원문: 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+C3 (2.458–2.542초): [기존 측정 제안·미확정] 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+원문: 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+C4 (2.792–3.292초): [기존 측정 제안·미확정] 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+원문: 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+C5 (3.000–3.250초): [기존 시각 후보] A ghostly residual double of the boy appears faintly in the grass area.
+원문: A ghostly residual double of the boy appears faintly in the grass area.
+C6 (3.100–3.400초): [기존 시각 후보] Around 00:03.125 to 00:03.375, a cross-dissolve/blending artifact appears overlapping two distinct scenes (boy kneeling on ground and girl riding bicycle).
+원문: Around 00:03.125 to 00:03.375, a cross-dissolve/blending artifact appears overlapping two distinct scenes (boy kneeling on ground and girl riding bicycle).
+C7 (7.000–7.800초): [기존 시각 후보] The girl's left leg and foot exhibit unnatural sliding and morphing motion around the pedal and frame while dismounting or pedaling the bicycle.
+원문: The girl's left leg and foot exhibit unnatural sliding and morphing motion around the pedal and frame while dismounting or pedaling the bicycle.
+C8 (1.750–3.125초): [프롬프트 불일치] 소년이 얼굴부터 흙 위로 미끄러지지 않고 웅크려 멈춤
+원문: 소년이 얼굴부터 흙 위로 미끄러지지 않고 웅크려 멈춤
+P1 기대: 소년이 흙 위로 얼굴부터 미끄러지듯 넘어짐
+관측: 소년이 달리다 앉아 넘어지며 얼굴부터 슬라이딩하지 않음
+프롬프트 근거: boy slides rides into the dirt face first
+C9 (6.875–7.875초): [프롬프트 불일치] 아이가 자전거에서 내리며 서 있을 뿐 얼굴부터 넘어지지 않음
+원문: 아이가 자전거에서 내리며 서 있을 뿐 얼굴부터 넘어지지 않음
+P3 기대: 자전거를 탄 아이가 흙 쪽으로 얼굴부터 넘어짐
+관측: 아이가 자전거에서 발을 딛고 내릴 뿐 흙으로 얼굴부터 넘어지지 않음
+프롬프트 근거: falls face first into the dirt
+
+자동 의미 대응
