@@ -1,0 +1,91 @@
+sid_063_veo3
+이전 판정: no_hit → v5 판정: no_hit
+검출 완료: True / 평가 상태: completed
+시간: 보조 정보 없음
+
+원본 라벨 R
+R1 (hard, [2.2, 5.7]초): 사람들이 일제히 행동한다.
+원문: The people act in unison
+R1.S1 · neutral · 사람들이 일제히 행동함
+R2 (easy, [0, 8]초): 영상 내에 슬로 모션으로 진행되는 것은 아무것도 없음.
+원문: Nothing in this video is in slow motion
+R2.S1 · neutral · 영상 내 어떤 요소도 슬로 모션으로 동작하지 않음
+R3 (easy, [0.4, 8]초): 카메라가 뒤로 물러나지 않고 영상이 진행됨에 따라 실제로 줌인되고 있음
+원문: The camera is not backing up but its actually zooming in as the video goes on
+R3.S1 · specific · 카메라가 뒤로 물러서지 않고 영상이 진행되면서 줌인됨
+R4 (easy, [1.7, 2.2]초): 모든 학생들이 정확히 동시에 손을 든다.
+원문: All the students raise their hand at exactly the same time
+R4.S1 · specific · 모든 학생들이 정확히 동일한 시점에 손을 든다.
+R5 (easy, [1.9, 3.2]초): 모든 학생들이 정확히 동시에 손을 내림
+원문: All the students put their hands down at the exact same time
+R5.S1 · specific · 모든 학생들이 정확히 동일한 시점에 손을 내린다
+
+검출 후보 C
+C1 (1.75–3.875초): 학생의 들어올린 팔이 갑자기 나타나며 올리고 내리는 동안 윤곽이 모핑됨.
+원문: The student's raised arm appears abruptly and exhibits morphing contours while raising and lowering.
+C2 (1.2–3.5초): 학생들이 손을 드는 동안 교사의 자세와 팔 형태가 불연속적으로 바뀜.
+원문: Teacher's posture and arm configurations shift discontinuously while students raise hands.
+C3 (1.7–4.1초): 학생의 오른팔을 올리고 내릴 때 왜곡과 미세한 변형이 나타남.
+원문: Student's right arm displays warping and slight deformation while raising and lowering.
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+근거 검증: explicit_separation / 참조 설명은 사람들이 일제히 행동하는 집단 행동을 기술하는 반면, 후보 C1은 특정 학생의 팔이 갑작스럽게 나타나고 윤곽이 모핑되는 국소적 시각 결함을 서술하므로 서로 다른 대상과 현상으로 명확히 구분됩니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+근거 검증: explicit_separation / 참조 설명은 사람들의 일제 행동을 기술하는 반면, 후보 C2는 교사의 자세 및 팔 형태가 불연속적으로 변하는 결함을 지칭하므로 서로 대상 및 사건이 다릅니다.
+R1 ↔ C3 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+근거 검증: explicit_separation / 참조 설명은 사람들의 일제 행동을 기술하는 반면, 후보 C3는 학생의 오른팔에 나타나는 왜곡과 변형 결함을 기술하므로 대상과 내용이 완전히 구분됩니다.
+R2 ↔ C1 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+근거 검증: explicit_separation / 참조 R2는 비디오 전체에 슬로 모션이 없다는 진술(정상 상태/속도 관련)을 기술하는 반면, C1은 학생의 팔이 갑자기 나타나고 윤곽이 모핑되는 국소적 신체 왜곡 결함을 다루고 있어 서로 대상과 현상이 명확히 구별됩니다.
+R2 ↔ C2 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+근거 검증: explicit_separation / 참조 R2는 영상 전체에서 슬로 모션이 없다는 점을 서술하는 반면, C2는 교사의 자세와 팔 형태가 불연속적으로 변하는 구체적 결함을 기술하므로 대상과 결함 양상이 서로 완전히 분리됩니다.
+R2 ↔ C3 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+근거 검증: explicit_separation / 참조 R2는 영상 내 슬로 모션 부재를 기술하고 있는 반면, C3은 학생의 오른팔에 발생하는 워핑 및 변형 결함을 기술하고 있어 대상 및 사건이 명확히 구별됩니다.
+R3 ↔ C1 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조 설명은 카메라의 줌인 동작(The camera)을 다루는 반면, 후보 설명은 학생의 팔(student's raised arm)의 모핑 및 출현 결함을 기술하고 있어 대상과 결함이 명확히 구별됩니다.
+근거 검증: explicit_separation / 참조 설명은 카메라의 줌인 동작(The camera)을 다루는 반면, 후보 설명은 학생의 팔(student's raised arm)의 모핑 및 출현 결함을 기술하고 있어 대상과 결함이 명확히 구별됩니다.
+R3 ↔ C2 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조 설명은 카메라의 줌인 동작(The camera)을 기술하는 반면, 후보 설명은 교사의 자세 및 팔 형태 불연속성(Teacher's posture and arm configurations)을 기술하므로 대상 및 현상이 명확히 구별됩니다.
+근거 검증: explicit_separation / 참조 설명은 카메라의 줌인 동작(The camera)을 기술하는 반면, 후보 설명은 교사의 자세 및 팔 형태 불연속성(Teacher's posture and arm configurations)을 기술하므로 대상 및 현상이 명확히 구별됩니다.
+R3 ↔ C3 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조 설명은 카메라 줌인 동작(The camera)에 대한 내용인 반면, 후보 설명은 학생 오른팔(Student's right arm)의 워핑 및 변형을 기술하므로 대상과 결함이 완전히 분리됩니다.
+근거 검증: explicit_separation / 참조 설명은 카메라 줌인 동작(The camera)에 대한 내용인 반면, 후보 설명은 학생 오른팔(Student's right arm)의 워핑 및 변형을 기술하므로 대상과 결함이 완전히 분리됩니다.
+R4 ↔ C1 / 미대응 / 시간도 일치
+최초: related_only / core_conflict → 최종: different / insufficient
+명시적 별개 증상: R4는 모든 학생들이 완전히 동시에 손을 든다는 집단적 동기화 동작 이상을 설명하고 있으며, C1은 특정 학생의 팔이 갑자기 나타나고 윤곽이 변형(morphing)된다는 개별 신체 부위의 렌더링 결함을 다루고 있어 대상과 결함 현상이 명확히 구별됩니다.
+근거 검증: explicit_separation / R4는 모든 학생들이 완전히 동시에 손을 든다는 집단적 동기화 동작 이상을 설명하고 있으며, C1은 특정 학생의 팔이 갑자기 나타나고 윤곽이 변형(morphing)된다는 개별 신체 부위의 렌더링 결함을 다루고 있어 대상과 결함 현상이 명확히 구별됩니다.
+R4 ↔ C2 / 미대응 / 시간도 일치
+최초: related_only / core_conflict → 최종: different / insufficient
+명시적 별개 증상: R4의 이상 현상은 모든 학생들이 동시에 손을 든다는 점에 초점이 있는 반면, C2의 이상 현상은 교사의 자세와 팔 형태가 불연속적으로 변한다는 점이므로 서로 다른 대상에서 발생하는 명확히 별개의 결함입니다.
+근거 검증: explicit_separation / R4의 이상 현상은 모든 학생들이 동시에 손을 든다는 점에 초점이 있는 반면, C2의 이상 현상은 교사의 자세와 팔 형태가 불연속적으로 변한다는 점이므로 서로 다른 대상에서 발생하는 명확히 별개의 결함입니다.
+R4 ↔ C3 / 미대응 / 시간도 일치
+최초: related_only / core_conflict → 최종: different / insufficient
+명시적 별개 증상: R4는 모든 학생들이 일제히 손을 올린다는 동시성 이상을 지적하는 반면, C3는 특정 학생의 오른팔에 국한된 뒤틀림(warping) 및 변형 결함을 지적하므로 두 결함은 별개의 이상 현상으로 분리됩니다.
+근거 검증: explicit_separation / R4는 모든 학생들이 일제히 손을 올린다는 동시성 이상을 지적하는 반면, C3는 특정 학생의 오른팔에 국한된 뒤틀림(warping) 및 변형 결함을 지적하므로 두 결함은 별개의 이상 현상으로 분리됩니다.
+R5 ↔ C1 / 미대응 / 시간도 일치
+최초: related_only / core_conflict → 최종: different / insufficient
+명시적 별개 증상: R5는 모든 학생이 완전히 동시에 손을 내리는 집단적 동기화/타이밍 이상을 구체적으로 설명하는 반면, C1은 특정 한 학생의 팔이 갑자기 나타나거나 형태가 변형되는 개별 부위의 외형 모핑 결함을 지목하므로 서로 다른 구체적 결함입니다.
+근거 검증: explicit_separation / R5는 모든 학생이 완전히 동시에 손을 내리는 집단적 동기화/타이밍 이상을 구체적으로 설명하는 반면, C1은 특정 한 학생의 팔이 갑자기 나타나거나 형태가 변형되는 개별 부위의 외형 모핑 결함을 지목하므로 서로 다른 구체적 결함입니다.
+R5 ↔ C2 / 미대응 / 시간도 일치
+최초: related_only / core_conflict → 최종: different / insufficient
+명시적 별개 증상: R5는 모든 학생 집단이 손을 내리는 동작의 타이밍을 다루는 반면, C2는 교사의 자세와 팔 형태가 불연속적으로 바뀌는 결함을 다루고 있어 대상 엔티티와 이상 현상이 명백히 분리됩니다.
+근거 검증: explicit_separation / R5는 모든 학생 집단이 손을 내리는 동작의 타이밍을 다루는 반면, C2는 교사의 자세와 팔 형태가 불연속적으로 바뀌는 결함을 다루고 있어 대상 엔티티와 이상 현상이 명백히 분리됩니다.
+R5 ↔ C3 / 미대응 / 시간도 일치
+최초: related_only / core_conflict → 최종: different / insufficient
+명시적 별개 증상: R5는 모든 학생들이 동시에 손을 내리는 동작의 타이밍 일치 이상을 구체적으로 기술하는 반면, C3는 한 학생의 오른팔에 국한된 형태 왜곡 및 변형을 기술하므로 서로 다른 별개의 결함입니다.
+근거 검증: explicit_separation / R5는 모든 학생들이 동시에 손을 내리는 동작의 타이밍 일치 이상을 구체적으로 기술하는 반면, C3는 한 학생의 오른팔에 국한된 형태 왜곡 및 변형을 기술하므로 서로 다른 별개의 결함입니다.

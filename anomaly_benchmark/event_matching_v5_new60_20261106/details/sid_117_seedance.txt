@@ -1,0 +1,69 @@
+sid_117_seedance
+이전 판정: hit → v5 판정: hit
+검출 완료: True / 평가 상태: completed
+시간: 시간도 일치
+
+원본 라벨 R
+R1 (easy, [1.8, 2.1]초): 스쿠터가 사라짐
+원문: disappearance of the scooter
+R1.S1 · specific · 스쿠터가 사라짐
+R2 (easy, [1, 4.2]초): 두 소년이 스쿠터에서 넘어지는 물리 법칙이 잘못되었으며, 첫 번째 소년의 스쿠터가 그가 땅에 넘어진 후 사라집니다.
+원문: The physics in how the 2 boys fell off their scooters are incorrect.  Also, the scooter for the first boy disappears after he falls to the ground.
+R2.S1 · broad · 두 소년이 스쿠터에서 넘어지는 물리 동작이 올바르지 않음 / 미명시: 물리 동작이 어떻게 잘못되었는지 구체적인 궤적, 자세, 방향, 속도 등의 관찰 가능한 세부 사항이 명시되지 않음
+R2.S2 · specific · 첫 번째 소년이 땅에 넘어진 후 그의 스쿠터가 사라짐
+
+검출 후보 C
+C1 (1.0–2.4166666666666665초): 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+원문: 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+C2 (2.75–2.8333333333333335초): 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+원문: 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+C3 (1.625–2.417초): 소년이 넘어지는 동안 그의 스쿠터가 땅속으로 사라집니다.
+원문: The boy's scooter vanishes into the ground during his fall.
+C4 (2.25–3.125초): 두 번째 소년이 넘어질 때 그의 스쿠터 구조와 바퀴 크기가 갑작스럽게 변합니다.
+원문: The second boy's scooter abruptly changes structure and wheel size as he crashes.
+C5 (1.7–2.2초): 넘어진 후 전경에 있는 아이 아래의 스쿠터가 녹아내리며 땅속으로 사라집니다.
+원문: Scooter under the foreground child dissolves and vanishes into the ground after the fall.
+C6 (2.2–3.0초): 배경의 탈것이 똑바로 서 있는 스쿠터에서 넘어진 밸런스 바이크로 바뀝니다.
+원문: The background vehicle transitions from an upright scooter into a fallen balance bicycle.
+
+자동 의미 대응
+R1 ↔ C1 / 판단 보류 / 시간도 일치
+최초: uncertain / insufficient → 최종: uncertain / insufficient
+C1은 구체적 결함 보고가 아닌 단순 측정 제안에 불과하여 대조가 불가능합니다.
+R1 ↔ C2 / 판단 보류 / 시간 차이 있음
+최초: uncertain / insufficient → 최종: uncertain / insufficient
+C2는 단순 측정 제안으로 구체적인 결함이나 대상을 명시하지 않습니다.
+R1 ↔ C3 / 의미 대응 / 시간도 일치
+최초: equivalent / compatible → 최종: equivalent / compatible
+참조와 후보 모두 스쿠터가 사라지는(vanishes/disappearance) 현상을 직접 보고하고 있어 동일한 결함에 해당합니다.
+R1 ↔ C4 / 미대응 / 시간 차이 있음
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조 설명은 스쿠터의 소멸(disappearance)을 명시하고 있는 반면, 후보 설명은 스쿠터의 구조 및 바퀴 크기가 급변하는 형태 변형 현상을 구체적으로 기술하고 있어 서로 다른 결함을 다루고 있습니다.
+근거 검증: explicit_separation / 참조 설명은 스쿠터의 소멸(disappearance)을 명시하고 있는 반면, 후보 설명은 스쿠터의 구조 및 바퀴 크기가 급변하는 형태 변형 현상을 구체적으로 기술하고 있어 서로 다른 결함을 다루고 있습니다.
+R1 ↔ C5 / 의미 대응 / 시간도 일치
+최초: same_event_different_aspect / compatible → 최종: same_event_different_aspect / compatible
+C5는 스쿠터가 녹아내려 땅속으로 사라진다는 구체적인 양상을 서술하고 있어 참조의 스쿠터 사라짐 현상과 양립합니다.
+R1 ↔ C6 / 미대응 / 시간 차이 있음
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조 설명은 스쿠터의 완전한 소멸(disappearance)을 명시하지만, 후보 설명은 직립한 스쿠터가 넘어진 밸런스 바이크로 전환(transitions)되는 형태 변형을 명시하고 있어 서로 다른 구체적 이상 현상입니다.
+근거 검증: explicit_separation / 참조 설명은 스쿠터의 완전한 소멸(disappearance)을 명시하지만, 후보 설명은 직립한 스쿠터가 넘어진 밸런스 바이크로 전환(transitions)되는 형태 변형을 명시하고 있어 서로 다른 구체적 이상 현상입니다.
+R2 ↔ C1 / 판단 보류 / 시간도 일치
+최초: uncertain / insufficient → 최종: uncertain / insufficient
+C1은 일반적인 측정 제안으로 구체적 이상 현상을 식별하지 않습니다.
+R2 ↔ C2 / 판단 보류 / 시간 차이 있음
+최초: uncertain / insufficient → 최종: uncertain / insufficient
+C2는 단순 측정 제안이며 구체적인 결함이 명시되지 않았습니다.
+R2 ↔ C3 / 의미 대응 / 시간도 일치
+최초: equivalent / compatible → 최종: equivalent / compatible
+C3는 첫 번째 소년의 스쿠터가 사라지는 이상 현상(R2.S2)과 일치합니다.
+R2 ↔ C4 / 판단 보류 / 시간도 일치
+최초: related_only / compatible → 최종: uncertain / insufficient
+불일치 확정 보류: 참조의 구체적 결함은 첫 번째 소년의 스쿠터가 땅에 넘어진 후 사라지는 현상(R2.S2)인 반면, C4는 두 번째 소년의 스쿠터가 충돌하면서 구조와 바퀴 크기가 변형되는 현상을 설명하여 대상 개체(첫 번째 소년의 스쿠터 vs 두 번째 소년의 스쿠터)와 결함 현상이 명확히 구분됩니다. 또한 소년들이 넘어지는 물리 오류(R2.S1)와도 스쿠터의 기하학적 형태 변형이라는 명확히 구분되는 별개의 결함입니다.
+근거 검증: explicit_separation / 참조의 구체적 결함은 첫 번째 소년의 스쿠터가 땅에 넘어진 후 사라지는 현상(R2.S2)인 반면, C4는 두 번째 소년의 스쿠터가 충돌하면서 구조와 바퀴 크기가 변형되는 현상을 설명하여 대상 개체(첫 번째 소년의 스쿠터 vs 두 번째 소년의 스쿠터)와 결함 현상이 명확히 구분됩니다. 또한 소년들이 넘어지는 물리 오류(R2.S1)와도 스쿠터의 기하학적 형태 변형이라는 명확히 구분되는 별개의 결함입니다.
+R2 ↔ C5 / 의미 대응 / 시간도 일치
+최초: same_event_different_aspect / compatible → 최종: same_event_different_aspect / compatible
+C5는 전경의 아이가 넘어진 후 스쿠터가 녹아내리며 사라진다고 기술하여, 첫 번째 소년의 스쿠터가 땅에 넘어진 후 사라진다는 R2.S2와 일치합니다.
+R2 ↔ C6 / 미대응 / 시간도 일치
+최초: different / core_conflict → 최종: different / insufficient
+명시적 별개 증상: 참조는 첫 번째 소년의 스쿠터가 사라지는 결함을 서술하는 반면, C6은 배경의 탈것이 똑바로 선 스쿠터에서 넘어진 밸런스 자전거로 변형되는 결함을 서술하여 대상 개체 및 결함 내용이 텍스트상 명확히 다른 별개의 결함으로 분리됩니다.
+근거 검증: explicit_separation / 참조는 첫 번째 소년의 스쿠터가 사라지는 결함을 서술하는 반면, C6은 배경의 탈것이 똑바로 선 스쿠터에서 넘어진 밸런스 자전거로 변형되는 결함을 서술하여 대상 개체 및 결함 내용이 텍스트상 명확히 다른 별개의 결함으로 분리됩니다.

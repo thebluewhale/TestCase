@@ -1,0 +1,72 @@
+sid_184_veo3
+이전 판정: hit → v5 판정: hit
+검출 완료: True / 평가 상태: completed
+시간: 시간도 일치
+
+원본 라벨 R
+R1 (easy, [0.01, 1.6]초): 영상 속 인물이 손으로 모양을 잡기 전에 반죽을 내려놓는다.
+원문: The person in the video places the dough before hand shaping it.
+R1.S1 · neutral · 인물이 손으로 모양을 잡기 전에 반죽을 놓는다.
+R2 (easy, [0.5, 1.4]초): 반죽이 이미 그릇 안에 들어있음
+원문: The dough is already inside the bowl 
+R2.S1 · neutral · 반죽이 이미 그릇 안에 존재함
+R3 (easy, [1.6, 2.7]초): 야채가 이미 그릇 안에 있고, 반죽이 다시 제거됩니다.
+원문: The vegetables are already inside the bowl, and the dough just gets removed back. 
+R3.S1 · neutral · 야채가 이미 그릇 안에 들어있음
+R3.S2 · specific · 반죽이 그냥 다시 제거됨
+R4 (easy, [3.7, 5]초): 도우를 야채 위에 다시 덮을 때 모양과 형태가 처음 도우의 상태와 일치하지 않는다.
+원문: The way the dough was shaped and how it looked when putting it back over the vegetables does not match how the dough was in the first place. 
+R4.S1 · broad · 야채 위에 다시 올릴 때의 도우 모양 및 외형이 처음에 있던 도우 상태와 일치하지 않음 / 미명시: 도우의 모양이나 외형이 구체적으로 어떤 형태, 크기, 질감 등으로 바뀌었거나 어떻게 일치하지 않는지 구체적인 세부 정보가 명시되지 않음
+
+검출 후보 C
+C1 (0.75–1.6666666666666667초): 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+원문: 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+C2 (0.875–1.75초): Vegetable filling abruptly appears inside the dough bowl as the top dough layer is lifted, with no prior visual presence.
+원문: Vegetable filling abruptly appears inside the dough bowl as the top dough layer is lifted, with no prior visual presence.
+C3 (3.5–5.9초): The dough layer lifted reveals vegetable filling inside, but as it is replaced, the dough's form and rim morphology transform inconsistently with elastic deformation.
+원문: The dough layer lifted reveals vegetable filling inside, but as it is replaced, the dough's form and rim morphology transform inconsistently with elastic deformation.
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+R1 ↔ C2 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+근거 검증: insufficient / R1에는 이상 현상에 대한 어떠한 주장도 포함되어 있지 않으며(is_anomaly가 참인 클레임 부재), 이상 현상 증거를 비교할 수 없어 동일한 증상 여부를 텍스트만으로 판단하기 불충분합니다.
+R1 ↔ C3 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+근거 검증: insufficient / R1에는 이상 현상(anomaly)으로 분류된 클레임이 존재하지 않아 후보 C3의 변형 이상 현상과 직접적으로 양립 불가하거나 명시적으로 분리되는 증거를 확정할 수 없으므로 불충분합니다.
+R2 ↔ C1 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+R2 ↔ C2 / 미대응 / 시간도 일치
+최초: different / insufficient → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+근거 검증: insufficient / R2에는 이상 현상으로 분류된 클레임이 존재하지 않으며, 반죽이 그릇 안에 있다는 배경 상태만 언급하고 있어 후보의 채소 필링 출현 이상 현상과의 일치 여부를 판단하기에 정보가 부족합니다.
+R2 ↔ C3 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+원본 라벨에 이상 주장이 없어 대응 대상에서 제외
+근거 검증: insufficient / R2에는 이상 현상 클레임이 정의되어 있지 않고 반죽의 초기 위치 상태만 기술되어 있어, C3의 반죽 덮개 형태 및 테두리 변형 이상 증상과의 동일성이나 모순 여부를 결정할 수 없습니다.
+R3 ↔ C1 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+C1은 구체적 결함 보고가 없는 일반적인 측정 제안입니다.
+R3 ↔ C2 / 미대응 / 시간 차이 있음
+최초: related_only / core_conflict → 최종: different / insufficient
+명시적 별개 증상: R3.S2는 반죽이 다시 제거되는 현상 자체를 결함으로 명시하고 있는 반면, C2는 반죽이 들어올려질 때 야채 필링이 갑자기 나타나는 출현 현상을 별개의 이상 증상으로 설명하고 있어 두 결함의 대상과 현상이 명확히 분리됩니다.
+근거 검증: explicit_separation / R3.S2는 반죽이 다시 제거되는 현상 자체를 결함으로 명시하고 있는 반면, C2는 반죽이 들어올려질 때 야채 필링이 갑자기 나타나는 출현 현상을 별개의 이상 증상으로 설명하고 있어 두 결함의 대상과 현상이 명확히 분리됩니다.
+R3 ↔ C3 / 미대응 / 시간 차이 있음
+최초: related_only / core_conflict → 최종: different / insufficient
+명시적 별개 증상: R3.S2는 반죽이 다시 제거되는 동작을 지적하는 반면, C3는 반죽이 다시 덮일(replaced) 때 형태 및 테두리 변형이 비일관되게 일어나는 물리적 형태 결함을 명시하고 있어 서로 다른 구체적 결함으로 명확히 구분됩니다.
+근거 검증: explicit_separation / R3.S2는 반죽이 다시 제거되는 동작을 지적하는 반면, C3는 반죽이 다시 덮일(replaced) 때 형태 및 테두리 변형이 비일관되게 일어나는 물리적 형태 결함을 명시하고 있어 서로 다른 구체적 결함으로 명확히 구분됩니다.
+R4 ↔ C1 / 미대응 / 시간 차이 있음
+최초: different / insufficient → 최종: different / insufficient
+C1은 단순 측정 제안에 불과하여 R4의 도우 외형 불일치 결함과 대응되지 않습니다.
+R4 ↔ C2 / 판단 보류 / 시간 차이 있음
+최초: related_only / core_conflict → 최종: uncertain / insufficient
+불일치 확정 보류: R4는 도우를 야채 위에 다시 덮는 시점에 도우의 외형/형태가 달라진 결함을 명시한 반면, C2는 상단 도우를 들어 올릴 때 야채 필링이 불쑥 나타나는 결함을 명시하고 있어, 서로 다른 대상에 대한 구체적 결함 현상이 명확히 구분됩니다.
+근거 검증: explicit_separation / R4는 도우를 야채 위에 다시 덮는 시점에 도우의 외형/형태가 달라진 결함을 명시한 반면, C2는 상단 도우를 들어 올릴 때 야채 필링이 불쑥 나타나는 결함을 명시하고 있어, 서로 다른 대상에 대한 구체적 결함 현상이 명확히 구분됩니다.
+R4 ↔ C3 / 의미 대응 / 시간도 일치
+최초: same_event_different_aspect / compatible → 최종: same_event_different_aspect / compatible
+R4는 반죽을 야채 위에 다시 올릴 때 이전 형태와 외형이 일치하지 않는 현상을 보고하였고, C3는 반죽을 다시 덮을 때 형태와 가장자리 모양이 탄성 변형에 맞지 않게 변형된다고 설명하므로 동일한 반죽 형태 변형 이상의 서로 다른 측면을 일관되게 보고하고 있습니다.
