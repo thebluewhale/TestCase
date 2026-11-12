@@ -1,0 +1,72 @@
+sid_053_seedance
+Gemini 단독 재실행 · 집계 v3 최종 상태: hit
+R–C 의미 대응: 대응 있음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+모델: gemini-3.8-flash · 영상 8fps · 집중 재검토 · 선택적 프롬프트 검사
+검출과 채점을 모두 새로 실행했습니다. 원본 라벨은 검출 입력에 포함하지 않았습니다.
+C 번호는 이번 실행 기준이며 이전 실험의 C 번호와 대응하지 않습니다.
+라벨 밖 결함은 hit에 더하지 않습니다. 시간 차이는 보조 정보입니다.
+실행 · v4.temporal_context: completed (0개) 
+실행 · vertex-gemini: completed (1개) 
+실행 · vertex-gemini-focused: completed (1개) 
+실행 · vertex-gemini-prompt: completed (1개) 
+
+생성 프롬프트
+A video showing a rugby ball flying in from the left foreground and hitting the ground on a sunny rugby field covered with green grass. The ball makes an irregular bounce towards the left background, highlighting the unpredictable nature of its movement. The scene is set on a bright, clear day, emphasizing the vibrancy of the green field and the dynamic motion of the rugby ball.  
+
+프롬프트 요구사항 검사
+P1 · matched · 기대: 럭비공이 왼쪽 전경에서 날아옴
+관측: 럭비공이 왼쪽 전경에서 중앙/우측으로 날아옴
+근거: 요구사항이 영상 초반에 관찰됨
+P2 · matched · 기대: 푸른 잔디가 깔린 경기장 지면에 공이 바운드됨
+관측: 럭비공이 잔디 지면에 닿아 튐
+근거: 지면 충돌이 정상 관찰됨
+P3 · mismatch · 기대: 왼쪽 배경 방향으로 불규칙하게 튐
+관측: 공이 우측으로 날아온 후 왼쪽 전경/카메라 쪽으로 다시 굴러옴
+근거: 공이 왼쪽 배경 방향으로 튀지 않고 왼쪽 앞쪽으로 굴러옴
+P4 · matched · 기대: 밝고 맑은 날씨
+관측: 맑은 하늘과 밝은 조명 환경
+근거: 날씨 조건이 일치함
+
+원본 라벨 R
+R1 (easy, 1.700–4.200초): 공이 자연스럽게 움직이지 않는다는 불만 사항.
+원문: The ball doesn't move naturally
+R2 (hard, 4.200–4.600초): 공이 배경 쪽이 아닌 전경 쪽으로 튕겨 나옴.
+원문: Ball bounces to foreground, not background
+R3 (easy, 3.100–5.000초): 럭비공이 물리 법칙을 거스르며 던진 사람을 향해 부메랑처럼 되돌아옵니다.
+원문: The rugby ball boomerangs back towards the person throwing it defying the laws of physics.
+
+검출 후보 C
+C1 (0.500–3.750초): [Gemini] 공이 움직이는 동안 축구공과 럭비공 특성 사이에서 형태와 질감 표식이 계속 변함.
+원문: The ball's morphology and texture markings continuously shift between soccer ball and rugby ball traits during movement.
+종류: model_proposal / bbox: [0.0, 0.449, 0.825, 0.852]
+C2 (0.500–4.950초): [Gemini] 공이 구르고 잔디 위에 멈추는 동안 형태와 표면 표식이 계속 바뀜.
+원문: The ball changes shape and surface markings continuously as it rolls and comes to rest on the grass.
+종류: model_proposal / bbox: [0.038, 0.553, 0.28, 0.793]
+C3 (1.000–4.500초): [프롬프트 검사] 공이 왼쪽 배경 방향이 아닌 전경 쪽으로 굴러옴.
+원문: 공이 왼쪽 배경 방향이 아닌 전경 쪽으로 굴러옵니다.
+종류: model_proposal / bbox: [0.47, 0.64, 0.76, 0.83]
+
+자동 의미 대응
+R1 ↔ C1 / 판단 보류 / 시간도 일치
+동일 사건 여부/불일치 확정 보류: 공의 불특정 부자연스러운 움직임과 공의 형태/표식 변형이 동일한 현상에 대한 기술인지 판단할 구체적 근거가 부족합니다.
+R1 ↔ C2 / 판단 보류 / 시간도 일치
+동일 사건 여부/불일치 확정 보류: 움직임이 자연스럽지 않다는 포괄적 표현이 형태 변형을 의미하는 것인지 확정할 수 없습니다.
+R1 ↔ C3 / 판단 보류 / 시간도 일치
+동일 사건 여부/불일치 확정 보류: 배경이 아닌 전경으로 굴러오는 움직임이 레퍼런스가 언급한 '자연스럽지 않은 움직임'의 구체적 사례일 가능성이 있으나 단정하기엔 모호합니다.
+R2 ↔ C1 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 레퍼런스는 공이 배경 대신 전경으로 튕기는 물리적 궤적 및 방향 결함을 지적하는 반면, 후보는 축구공과 럭비공 특성 사이에서 형태 및 질감 표식이 변하는 외형 변형 결함을 지적하므로 상호 무관한 별개의 현상입니다.
+R2 ↔ C2 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 레퍼런스는 공이 튕길 때의 이동 방향(전경으로 튕김) 문제를 보고하는 반면, 후보는 잔디 위를 구르고 멈출 때 공의 모양과 표면 무늬가 변형되는 문제를 다루므로 명확히 구분되는 다른 결함입니다.
+R2 ↔ C3 / 의미 대응 / 시간 차이 있음
+이동 방식(튕김 vs 굴러옴)에 사소한 표현 차이가 있으나, 배경 방향이 아닌 전경 쪽으로 공이 이동한다는 핵심 결함 현상이 일치합니다.
+R3 ↔ C1 / 미대응 / 시간도 일치
+명시적 별개 사건: 레퍼런스는 공이 던진 사람에게 부메랑처럼 되돌아오는 비정상적인 궤적 이상(물리 법칙 위반)을 지적하지만, 후보 C1은 공의 형태와 텍스처 마킹이 축구공과 럭비공 사이에서 지속적으로 변하는 외형 변형 이상을 지적하므로 상호 무관한 별개의 상호작용 및 현상입니다.
+R3 ↔ C2 / 미대응 / 시간도 일치
+명시적 별개 사건: 레퍼런스는 던져진 공이 투척자에게 역행하여 되돌아오는 궤적의 물리 법칙 위반을 다루는 반면, 후보 C2는 공이 구르면서 형태와 표면 표식이 계속 바뀌는 모핑 현상을 다루고 있어 서로 다른 상호작용 및 사건입니다.
+R3 ↔ C3 / 의미 대응 / 시간도 일치
+배경으로 던져진 공이 전경에 있는 던진 사람 쪽으로 돌아오는 동일한 비정상적 역방향 이동 관찰을 서로 다른 측면과 세부 표현으로 묘사하고 있습니다.
+
+채점 검증 상태
+유효 쌍 9 / 미사용 쌍 0

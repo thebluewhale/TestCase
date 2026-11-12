@@ -1,0 +1,74 @@
+sid_053_veo3
+Gemini 단독 재실행 · 집계 v3 최종 상태: hit
+R–C 의미 대응: 대응 있음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+모델: gemini-3.8-flash · 영상 8fps · 집중 재검토 · 선택적 프롬프트 검사
+검출과 채점을 모두 새로 실행했습니다. 원본 라벨은 검출 입력에 포함하지 않았습니다.
+C 번호는 이번 실행 기준이며 이전 실험의 C 번호와 대응하지 않습니다.
+라벨 밖 결함은 hit에 더하지 않습니다. 시간 차이는 보조 정보입니다.
+실행 · v4.temporal_context: completed (0개) 
+실행 · vertex-gemini: completed (2개) 
+실행 · vertex-gemini-focused: completed (2개) 
+실행 · vertex-gemini-prompt: completed (0개) 
+
+생성 프롬프트
+A video showing a rugby ball flying in from the left foreground and hitting the ground on a sunny rugby field covered with green grass. The ball makes an irregular bounce towards the left background, highlighting the unpredictable nature of its movement. The scene is set on a bright, clear day, emphasizing the vibrancy of the green field and the dynamic motion of the rugby ball.  
+
+프롬프트 요구사항 검사
+P1 · matched · 기대: 럭비공이 영상에 등장함.
+관측: 흰색 바탕에 파란 무늬가 있는 럭비공이 보임.
+근거: 요구된 럭비공이 명확히 확인됨.
+P2 · matched · 기대: 럭비공이 왼쪽 전경에서 날아 들어옴.
+관측: 공이 왼쪽 전경에서 시작하여 화면 중앙 쪽으로 이동함.
+근거: 왼쪽 전경에서 날아오는 동작이 일치함.
+P3 · matched · 기대: 햇빛이 비치는 푸른 잔디 럭비장에 공이 떨어져 닿음.
+관측: 햇빛이 드는 푸른 잔디밭 바닥에 공이 바운드됨.
+근거: 지면에 공이 닿는 모습이 일치함.
+P4 · matched · 기대: 공이 왼쪽 배경 방향으로 불규칙하게 튕겨 나감.
+관측: 지면에 닿은 후 공이 왼쪽 배경 방향으로 튕겨 이동함.
+근거: 불규칙하게 튀어 왼쪽 배경 쪽으로 굴러가는 궤적이 확인됨.
+P5 · matched · 기대: 맑고 밝은 날의 야외 배경임.
+관측: 화창한 자연광과 맑은 야외 잔디밭 환경이 나타남.
+근거: 전체 조명과 환경이 요구사항과 부합함.
+
+원본 라벨 R
+R1 (easy, 2.700–4.700초): 바운스가 물리적으로 불가능함
+원문: The bounce is physically impossible
+R2 (easy, 4.200–5.100초): 공이 불규칙하게 튀어야 하는데 튀지 않고 구르며 착지한 뒤 갑자기 위로 떠올라 화면 왼쪽으로 날아감
+원문: The prompt asks for the ball to have an ireegular bounce but the ball does bounce. It lands with a roll and then abrubtly just raises up and flies to the leftside of the screen. But there is no bounce that takes place. 
+
+검출 후보 C
+C1 (3.000–3.750초): [Gemini] 럭비공이 똑바로 착지한 후 바운스 사이에서 구형으로 변형되었다가 원래 형태로 돌아옴
+원문: The rugby ball lands upright and spontaneously morphs into a nearly spherical shape between bounces before regaining its prolate spheroid form.
+종류: model_proposal / bbox: [0.449, 0.381, 0.627, 0.686]
+C2 (6.125–7.875초): [Gemini] 첫 번째 공이 화면을 벗어난 후 두 번째 럭비공이 나타나 튕겨 나감
+원문: A second rugby ball appears at the far left edge and bounces away into the distance after the first ball leaves frame.
+종류: model_proposal / bbox: [0.0, 0.27, 0.12, 0.58]
+C3 (6.000–7.800초): [Gemini] 럭비공이 왼쪽으로 굴러 나갔다가 배경에서 다시 나타남
+원문: The rugby ball rolls off-screen on the left around 05.2s, then reappears rolling in the background near the left edge starting around 06.0s.
+종류: model_proposal / bbox: None
+C4 (2.500–4.500초): [Gemini] 럭비공이 바운스 도중 종횡비가 변하며 구형에 가깝게 변형됨
+원문: The rugby ball morphs in aspect ratio, abruptly shifting from an upright pointed oval to nearly spherical between bounces.
+종류: model_proposal / bbox: None
+
+자동 의미 대응
+R1 ↔ C1 / 판단 보류 / 시간도 일치
+동일 사건 여부/불일치 확정 보류: 기준 제보는 바운스가 물리적으로 불가능하다는 극도로 포괄적인 설명만 제시하여, 후보의 형태 변형과 동일한 사건인지 단정할 수 없습니다.
+R1 ↔ C2 / 판단 보류 / 시간 차이 있음
+동일 사건 여부/불일치 확정 보류: 기준 설명은 구체적으로 어떤 대상의 어떤 바운스가 물리적으로 불가능한지 세부 정보를 제공하지 않고 단순히 'The bounce is physically impossible'이라고만 명시하고 있습니다. 후보는 두 번째 럭비공이 튀어 나가는(bounces away) 현상을 언급하고 있어 해당 바운스에 대한 불만일 가능성을 완전히 배제할 수는 없으나, 텍스트만으로는 서로 동일한 이상 현상인지 명확히 분리되거나 일치하는지 단정할 수 없습니다.
+R1 ↔ C3 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 기준은 튀어 오르는 동작(bounce)의 물리적 불가능성을 지적하고 있는 반면, 후보 C3는 공이 굴러서(rolls) 화면 밖으로 나간 뒤 다시 굴러서(rolling) 재등장하는 비정상적 출현/구르기 현상을 기술하고 있어 동작과 상호작용 자체가 상이합니다.
+R1 ↔ C4 / 판단 보류 / 시간도 일치
+동일 사건 여부/불일치 확정 보류: 기준의 불가능한 바운스 주장이 형태 변형을 의미하는지 알 수 없어 판단이 불충분합니다.
+R2 ↔ C1 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 기준 설명은 공이 전혀 튀지(bounce) 않는다고 명시적으로 지적하는 반면, 후보 설명은 바운스들 사이(between bounces)에 형태가 변형된다고 설명하여 핵심 동작에 대한 상호 모순이 발생합니다.
+R2 ↔ C2 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 기준은 프레임 내에 존재하는 본래 공의 움직임 이상을 문제 삼고 있으나, 후보는 첫 번째 공이 프레임을 벗어난 후 새로 나타난 두 번째 럭비공의 출현 및 이동을 설명하므로 서로 다른 대상과 사건에 해당합니다.
+R2 ↔ C3 / 의미 대응 / 시간 차이 있음
+기준은 공이 착지하여 구르다가 왼쪽으로 날아간다고 기술하고, 후보는 공이 왼쪽 화면 밖으로 굴러 나갔다가 다시 나타난다고 하여 왼쪽으로 벗어나는 공의 궤적 및 이상 동작 측면을 공유합니다.
+R2 ↔ C4 / 미대응 / 시간도 일치
+명시적 별개 사건: 기준은 바운스가 전혀 발생하지 않는다고 명시적으로 기술하는 반면, 후보는 바운스들 사이에서 공의 형태가 변형된다고 기술하여 두 설명이 정면으로 대립합니다.
+
+채점 검증 상태
+유효 쌍 8 / 미사용 쌍 0

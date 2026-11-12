@@ -1,0 +1,68 @@
+sid_013_ltx2
+Gemini 단독 재실행 · 집계 v3 최종 상태: pending
+R–C 의미 대응: 판단 보류
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+모델: gemini-3.8-flash · 영상 8fps · 집중 재검토 · 선택적 프롬프트 검사
+검출과 채점을 모두 새로 실행했습니다. 원본 라벨은 검출 입력에 포함하지 않았습니다.
+C 번호는 이번 실행 기준이며 이전 실험의 C 번호와 대응하지 않습니다.
+라벨 밖 결함은 hit에 더하지 않습니다. 시간 차이는 보조 정보입니다.
+실행 · v4.temporal_context: completed (1개) 
+실행 · vertex-gemini: completed (1개) 
+실행 · vertex-gemini-focused: completed (2개) 
+실행 · vertex-gemini-prompt: completed (0개) 
+
+생성 프롬프트
+A chef tosses vegetables into the air, they arrange themselves into a salad, and then land back in the bowl.
+
+프롬프트 요구사항 검사
+P1 · matched · 기대: 요리사가 채소를 공중으로 던지는 동작
+관측: 요리사가 채소를 위로 던지는 동작이 확인됨
+근거: 요리사가 손으로 채소 묶음을 위로 띄움
+P2 · matched · 기대: 공중에서 채소들이 샐러드 형태로 정렬됨
+관측: 공중에 떠 있는 동안 정갈한 형태로 배열됨
+근거: 공중에서 채소들이 일정한 정렬을 유지하며 형태를 갖춤
+P3 · matched · 기대: 채소들이 그릇 안으로 떨어져 담김
+관측: 채소들이 아래의 유리 그릇 안으로 안착함
+근거: 공중에 있던 채소들이 투명한 볼 안으로 들어감
+
+원본 라벨 R
+R1 (easy, 4.800–6.100초): 야채가 그릇에 담기기는 하지만 샐러드가 만들어지지 않음.
+원문: The vegetables do land in the bowl, but they do not make a salad.
+R2 (easy, 0.400–4.500초): 채소가 무엇인지 불분명하고 썰린 조각이 지나치게 길며 비현실적이고 양상추만 알아볼 수 있다는 지적.
+원문: Very unclear what the vegetables are, the slices they're cut into are way too long and unrealistic, only the lettuce is recognizable
+
+검출 후보 C
+C1 (5.520–6.200초): [측정 제안] 영상 특징과 픽셀 구조 변화 구간 확인 제안.
+원문: 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+종류: measurement_proposal / bbox: [0.3020833333333333, 0.0, 0.7083333333333334, 1.0]
+C2 (5.125–6.250초): [Gemini] 떨어지는 야채 아래로 유리 볼이 갑자기 나타남.
+원문: A glass bowl abruptly fades into existence beneath the falling vegetables instead of entering naturally.
+종류: model_proposal / bbox: [0.264, 0.443, 0.724, 0.992]
+C3 (2.200–6.500초): [Gemini] 야채 묶음이 공중에서 분산되지 않고 굳은 채 떠 있다가 볼에 담김.
+원문: The tossed arrangement of vegetables maintains an unnaturally rigid structure in mid-air, levitating without physical dispersion before settling perfectly into the bowl.
+종류: model_proposal / bbox: [0.32, 0.01, 0.71, 0.58]
+C4 (2.400–5.200초): [Gemini] 셰프의 머리와 목이 채소 무리 뒤에서 사라지고 모자가 불규칙하게 깜빡임.
+원문: The chef's head and neck vanish behind the floating cluster, with the tall chef hat partially fading out and reappearing irregularly.
+종류: model_proposal / bbox: [0.45, 0.0, 0.56, 0.35]
+
+자동 의미 대응
+R1 ↔ C1 / 판단 보류 / 시간도 일치
+동일 사건 여부/불일치 확정 보류: C1은 단순 측정 변화 제안이며 구체적인 대상이나 상태 변화가 명시되지 않았습니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+명시적 별개 사건: R1은 떨어진 야채들이 샐러드를 완성하지 못한다는 결과적 결함을 지적하는 반면, C2는 떨어지는 야채 아래로 유리 그릇 자체가 비자연스럽게 서서히 나타나는 그릇의 생성 이상을 다루므로 대상과 상호작용이 명확히 다릅니다.
+R1 ↔ C3 / 미대응 / 시간도 일치
+명시적 별개 사건: R1의 불만은 야채들이 샐러드를 구성/완성하지 못한다는 점인 반면, C3은 야채들이 공중에서 분산되지 않고 굳은 채 떠 있다가 그릇으로 들어가는 물리적 이상 현상에 대한 설명이므로 상호작용 및 불만 내용이 상이합니다.
+R1 ↔ C4 / 미대응 / 시간도 일치
+명시적 별개 사건: R1은 야채들이 샐러드가 되지 않는다는 점을 지적하나 C4는 요리사의 머리, 목, 모자가 사라지고 불규칙하게 다시 나타나는 신체 시각 결함에 관한 것이므로 대상과 현상이 완전히 다릅니다.
+R2 ↔ C1 / 판단 보류 / 시간 차이 있음
+동일 사건 여부/불일치 확정 보류: C1은 구체적이지 않은 메트릭 기반 측정 제안입니다.
+R2 ↔ C2 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조 설명은 채소들이 어떻게 썰려 있는지와 정체를 알아보기 힘든 외형을 지적하고 있는 반면, 후보 설명은 유리 볼이 갑작스럽게 생성되는 현상을 다루고 있어 대상과 사건이 완전히 다릅니다.
+R2 ↔ C3 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조 설명은 채소 조각의 길이와 식별 가능성 등 개별 채소의 절단 외형 문제를 지적하는 반면, 후보 설명은 공중에 던져진 채소 덩어리가 분산되지 않고 단단한 구조를 유지하며 공중부양하는 물리적 움직임 현상을 다루고 있어 서로 다른 상호작용 및 이상 현상입니다.
+R2 ↔ C4 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조 설명은 썰린 채소의 형태적 외형에 관한 불만인 반면, 후보 설명은 요리사의 머리와 모자가 사라지고 깜빡이는 현상을 지적하여 서로 완전히 다른 대상에 대한 설명입니다.
+
+채점 검증 상태
+유효 쌍 8 / 미사용 쌍 0
