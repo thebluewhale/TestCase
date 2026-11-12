@@ -1,0 +1,103 @@
+sid_079_ltx2
+8fps 병렬 실험의 기존 검출 · 집계 v2 최종 상태: pending (이전: pending)
+R–C 의미 대응: 판단 보류
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 무효 · 원시 상태: invalid_response
+Gemini 시각: 8개 · 미채점
+Claude 시각: 8개 · 미채점
+별도 프롬프트 검사: 0개 · 미채점
+두 모델은 공통 집중 구간을 공유합니다. 이 표는 단독 재실행 성능 비교가 아닙니다.
+실행 실패·응답 검증 실패를 정상 또는 미검출로 간주하지 않습니다. 라벨 밖 결함은 hit에 더하지 않습니다.
+유효한 의미 대응이 하나라도 있으면 hit입니다. 검출 일부 실패는 별도로 표시합니다. 시간 차이는 보조 정보입니다.
+채점 보류 사유: Candidate event atoms must be exact source substrings
+실행 · v4.temporal_context /  : completed (0개) 
+실행 · vertex-gemini / overview : completed (1개) 
+실행 · claude-overview / overview : completed (2개) 
+실행 · vertex-gemini / focus-0 : completed (2개) 
+실행 · claude-focus-0 / focus-0 : completed (2개) 
+실행 · vertex-gemini / focus-1 : completed (3개) 
+실행 · claude-focus-1 / focus-1 : completed (2개) 
+실행 · vertex-gemini / focus-2 : completed (2개) 
+실행 · claude-focus-2 / focus-2 : completed (2개) 
+실행 · vertex-gemini-prompt /  : completed (0개) 
+
+생성 프롬프트
+4 friends, 2 men and 2 women in a bar at night drinking wine and talking  
+
+프롬프트 요구사항 검사
+P1 · matched · 기대: 네 명의 친구들이 등장해야 함
+관측: 남성 2명, 여성 2명 총 4명의 인물이 함께 앉아 있음
+근거: 요구된 4명의 인물이 정확히 등장함
+P2 · matched · 기대: 남성 2명과 여성 2명으로 구성되어야 함
+관측: 남성 2명과 여성 2명이 보임
+근거: 성별 구성 요구가 완벽히 충족됨
+P3 · matched · 기대: 밤 시간대의 바 공간에 위치해야 함
+관측: 어두운 실내 조명과 배경의 액자 및 바 분위기를 갖춘 장소임
+근거: 밤 시간대 바의 환경이 시각적으로 일치함
+P4 · matched · 기대: 인물들이 와인을 마시는 모습이 나타나야 함
+관측: 와인잔을 들고 건배한 후 입에 대고 와인을 마심
+근거: 와인을 마시는 동작이 확인됨
+P5 · matched · 기대: 인물들이 대화를 나누고 있어야 함
+관측: 영상 초반에 서로를 보며 미소 짓고 대화를 나누는 모습이 보임
+근거: 대화하는 행동 요구사항이 충족됨
+
+원본 라벨 R
+R1 (easy, 5.000–8.000초): The wine glass appears out of nowhere for the 2nd woman
+원문: The wine glass appears out of nowhere for the 2nd woman
+R2 (medium, 3.300–5.300초): The brunette woman in pink seems to cheers with an empty glass, thumbs-up gesture, but at the end of the cheers has a wine glass in her hands. 
+원문: The brunette woman in pink seems to cheers with an empty glass, thumbs-up gesture, but at the end of the cheers has a wine glass in her hands. 
+
+검출 후보 C
+C1 (3.400–5.400초): [Gemini] During the toast, the wine glasses merge, distort, and duplicate temporarily in the cluster.
+원문: During the toast, the wine glasses merge, distort, and duplicate temporarily in the cluster.
+종류: model_proposal / bbox: [0.41, 0.43, 0.59, 0.77]
+C2 (2.880–3.480초): [Claude] 초반에는 파란셔츠 남성 영역에 와인잔이 하나로 보이지만, 약 3초 이후 프레임들에서 서로 겹친 두 개의 잔 윤곽이 나타나 잔의 개수가 불안정하게 변동한다.
+원문: 초반에는 파란셔츠 남성 영역에 와인잔이 하나로 보이지만, 약 3초 이후 프레임들에서 서로 겹친 두 개의 잔 윤곽이 나타나 잔의 개수가 불안정하게 변동한다.
+종류: model_proposal / bbox: [0.3, 0.55, 0.5, 0.95]
+C3 (0.000–2.760초): [Claude] 초반 프레임 하단에 반쯤 보이던 작은 와인잔이 후반 건배 구도로 전환되면서 명확한 연속성 없이 사라진다.
+원문: 초반 프레임 하단에 반쯤 보이던 작은 와인잔이 후반 건배 구도로 전환되면서 명확한 연속성 없이 사라진다.
+종류: model_proposal / bbox: [0.38, 0.82, 0.48, 1.0]
+C4 (3.300–5.400초): [Gemini] Wine glasses duplicate and morph in the center area during the toast sequence, fluctuating in number and stem alignment.
+원문: Wine glasses duplicate and morph in the center area during the toast sequence, fluctuating in number and stem alignment.
+종류: model_proposal / bbox: [0.35, 0.44, 0.54, 0.77]
+C5 (3.000–4.500초): [Gemini] The woman in the red shirt abruptly switches her hand configuration, showing inconsistent fingers grasping and releasing near her glass stem.
+원문: The woman in the red shirt abruptly switches her hand configuration, showing inconsistent fingers grasping and releasing near her glass stem.
+종류: model_proposal / bbox: [0.52, 0.59, 0.61, 0.77]
+C6 (2.920–5.880초): [Claude] 중앙에 모인 와인잔들이 프레임마다 서로 겹치며 윤곽과 개수가 불안정하게 보인다. 특정 프레임(예: 4.16, 4.32초)에서는 잔의 테두리가 이중으로 그려지거나 뒤틀린 형태로 나타나 잔의 개수를 명확히 셀 수 없다. 샘플 간 잔의 경계가 일관되지 않다.
+원문: 중앙에 모인 와인잔들이 프레임마다 서로 겹치며 윤곽과 개수가 불안정하게 보인다. 특정 프레임(예: 4.16, 4.32초)에서는 잔의 테두리가 이중으로 그려지거나 뒤틀린 형태로 나타나 잔의 개수를 명확히 셀 수 없다. 샘플 간 잔의 경계가 일관되지 않다.
+종류: model_proposal / bbox: [0.28, 0.35, 0.62, 0.85]
+C7 (4.160–4.320초): [Claude] 4.16~4.32초 프레임에서 중앙의 와인잔 테두리가 접히거나 찌그러진 비자연스러운 형태로 보인다. 잔 림이 매끄러운 곡선이 아니라 꺾이거나 이중으로 겹친 윤곽으로 렌더링되어 형태 왜곡이 관찰된다.
+원문: 4.16~4.32초 프레임에서 중앙의 와인잔 테두리가 접히거나 찌그러진 비자연스러운 형태로 보인다. 잔 림이 매끄러운 곡선이 아니라 꺾이거나 이중으로 겹친 윤곽으로 렌더링되어 형태 왜곡이 관찰된다.
+종류: model_proposal / bbox: [0.38, 0.33, 0.56, 0.55]
+C8 (2.500–4.500초): [Gemini] Wine glasses multiply and morph unrealistically as characters initiate a toast.
+원문: Wine glasses multiply and morph unrealistically as characters initiate a toast.
+종류: model_proposal / bbox: [0.38, 0.4, 0.58, 0.75]
+C9 (2.600–3.800초): [Gemini] Woman's hand dissolves and reappears awkwardly while holding her glass.
+원문: Woman's hand dissolves and reappears awkwardly while holding her glass.
+종류: model_proposal / bbox: [0.55, 0.65, 0.66, 0.85]
+C10 (5.000–7.800초): [Gemini] Wine glass held by the man in blue shifts form and contents inconsistently before drinking.
+원문: Wine glass held by the man in blue shifts form and contents inconsistently before drinking.
+종류: model_proposal / bbox: [0.24, 0.32, 0.48, 0.56]
+C11 (2.640–3.360초): [Claude] 중앙 영역에서 처음에는 와인잔 하나(그리고 뒤쪽에 낮은 잔)로 보이다가 이후 프레임에서 나란히 두 개의 긴 와인잔이 명확히 존재하는 등 잔의 개수와 형태가 프레임마다 불안정하게 변동함. 손과 잔의 접촉 구성도 일관되지 않음.
+원문: 중앙 영역에서 처음에는 와인잔 하나(그리고 뒤쪽에 낮은 잔)로 보이다가 이후 프레임에서 나란히 두 개의 긴 와인잔이 명확히 존재하는 등 잔의 개수와 형태가 프레임마다 불안정하게 변동함. 손과 잔의 접촉 구성도 일관되지 않음.
+종류: model_proposal / bbox: [0.33, 0.55, 0.52, 0.95]
+C12 (2.400–2.960초): [Claude] 초기 프레임(2.4~2.96초)에서는 큰 잔 옆에 낮고 둥근 작은 잔이 보이나, 이후 프레임에서는 동일 위치에 길쭉한 와인잔으로 형태가 전환되어 잔의 종류/형태가 불일치함.
+원문: 초기 프레임(2.4~2.96초)에서는 큰 잔 옆에 낮고 둥근 작은 잔이 보이나, 이후 프레임에서는 동일 위치에 길쭉한 와인잔으로 형태가 전환되어 잔의 종류/형태가 불일치함.
+종류: model_proposal / bbox: [0.4, 0.68, 0.5, 0.95]
+C13 (2.200–3.800초): [Gemini] The wine glass held by the man in blue shifts form, gaining a stem and changing bowl dimensions dynamically.
+원문: The wine glass held by the man in blue shifts form, gaining a stem and changing bowl dimensions dynamically.
+종류: model_proposal / bbox: None
+C14 (3.000–4.500초): [Gemini] The woman in the red shirt is seated with her glass on her lap, but as the toast progresses another hand or glass interacts unnaturally before she drinks.
+원문: The woman in the red shirt is seated with her glass on her lap, but as the toast progresses another hand or glass interacts unnaturally before she drinks.
+종류: model_proposal / bbox: None
+C15 (0.000–2.880초): [Claude] 초반 프레임(0.0~2.36초)에서 남성이 들고 있는 두 번째 잔은 작고 둥근 브랜디/스니프터형 잔으로 보이며 다리(스템)가 거의 없는 형태였다. 그러나 2.76초 이후 프레임에서 이 잔이 긴 스템을 가진 일반 와인잔 형태로 바뀌어 나타난다. 동일 위치의 잔 형태가 둥근 작은 잔에서 길쭉한 와인잔으로 변형되는 것이 관찰된다.
+원문: 초반 프레임(0.0~2.36초)에서 남성이 들고 있는 두 번째 잔은 작고 둥근 브랜디/스니프터형 잔으로 보이며 다리(스템)가 거의 없는 형태였다. 그러나 2.76초 이후 프레임에서 이 잔이 긴 스템을 가진 일반 와인잔 형태로 바뀌어 나타난다. 동일 위치의 잔 형태가 둥근 작은 잔에서 길쭉한 와인잔으로 변형되는 것이 관찰된다.
+종류: model_proposal / bbox: [0.58, 0.65, 0.73, 1.0]
+C16 (0.000–2.480초): [Claude] 초반~중반 프레임에서 작은 둥근 잔 하단 테두리에 매달린 반짝이는 금속/보석 장식(참)이 반복적으로 관찰되나, 후반 프레임(2.76초 이후)에서는 잔 형태 변화와 함께 해당 장식이 더 이상 명확히 보이지 않는다.
+원문: 초반~중반 프레임에서 작은 둥근 잔 하단 테두리에 매달린 반짝이는 금속/보석 장식(참)이 반복적으로 관찰되나, 후반 프레임(2.76초 이후)에서는 잔 형태 변화와 함께 해당 장식이 더 이상 명확히 보이지 않는다.
+종류: model_proposal / bbox: [0.6, 0.72, 0.68, 0.9]
+
+검증 탈락 원시 응답
+
+자동 의미 대응
+유효한 자동 의미 평가가 없어 대응 여부를 확정하지 않았습니다.

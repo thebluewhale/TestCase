@@ -1,15 +1,14 @@
 sid_013_seedance
-8fps 병렬 실험의 기존 검출 · 집계 v2 최종 상태: pending (이전: pending)
-R–C 의미 대응: 판단 보류
+기존 병렬 실험 · 집계 v3 최종 상태: hit
+R–C 의미 대응: 대응 있음
 검출 실행 상태: 부분 완료
-채점 응답 유효성: 무효 · 원시 상태: invalid_response
+채점 응답 유효성: 일부 유효 · 원시 상태: invalid_response
 Gemini 시각: 8개 · 미채점
 Claude 시각: 8개 · 미채점
 별도 프롬프트 검사: 2개 · 미채점
 두 모델은 공통 집중 구간을 공유합니다. 이 표는 단독 재실행 성능 비교가 아닙니다.
 실행 실패·응답 검증 실패를 정상 또는 미검출로 간주하지 않습니다. 라벨 밖 결함은 hit에 더하지 않습니다.
 유효한 의미 대응이 하나라도 있으면 hit입니다. 검출 일부 실패는 별도로 표시합니다. 시간 차이는 보조 정보입니다.
-채점 보류 사유: Pair evidence must belong to a selected claim
 실행 · v4.temporal_context /  : completed (0개) 
 실행 · vertex-gemini / overview : completed (2개) 
 실행 · claude-overview / overview : completed (3개) 
@@ -104,4 +103,58 @@ claude-focus-0 / focus-0 · 채점에서 제외됨
 미채택 원시 서술: 초반(1.25초) 그릇에는 작은 당근·녹색 조각만 보이나, 저글링이 진행되며 오이 슬라이스, 당근 스틱, 상추 잎이 순차적으로 출현하여 내용물 구성과 양이 불연속적으로 변함. 공중 채소가 떨어진 양에 비해 그릇 내용물의 변화 양상이 자연스럽게 연결되지 않음.
 
 자동 의미 대응
-유효한 자동 의미 평가가 없어 대응 여부를 확정하지 않았습니다.
+R1 ↔ C17: 의미 대응 / 시간도 일치
+던져진 채소들이 샐러드로 완성되지 않고 그대로 볼/바닥으로 떨어지는 현상
+근거: R1과 C17은 채소들이 저절로 샐러드로 조합되지 않고 그냥 던져지거나 떨어진다는 동일한 불만을 설명하고 있습니다.
+R2 ↔ C1: 의미 대응 / 시간 차이 있음
+볼 안에 채소(당근 등)가 갑자기 나타나는 현상
+근거: R2는 볼 안으로 채소가 떨어지는 과정에서 당근이 갑자기 나타남을 지적하고, C1은 저글링 중 볼 안에 채소가 갑자기 나타남을 지적하여 동일한 출현 현상을 기술합니다.
+R2 ↔ C3: 의미 대응 / 시간 차이 있음
+당근의 돌발적인 출현 현상
+근거: 두 관찰 모두 영상 내에서 갑자기 나타나는 당근(주황색 물체)의 출현 결함을 포착하고 있습니다.
+R2 ↔ C4: 의미 대응 / 시간 차이 있음
+볼 내부에서 당근 조각이 불규칙하게 변하거나 갑자기 나타나는 현상
+근거: 볼 안에서 당근 내용물이 던져 넣지 않은 상태에서 갑자기 나타나거나 변하는 동일 대상을 설명합니다.
+R2 ↔ C6: 의미 대응 / 시간 차이 있음
+상추 등 채소가 볼 안으로 들어가는 과정의 비현실적 출현/복제
+근거: R2에서 상추가 볼로 떨어지는 방식이 비현실적이라고 한 점과 C6에서 채소가 공중에 남은 채 볼 안으로 복제/출현한다는 설명은 동일한 착지/출현 이상을 다룹니다.
+R2 ↔ C9: 의미 대응 / 시간도 일치
+채소의 비현실적인 공중 낙하 궤적과 움직임
+근거: R2의 상추가 그릇으로 떨어지는 방식이 비현실적이라는 불만은 C9의 부자연스러운 중력, 속도 및 궤적 변화와 공통의 낙하/궤적 이상을 다룹니다.
+R2 ↔ C13: 의미 대응 / 시간 차이 있음
+볼 안에 채소가 비현실적으로 갑자기 나타나며 들어가는 현상
+근거: 채소가 공중에 있는 상태에서 볼 안에 돌발적으로 채소가 나타나는 비현실적인 낙하/출현 과정을 공유합니다.
+
+채점 검증 상태
+유효 쌍 7 / 미사용 쌍 29
+국소 오류는 해당 후보/쌍만 제외합니다. 공통 정답 분석·ID 구조 오류는 전체 보류합니다.
+원시 응답 : Pair evidence must belong to a selected claim
+pair R1/C1: required_review_incomplete
+pair R1/C2: required_review_incomplete
+pair R1/C3: required_review_incomplete
+pair R1/C4: required_review_incomplete
+pair R1/C5: required_review_incomplete
+pair R1/C6: required_review_incomplete
+pair R1/C7: required_review_incomplete
+pair R1/C8: required_review_incomplete
+pair R1/C9: required_review_incomplete
+pair R1/C10: required_review_incomplete
+pair R1/C11: required_review_incomplete
+pair R1/C12: required_review_incomplete
+pair R1/C13: required_review_incomplete
+pair R1/C14: required_review_incomplete
+pair R1/C15: required_review_incomplete
+pair R1/C16: required_review_incomplete
+pair R1/C18: required_review_incomplete
+pair R2/C2: required_review_incomplete
+pair R2/C5: required_review_incomplete
+pair R2/C7: required_review_incomplete
+pair R2/C8: required_review_incomplete
+pair R2/C10: required_review_incomplete
+pair R2/C11: required_review_incomplete
+pair R2/C12: required_review_incomplete
+pair R2/C14: required_review_incomplete
+pair R2/C15: Pair evidence must belong to a selected claim
+pair R2/C16: required_review_incomplete
+pair R2/C17: required_review_incomplete
+pair R2/C18: required_review_incomplete

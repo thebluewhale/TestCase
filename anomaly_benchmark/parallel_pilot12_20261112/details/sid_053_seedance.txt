@@ -1,15 +1,14 @@
 sid_053_seedance
-8fps 병렬 실험의 기존 검출 · 집계 v2 최종 상태: pending (이전: pending)
-R–C 의미 대응: 판단 보류
+기존 병렬 실험 · 집계 v3 최종 상태: hit
+R–C 의미 대응: 대응 있음
 검출 실행 상태: 부분 완료
-채점 응답 유효성: 무효 · 원시 상태: invalid_response
+채점 응답 유효성: 일부 유효 · 원시 상태: invalid_response
 Gemini 시각: 3개 · 미채점
 Claude 시각: 8개 · 미채점
 별도 프롬프트 검사: 1개 · 미채점
 두 모델은 공통 집중 구간을 공유합니다. 이 표는 단독 재실행 성능 비교가 아닙니다.
 실행 실패·응답 검증 실패를 정상 또는 미검출로 간주하지 않습니다. 라벨 밖 결함은 hit에 더하지 않습니다.
 유효한 의미 대응이 하나라도 있으면 hit입니다. 검출 일부 실패는 별도로 표시합니다. 시간 차이는 보조 정보입니다.
-채점 보류 사유: Candidate event atoms must be exact source substrings
 실행 · v4.temporal_context /  : completed (0개) 
 실행 · vertex-gemini / overview : completed (1개) 
 실행 · claude-overview / overview : completed (2개) 
@@ -87,4 +86,47 @@ C12 (0.500–3.000초): [프롬프트 검사] 공이 왼쪽 배경 방향으로 
 검증 탈락 원시 응답
 
 자동 의미 대응
-유효한 자동 의미 평가가 없어 대응 여부를 확정하지 않았습니다.
+R1 ↔ C4: 의미 대응 / 시간도 일치
+공이 구르는 동안 나타나는 부자연스러운 거동 및 변형
+근거: 후보에서 공이 구르는(rolling) 동안 방향, 크기, 형태가 부자연스럽게 변형된다고 설명하여 공의 부자연스러운 움직임과 동일 사건의 양상을 공유함
+R1 ↔ C9: 의미 대응 / 시간도 일치
+공이 튀고 구르는 동안 나타나는 부자연스러운 동적 변화
+근거: 공이 튀고 구르는(bouncing and rolling) 동안의 동적 변화를 서술하여 기준의 부자연스러운 움직임과 동일 사건의 구체적 양상을 공유함
+R1 ↔ C12: 의미 대응 / 시간도 일치
+공의 부자연스러운 궤적 및 움직임
+근거: 기준의 자연스럽지 않은 움직임에 대해 후보가 구체적으로 튀고 굴러가는 이상 궤적을 설명함
+R2 ↔ C12: 의미 대응 / 시간 차이 있음
+공이 배경 쪽이 아닌 전경 쪽으로 튀어 이동하는 궤적
+근거: 배경 방향으로 튀지 않고 전경 쪽으로 튄다는 핵심 사실을 완전히 동일하게 서술함
+R3 ↔ C12: 의미 대응 / 시간 차이 있음
+공이 던져진 후 정상적으로 날아가지 않고 관찰자/투구자 쪽(전경)으로 되돌아오는 비정상적 궤적
+근거: 기준의 부메랑처럼 던진 사람 쪽으로 되돌아온다는 설명과 후보의 배경 방향이 아닌 전경 쪽으로 튀어 굴러온다는 설명이 동일한 비정상적 궤적 현상을 상호 보완적으로 서술함
+
+채점 검증 상태
+유효 쌍 13 / 미사용 쌍 23
+국소 오류는 해당 후보/쌍만 제외합니다. 공통 정답 분석·ID 구조 오류는 전체 보류합니다.
+원시 응답 : Candidate event atoms must be exact source substrings
+candidate C11: Candidate event atoms must be exact source substrings
+pair R1/C11: candidate_validation_failed
+pair R2/C1: required_review_incomplete
+pair R2/C2: required_review_incomplete
+pair R2/C3: required_review_incomplete
+pair R2/C4: required_review_incomplete
+pair R2/C5: required_review_incomplete
+pair R2/C6: required_review_incomplete
+pair R2/C7: required_review_incomplete
+pair R2/C8: required_review_incomplete
+pair R2/C9: required_review_incomplete
+pair R2/C10: required_review_incomplete
+pair R2/C11: candidate_validation_failed
+pair R3/C1: required_review_incomplete
+pair R3/C2: required_review_incomplete
+pair R3/C3: required_review_incomplete
+pair R3/C4: required_review_incomplete
+pair R3/C5: required_review_incomplete
+pair R3/C6: required_review_incomplete
+pair R3/C7: required_review_incomplete
+pair R3/C8: required_review_incomplete
+pair R3/C9: required_review_incomplete
+pair R3/C10: required_review_incomplete
+pair R3/C11: candidate_validation_failed
