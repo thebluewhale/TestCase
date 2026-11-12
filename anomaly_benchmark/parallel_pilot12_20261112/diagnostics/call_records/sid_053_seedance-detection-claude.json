@@ -1,0 +1,158 @@
+[
+  {
+    "model": "claude-opus-4-8",
+    "phase": "detection",
+    "provider": "claude",
+    "request_sha256": "e1d4e98b9807676ee84c94fed5606c29ffd47385b878a7951e31bd470fb898f1",
+    "reused": false,
+    "status": "received",
+    "raw_response": {
+      "model": "claude-opus-4-8",
+      "id": "msg_vrtx_011CgxGro1dApGmhGcL8Cc8g",
+      "type": "message",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"candidates\": [{\"target\": \"공(ball)의 표면 패턴 및 형태\", \"normal_alternative\": \"일관된 패턴과 모양을 가진 단일 공이 구르거나 정지하는 모습\", \"end_seconds\": 5.0, \"bbox\": [0.0, 0.57, 0.3, 0.86], \"category\": \"form_existence\", \"location_reason\": \"공이 프레임 좌측 하단 또는 우측 하단에 위치하며 시간에 따라 표면 무늬가 지속적으로 변함\", \"start_seconds\": 0.0, \"description\": \"공의 표면 무늬가 프레임마다 일관성 없이 변형됨. 초반(0~0.5초)에는 검은 곡선 줄무늬가 있는 흰 공이었으나, 중반(1.25~2.0초)에는 끈 모양/점 패턴으로 바뀌고, 후반(3.5초 이후)에는 럭비공 모양의 끈(레이싱) 무늬가 선명하게 나타남. 동일한 공 하나가 굴러가는 장면이라기엔 표면 아이덴티티가 비현실적으로 계속 바뀜.\", \"visibility\": \"obvious\"}, {\"target\": \"공의 전체 윤곽 형태(구형 vs 타원형)\", \"normal_alternative\": \"구르는 동안 일정한 구형 또는 타원형을 유지\", \"end_seconds\": 5.0, \"bbox\": [0.0, 0.57, 0.3, 0.86], \"category\": \"form_existence\", \"location_reason\": \"근경에 있는 공의 실루엣이 프레임에 따라 구형과 럭비공형 사이에서 변함\", \"start_seconds\": 2.25, \"description\": \"공의 외곽 윤곽이 둥근 축구공 형태에서 길쭉한 럭비공(타원형) 형태로 서서히 변형됨. 2.25초 이후 점점 가로로 늘어진 럭비공 형태로 바뀌어 형태 일관성이 붕괴됨.\", \"visibility\": \"obvious\"}], \"limitations\": [\"샘플된 스틸 프레임만 검토 가능하며 연속 재생 움직임은 추정하지 않음.\", \"공이 모션 블러 상태(0~0.375초)일 때 표면 패턴 식별이 제한됨.\", \"배경 요소(나무, 골대)는 안정적이며 특이 변화 관찰되지 않음.\"]}"
+        }
+      ],
+      "container": null,
+      "stop_reason": "end_turn",
+      "stop_sequence": null,
+      "stop_details": null,
+      "usage": {
+        "input_tokens": 36463,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 838,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "speed": "standard"
+      }
+    },
+    "elapsed_seconds": 18.823724763999962
+  },
+  {
+    "model": "claude-opus-4-8",
+    "phase": "detection",
+    "provider": "claude",
+    "request_sha256": "c08efae4b9967fa51618dfc9ded676a293d07f950d93ae46fb76626ae5181cf1",
+    "reused": false,
+    "status": "received",
+    "raw_response": {
+      "model": "claude-opus-4-8",
+      "id": "msg_vrtx_011CgxGtPuNWoeD8JnGY4syo",
+      "type": "message",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"candidates\": [{\"target\": \"흰색 공 (구형→럭비공형 변형)\", \"normal_alternative\": \"일관된 하나의 공 형태 유지 (축구공이면 구형, 럭비공이면 타원형)\", \"end_seconds\": 1.9166666666666667, \"bbox\": [0.63, 0.46, 0.76, 0.62], \"category\": \"form_existence\", \"location_reason\": \"measurement_crop에서 공이 프레임 하단 중앙~우측에 위치. crop [864,369,1825,849] 기준으로 환산한 원본 좌표. 초반 프레임에서는 구형 축구공, 이후 타원형 럭비공으로 바뀜\", \"start_seconds\": 1.0, \"description\": \"초반(1.0~1.25초) 공은 전형적인 둥근 축구공 형태이며 파란색/검정 패널 무늬가 보인다. 이후 프레임(1.5초부터)에서 동일 공이 점차 길쭉한 타원형(럭비공/미식축구공) 형태로 변하고 표면 무늬도 측면 레이스(끈) 모양으로 바뀐다. 동일 물체의 종류/형태가 연속 샘플 사이에서 일관성 없이 변화함.\", \"visibility\": \"obvious\"}, {\"target\": \"공 표면 무늬/텍스처\", \"normal_alternative\": \"일관된 로고/무늬 유지\", \"end_seconds\": 4.0, \"bbox\": [0.1, 0.63, 0.28, 0.78], \"category\": \"temporal_instability\", \"location_reason\": \"후반 프레임에서 공이 왼쪽 하단으로 이동. measurement_crop 기준 공 위치를 원본 좌표로 환산\", \"start_seconds\": 1.0, \"description\": \"공 표면의 무늬/글자/레이스 패턴이 프레임마다 다르게 나타난다. 어떤 프레임은 검정 곡선 무늬, 어떤 프레임은 지퍼형 레이스, 어떤 프레임은 읽을 수 없는 글자가 번지듯 보이며 안정적으로 유지되지 않는다.\", \"visibility\": \"obvious\"}], \"limitations\": [\"샘플된 정지 프레임만 제공되어 연속 움직임은 추정 불가\", \"카메라가 공에 접근하거나 패닝하는 중일 수 있어 일부 형태 변화는 원근/모션 블러 영향 가능\", \"공의 실제 종류(축구공/럭비공)에 대한 제작 의도를 알 수 없음\", \"measurement_crop와 full_frame 간 좌표 변환은 근사치\"]}"
+        }
+      ],
+      "container": null,
+      "stop_reason": "end_turn",
+      "stop_sequence": null,
+      "stop_details": null,
+      "usage": {
+        "input_tokens": 47366,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 909,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "speed": "standard"
+      }
+    },
+    "elapsed_seconds": 21.30808048900053
+  },
+  {
+    "model": "claude-opus-4-8",
+    "phase": "detection",
+    "provider": "claude",
+    "request_sha256": "0d91cd8c46595b011549c0cc0222081587c12bbb1b1605f35c85c4e92ea879fd",
+    "reused": false,
+    "status": "received",
+    "raw_response": {
+      "model": "claude-opus-4-8",
+      "id": "msg_vrtx_011CgxH3ME9361QfwatTxhgq",
+      "type": "message",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"candidates\": [{\"target\": \"공 (스포츠 볼)\", \"normal_alternative\": \"일관된 하나의 공 형태(축구공 또는 럭비공 중 하나)가 유지되어야 함\", \"end_seconds\": 2.1666666666666665, \"bbox\": [0.62, 0.46, 0.73, 0.62], \"category\": \"form_existence\", \"location_reason\": \"초기 프레임들에서 공은 오른쪽 중앙 잔디 위에 위치, full_frame 기준 대략 좌표\", \"start_seconds\": 1.0, \"description\": \"초반(약 1.0~2.0초) 공은 둥근 구형(축구공 형태)으로 검은 얼룩/패널 무늬가 보인다. 그러나 이후 프레임에서 점차 타원형으로 바뀌며 표면 무늬가 변한다. 구형에서 타원형으로의 형태 전이가 관찰된다.\", \"visibility\": \"obvious\"}, {\"target\": \"공의 표면 무늬/텍스처\", \"normal_alternative\": \"공의 표면 무늬(패널, 로고, 레이스)가 프레임 간 일관되게 유지되어야 함\", \"end_seconds\": 4.0, \"bbox\": [0.1, 0.55, 0.42, 0.8], \"category\": \"temporal_instability\", \"location_reason\": \"후반 프레임에서 공이 왼쪽 하단으로 이동하여 표면 무늬가 크게 나타남\", \"start_seconds\": 2.1666666666666665, \"description\": \"공의 표면이 축구공 유형의 검은 점/패널에서 럭비공 유형의 중앙 레이스(끈) 무늬로 점진적으로 변형된다. 2.17초 이후 타원형과 함께 레이스 패턴이 나타나며, 동일 물체의 정체성(축구공↔럭비공)이 불안정하게 바뀐다.\", \"visibility\": \"obvious\"}], \"limitations\": [\"샘플된 스틸 프레임만 관찰 가능하며 연속 재생이 아니므로 공의 실제 형태 전이 과정(회전/교체 등)은 추정 불가.\", \"카메라가 공에 점진적으로 접근(줌/트래킹)하여 공의 겉보기 크기 변화는 정상적인 카메라 이동일 수 있음.\", \"measurement_crop는 동일 프레임의 확대 뷰이며 별도 이벤트가 아님.\", \"bbox 좌표는 full_frame 추정값으로 정확도에 한계가 있음.\"]}"
+        }
+      ],
+      "container": null,
+      "stop_reason": "end_turn",
+      "stop_sequence": null,
+      "stop_details": null,
+      "usage": {
+        "input_tokens": 45336,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 876,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "speed": "standard"
+      }
+    },
+    "elapsed_seconds": 19.21575646400015
+  },
+  {
+    "model": "claude-opus-4-8",
+    "phase": "detection",
+    "provider": "claude",
+    "request_sha256": "e16b646c25e867a384577ca976070a2d4fbf72f882a5d3ad7490c159f0ee5cee",
+    "reused": false,
+    "status": "received",
+    "raw_response": {
+      "model": "claude-opus-4-8",
+      "id": "msg_vrtx_011CgxHRyCTkkj59NX5i7T3R",
+      "type": "message",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"candidates\": [{\"target\": \"공(럭비공/풋볼)의 형태 및 무늬\", \"normal_alternative\": \"일관된 형태와 표면 무늬를 가진 단일 공이 점진적 확대로 접근\", \"end_seconds\": 3.0416666666666665, \"bbox\": [0.37, 0.48, 0.56, 0.72], \"category\": \"form_existence\", \"location_reason\": \"공이 프레임 중앙~좌하단에서 점점 확대되는 위치, 2.125초 full_frame 기준 공 영역\", \"start_seconds\": 2.125, \"description\": \"공의 표면 무늬가 프레임마다 불안정하게 변한다. 2.125초에는 작은 파란색 패치만 보이고, 2.7초경에는 'DAIS'류 흐릿한 텍스트가, 2.9~3.0초에는 톱니 같은 검은 지퍼형 라인이 나타나는 등 레이스/바느질 무늬가 일관되지 않게 생성·변형된다. 동일 공이라 보기 어려운 표면 텍스처 변동이 관측됨.\", \"visibility\": \"obvious\"}, {\"target\": \"공 표면의 레이스(끈) 무늬\", \"normal_alternative\": \"실제 럭비/풋볼의 고정된 레이스 패턴이 확대되어도 형태 유지\", \"end_seconds\": 5.0, \"bbox\": [0.08, 0.55, 0.42, 0.85], \"category\": \"form_existence\", \"location_reason\": \"클로즈업 프레임에서 공이 좌하단을 크게 차지, 레이스 무늬가 위치한 중앙부\", \"start_seconds\": 3.4583333333333335, \"description\": \"확대되는 과정에서 레이스(바느질 끈) 무늬의 개수와 형태가 프레임마다 달라진다. 톱니 모양, 일자형 끈, 화살표형 끝단 등으로 변형되며, 공 표면의 브랜드 텍스트도 흐릿하게 나타났다 사라져 텍스처가 안정적으로 유지되지 않는다.\", \"visibility\": \"minor\"}], \"limitations\": [\"샘플 스틸만 제공되어 연속 재생 시의 실제 움직임/변형 속도를 확인할 수 없음\", \"카메라가 공을 향해 지속적으로 접근(줌/돌리)하는 것으로 보여 일부 무늬 변화는 확대에 따른 해상도 증가일 가능성이 있음\", \"공의 조명/그림자 변화와 생성형 텍스처 노이즈를 명확히 구분하기 어려움\"]}"
+        }
+      ],
+      "container": null,
+      "stop_reason": "end_turn",
+      "stop_sequence": null,
+      "stop_details": null,
+      "usage": {
+        "input_tokens": 45326,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 904,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "speed": "standard"
+      }
+    },
+    "elapsed_seconds": 21.711578497999653
+  }
+]

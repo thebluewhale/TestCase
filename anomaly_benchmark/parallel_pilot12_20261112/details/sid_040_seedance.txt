@@ -1,0 +1,78 @@
+sid_040_seedance
+8fps 병렬 POC · 자동 라벨 대응: pending
+검출 완료: False / 의미 평가: invalid_response
+Gemini 시각: 6개 · 미채점
+Claude 시각: 4개 · 미채점
+별도 프롬프트 검사: 0개 · 미채점
+두 모델은 공통 집중 구간을 공유합니다. 이 표는 단독 재실행 성능 비교가 아닙니다.
+실행 실패·응답 검증 실패를 정상 또는 미검출로 간주하지 않습니다. 라벨 밖 결함은 hit에 더하지 않습니다.
+기존 채점 규칙상 검사 일부가 미완료이면 라벨 대응 후보가 있어도 최종 상태는 pending입니다.
+채점 보류 사유: Pair evidence must belong to a selected claim
+실행 · v4.temporal_context /  : completed (0개) 
+실행 · vertex-gemini / overview : failed (0개) Provider transport failure/timeout
+실행 · claude-overview / overview : completed (1개) 
+실행 · vertex-gemini / focus-0 : completed (2개) 
+실행 · claude-focus-0 / focus-0 : completed (1개) 
+실행 · vertex-gemini / focus-1 : completed (2개) 
+실행 · claude-focus-1 / focus-1 : completed (1개) 
+실행 · vertex-gemini / focus-2 : completed (2개) 
+실행 · claude-focus-2 / focus-2 : completed (1개) 
+실행 · vertex-gemini-prompt /  : completed (0개) 
+
+생성 프롬프트
+A person is drinking a glass of water, then they suddenly start cleaning the windows.
+
+프롬프트 요구사항 검사
+P1 · matched · 기대: 한 사람이 유리잔에 든 물을 마시고 있어야 함
+관측: 남성이 유리잔을 입에 대고 물을 마시는 동작을 수행함
+근거: 초반부에 인물이 유리잔을 들고 마시는 모습이 나타남
+P2 · matched · 기대: 마시던 중 갑자기 창문을 닦기 시작해야 함
+관측: 인물이 물을 마시다가 창문 쪽으로 이동해 창문을 닦기 시작함
+근거: 물을 마신 직후 손을 들어 창문을 문지르며 닦는 동작을 수행함
+
+원본 라벨 R
+R1 (medium, 0.500–2.200초): the glass disappears and start wiping.
+원문: the glass disappears and start wiping.
+R2 (easy, 1.500–4.200초): Water glass vanishes, and isn't replaced with anything even though the person then starts cleaning
+원문: Water glass vanishes, and isn't replaced with anything even though the person then starts cleaning
+R3 (easy, 1.800–5.000초): Person starts cleaning the window without any cloth, item, or cleaner. their hand leaving streaks of cleaning fluid behind
+원문: Person starts cleaning the window without any cloth, item, or cleaner. their hand leaving streaks of cleaning fluid behind
+R4 (medium, 3.800–5.000초): Hand elongated and strange looking while switching to cleaning the window
+원문: Hand elongated and strange looking while switching to cleaning the window
+
+검출 후보 C
+C1 (0.000–2.625초): [Claude] 초반(0~2.5초)에는 남성이 손에 든 투명 유리컵이 얼굴 앞에서 분명히 보이지만, 2.6초 이후 프레임부터는 손에 컵이 보이지 않고 창문을 손으로 미는 동작으로 전환된다. 컵을 내려놓거나 치우는 명확한 동작이 중간 프레임에 관찰되지 않아 존재/소실이 불연속적으로 보인다.
+원문: 초반(0~2.5초)에는 남성이 손에 든 투명 유리컵이 얼굴 앞에서 분명히 보이지만, 2.6초 이후 프레임부터는 손에 컵이 보이지 않고 창문을 손으로 미는 동작으로 전환된다. 컵을 내려놓거나 치우는 명확한 동작이 중간 프레임에 관찰되지 않아 존재/소실이 불연속적으로 보인다.
+종류: model_proposal / bbox: [0.38, 0.14, 0.46, 0.32]
+C2 (2.200–3.300초): [Gemini] The drinking glass held by the man morphs into a semi-translucent cleaning rag or squeegee cloth as he brings his hand to the window pane.
+원문: The drinking glass held by the man morphs into a semi-translucent cleaning rag or squeegee cloth as he brings his hand to the window pane.
+종류: model_proposal / bbox: None
+C3 (1.700–2.800초): [Gemini] The graphic logo printed on the front of the sweatshirt fades away and vanishes entirely as the man turns toward the window.
+원문: The graphic logo printed on the front of the sweatshirt fades away and vanishes entirely as the man turns toward the window.
+종류: model_proposal / bbox: None
+C4 (2.500–2.792초): [Claude] 창문을 향해 뻗은 오른손에 들고 있던 유리컵이 후속 프레임에서 관찰되지 않으며, 컵을 내려놓는 중간 동작 없이 양손이 창문을 짚는 자세로 전환됨. 샘플 간격 사이에서 컵의 존재가 사라진 것으로 보임
+원문: 창문을 향해 뻗은 오른손에 들고 있던 유리컵이 후속 프레임에서 관찰되지 않으며, 컵을 내려놓는 중간 동작 없이 양손이 창문을 짚는 자세로 전환됨. 샘플 간격 사이에서 컵의 존재가 사라진 것으로 보임
+종류: model_proposal / bbox: [0.58, 0.1, 0.65, 0.22]
+C5 (2.200–3.600초): [Gemini] The drinking glass held by the man morphs into an oversized translucent object resembling a cleaning cloth or bubble as he moves it toward the window.
+원문: The drinking glass held by the man morphs into an oversized translucent object resembling a cleaning cloth or bubble as he moves it toward the window.
+종류: model_proposal / bbox: None
+C6 (1.700–3.000초): [Gemini] The graphic logo on the front of the sweatshirt distorts, shifts, and largely vanishes after the man turns toward the window.
+원문: The graphic logo on the front of the sweatshirt distorts, shifts, and largely vanishes after the man turns toward the window.
+종류: model_proposal / bbox: None
+C7 (1.542–3.500초): [Claude] 초반 프레임(1.5~3.0초)에서는 손에 작고 둥근 투명 컵이 명확히 보이나, 3.29초 이후 컵이 점점 비정상적으로 커지고 납작한 접시/거품 같은 불규칙한 형태로 변형됨. 3.5초 프레임에서는 컵이 원래 크기보다 훨씬 크고 흐릿한 반투명 덩어리로 보여 물체 형태의 일관성이 붕괴됨.
+원문: 초반 프레임(1.5~3.0초)에서는 손에 작고 둥근 투명 컵이 명확히 보이나, 3.29초 이후 컵이 점점 비정상적으로 커지고 납작한 접시/거품 같은 불규칙한 형태로 변형됨. 3.5초 프레임에서는 컵이 원래 크기보다 훨씬 크고 흐릿한 반투명 덩어리로 보여 물체 형태의 일관성이 붕괴됨.
+종류: model_proposal / bbox: [0.58, 0.14, 0.69, 0.4]
+C8 (1.600–2.500초): [Gemini] Graphic print on the man's navy sweatshirt morphs and disappears as he moves.
+원문: Graphic print on the man's navy sweatshirt morphs and disappears as he moves.
+종류: model_proposal / bbox: [0.33, 0.23, 0.42, 0.42]
+C9 (2.700–5.040초): [Gemini] Glass or translucent wiping object morphs into a semi-floating oval shape with unstable contours while wiping the window.
+원문: Glass or translucent wiping object morphs into a semi-floating oval shape with unstable contours while wiping the window.
+종류: model_proposal / bbox: [0.6, 0.16, 0.67, 0.41]
+C10 (3.042–5.000초): [Claude] 손에 쥔 닦는 천이 프레임마다 크기와 형태가 크게 변한다. 어떤 프레임에서는 큰 반투명 덩어리로 불규칙하게 늘어나고, 다른 프레임에서는 작게 축소되며 경계가 유동적으로 흔들린다. 천이 손 밖으로 비현실적으로 부풀거나 투명하게 번지는 등 일관되지 않은 형태 변화를 보인다.
+원문: 손에 쥔 닦는 천이 프레임마다 크기와 형태가 크게 변한다. 어떤 프레임에서는 큰 반투명 덩어리로 불규칙하게 늘어나고, 다른 프레임에서는 작게 축소되며 경계가 유동적으로 흔들린다. 천이 손 밖으로 비현실적으로 부풀거나 투명하게 번지는 등 일관되지 않은 형태 변화를 보인다.
+종류: model_proposal / bbox: [0.58, 0.14, 0.68, 0.42]
+
+검증 탈락 원시 응답
+
+자동 의미 대응
+유효한 자동 의미 평가가 없어 대응 여부를 확정하지 않았습니다.

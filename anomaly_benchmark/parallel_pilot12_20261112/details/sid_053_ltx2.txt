@@ -1,0 +1,96 @@
+sid_053_ltx2
+8fps 병렬 POC · 자동 라벨 대응: hit
+검출 완료: True / 의미 평가: completed
+Gemini 시각: 7개 · 대응 있음
+Claude 시각: 1개 · 대응 없음
+별도 프롬프트 검사: 2개 · 대응 없음
+두 모델은 공통 집중 구간을 공유합니다. 이 표는 단독 재실행 성능 비교가 아닙니다.
+실행 실패·응답 검증 실패를 정상 또는 미검출로 간주하지 않습니다. 라벨 밖 결함은 hit에 더하지 않습니다.
+기존 채점 규칙상 검사 일부가 미완료이면 라벨 대응 후보가 있어도 최종 상태는 pending입니다.
+실행 · v4.temporal_context /  : completed (0개) 
+실행 · vertex-gemini / overview : completed (2개) 
+실행 · claude-overview / overview : completed (0개) 
+실행 · vertex-gemini / focus-0 : completed (2개) 
+실행 · claude-focus-0 / focus-0 : completed (0개) 
+실행 · vertex-gemini / focus-1 : completed (1개) 
+실행 · claude-focus-1 / focus-1 : completed (1개) 
+실행 · vertex-gemini / focus-2 : completed (2개) 
+실행 · claude-focus-2 / focus-2 : completed (0개) 
+실행 · vertex-gemini-prompt /  : completed (2개) 
+
+생성 프롬프트
+A video showing a rugby ball flying in from the left foreground and hitting the ground on a sunny rugby field covered with green grass. The ball makes an irregular bounce towards the left background, highlighting the unpredictable nature of its movement. The scene is set on a bright, clear day, emphasizing the vibrancy of the green field and the dynamic motion of the rugby ball.  
+
+프롬프트 요구사항 검사
+P1 · mismatch · 기대: 럭비공이 왼쪽 전경에서 날아 들어옴
+관측: 공이 시작부터 화면 중앙 부근에 위치하며 비행함
+근거: 왼쪽 전경에서 유입되는 모습이 명확히 확인되지 않음
+P2 · matched · 기대: 맑은 날 잔디가 깔린 경기장 지면에 럭비공이 착지함
+관측: 럭비공이 잔디 지면에 닿아 튕김
+근거: 잔디 구장 표면에 닿는 과정이 정상적으로 나타남
+P3 · mismatch · 기대: 공이 왼쪽 배경 방향으로 불규칙하게 튕겨 나감
+관측: 공이 바닥에 튕긴 후 왼쪽 배경 방향으로 크게 이동하지 않고 거의 제자리에서 멈춤
+근거: 왼쪽 배경 방향으로의 불규칙한 바운스 이동이 나타나지 않음
+P4 · matched · 기대: 밝고 맑은 날씨와 푸른 잔디 필드
+관측: 햇빛이 비치는 선명한 녹색 잔디 필드가 확인됨
+근거: 밝은 날씨와 선명한 잔디 필드 표현이 일치함
+
+원본 라벨 R
+R1 (easy, 0.000–2.100초): 둥근 공에서 럭비공으로 형태가 변함.
+원문: Morphs from a round ball to a rugby ball.
+
+검출 후보 C
+C1 (0.000–3.000초): [Gemini] 공이 공중 및 착지 시 둥근 구형에서 길쭉한 럭비공으로 형태가 변함.
+원문: The ball transitions morphologically from a round soccer-like sphere to an elongated rugby ball while mid-air and upon landing.
+종류: model_proposal / bbox: [0.43, 0.26, 0.48, 0.35]
+C2 (4.120–6.120초): [Gemini] 잔디 위에 놓인 럭비공 표면의 그래픽과 브랜딩이 지속적으로 변형되고 깜빡임.
+원문: The surface branding and graphics on the rugby ball continually morph, flicker, and rearrange as it sits on the turf.
+종류: model_proposal / bbox: [0.35, 0.47, 0.51, 0.69]
+C3 (2.200–4.500초): [Gemini] 공이 부자연스럽게 떠 있으며 형태와 방향이 그림자와 불일치하게 변함.
+원문: The ball hovers unnaturally, changing shape and orientation inconsistently relative to its shadow before settling.
+종류: model_proposal / bbox: [0.34, 0.44, 0.52, 0.68]
+C4 (1.200–3.800초): [Gemini] 공 아래 그림자가 공의 움직임과 분리되어 떨리며 변형됨.
+원문: The shadow beneath the ball displays jittery, morphing shapes while detached from the ball's motion.
+종류: model_proposal / bbox: [0.42, 0.58, 0.51, 0.62]
+C5 (3.600–6.120초): [Gemini] 럭비공이 튀고 멈추는 동안 형태, 표면 패턴 및 종횡비가 변함.
+원문: The rugby ball shifts shape, surface pattern details, and aspect ratio noticeably while bouncing and coming to rest on the field.
+종류: model_proposal / bbox: [0.35, 0.45, 0.52, 0.7]
+C6 (3.640–6.080초): [Claude] 공 표면의 무늬가 얼룩, 선, 뚜렷한 로고로 점차 변형되어 나타남.
+원문: 공 표면의 무늬가 시간에 따라 일관된 회전 패턴이 아니라 추상적 얼룩, 번진 선, 그리고 후반부에는 'Gilbert'로 보이는 명확한 로고로 점차 변형되며 나타난다. 초기 프레임에서는 흐릿한 검은 얼룩에 가깝고 중반부에는 방사형 선 패턴, 후반부에는 뚜렷한 브랜드 텍스트/로고가 생성되어 표면 텍스처의 형태가 불안정하게 변화한다.
+종류: model_proposal / bbox: [0.33, 0.45, 0.5, 0.68]
+C7 (0.500–4.500초): [Gemini] 럭비공이 잔디를 가로질러 튀는 동안 구형과 타원형 사이로 형태가 반복적으로 변함.
+원문: The rugby ball repeatedly shifts shape between nearly spherical, oblong, and distorted proportions while floating/bouncing across the turf.
+종류: model_proposal / bbox: None
+C8 (2.000–6.120초): [Gemini] 공의 표면 그래픽과 인쇄된 브랜드 표시가 이동 중 지속적으로 변형됨.
+원문: Surface panel graphics and printed brand markings on the ball morph, flicker, and rearrange continuously while in motion.
+종류: model_proposal / bbox: None
+C9 (0.000–1.000초): [프롬프트 검사] 공이 화면 중앙 상단 영역에서 나타남.
+원문: 공이 왼쪽 전경이 아닌 화면 중앙 상단 영역에서 나타남
+종류: model_proposal / bbox: [0.26, 0.46, 0.35, 0.52]
+C10 (2.500–5.500초): [프롬프트 검사] 공이 튕기지 않고 중앙 하단 근처에서 바로 감속 및 정지함.
+원문: 공이 왼쪽 배경으로 튕기지 않고 중앙 하단 근처에서 바로 감속 및 정지함
+종류: model_proposal / bbox: [0.45, 0.35, 0.68, 0.48]
+
+검증 탈락 원시 응답
+
+자동 의미 대응
+R1 ↔ C1 / 의미 대응 / 시간도 일치
+참조의 둥근 공에서 럭비공으로의 변형을 후보 설명이 정확히 동일하게 서술하고 있어 일치함.
+R1 ↔ C2 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 공 본체 자체가 둥근 공에서 럭비공으로 기하학적 형태가 바뀌는 현상을 지적하지만, 후보 C2는 공 표면의 그래픽 및 로고가 깜빡이고 변형되는 현상을 설명하여 발생한 상호작용 및 변화 양상이 명확히 구별됩니다.
+R1 ↔ C3 / 의미 대응 / 시간 차이 있음
+후보는 공이 공중에 머물며 형태가 변한다고 서술하여 참조의 형태 변형 결함과 동일한 사건의 다른 측면을 설명함.
+R1 ↔ C4 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조의 대상은 공 자체의 형태 변형이지만, 후보 C4는 공 아래에 있는 그림자의 떨림 및 분리 현상을 지적하고 있어 문제의 대상 개체가 상이합니다.
+R1 ↔ C5 / 의미 대응 / 시간 차이 있음
+공의 형태와 가로세로 비율 변화를 기술하여 참조의 구형에서 럭비공으로의 변형 사건과 밀접히 연결됨.
+R1 ↔ C6 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 공 본체의 기하학적 형상이 원형에서 럭비공으로 변하는 현상인 반면, 후보 C6은 공 표면의 무늬와 로고 텍스처가 변형되는 현상에 국한되어 서로 다른 결함을 다루고 있습니다.
+R1 ↔ C7 / 의미 대응 / 시간도 일치
+공이 구형과 타원형 사이에서 형태가 변형된다고 설명하여 참조의 구형-럭비공 변형 증거와 부합함.
+R1 ↔ C8 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 공 자체의 3차원 형태 변화를 가리키나, 후보 C8은 공 표면에 인쇄된 그래픽과 브랜드 마킹의 변화를 설명하여 다루는 상호작용 및 현상이 명확히 다릅니다.
+R1 ↔ C9 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 공의 형태 변형 결함을 지적하는 반면, 후보 C9는 공의 최초 출현 위치 결함을 설명하므로 완전히 구별되는 사건입니다.
+R1 ↔ C10 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 공이 둥근 공에서 럭비공으로 바뀌는 형태적 변화인 반면, 후보 C10은 공의 바운스 궤적 및 정지 위치에 대한 이상을 설명하므로 서로 무관한 상호작용입니다.
