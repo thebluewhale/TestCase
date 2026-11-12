@@ -1,0 +1,134 @@
+[
+  {
+    "phase": "control",
+    "model": "gemini-3.8-flash",
+    "request_sha256": "ee9ed99ba642946d985dad9bbe6b1ddc40c46e08928b0d0552390d9a5f6d3878",
+    "status": "received",
+    "raw_response": {
+      "candidates": [
+        {
+          "content": {
+            "role": "model",
+            "parts": [
+              {
+                "text": "{\n  \"id\": \"R1\",\n  \"summary_ko\": \"손에 쥐고 있던 유리잔이 사라지고 대체 물체 없이 닦는 동안 빈 손 상태로 유지됨.\",\n  \"claims\": [\n    {\n      \"id\": \"R1.S1\",\n      \"evidence\": \"The glass in her hand disappears\",\n      \"symptom_ko\": \"손에 있던 유리잔이 사라짐\",\n      \"role\": \"complaint\",\n      \"specificity\": \"specific\",\n      \"target_evidence\": \"The glass in her hand\",\n      \"interaction_evidence\": \"in her hand\",\n      \"change_evidence\": \"disappears\",\n      \"scope\": \"individual\",\n      \"explicit_detail_evidence\": [\"disappears\"],\n      \"missing_details_ko\": \"\"\n    },\n    {\n      \"id\": \"R1.S2\",\n      \"evidence\": \"no replacement object appears and her hand stays empty throughout wiping\",\n      \"symptom_ko\": \"대체 물체가 나타나지 않고 닦는 내내 손이 빈 상태로 유지됨\",\n      \"role\": \"complaint\",\n      \"specificity\": \"specific\",\n      \"target_evidence\": \"her hand\",\n      \"interaction_evidence\": \"wiping\",\n      \"change_evidence\": \"no replacement object appears and her hand stays empty\",\n      \"scope\": \"part\",\n      \"explicit_detail_evidence\": [\"no replacement object appears\", \"her hand stays empty throughout wiping\"],\n      \"missing_details_ko\": \"\"\n    }\n  ]\n}",
+                "thoughtSignature": "AY89a19jwO62rCpLWYdYxDgzSkgzSF2ySfxaOV8uHTAQq1K5mH8blSwUcddpO+R7aai+mbO3guiU2LuqXLKhYpCG+XEX+sA1voB86WO9b6t5mpdot5kl"
+              }
+            ]
+          },
+          "finishReason": "STOP"
+        }
+      ],
+      "usageMetadata": {
+        "promptTokenCount": 983,
+        "candidatesTokenCount": 355,
+        "totalTokenCount": 1338,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 983
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 355
+          }
+        ]
+      },
+      "modelVersion": "gemini-3.8-flash",
+      "createTime": "2026-11-12T07:06:55.882370Z",
+      "responseId": "j2X1asLtNdmdvdAPgP3MmAE"
+    },
+    "elapsed_seconds": 4.017028124999342
+  },
+  {
+    "phase": "control",
+    "model": "gemini-3.8-flash",
+    "request_sha256": "28ce8465193a69ca97ac27a7e0e3570672b928bf8d91fd833ed6340506247ef7",
+    "status": "received",
+    "raw_response": {
+      "candidates": [
+        {
+          "content": {
+            "role": "model",
+            "parts": [
+              {
+                "text": "{\n  \"references\": [\n    {\n      \"id\": \"R1\",\n      \"summary_ko\": \"손에 쥐고 있던 유리잔이 사라지고 대체 물체 없이 닦는 동안 빈 손 상태로 유지됨.\",\n      \"claims\": [\n        {\n          \"id\": \"R1.S1\",\n          \"evidence\": \"The glass in her hand disappears\",\n          \"symptom_ko\": \"손에 있던 유리잔이 사라짐\",\n          \"role\": \"complaint\"\n        },\n        {\n          \"id\": \"R1.S2\",\n          \"evidence\": \"no replacement object appears and her hand stays empty throughout wiping\",\n          \"symptom_ko\": \"대체 물체가 나타나지 않고 닦는 내내 손이 빈 상태로 유지됨\",\n          \"role\": \"complaint\"\n        }\n      ]\n    }\n  ],\n  \"candidates\": [\n    {\n      \"id\": \"C1\",\n      \"summary_ko\": \"유리잔이 닦는 동안 손에 들려 있는 천으로 변함.\",\n      \"target_evidence\": \"The glass\",\n      \"interaction_evidence\": \"stays visibly held in her hand throughout wiping\",\n      \"change_evidence\": \"becomes a cloth\",\n      \"scope\": \"individual\"\n    }\n  ],\n  \"pairs\": [\n    {\n      \"reference_id\": \"R1\",\n      \"candidate_id\": \"C1\",\n      \"target_relation\": \"same_interaction\",\n      \"event_relation\": \"different\",\n      \"description_consistency\": \"core_conflict\",\n      \"conflict_scope\": \"matched_claim\",\n      \"reference_claim_ids\": [\n        \"R1.S1\",\n        \"R1.S2\"\n      ],\n      \"reference_evidence\": \"no replacement object appears and her hand stays empty throughout wiping\",\n      \"candidate_evidence\": \"The glass becomes a cloth that stays visibly held in her hand throughout wiping.\",\n      \"shared_event_ko\": \"손에 들고 있던 유리잔이 닦는 과정에서 변하는 현상에 대한 서술.\",\n      \"coexistence_explanation_ko\": \"\",\n      \"conflicts_ko\": [\n        \"레퍼런스는 대체 물체 없이 손이 비어 있다고 명시했으나, 후보는 유리잔이 천으로 바뀌어 손에 계속 쥐어져 있다고 주장하여 정면으로 충돌함\"\n      ],\n      \"reason_ko\": \"레퍼런스는 대체 물체가 나타나지 않고 손이 비어 있다고 주장한 반면, 후보는 유리잔이 천으로 변하여 손에 계속 쥐어져 있다고 서술하여 동일한 상호작용 상황에서 상호 배타적인 주장을 하고 있습니다.\",\n      \"event_link\": \"distinct_events\",\n      \"separation_basis\": \"contradictory_claim\"\n    }\n  ]\n}",
+                "thoughtSignature": "AY89a1/X62biHhQ1Pjdqi0OqzbMYEFUy4VFclpg1S3MffD58uiZWFDbApS6EuRquLhNs9xx5CiE6XRo+OAjOP2mxjVfcGAp6sS3Ki2dseNhvrNmkjDGY"
+              }
+            ]
+          },
+          "finishReason": "STOP"
+        }
+      ],
+      "usageMetadata": {
+        "promptTokenCount": 2708,
+        "candidatesTokenCount": 653,
+        "totalTokenCount": 3361,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2708
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 653
+          }
+        ]
+      },
+      "modelVersion": "gemini-3.8-flash",
+      "createTime": "2026-11-12T07:06:59.856590Z",
+      "responseId": "k2X1ao6kNMWXvdAP7aKDmAE"
+    },
+    "elapsed_seconds": 31.906803805999516
+  },
+  {
+    "phase": "control",
+    "model": "gemini-3.8-flash",
+    "request_sha256": "171973097957527ef15bb6bbe622a103cabe0e1adb91d0cae99489058cd011f8",
+    "status": "received",
+    "raw_response": {
+      "candidates": [
+        {
+          "content": {
+            "role": "model",
+            "parts": [
+              {
+                "text": "{\n  \"pairs\": [\n    {\n      \"reference_id\": \"R1\",\n      \"candidate_id\": \"C1\",\n      \"target_relation\": \"different\",\n      \"reference_claim_ids\": [\n        \"R1.S2\"\n      ],\n      \"reference_evidence\": \"no replacement object appears and her hand stays empty throughout wiping\",\n      \"candidate_evidence\": \"The glass becomes a cloth that stays visibly held in her hand throughout wiping.\",\n      \"basis\": \"explicit_contradiction\",\n      \"reason_ko\": \"레퍼런스는 손에 들고 있던 유리잔이 사라진 후 어떠한 대체 물체도 나타나지 않아 닦는 동안 손이 빈 상태로 유지된다고 명시적으로 서술하고 있는 반면, 후보는 유리잔이 천으로 바뀌어 닦는 동안 손에 쥐어져 있는 상태가 명확히 보인다고 주장합니다. 이는 동일한 대상의 상호작용 상태에 대해 공존할 수 없는 명백한 모순을 이룹니다.\",\n      \"separation_basis\": \"contradictory_claim\"\n    }\n  ]\n}",
+                "thoughtSignature": "AY89a19HB/5p3JmEw4M3Q3F4AuJ0/0taecL8UekG/3vDkKcIp6E29m8QhZPvGbrTQ40292PcuHkwiCGiyuLQhQBrtzQaewvSEPxx8M7VKN1bU8JfTqbh"
+              }
+            ]
+          },
+          "finishReason": "STOP"
+        }
+      ],
+      "usageMetadata": {
+        "promptTokenCount": 1557,
+        "candidatesTokenCount": 253,
+        "totalTokenCount": 1810,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1557
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 253
+          }
+        ]
+      },
+      "modelVersion": "gemini-3.8-flash",
+      "createTime": "2026-11-12T07:07:31.625747Z",
+      "responseId": "s2X1atOYJoCVvdAP2OLQEQ"
+    },
+    "elapsed_seconds": 5.027563161998842
+  }
+]

@@ -1,0 +1,65 @@
+sid_040_ltx2
+검출 고정 · 의미 매칭 v7 비교 판정: hit (이전 v6: hit)
+R–C 의미 대응: 대응 있음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 일부 유효 · 원시 상태: invalid_response
+모델: gemini-3.8-flash · 영상 8fps · 집중 재검토 · 선택적 프롬프트 검사
+검출 후보 47개는 고정하고 의미 채점만 새로 수행했습니다. 원본 R/C는 변경하지 않았습니다.
+C 번호는 직전 Gemini 단독 12개와 같습니다. 과거 병렬 실험의 C 번호와는 다릅니다.
+라벨 밖 결함은 hit에 더하지 않습니다. 시간 차이는 보조 정보입니다.
+실행 · v4.temporal_context: completed (1개) 
+실행 · vertex-gemini: completed (1개) 
+실행 · vertex-gemini-focused: completed (2개) 
+실행 · vertex-gemini-prompt: completed (0개) 
+
+생성 프롬프트
+A person is drinking a glass of water, then they suddenly start cleaning the windows.
+
+프롬프트 요구사항 검사
+P1 · matched · 기대: 사람이 물 한 잔을 마시는 동작
+관측: 영상 초반에 여성이 유리잔의 물을 마시고 있음
+근거: 요구된 동작이 명확히 확인됨
+P2 · matched · 기대: 이후 갑자기 창문을 닦기 시작하는 동작
+관측: 물을 마신 후 유리병을 내려놓고 걸레를 집어 창문을 닦음
+근거: 창문을 닦는 동작으로 자연스럽게 이어짐
+
+
+원본 라벨 R
+R1 (hard, 4.000–4.600초): 수건을 잡는 방식에 문제가 있음
+원문: the way she grabs the towel is an issue
+R2 (easy, 0.500–2.400초): 물잔이 스프레이 병으로 변형됨.
+원문: The glass of water transformed from the glass into a spray bottle.
+
+검출 후보 C
+C1 (3.840–3.920초): [측정 제안] 밝기 및 구조 변화 패턴 탐지 제안
+원문: 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+종류: measurement_proposal / bbox: [0.0, 0.0, 0.9947916666666666, 1.0]
+C2 (1.250–2.500초): [Gemini] 여성이 들고 있던 유리잔이 창턱에 내려놓는 동안 스프레이 병으로 변형됨
+원문: The drinking glass held by the woman morphs directly into a spray bottle while being lowered to the windowsill.
+종류: model_proposal / bbox: [0.39, 0.27, 0.54, 0.94]
+C3 (1.400–2.400초): [Gemini] 내려놓는 동안 유리잔이 펌프 스프레이 병으로 변형됨
+원문: Drinking glass shape-shifts into a pump spray bottle as lowered.
+종류: model_proposal / bbox: [0.4, 0.5, 0.47, 0.95]
+C4 (2.800–3.400초): [Gemini] 여성이 병을 내려놓는 동안 창턱의 수건이 사라짐
+원문: Towel on windowsill disappears while woman places bottle down.
+종류: model_proposal / bbox: [0.43, 0.88, 0.54, 0.98]
+
+자동 의미 대응
+R2 ↔ C2 / 의미 대응 / 시간도 일치
+유리잔이 스프레이 병으로 변형된다는 핵심 불만 및 변화 대상이 동일하게 관찰되고 일치합니다.
+새 허용 규칙 의존: 없음
+직전 v6 결과 대비 새 대응: False
+R2 ↔ C3 / 의미 대응 / 시간도 일치
+유리잔이 펌프 스프레이 병으로 변형된다는 동일한 이상 현상을 기술하고 있습니다.
+새 허용 규칙 의존: 없음
+직전 v6 결과 대비 새 대응: False
+
+채점 검증 상태
+유효 쌍 2 / 미사용 쌍 6
+{"status": "invalid_response", "reason": "Entity separation requires explicitly different targets"}
+{"scope": "pair", "reference_id": "R1", "candidate_id": "C1", "reason": "Entity separation requires explicitly different targets"}
+{"scope": "pair", "reference_id": "R1", "candidate_id": "C2", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R1", "candidate_id": "C3", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R1", "candidate_id": "C4", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R2", "candidate_id": "C1", "reason": "Entity separation requires explicitly different targets"}
+{"scope": "pair", "reference_id": "R2", "candidate_id": "C4", "reason": "required_review_incomplete"}

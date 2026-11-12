@@ -1,0 +1,43 @@
+{
+  "version": "event-matching-v7-controls-1",
+  "synthetic": true,
+  "expectations_sent_to_model": false,
+  "cases": [
+    {
+      "id": "omitted_outcome",
+      "expected_hit": true,
+      "reference": "As the woman starts wiping the window, the glass in her hand disappears.",
+      "candidate": "As the woman starts wiping the window, the glass in her hand transforms into a cloth-like wiping sheet."
+    },
+    {
+      "id": "explicit_unchanged",
+      "expected_hit": false,
+      "reference": "During the entire wiping action, the glass in her hand remains unchanged and never turns into another object.",
+      "candidate": "During the wiping action, the glass in her hand transforms into a wiping sheet."
+    },
+    {
+      "id": "different_person",
+      "expected_hit": false,
+      "reference": "The man on the left loses his glass as he starts wiping his window.",
+      "candidate": "The woman on the right has her glass transform into a cloth as she wipes a separate window."
+    },
+    {
+      "id": "distinct_occurrence",
+      "expected_hit": false,
+      "reference": "During the first toast, the stem of the wine glass disappears.",
+      "candidate": "During a separate later cleanup, the same wine glass transforms into a wiping cloth."
+    },
+    {
+      "id": "unproven_bridge",
+      "expected_hit": false,
+      "reference": "A glass disappears from the kitchen counter.",
+      "candidate": "A cloth is visible on a shelf in another room."
+    },
+    {
+      "id": "explicit_no_replacement",
+      "expected_hit": false,
+      "reference": "The glass in her hand disappears; no replacement object appears and her hand stays empty throughout wiping.",
+      "candidate": "The glass becomes a cloth that stays visibly held in her hand throughout wiping."
+    }
+  ]
+}

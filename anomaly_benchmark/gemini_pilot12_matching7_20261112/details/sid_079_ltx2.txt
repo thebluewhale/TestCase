@@ -1,0 +1,83 @@
+sid_079_ltx2
+검출 고정 · 의미 매칭 v7 비교 판정: hit (이전 v6: pending)
+R–C 의미 대응: 대응 있음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+모델: gemini-3.8-flash · 영상 8fps · 집중 재검토 · 선택적 프롬프트 검사
+검출 후보 47개는 고정하고 의미 채점만 새로 수행했습니다. 원본 R/C는 변경하지 않았습니다.
+C 번호는 직전 Gemini 단독 12개와 같습니다. 과거 병렬 실험의 C 번호와는 다릅니다.
+라벨 밖 결함은 hit에 더하지 않습니다. 시간 차이는 보조 정보입니다.
+실행 · v4.temporal_context: completed (0개) 
+실행 · vertex-gemini: completed (2개) 
+실행 · vertex-gemini-focused: completed (2개) 
+실행 · vertex-gemini-prompt: completed (0개) 
+
+생성 프롬프트
+4 friends, 2 men and 2 women in a bar at night drinking wine and talking  
+
+프롬프트 요구사항 검사
+P1 · matched · 기대: 네 명의 친구들이 등장함
+관측: 화면에 성인 남녀 총 4명이 둘러앉아 있음
+근거: 요구된 인원수와 일치함
+P2 · matched · 기대: 남성 2명과 여성 2명으로 구성됨
+관측: 왼쪽과 오른쪽에 각각 여성 2명, 남성 2명이 보임
+근거: 성별 구성이 일치함
+P3 · matched · 기대: 밤 시간대의 바(bar) 실내 환경
+관측: 어두운 조명과 액자가 걸린 실내 주점 분위기의 공간이 확인됨
+근거: 밤 시간대 바의 시각적 특징과 부합함
+P4 · matched · 기대: 와인을 마시는 모습
+관측: 네 사람 모두 와인잔을 부딪치고 와인을 마심
+근거: 와인을 마시는 동작이 확인됨
+P5 · matched · 기대: 대화를 나누는 모습
+관측: 초반부 인물들이 웃으며 서로 대화를 나눔
+근거: 대화하는 모습이 확인됨
+
+
+원본 라벨 R
+R1 (easy, 5.000–8.000초): 두 번째 여성에게 와인잔이 갑자기 나타남
+원문: The wine glass appears out of nowhere for the 2nd woman
+R2 (medium, 3.300–5.300초): 분홍색 옷을 입은 갈색 머리 여성이 빈 잔 또는 엄지손가락을 든 손짓으로 건배를 하는 것처럼 보이다가 건배가 끝날 때 손에 와인 잔을 들고 있음.
+원문: The brunette woman in pink seems to cheers with an empty glass, thumbs-up gesture, but at the end of the cheers has a wine glass in her hands. 
+
+검출 후보 C
+C1 (3.400–5.400초): [Gemini] 와인잔 건배 중 스템이 변형되고 복제된 잔들이 비정상적으로 병합됨
+원문: Wine glass clinking creates morphing stems and duplicated glasses merging unnaturally.
+종류: model_proposal / bbox: [0.43, 0.44, 0.58, 0.77]
+C2 (2.500–3.400초): [Gemini] 남성의 손 근처에 여분의 잔이 잠시 나타났다가 사라짐
+원문: Extra glass briefly appears held near man's hands before fading.
+종류: model_proposal / bbox: [0.38, 0.61, 0.47, 0.94]
+C3 (3.000–6.000초): [Gemini] 건배를 할 때 와인잔들이 증식하고 병합되며 모양이 바뀜
+원문: Wine glasses multiply, merge, and change shapes inconsistently as the group raises their toast.
+종류: model_proposal / bbox: None
+C4 (3.300–5.200초): [Gemini] 잔의 스템을 잡고 조절하는 동안 여분의 손과 손가락이 나타나고 변형됨
+원문: Extra hands and fingers appear and morph while adjusting and holding the stems of the glasses.
+종류: model_proposal / bbox: None
+
+자동 의미 대응
+R1 ↔ C1 / 의미 대응 / 시간 차이 있음
+여성 손에 와인잔이 갑자기 생겨나는 것은 건배 도중 와인잔이 복제/변형되는 군집 현상의 일환으로 해석될 수 있으며 모순이 없습니다.
+새 허용 규칙 의존: 없음
+직전 v6 결과 대비 새 대응: True
+R1 ↔ C2 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 두 번째 여성에게 와인잔이 갑자기 나타나는 현상을 지적하는 반면, 후보는 남성의 손 근처에 잔이 나타났다가 사라지는 현상을 설명하므로 상호작용하는 인물 및 개체 맥락이 상이합니다.
+R1 ↔ C3 / 의미 대응 / 시간도 일치
+건배 중 와인잔이 증식하고 변형되는 과정의 일부로서 여성에게 와인잔이 나타나는 현상이 호환됩니다.
+새 허용 규칙 의존: 없음
+직전 v6 결과 대비 새 대응: True
+R1 ↔ C4 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조의 핵심 대상은 와인잔의 출현인 반면, 후보의 핵심 대상은 여분의 손과 손가락이 나타나고 변형되는 현상으로 불만 대상 엔티티가 명확히 분리됩니다.
+R2 ↔ C1 / 의미 대응 / 시간도 일치
+건배 중에 잔이 없던 손에 와인잔이 생기는 것은 전체 건배 중 와인잔들이 복제 및 병합되는 현상과 양립 가능합니다.
+새 허용 규칙 의존: 없음
+직전 v6 결과 대비 새 대응: True
+R2 ↔ C2 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 분홍색 옷을 입은 갈색 머리 여성의 손에 와인 잔이 나타나는 현상을 지적하지만, 후보는 남성의 손 근처에 여분의 잔이 나타났다가 사라지는 현상을 설명하므로 명확히 서로 다른 인물과 대상에서 발생하는 구분된 사건입니다.
+R2 ↔ C3 / 의미 대응 / 시간도 일치
+건배 과정에서 와인잔들이 비정상적으로 복제/증식하면서 특정 인물의 손에 와인잔이 들리게 되는 과정을 다룹니다.
+새 허용 규칙 의존: 없음
+직전 v6 결과 대비 새 대응: True
+R2 ↔ C4 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 여성의 손에 와인 잔이 새롭게 생겨나는 객체 출현을 설명하는 반면, 후보는 잔 줄기를 잡고 조절하는 과정에서 여분의 손과 손가락이 나타나 변형되는 현상을 설명하여 불만의 대상과 상호작용이 전혀 다릅니다.
+
+채점 검증 상태
+유효 쌍 8 / 미사용 쌍 0
