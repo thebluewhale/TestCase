@@ -1,0 +1,88 @@
+sid_053_seedance
+8fps 병렬 POC · 자동 라벨 대응: pending
+검출 완료: False / 의미 평가: invalid_response
+Gemini 시각: 3개 · 미채점
+Claude 시각: 8개 · 미채점
+별도 프롬프트 검사: 1개 · 미채점
+두 모델은 공통 집중 구간을 공유합니다. 이 표는 단독 재실행 성능 비교가 아닙니다.
+실행 실패·응답 검증 실패를 정상 또는 미검출로 간주하지 않습니다. 라벨 밖 결함은 hit에 더하지 않습니다.
+기존 채점 규칙상 검사 일부가 미완료이면 라벨 대응 후보가 있어도 최종 상태는 pending입니다.
+채점 보류 사유: Candidate event atoms must be exact source substrings
+실행 · v4.temporal_context /  : completed (0개) 
+실행 · vertex-gemini / overview : completed (1개) 
+실행 · claude-overview / overview : completed (2개) 
+실행 · vertex-gemini / focus-0 : completed (1개) 
+실행 · claude-focus-0 / focus-0 : completed (2개) 
+실행 · vertex-gemini / focus-1 : failed (0개) Provider transport failure/timeout
+실행 · claude-focus-1 / focus-1 : completed (2개) 
+실행 · vertex-gemini / focus-2 : completed (1개) 
+실행 · claude-focus-2 / focus-2 : completed (2개) 
+실행 · vertex-gemini-prompt /  : completed (1개) 
+
+생성 프롬프트
+A video showing a rugby ball flying in from the left foreground and hitting the ground on a sunny rugby field covered with green grass. The ball makes an irregular bounce towards the left background, highlighting the unpredictable nature of its movement. The scene is set on a bright, clear day, emphasizing the vibrancy of the green field and the dynamic motion of the rugby ball.  
+
+프롬프트 요구사항 검사
+P1 · matched · 기대: 럭비공이 왼쪽 전경에서 날아 들어옴
+관측: 공이 왼쪽 전경에서 프레임 안으로 날아 들어옴
+근거: 지정된 방향에서 공이 날아오는 모습이 확인됨
+P2 · matched · 기대: 녹색 잔디로 덮인 맑은 날씨의 럭비 경기장 지면에 공이 부딪힘
+관측: 푸른 잔디밭 바닥에 공이 닿아 바운스됨
+근거: 잔디 필드 위에 공이 떨어지는 모습이 일치함
+P3 · mismatch · 기대: 왼쪽 배경 방향으로 불규칙하게 튕겨 나감
+관측: 공이 우측/중앙 쪽으로 튀었다가 왼쪽 전경 근처로 굴러옴
+근거: 왼쪽 배경으로 튕겨 나가지 않고 화면 앞쪽으로 굴러 떨어짐
+P4 · matched · 기대: 맑고 화창한 날씨
+관측: 푸른 하늘과 햇빛이 비치는 맑은 야외 풍경
+근거: 날씨 조건이 일치함
+
+원본 라벨 R
+R1 (easy, 1.700–4.200초): The ball doesn't move naturally
+원문: The ball doesn't move naturally
+R2 (hard, 4.200–4.600초): Ball bounces to foreground, not background
+원문: Ball bounces to foreground, not background
+R3 (easy, 3.100–5.000초): The rugby ball boomerangs back towards the person throwing it defying the laws of physics.
+원문: The rugby ball boomerangs back towards the person throwing it defying the laws of physics.
+
+검출 후보 C
+C1 (0.500–4.500초): [Gemini] The ball morphs repeatedly, alternating between an oval rugby/football shape, a spherical soccer ball, and fluctuating surface markings.
+원문: The ball morphs repeatedly, alternating between an oval rugby/football shape, a spherical soccer ball, and fluctuating surface markings.
+종류: model_proposal / bbox: [0.55, 0.44, 0.85, 0.68]
+C2 (0.000–5.000초): [Claude] 공의 표면 무늬가 프레임마다 일관성 없이 변형됨. 초반(0~0.5초)에는 검은 곡선 줄무늬가 있는 흰 공이었으나, 중반(1.25~2.0초)에는 끈 모양/점 패턴으로 바뀌고, 후반(3.5초 이후)에는 럭비공 모양의 끈(레이싱) 무늬가 선명하게 나타남. 동일한 공 하나가 굴러가는 장면이라기엔 표면 아이덴티티가 비현실적으로 계속 바뀜.
+원문: 공의 표면 무늬가 프레임마다 일관성 없이 변형됨. 초반(0~0.5초)에는 검은 곡선 줄무늬가 있는 흰 공이었으나, 중반(1.25~2.0초)에는 끈 모양/점 패턴으로 바뀌고, 후반(3.5초 이후)에는 럭비공 모양의 끈(레이싱) 무늬가 선명하게 나타남. 동일한 공 하나가 굴러가는 장면이라기엔 표면 아이덴티티가 비현실적으로 계속 바뀜.
+종류: model_proposal / bbox: [0.0, 0.57, 0.3, 0.86]
+C3 (2.250–5.000초): [Claude] 공의 외곽 윤곽이 둥근 축구공 형태에서 길쭉한 럭비공(타원형) 형태로 서서히 변형됨. 2.25초 이후 점점 가로로 늘어진 럭비공 형태로 바뀌어 형태 일관성이 붕괴됨.
+원문: 공의 외곽 윤곽이 둥근 축구공 형태에서 길쭉한 럭비공(타원형) 형태로 서서히 변형됨. 2.25초 이후 점점 가로로 늘어진 럭비공 형태로 바뀌어 형태 일관성이 붕괴됨.
+종류: model_proposal / bbox: [0.0, 0.57, 0.3, 0.86]
+C4 (0.000–4.500초): [Gemini] The football visibly alters its form, orientation, and size unnaturally while rolling, repeatedly morphing between spherical and oblong shapes with inconsistent surface markings.
+원문: The football visibly alters its form, orientation, and size unnaturally while rolling, repeatedly morphing between spherical and oblong shapes with inconsistent surface markings.
+종류: model_proposal / bbox: None
+C5 (1.000–1.917초): [Claude] 초반(1.0~1.25초) 공은 전형적인 둥근 축구공 형태이며 파란색/검정 패널 무늬가 보인다. 이후 프레임(1.5초부터)에서 동일 공이 점차 길쭉한 타원형(럭비공/미식축구공) 형태로 변하고 표면 무늬도 측면 레이스(끈) 모양으로 바뀐다. 동일 물체의 종류/형태가 연속 샘플 사이에서 일관성 없이 변화함.
+원문: 초반(1.0~1.25초) 공은 전형적인 둥근 축구공 형태이며 파란색/검정 패널 무늬가 보인다. 이후 프레임(1.5초부터)에서 동일 공이 점차 길쭉한 타원형(럭비공/미식축구공) 형태로 변하고 표면 무늬도 측면 레이스(끈) 모양으로 바뀐다. 동일 물체의 종류/형태가 연속 샘플 사이에서 일관성 없이 변화함.
+종류: model_proposal / bbox: [0.63, 0.46, 0.76, 0.62]
+C6 (1.000–4.000초): [Claude] 공 표면의 무늬/글자/레이스 패턴이 프레임마다 다르게 나타난다. 어떤 프레임은 검정 곡선 무늬, 어떤 프레임은 지퍼형 레이스, 어떤 프레임은 읽을 수 없는 글자가 번지듯 보이며 안정적으로 유지되지 않는다.
+원문: 공 표면의 무늬/글자/레이스 패턴이 프레임마다 다르게 나타난다. 어떤 프레임은 검정 곡선 무늬, 어떤 프레임은 지퍼형 레이스, 어떤 프레임은 읽을 수 없는 글자가 번지듯 보이며 안정적으로 유지되지 않는다.
+종류: model_proposal / bbox: [0.1, 0.63, 0.28, 0.78]
+C7 (1.000–2.167초): [Claude] 초반(약 1.0~2.0초) 공은 둥근 구형(축구공 형태)으로 검은 얼룩/패널 무늬가 보인다. 그러나 이후 프레임에서 점차 타원형으로 바뀌며 표면 무늬가 변한다. 구형에서 타원형으로의 형태 전이가 관찰된다.
+원문: 초반(약 1.0~2.0초) 공은 둥근 구형(축구공 형태)으로 검은 얼룩/패널 무늬가 보인다. 그러나 이후 프레임에서 점차 타원형으로 바뀌며 표면 무늬가 변한다. 구형에서 타원형으로의 형태 전이가 관찰된다.
+종류: model_proposal / bbox: [0.62, 0.46, 0.73, 0.62]
+C8 (2.167–4.000초): [Claude] 공의 표면이 축구공 유형의 검은 점/패널에서 럭비공 유형의 중앙 레이스(끈) 무늬로 점진적으로 변형된다. 2.17초 이후 타원형과 함께 레이스 패턴이 나타나며, 동일 물체의 정체성(축구공↔럭비공)이 불안정하게 바뀐다.
+원문: 공의 표면이 축구공 유형의 검은 점/패널에서 럭비공 유형의 중앙 레이스(끈) 무늬로 점진적으로 변형된다. 2.17초 이후 타원형과 함께 레이스 패턴이 나타나며, 동일 물체의 정체성(축구공↔럭비공)이 불안정하게 바뀐다.
+종류: model_proposal / bbox: [0.1, 0.55, 0.42, 0.8]
+C9 (0.500–4.500초): [Gemini] The ball changes shape and markings dynamically while bouncing and rolling, shifting from a rounded ball into an American football shape with morphing seams and laces.
+원문: The ball changes shape and markings dynamically while bouncing and rolling, shifting from a rounded ball into an American football shape with morphing seams and laces.
+종류: model_proposal / bbox: None
+C10 (2.125–3.042초): [Claude] 공의 표면 무늬가 프레임마다 불안정하게 변한다. 2.125초에는 작은 파란색 패치만 보이고, 2.7초경에는 'DAIS'류 흐릿한 텍스트가, 2.9~3.0초에는 톱니 같은 검은 지퍼형 라인이 나타나는 등 레이스/바느질 무늬가 일관되지 않게 생성·변형된다. 동일 공이라 보기 어려운 표면 텍스처 변동이 관측됨.
+원문: 공의 표면 무늬가 프레임마다 불안정하게 변한다. 2.125초에는 작은 파란색 패치만 보이고, 2.7초경에는 'DAIS'류 흐릿한 텍스트가, 2.9~3.0초에는 톱니 같은 검은 지퍼형 라인이 나타나는 등 레이스/바느질 무늬가 일관되지 않게 생성·변형된다. 동일 공이라 보기 어려운 표면 텍스처 변동이 관측됨.
+종류: model_proposal / bbox: [0.37, 0.48, 0.56, 0.72]
+C11 (3.458–5.000초): [Claude] 확대되는 과정에서 레이스(바느질 끈) 무늬의 개수와 형태가 프레임마다 달라진다. 톱니 모양, 일자형 끈, 화살표형 끝단 등으로 변형되며, 공 표면의 브랜드 텍스트도 흐릿하게 나타났다 사라져 텍스처가 안정적으로 유지되지 않는다.
+원문: 확대되는 과정에서 레이스(바느질 끈) 무늬의 개수와 형태가 프레임마다 달라진다. 톱니 모양, 일자형 끈, 화살표형 끝단 등으로 변형되며, 공 표면의 브랜드 텍스트도 흐릿하게 나타났다 사라져 텍스처가 안정적으로 유지되지 않는다.
+종류: model_proposal / bbox: [0.08, 0.55, 0.42, 0.85]
+C12 (0.500–3.000초): [프롬프트 검사] 공이 왼쪽 배경 방향으로 튀지 않고 우측으로 튄 뒤 전경 쪽으로 굴러감
+원문: 공이 왼쪽 배경 방향으로 튀지 않고 우측으로 튄 뒤 전경 쪽으로 굴러감
+종류: model_proposal / bbox: [0.44, 0.44, 0.85, 0.86]
+
+검증 탈락 원시 응답
+
+자동 의미 대응
+유효한 자동 의미 평가가 없어 대응 여부를 확정하지 않았습니다.

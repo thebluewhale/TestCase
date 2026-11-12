@@ -1,13 +1,30 @@
 {
   "schema_version": "event-claims-6",
+  "aggregation_version": "event-aggregation-2",
   "summary": {
+    "aggregation_version": "event-aggregation-2",
     "videos": 12,
-    "semantic_video_hits": 2,
-    "stage1_automatic_hits": 2,
-    "localized_video_hits": 1,
-    "stage1_automatic_rate": 0.16666666666666666,
-    "pending": 10,
+    "semantic_video_hits": 4,
+    "stage1_automatic_hits": 4,
+    "localized_video_hits": 3,
+    "stage1_automatic_rate": 0.3333333333333333,
+    "pending": 8,
     "no_hit": 0,
+    "semantic_status_counts": {
+      "pending": 7,
+      "matched": 4,
+      "not_matched": 1
+    },
+    "detection_execution_counts": {
+      "partial": 8,
+      "completed": 4
+    },
+    "evaluation_validity_counts": {
+      "invalid": 7,
+      "valid": 5
+    },
+    "hits_with_incomplete_detection": 2,
+    "hits_with_partial_evaluation": 0,
     "required_hits": 11,
     "human_verified": false,
     "reference_counts_are_not_distinct_event_counts": true
@@ -18,8 +35,24 @@
       "generator": "ltx2",
       "media_sha256": "9d4b2236bfa2b9552974937300631f7784ac47ec21b4f34f50f2fb8c9fd8f977",
       "judge_version": "event-claims-6",
+      "aggregation_version": "event-aggregation-2",
       "inference_complete": false,
+      "detection_execution_status": "partial",
+      "detection_stage_counts": {
+        "completed": 9,
+        "invalid_response": 2
+      },
       "evaluation_status": "invalid_response",
+      "evaluation_validity": "invalid",
+      "evaluation_issues": [
+        {
+          "status": "invalid_response",
+          "reason": "Candidate event atoms must be exact source substrings"
+        }
+      ],
+      "valid_pair_count": 0,
+      "unavailable_pair_count": 16,
+      "semantic_status": "pending",
       "scoring_complete": false,
       "semantic_video_hit": false,
       "time_advisory_labels": [],
@@ -143,10 +176,7 @@
           "summary_ko": "영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "vbench-poc-rules"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-c6419290a00222ec17ff",
@@ -164,10 +194,7 @@
           "summary_ko": "The clear glass bowl suddenly fades and materializes onto the counter surface right before the salad lands in it.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-5f12dd101e3cef05b080",
@@ -185,10 +212,7 @@
           "summary_ko": "Sliced vegetable arrangement stays intact like a solid mass while tossed in the air, maintaining its precise vertical arrangement without dispersing.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-862d44d4018e18ab5e17",
@@ -206,10 +230,7 @@
           "summary_ko": "빨강·노랑·초록·파랑 스트립들이 연속 프레임에서 개수와 윤곽이 불안정하게 바뀌고 서로 녹아 붙거나 뒤섞인 형태로 흔들린다. 모션블러를 고려해도 스트립 가닥의 경계가 프레임마다 재배열되어 형태 일관성이 떨어진다.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-08f23be4716c7b606c58",
@@ -227,10 +248,7 @@
           "summary_ko": "파란색 띠가 일부 프레임에서는 뚜렷하게 보이다가 다른 프레임에서는 다른 색에 가려지거나 형태가 사라지는 듯 변화한다. 블러와 겹침 가능성이 있어 확정 어려움.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-e95bb1e238b53dff9ee7",
@@ -248,10 +266,7 @@
           "summary_ko": "The sliced vegetables and lettuce assembly begins floating mid-air, remaining unnaturally suspended and shifting shapes slightly before descending into the glass bowl.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-a384cabb8a194f145055",
@@ -269,10 +284,7 @@
           "summary_ko": "Vegetable cluster hovers unnaturally in mid-air defying gravity while slightly warping and morphing internal slice textures before falling into a bowl.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-c18e99f99f2fc5354efe",
@@ -290,10 +302,7 @@
           "summary_ko": "여러 프레임에 걸쳐 채소 다발이 심하게 흐려지고 색상 띠가 수직으로 늘어나며, 형태와 경계가 불안정하게 변동함. 빠른 손 동작으로 인한 모션 블러 외에도 색상 줄무늬의 급격한 재배열이 관찰됨.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         }
       ],
       "pairs": [],
@@ -301,107 +310,32 @@
       "localized_reference_count": 0,
       "human_verified": false,
       "visual_truth": "not_assessed",
-      "source_contributions": {
-        "gemini_visual": {
-          "candidate_count": 4,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "not_evaluated"
-        },
-        "claude_visual": {
-          "candidate_count": 3,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "not_evaluated"
-        },
-        "prompt": {
-          "candidate_count": 0,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "not_evaluated"
-        }
-      },
-      "detection_modules": [
-        {
-          "source": "v4.temporal_context",
-          "stage": null,
-          "status": "completed",
-          "reason": null,
-          "candidates": 1
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "overview",
-          "status": "completed",
-          "reason": "",
-          "candidates": 1
-        },
-        {
-          "source": "claude-overview",
-          "stage": "overview",
-          "status": "invalid_response",
-          "reason": "Claude output validation failed",
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-0",
-          "status": "completed",
-          "reason": "",
-          "candidates": 1
-        },
-        {
-          "source": "claude-focus-0",
-          "stage": "focus-0",
-          "status": "completed",
-          "reason": null,
-          "candidates": 2
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-1",
-          "status": "completed",
-          "reason": "",
-          "candidates": 1
-        },
-        {
-          "source": "claude-focus-1",
-          "stage": "focus-1",
-          "status": "invalid_response",
-          "reason": "Claude output validation failed",
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": "",
-          "candidates": 1
-        },
-        {
-          "source": "claude-focus-2",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": null,
-          "candidates": 1
-        },
-        {
-          "source": "vertex-gemini-prompt",
-          "stage": null,
-          "status": "completed",
-          "reason": "",
-          "candidates": 0
-        }
-      ],
-      "previous_automatic_hit": null
+      "previous_automatic_hit": false,
+      "previous_automatic_status": "pending"
     },
     {
       "asset_id": "sid_013_seedance",
       "generator": "seedance",
       "media_sha256": "975626694a24322126959db43625d69b7dbe40d364d38265a78f73d608130fad",
       "judge_version": "event-claims-6",
+      "aggregation_version": "event-aggregation-2",
       "inference_complete": false,
+      "detection_execution_status": "partial",
+      "detection_stage_counts": {
+        "completed": 10,
+        "invalid_response": 1
+      },
       "evaluation_status": "invalid_response",
+      "evaluation_validity": "invalid",
+      "evaluation_issues": [
+        {
+          "status": "invalid_response",
+          "reason": "Pair evidence must belong to a selected claim"
+        }
+      ],
+      "valid_pair_count": 0,
+      "unavailable_pair_count": 36,
+      "semantic_status": "pending",
       "scoring_complete": false,
       "semantic_video_hit": false,
       "time_advisory_labels": [],
@@ -573,10 +507,7 @@
           "summary_ko": "Vegetables suddenly appear inside the metal bowl while the chef is juggling the lettuce and cabbage overhead.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-6914b8fad6bb7f8ecc61",
@@ -594,10 +525,7 @@
           "summary_ko": "The tossed cabbage changes shape from round green cabbage into an elongated Napa cabbage while hovering and floating unnaturally in mid-air.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-820f05ef210d5531cad9",
@@ -615,10 +543,7 @@
           "summary_ko": "1.25초경 저글링 중 오른쪽 상단 채소 위에 주황색 물체(당근 추정)가 순간적으로 나타나며, 이후 프레임에서는 보이지 않는다. 공중에 있는 물체의 개수와 구성이 프레임 간 불안정하게 변한다.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-efe0e2840cfcdf2482b7",
@@ -636,10 +561,7 @@
           "summary_ko": "초반 볼 안에는 소량의 채소/당근 조각만 있었으나, 아직 채소를 던져 넣지 않은 저글링 단계(약 2.25초)에서 당근 등 내용물의 양과 구성이 프레임마다 불규칙하게 변한다.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-6a0fbf5fcfa78026d3bb",
@@ -657,10 +579,7 @@
           "summary_ko": "공중의 채소가 프레임에 따라 잎이 풍성한 상추 모양과 둥근 양배추 모양으로 번갈아 나타나며, 두 덩어리 간 형태와 질감이 서로 바뀌는 것처럼 보여 정체성이 불안정하다.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-cfbdc1208dffe728af35",
@@ -678,10 +597,7 @@
           "summary_ko": "Vegetables duplicate into the metal bowl while the original cabbage and lettuce remain in mid-air and in hands.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-95c4b0840f8c079d77d6",
@@ -699,10 +615,7 @@
           "summary_ko": "The cabbage in the air shifts shape, orientation, and texture unnaturally between juggling passes.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-192ace46c66ba6a45938",
@@ -720,10 +633,7 @@
           "summary_ko": "The tossed lettuce and cabbage deform unnaturally, morph into loose leaves, and duplicate or vanish during motion.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-189e65f5c799b0ca6875",
@@ -741,10 +651,7 @@
           "summary_ko": "Vegetables in the air float with unnatural gravity, altering speed and trajectory without realistic momentum.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-aa59b18da130cf144c58",
@@ -762,10 +669,7 @@
           "summary_ko": "프레임마다 공중에 떠 있는 녹색 채소(상추 잎 뭉치와 둥근 배추/양배추)의 개수와 윤곽이 불안정하게 변함. 1.25초 프레임에서는 둥근 배추 하나와 뒤쪽 잎 뭉치가 보이고, 1.5초에서는 좌우로 두 개가 분리되어 보이며, 형태가 매 프레임 재구성되는 양상을 보인다. 잎의 경계가 흐릿하게 뭉개지며 일관성이 떨어진다.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-a6539ee7848b7f2c3789",
@@ -783,10 +687,7 @@
           "summary_ko": "오른쪽 상단에 나타나는 둥근 연녹색 채소가 프레임마다 크기와 테두리 질감이 변하며, 1.5초 프레임에서는 뒤쪽 잎과 결합된 듯 윤곽이 불명확해진다. 모션 블러를 고려해도 형태 재구성이 과해 보인다.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-1af8d23ac1468c50fdbc",
@@ -804,10 +705,7 @@
           "summary_ko": "Vegetable changes morphology rapidly in mid-air while being juggled, transforming between cabbage and lettuce types.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-ad7eeb3904945c94b276",
@@ -825,10 +723,7 @@
           "summary_ko": "Produce items appear inside the mixing bowl spontaneously while original items remain in motion or hands.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-155ffeb67a0bf72319f0",
@@ -846,10 +741,7 @@
           "summary_ko": "저글링되는 채소의 종류와 형태가 프레임마다 불안정하게 변함. 1.5초에는 왼쪽이 잎이 풍성한 적상추, 오른쪽이 둥근 양배추/배추 형태였으나, 이후 프레임들에서 두 채소의 잎 구조, 밀도, 윤곽이 일관되지 않게 변형됨. 던지는 중 채소의 정체성이 유지되지 않음.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-24c49bf2c71111d9f1d6",
@@ -867,10 +759,7 @@
           "summary_ko": "그릇 속 샐러드 내용물이 프레임 진행에 따라 점프하듯 증가/변화함. 1.5초에는 소량의 채소와 당근만 보였으나 후반부 프레임에서 양상추 덩어리가 갑자기 그릇을 가득 채우는 등 내용물 변화가 저글링 타이밍과 매끄럽게 연결되지 않음.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-066e8b034cccdf6b99ee",
@@ -888,10 +777,7 @@
           "summary_ko": "3.08초경 조리대 왼쪽에 적상추 덩어리가 갑자기 나타나 놓여 있음. 이전 프레임에서는 두 채소가 모두 공중/손에 있었으므로 테이블 위 채소의 출현이 돌발적임.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-be45d7b4e048fcdf10cb",
@@ -909,10 +795,7 @@
           "summary_ko": "야채들이 공중에서 저절로 샐러드로 조합되지 않고 그대로 떨어집니다.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "vertex-gemini-prompt"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-28330ff209b6c4eac758",
@@ -930,10 +813,7 @@
           "summary_ko": "모든 야채가 볼 안으로 착지하지 않고 일부는 테이블 위에 놓입니다.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "vertex-gemini-prompt"
-          ]
+          "visual_truth": "not_assessed"
         }
       ],
       "pairs": [],
@@ -941,115 +821,35 @@
       "localized_reference_count": 0,
       "human_verified": false,
       "visual_truth": "not_assessed",
-      "source_contributions": {
-        "gemini_visual": {
-          "candidate_count": 8,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "not_evaluated"
-        },
-        "claude_visual": {
-          "candidate_count": 8,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "not_evaluated"
-        },
-        "prompt": {
-          "candidate_count": 2,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "not_evaluated"
-        }
-      },
-      "detection_modules": [
-        {
-          "source": "v4.temporal_context",
-          "stage": null,
-          "status": "completed",
-          "reason": null,
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "overview",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-overview",
-          "stage": "overview",
-          "status": "completed",
-          "reason": null,
-          "candidates": 3
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-0",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-0",
-          "stage": "focus-0",
-          "status": "invalid_response",
-          "reason": "Claude output validation failed",
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-1",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-1",
-          "stage": "focus-1",
-          "status": "completed",
-          "reason": null,
-          "candidates": 2
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-2",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": null,
-          "candidates": 3
-        },
-        {
-          "source": "vertex-gemini-prompt",
-          "stage": null,
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        }
-      ],
-      "previous_automatic_hit": null
+      "previous_automatic_hit": false,
+      "previous_automatic_status": "pending"
     },
     {
       "asset_id": "sid_013_veo3",
       "generator": "veo3",
       "media_sha256": "c9606dc11095386c4616e4453fcc7d737cf193c1eafab5515787bdc1403e3098",
       "judge_version": "event-claims-6",
+      "aggregation_version": "event-aggregation-2",
       "inference_complete": false,
+      "detection_execution_status": "partial",
+      "detection_stage_counts": {
+        "completed": 10,
+        "failed": 1
+      },
       "evaluation_status": "completed",
-      "scoring_complete": false,
-      "semantic_video_hit": false,
+      "evaluation_validity": "valid",
+      "evaluation_issues": [],
+      "valid_pair_count": 39,
+      "unavailable_pair_count": 0,
+      "semantic_status": "matched",
+      "scoring_complete": true,
+      "semantic_video_hit": true,
       "time_advisory_labels": [
         "시간 차이 있음",
         "시간도 일치"
       ],
-      "localized_video_hit": false,
-      "stage1_automatic_status": "pending",
+      "localized_video_hit": true,
+      "stage1_automatic_status": "hit",
       "stage1_policy": "at least one original reference complaint; time is advisory only",
       "references": [
         {
@@ -1354,10 +1154,7 @@
             "scope": "part"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-e3e69468fdd808757282",
@@ -1384,10 +1181,7 @@
           "semantic_references": [
             "R3"
           ],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-c744ec980598f714f119",
@@ -1412,10 +1206,7 @@
             "scope": "group"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-524f31c00f4556fd8730",
@@ -1440,10 +1231,7 @@
             "scope": "part"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-49ff0e39e9dfd424729b",
@@ -1470,10 +1258,7 @@
           "semantic_references": [
             "R3"
           ],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-163125955eb56be0b68a",
@@ -1500,10 +1285,7 @@
           "semantic_references": [
             "R3"
           ],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-cc1e7ced6faa029f48d6",
@@ -1528,10 +1310,7 @@
             "scope": "part"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-5f280619e42f190baf2e",
@@ -1556,10 +1335,7 @@
             "scope": "part"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-c6e38946197ddcb0279f",
@@ -1586,10 +1362,7 @@
           "semantic_references": [
             "R3"
           ],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-19607f9cb8ddbc1ed773",
@@ -1616,10 +1389,7 @@
           "semantic_references": [
             "R3"
           ],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-6438c2f89bb1dabbd1db",
@@ -1644,10 +1414,7 @@
             "scope": "part"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-229d48d904212e47e69d",
@@ -1672,10 +1439,7 @@
             "scope": "part"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-06794ed3f9c0d5a9fd24",
@@ -1702,10 +1466,7 @@
           "semantic_references": [
             "R3"
           ],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         }
       ],
       "pairs": [
@@ -1780,6 +1541,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -1851,6 +1614,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -1922,6 +1687,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -1997,6 +1764,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -2068,6 +1837,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -2139,6 +1910,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -2214,6 +1987,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -2289,6 +2064,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -2360,6 +2137,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -2431,6 +2210,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -2506,6 +2287,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -2581,6 +2364,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -2652,6 +2437,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -2723,6 +2510,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -2798,6 +2587,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -2869,6 +2660,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -2940,6 +2733,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -3015,6 +2810,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -3090,6 +2887,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -3161,6 +2960,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -3232,6 +3033,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -3307,6 +3110,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -3382,6 +3187,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -3453,6 +3260,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -3524,6 +3333,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -3599,6 +3410,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -3674,6 +3487,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -3735,6 +3550,8 @@
             "R3.S1"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": true,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -3810,6 +3627,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -3885,6 +3704,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -3946,6 +3767,8 @@
             "R3.S1"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": true,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -4007,6 +3830,8 @@
             "R3.S1"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": true,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -4078,6 +3903,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -4149,6 +3976,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -4210,6 +4039,8 @@
             "R3.S1"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -4271,6 +4102,8 @@
             "R3.S1"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -4342,6 +4175,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -4413,6 +4248,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -4474,6 +4311,8 @@
             "R3.S1"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -4483,115 +4322,31 @@
       "localized_reference_count": 1,
       "human_verified": false,
       "visual_truth": "not_assessed",
-      "source_contributions": {
-        "gemini_visual": {
-          "candidate_count": 6,
-          "matched_candidates": [
-            "C10",
-            "C2",
-            "C6"
-          ],
-          "labeled_correspondence": true,
-          "status": "evaluated"
-        },
-        "claude_visual": {
-          "candidate_count": 7,
-          "matched_candidates": [
-            "C13",
-            "C5",
-            "C9"
-          ],
-          "labeled_correspondence": true,
-          "status": "evaluated"
-        },
-        "prompt": {
-          "candidate_count": 0,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "evaluated"
-        }
-      },
-      "detection_modules": [
-        {
-          "source": "v4.temporal_context",
-          "stage": null,
-          "status": "completed",
-          "reason": null,
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "overview",
-          "status": "failed",
-          "reason": "Provider transport failure/timeout",
-          "candidates": 0
-        },
-        {
-          "source": "claude-overview",
-          "stage": "overview",
-          "status": "completed",
-          "reason": null,
-          "candidates": 1
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-0",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-0",
-          "stage": "focus-0",
-          "status": "completed",
-          "reason": null,
-          "candidates": 2
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-1",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-1",
-          "stage": "focus-1",
-          "status": "completed",
-          "reason": null,
-          "candidates": 2
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-2",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": null,
-          "candidates": 2
-        },
-        {
-          "source": "vertex-gemini-prompt",
-          "stage": null,
-          "status": "completed",
-          "reason": "",
-          "candidates": 0
-        }
-      ],
-      "previous_automatic_hit": null
+      "previous_automatic_hit": false,
+      "previous_automatic_status": "pending"
     },
     {
       "asset_id": "sid_040_ltx2",
       "generator": "ltx2",
       "media_sha256": "6f140515b8c4d0f9b8b27ab8822da234b8533c4c755122200561d4f248b4a6a9",
       "judge_version": "event-claims-6",
+      "aggregation_version": "event-aggregation-2",
       "inference_complete": true,
+      "detection_execution_status": "completed",
+      "detection_stage_counts": {
+        "completed": 11
+      },
       "evaluation_status": "invalid_response",
+      "evaluation_validity": "invalid",
+      "evaluation_issues": [
+        {
+          "status": "invalid_response",
+          "reason": "Candidate event atoms must be exact source substrings"
+        }
+      ],
+      "valid_pair_count": 0,
+      "unavailable_pair_count": 22,
+      "semantic_status": "pending",
       "scoring_complete": false,
       "semantic_video_hit": false,
       "time_advisory_labels": [],
@@ -4707,10 +4462,7 @@
           "summary_ko": "밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "vbench-poc-rules"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-866f6776b580824adcd7",
@@ -4728,10 +4480,7 @@
           "summary_ko": "Drinking glass transforms directly into a spray dispenser bottle as it is set down.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-98de40bad52ca65e65a1",
@@ -4749,10 +4498,7 @@
           "summary_ko": "1.48초까지 인물은 투명한 물컵을 들고 물을 마시고 있었으나, 1.64초 이후 손에 든 물체가 상단에 검은 분무 노즐이 달린 스프레이 병으로 바뀌어 있음. 같은 투명 용기의 외형이 급격히 변함.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-0be0c6eb752ff6cbe93e",
@@ -4770,10 +4516,7 @@
           "summary_ko": "2.12초경부터 창틀 위에 스프레이 병이 놓인 것이 보이는데, 이전 프레임에서는 해당 위치에 병이 없었음. 손에 든 용기와 별개로 창틀 위 병이 출현함.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-cce9d24dd7ace2aa7e4b",
@@ -4791,10 +4534,7 @@
           "summary_ko": "Drinking glass transforms into a spray bottle as the person lowers her hand toward the windowsill.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-2acea518cb28fe865315",
@@ -4812,10 +4552,7 @@
           "summary_ko": "Cleaning cloth appears, disappears, and reappears inconsistently around her hands while moving near the window.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-f9252aae1302574139ec",
@@ -4833,10 +4570,7 @@
           "summary_ko": "Drinking glass transforms into a spray dispenser bottle as the woman lowers her hand.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-5ca355f2877c38637986",
@@ -4854,10 +4588,7 @@
           "summary_ko": "처음에는 짧은 유리컵(물을 마시는 장면)이었으나 점차 길쭉한 형태로 늘어나고, 이후 펌프/분무기 뚜껑이 달린 병으로 형태와 정체성이 점진적으로 변화함. 유리컵에서 분무기 병으로의 전환이 자연스러운 손 조작으로 설명되지 않고 물체 자체가 변형되는 것으로 관찰됨.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-3b2858829fc59f697931",
@@ -4875,10 +4606,7 @@
           "summary_ko": "이전 프레임에서는 뚜껑이 없는 컵/병이었으나 1.56초 이후 검은색 펌프 또는 분무 노즐이 상단에 새로 생겨남. 노즐 요소가 존재하지 않던 상태에서 출현함.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-ce6a8c890189ca353bf7",
@@ -4896,10 +4624,7 @@
           "summary_ko": "The drinking glass held by the woman morphs directly into a spray dispenser bottle as she lowers it.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-e6a4e11dc4dec7768201",
@@ -4917,10 +4642,7 @@
           "summary_ko": "The cloth being used to wipe the glass disappears abruptly as the woman lowers her arm.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         }
       ],
       "pairs": [],
@@ -4928,107 +4650,32 @@
       "localized_reference_count": 0,
       "human_verified": false,
       "visual_truth": "not_assessed",
-      "source_contributions": {
-        "gemini_visual": {
-          "candidate_count": 6,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "not_evaluated"
-        },
-        "claude_visual": {
-          "candidate_count": 4,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "not_evaluated"
-        },
-        "prompt": {
-          "candidate_count": 0,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "not_evaluated"
-        }
-      },
-      "detection_modules": [
-        {
-          "source": "v4.temporal_context",
-          "stage": null,
-          "status": "completed",
-          "reason": null,
-          "candidates": 1
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "overview",
-          "status": "completed",
-          "reason": "",
-          "candidates": 1
-        },
-        {
-          "source": "claude-overview",
-          "stage": "overview",
-          "status": "completed",
-          "reason": null,
-          "candidates": 2
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-0",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-0",
-          "stage": "focus-0",
-          "status": "completed",
-          "reason": null,
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-1",
-          "status": "completed",
-          "reason": "",
-          "candidates": 1
-        },
-        {
-          "source": "claude-focus-1",
-          "stage": "focus-1",
-          "status": "completed",
-          "reason": null,
-          "candidates": 2
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-2",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": null,
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini-prompt",
-          "stage": null,
-          "status": "completed",
-          "reason": "",
-          "candidates": 0
-        }
-      ],
-      "previous_automatic_hit": null
+      "previous_automatic_hit": false,
+      "previous_automatic_status": "pending"
     },
     {
       "asset_id": "sid_040_seedance",
       "generator": "seedance",
       "media_sha256": "ff3b8535a1d813c28030281234f77ed459e1b394acc2b4c4310ba79101e84bb5",
       "judge_version": "event-claims-6",
+      "aggregation_version": "event-aggregation-2",
       "inference_complete": false,
+      "detection_execution_status": "partial",
+      "detection_stage_counts": {
+        "completed": 10,
+        "failed": 1
+      },
       "evaluation_status": "invalid_response",
+      "evaluation_validity": "invalid",
+      "evaluation_issues": [
+        {
+          "status": "invalid_response",
+          "reason": "Pair evidence must belong to a selected claim"
+        }
+      ],
+      "valid_pair_count": 0,
+      "unavailable_pair_count": 40,
+      "semantic_status": "pending",
       "scoring_complete": false,
       "semantic_video_hit": false,
       "time_advisory_labels": [],
@@ -5266,10 +4913,7 @@
           "summary_ko": "초반(0~2.5초)에는 남성이 손에 든 투명 유리컵이 얼굴 앞에서 분명히 보이지만, 2.6초 이후 프레임부터는 손에 컵이 보이지 않고 창문을 손으로 미는 동작으로 전환된다. 컵을 내려놓거나 치우는 명확한 동작이 중간 프레임에 관찰되지 않아 존재/소실이 불연속적으로 보인다.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-d569bdd8afec8ebde81f",
@@ -5287,10 +4931,7 @@
           "summary_ko": "The drinking glass held by the man morphs into a semi-translucent cleaning rag or squeegee cloth as he brings his hand to the window pane.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-780bf79166bf8de6af27",
@@ -5308,10 +4949,7 @@
           "summary_ko": "The graphic logo printed on the front of the sweatshirt fades away and vanishes entirely as the man turns toward the window.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-fe2791e3173675e49df0",
@@ -5329,10 +4967,7 @@
           "summary_ko": "창문을 향해 뻗은 오른손에 들고 있던 유리컵이 후속 프레임에서 관찰되지 않으며, 컵을 내려놓는 중간 동작 없이 양손이 창문을 짚는 자세로 전환됨. 샘플 간격 사이에서 컵의 존재가 사라진 것으로 보임",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-a29dc66b926dbed3e4fe",
@@ -5350,10 +4985,7 @@
           "summary_ko": "The drinking glass held by the man morphs into an oversized translucent object resembling a cleaning cloth or bubble as he moves it toward the window.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-bc80f7d331d843cbdfc7",
@@ -5371,10 +5003,7 @@
           "summary_ko": "The graphic logo on the front of the sweatshirt distorts, shifts, and largely vanishes after the man turns toward the window.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-9f3beacc1dead531bf63",
@@ -5392,10 +5021,7 @@
           "summary_ko": "초반 프레임(1.5~3.0초)에서는 손에 작고 둥근 투명 컵이 명확히 보이나, 3.29초 이후 컵이 점점 비정상적으로 커지고 납작한 접시/거품 같은 불규칙한 형태로 변형됨. 3.5초 프레임에서는 컵이 원래 크기보다 훨씬 크고 흐릿한 반투명 덩어리로 보여 물체 형태의 일관성이 붕괴됨.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-451af9d1e304d5ca5ac6",
@@ -5413,10 +5039,7 @@
           "summary_ko": "Graphic print on the man's navy sweatshirt morphs and disappears as he moves.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-82f77f532efe99e49878",
@@ -5434,10 +5057,7 @@
           "summary_ko": "Glass or translucent wiping object morphs into a semi-floating oval shape with unstable contours while wiping the window.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-dd71bf6a4fbfd4ef36e9",
@@ -5455,10 +5075,7 @@
           "summary_ko": "손에 쥔 닦는 천이 프레임마다 크기와 형태가 크게 변한다. 어떤 프레임에서는 큰 반투명 덩어리로 불규칙하게 늘어나고, 다른 프레임에서는 작게 축소되며 경계가 유동적으로 흔들린다. 천이 손 밖으로 비현실적으로 부풀거나 투명하게 번지는 등 일관되지 않은 형태 변화를 보인다.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         }
       ],
       "pairs": [],
@@ -5466,115 +5083,35 @@
       "localized_reference_count": 0,
       "human_verified": false,
       "visual_truth": "not_assessed",
-      "source_contributions": {
-        "gemini_visual": {
-          "candidate_count": 6,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "not_evaluated"
-        },
-        "claude_visual": {
-          "candidate_count": 4,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "not_evaluated"
-        },
-        "prompt": {
-          "candidate_count": 0,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "not_evaluated"
-        }
-      },
-      "detection_modules": [
-        {
-          "source": "v4.temporal_context",
-          "stage": null,
-          "status": "completed",
-          "reason": null,
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "overview",
-          "status": "failed",
-          "reason": "Provider transport failure/timeout",
-          "candidates": 0
-        },
-        {
-          "source": "claude-overview",
-          "stage": "overview",
-          "status": "completed",
-          "reason": null,
-          "candidates": 1
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-0",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-0",
-          "stage": "focus-0",
-          "status": "completed",
-          "reason": null,
-          "candidates": 1
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-1",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-1",
-          "stage": "focus-1",
-          "status": "completed",
-          "reason": null,
-          "candidates": 1
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-2",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": null,
-          "candidates": 1
-        },
-        {
-          "source": "vertex-gemini-prompt",
-          "stage": null,
-          "status": "completed",
-          "reason": "",
-          "candidates": 0
-        }
-      ],
-      "previous_automatic_hit": null
+      "previous_automatic_hit": false,
+      "previous_automatic_status": "pending"
     },
     {
       "asset_id": "sid_040_veo3",
       "generator": "veo3",
       "media_sha256": "8863691a5073d363c7027e0cc3c160d5a1271d80c3205d3ae5340da490dcdba0",
       "judge_version": "event-claims-6",
+      "aggregation_version": "event-aggregation-2",
       "inference_complete": false,
+      "detection_execution_status": "partial",
+      "detection_stage_counts": {
+        "completed": 10,
+        "invalid_response": 1
+      },
       "evaluation_status": "completed",
-      "scoring_complete": false,
-      "semantic_video_hit": false,
+      "evaluation_validity": "valid",
+      "evaluation_issues": [],
+      "valid_pair_count": 52,
+      "unavailable_pair_count": 0,
+      "semantic_status": "matched",
+      "scoring_complete": true,
+      "semantic_video_hit": true,
       "time_advisory_labels": [
         "시간 차이 있음",
         "시간도 일치"
       ],
-      "localized_video_hit": false,
-      "stage1_automatic_status": "pending",
+      "localized_video_hit": true,
+      "stage1_automatic_status": "hit",
       "stage1_policy": "at least one original reference complaint; time is advisory only",
       "references": [
         {
@@ -5977,10 +5514,7 @@
             "R3",
             "R4"
           ],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-07647d078e70ad219365",
@@ -6007,10 +5541,7 @@
           "semantic_references": [
             "R3"
           ],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-0e446f45d5e9a0f59562",
@@ -6037,10 +5568,7 @@
           "semantic_references": [
             "R2"
           ],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-3d3794b8d6228c5c76df",
@@ -6068,10 +5596,7 @@
             "R3",
             "R4"
           ],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-34c8b49427c73b22b0fa",
@@ -6096,10 +5621,7 @@
             "scope": "individual"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-9e8a600fb46306214064",
@@ -6127,10 +5649,7 @@
             "R3",
             "R4"
           ],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-e8e5a6cb4ff91f4946f1",
@@ -6155,10 +5674,7 @@
             "scope": "part"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-104e344ae53f07d68739",
@@ -6183,10 +5699,7 @@
             "scope": "part"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-ff0411ef9ef4f735fc31",
@@ -6213,10 +5726,7 @@
           "semantic_references": [
             "R2"
           ],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-55e59ed885dd3a6b547e",
@@ -6244,10 +5754,7 @@
             "R3",
             "R4"
           ],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-e6c315cc7ac9a69659ec",
@@ -6272,10 +5779,7 @@
             "scope": "part"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-2c4081568dbd5bb63ffd",
@@ -6300,10 +5804,7 @@
             "scope": "part"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-0fed583ffd6c708b3a59",
@@ -6330,10 +5831,7 @@
           "semantic_references": [
             "R2"
           ],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         }
       ],
       "pairs": [
@@ -6408,6 +5906,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -6483,6 +5983,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -6558,6 +6060,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -6633,6 +6137,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -6708,6 +6214,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -6783,6 +6291,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -6858,6 +6368,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -6933,6 +6445,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -7008,6 +6522,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -7083,6 +6599,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -7158,6 +6676,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -7233,6 +6753,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -7308,6 +6830,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -7383,6 +6907,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -7458,6 +6984,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -7519,6 +7047,8 @@
             "R2.S1"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": true,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -7594,6 +7124,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -7669,6 +7201,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -7744,6 +7278,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -7819,6 +7355,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -7894,6 +7432,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -7955,6 +7495,8 @@
             "R2.S1"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": true,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -8030,6 +7572,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -8105,6 +7649,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -8180,6 +7726,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -8241,6 +7789,8 @@
             "R2.S1"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": true,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -8302,6 +7852,8 @@
             "R3.S2"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": true,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -8363,6 +7915,8 @@
             "R3.S2"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": true,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -8438,6 +7992,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -8499,6 +8055,8 @@
             "R3.S2"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": true,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -8574,6 +8132,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -8635,6 +8195,8 @@
             "R3.S2"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": true,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -8710,6 +8272,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -8785,6 +8349,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -8860,6 +8426,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -8921,6 +8489,8 @@
             "R3.S2"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -8996,6 +8566,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -9071,6 +8643,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -9146,6 +8720,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -9207,6 +8783,8 @@
             "R4.S1"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": true,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -9282,6 +8860,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -9357,6 +8937,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -9418,6 +9000,8 @@
             "R4.S1"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": true,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -9493,6 +9077,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -9554,6 +9140,8 @@
             "R4.S1"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": true,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -9629,6 +9217,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -9704,6 +9294,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -9779,6 +9371,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -9840,6 +9434,8 @@
             "R4.S1"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": true,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -9915,6 +9511,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -9990,6 +9588,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -10065,6 +9665,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -10074,117 +9676,26 @@
       "localized_reference_count": 3,
       "human_verified": false,
       "visual_truth": "not_assessed",
-      "source_contributions": {
-        "gemini_visual": {
-          "candidate_count": 7,
-          "matched_candidates": [
-            "C1",
-            "C10",
-            "C2",
-            "C3",
-            "C6"
-          ],
-          "labeled_correspondence": true,
-          "status": "evaluated"
-        },
-        "claude_visual": {
-          "candidate_count": 6,
-          "matched_candidates": [
-            "C13",
-            "C4",
-            "C9"
-          ],
-          "labeled_correspondence": true,
-          "status": "evaluated"
-        },
-        "prompt": {
-          "candidate_count": 0,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "evaluated"
-        }
-      },
-      "detection_modules": [
-        {
-          "source": "v4.temporal_context",
-          "stage": null,
-          "status": "completed",
-          "reason": null,
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "overview",
-          "status": "completed",
-          "reason": "",
-          "candidates": 1
-        },
-        {
-          "source": "claude-overview",
-          "stage": "overview",
-          "status": "invalid_response",
-          "reason": "Claude output validation failed",
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-0",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-0",
-          "stage": "focus-0",
-          "status": "completed",
-          "reason": null,
-          "candidates": 2
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-1",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-1",
-          "stage": "focus-1",
-          "status": "completed",
-          "reason": null,
-          "candidates": 2
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-2",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": null,
-          "candidates": 2
-        },
-        {
-          "source": "vertex-gemini-prompt",
-          "stage": null,
-          "status": "completed",
-          "reason": "",
-          "candidates": 0
-        }
-      ],
-      "previous_automatic_hit": null
+      "previous_automatic_hit": false,
+      "previous_automatic_status": "pending"
     },
     {
       "asset_id": "sid_053_ltx2",
       "generator": "ltx2",
       "media_sha256": "e8869467a0224cb22cc6e3cf9476a6c41bf049a1deb1972e6d4bf0c79996c9d6",
       "judge_version": "event-claims-6",
+      "aggregation_version": "event-aggregation-2",
       "inference_complete": true,
+      "detection_execution_status": "completed",
+      "detection_stage_counts": {
+        "completed": 11
+      },
       "evaluation_status": "completed",
+      "evaluation_validity": "valid",
+      "evaluation_issues": [],
+      "valid_pair_count": 10,
+      "unavailable_pair_count": 0,
+      "semantic_status": "matched",
       "scoring_complete": true,
       "semantic_video_hit": true,
       "time_advisory_labels": [
@@ -10300,10 +9811,7 @@
           "semantic_references": [
             "R1"
           ],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-f970ce81b50ccc2461c6",
@@ -10328,10 +9836,7 @@
             "scope": "part"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-8ae057cb542b038a9ede",
@@ -10358,10 +9863,7 @@
           "semantic_references": [
             "R1"
           ],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-56d6bcb85541d6bd15ee",
@@ -10386,10 +9888,7 @@
             "scope": "individual"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-fd95e5755d6f2ff11db4",
@@ -10416,10 +9915,7 @@
           "semantic_references": [
             "R1"
           ],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-888b8cc2093c66578abc",
@@ -10444,10 +9940,7 @@
             "scope": "part"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-63472f30c2f8262ef9b5",
@@ -10474,10 +9967,7 @@
           "semantic_references": [
             "R1"
           ],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-9da21a403a8ccb55d081",
@@ -10502,10 +9992,7 @@
             "scope": "part"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-aaee476717f67218ef53",
@@ -10530,10 +10017,7 @@
             "scope": "individual"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "vertex-gemini-prompt"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-1fdad8e572f3ff16ce1c",
@@ -10558,10 +10042,7 @@
             "scope": "individual"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "vertex-gemini-prompt"
-          ]
+          "visual_truth": "not_assessed"
         }
       ],
       "pairs": [
@@ -10622,6 +10103,8 @@
             "R1.S1"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": true,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -10697,6 +10180,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -10758,6 +10243,8 @@
             "R1.S1"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -10833,6 +10320,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -10894,6 +10383,8 @@
             "R1.S1"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -10969,6 +10460,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -11030,6 +10523,8 @@
             "R1.S1"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": true,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -11105,6 +10600,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -11180,6 +10677,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -11255,6 +10754,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -11264,112 +10765,32 @@
       "localized_reference_count": 1,
       "human_verified": false,
       "visual_truth": "not_assessed",
-      "source_contributions": {
-        "gemini_visual": {
-          "candidate_count": 7,
-          "matched_candidates": [
-            "C1",
-            "C3",
-            "C5",
-            "C7"
-          ],
-          "labeled_correspondence": true,
-          "status": "evaluated"
-        },
-        "claude_visual": {
-          "candidate_count": 1,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "evaluated"
-        },
-        "prompt": {
-          "candidate_count": 2,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "evaluated"
-        }
-      },
-      "detection_modules": [
-        {
-          "source": "v4.temporal_context",
-          "stage": null,
-          "status": "completed",
-          "reason": null,
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "overview",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-overview",
-          "stage": "overview",
-          "status": "completed",
-          "reason": null,
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-0",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-0",
-          "stage": "focus-0",
-          "status": "completed",
-          "reason": null,
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-1",
-          "status": "completed",
-          "reason": "",
-          "candidates": 1
-        },
-        {
-          "source": "claude-focus-1",
-          "stage": "focus-1",
-          "status": "completed",
-          "reason": null,
-          "candidates": 1
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-2",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": null,
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini-prompt",
-          "stage": null,
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        }
-      ],
-      "previous_automatic_hit": null
+      "previous_automatic_hit": true,
+      "previous_automatic_status": "hit"
     },
     {
       "asset_id": "sid_053_seedance",
       "generator": "seedance",
       "media_sha256": "164a2c53bd5db8476c374c950a5c572b2b36d507cc92ede5fb9face8e717a6d2",
       "judge_version": "event-claims-6",
+      "aggregation_version": "event-aggregation-2",
       "inference_complete": false,
+      "detection_execution_status": "partial",
+      "detection_stage_counts": {
+        "completed": 10,
+        "failed": 1
+      },
       "evaluation_status": "invalid_response",
+      "evaluation_validity": "invalid",
+      "evaluation_issues": [
+        {
+          "status": "invalid_response",
+          "reason": "Candidate event atoms must be exact source substrings"
+        }
+      ],
+      "valid_pair_count": 0,
+      "unavailable_pair_count": 36,
+      "semantic_status": "pending",
       "scoring_complete": false,
       "semantic_video_hit": false,
       "time_advisory_labels": [],
@@ -11560,10 +10981,7 @@
           "summary_ko": "The ball morphs repeatedly, alternating between an oval rugby/football shape, a spherical soccer ball, and fluctuating surface markings.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-35b95265b7da8620e7b4",
@@ -11581,10 +10999,7 @@
           "summary_ko": "공의 표면 무늬가 프레임마다 일관성 없이 변형됨. 초반(0~0.5초)에는 검은 곡선 줄무늬가 있는 흰 공이었으나, 중반(1.25~2.0초)에는 끈 모양/점 패턴으로 바뀌고, 후반(3.5초 이후)에는 럭비공 모양의 끈(레이싱) 무늬가 선명하게 나타남. 동일한 공 하나가 굴러가는 장면이라기엔 표면 아이덴티티가 비현실적으로 계속 바뀜.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-f31e6eb81cc454478ab1",
@@ -11602,10 +11017,7 @@
           "summary_ko": "공의 외곽 윤곽이 둥근 축구공 형태에서 길쭉한 럭비공(타원형) 형태로 서서히 변형됨. 2.25초 이후 점점 가로로 늘어진 럭비공 형태로 바뀌어 형태 일관성이 붕괴됨.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-5242e96930ef1fa68ce5",
@@ -11623,10 +11035,7 @@
           "summary_ko": "The football visibly alters its form, orientation, and size unnaturally while rolling, repeatedly morphing between spherical and oblong shapes with inconsistent surface markings.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-7a92dca2a52aa191b82d",
@@ -11644,10 +11053,7 @@
           "summary_ko": "초반(1.0~1.25초) 공은 전형적인 둥근 축구공 형태이며 파란색/검정 패널 무늬가 보인다. 이후 프레임(1.5초부터)에서 동일 공이 점차 길쭉한 타원형(럭비공/미식축구공) 형태로 변하고 표면 무늬도 측면 레이스(끈) 모양으로 바뀐다. 동일 물체의 종류/형태가 연속 샘플 사이에서 일관성 없이 변화함.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-0e35ba9b743c71de9053",
@@ -11665,10 +11071,7 @@
           "summary_ko": "공 표면의 무늬/글자/레이스 패턴이 프레임마다 다르게 나타난다. 어떤 프레임은 검정 곡선 무늬, 어떤 프레임은 지퍼형 레이스, 어떤 프레임은 읽을 수 없는 글자가 번지듯 보이며 안정적으로 유지되지 않는다.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-7a814dda59be43a4c463",
@@ -11686,10 +11089,7 @@
           "summary_ko": "초반(약 1.0~2.0초) 공은 둥근 구형(축구공 형태)으로 검은 얼룩/패널 무늬가 보인다. 그러나 이후 프레임에서 점차 타원형으로 바뀌며 표면 무늬가 변한다. 구형에서 타원형으로의 형태 전이가 관찰된다.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-c08b7adcbb3d70374953",
@@ -11707,10 +11107,7 @@
           "summary_ko": "공의 표면이 축구공 유형의 검은 점/패널에서 럭비공 유형의 중앙 레이스(끈) 무늬로 점진적으로 변형된다. 2.17초 이후 타원형과 함께 레이스 패턴이 나타나며, 동일 물체의 정체성(축구공↔럭비공)이 불안정하게 바뀐다.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-81bed4d73d278685c355",
@@ -11728,10 +11125,7 @@
           "summary_ko": "The ball changes shape and markings dynamically while bouncing and rolling, shifting from a rounded ball into an American football shape with morphing seams and laces.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-b0a18f13022419bc7bd6",
@@ -11749,10 +11143,7 @@
           "summary_ko": "공의 표면 무늬가 프레임마다 불안정하게 변한다. 2.125초에는 작은 파란색 패치만 보이고, 2.7초경에는 'DAIS'류 흐릿한 텍스트가, 2.9~3.0초에는 톱니 같은 검은 지퍼형 라인이 나타나는 등 레이스/바느질 무늬가 일관되지 않게 생성·변형된다. 동일 공이라 보기 어려운 표면 텍스처 변동이 관측됨.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-ba28eafa0e8f1063acba",
@@ -11770,10 +11161,7 @@
           "summary_ko": "확대되는 과정에서 레이스(바느질 끈) 무늬의 개수와 형태가 프레임마다 달라진다. 톱니 모양, 일자형 끈, 화살표형 끝단 등으로 변형되며, 공 표면의 브랜드 텍스트도 흐릿하게 나타났다 사라져 텍스처가 안정적으로 유지되지 않는다.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-e5c0a58234d473969f50",
@@ -11791,10 +11179,7 @@
           "summary_ko": "공이 왼쪽 배경 방향으로 튀지 않고 우측으로 튄 뒤 전경 쪽으로 굴러감",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "vertex-gemini-prompt"
-          ]
+          "visual_truth": "not_assessed"
         }
       ],
       "pairs": [],
@@ -11802,107 +11187,26 @@
       "localized_reference_count": 0,
       "human_verified": false,
       "visual_truth": "not_assessed",
-      "source_contributions": {
-        "gemini_visual": {
-          "candidate_count": 3,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "not_evaluated"
-        },
-        "claude_visual": {
-          "candidate_count": 8,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "not_evaluated"
-        },
-        "prompt": {
-          "candidate_count": 1,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "not_evaluated"
-        }
-      },
-      "detection_modules": [
-        {
-          "source": "v4.temporal_context",
-          "stage": null,
-          "status": "completed",
-          "reason": null,
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "overview",
-          "status": "completed",
-          "reason": "",
-          "candidates": 1
-        },
-        {
-          "source": "claude-overview",
-          "stage": "overview",
-          "status": "completed",
-          "reason": null,
-          "candidates": 2
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-0",
-          "status": "completed",
-          "reason": "",
-          "candidates": 1
-        },
-        {
-          "source": "claude-focus-0",
-          "stage": "focus-0",
-          "status": "completed",
-          "reason": null,
-          "candidates": 2
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-1",
-          "status": "failed",
-          "reason": "Provider transport failure/timeout",
-          "candidates": 0
-        },
-        {
-          "source": "claude-focus-1",
-          "stage": "focus-1",
-          "status": "completed",
-          "reason": null,
-          "candidates": 2
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": "",
-          "candidates": 1
-        },
-        {
-          "source": "claude-focus-2",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": null,
-          "candidates": 2
-        },
-        {
-          "source": "vertex-gemini-prompt",
-          "stage": null,
-          "status": "completed",
-          "reason": "",
-          "candidates": 1
-        }
-      ],
-      "previous_automatic_hit": null
+      "previous_automatic_hit": false,
+      "previous_automatic_status": "pending"
     },
     {
       "asset_id": "sid_053_veo3",
       "generator": "veo3",
       "media_sha256": "179b0ae33740af5c22b6ad5a9e1523f09f045e0e8b6d69030e68a2943d844993",
       "judge_version": "event-claims-6",
+      "aggregation_version": "event-aggregation-2",
       "inference_complete": true,
+      "detection_execution_status": "completed",
+      "detection_stage_counts": {
+        "completed": 11
+      },
       "evaluation_status": "completed",
+      "evaluation_validity": "valid",
+      "evaluation_issues": [],
+      "valid_pair_count": 18,
+      "unavailable_pair_count": 0,
+      "semantic_status": "matched",
       "scoring_complete": true,
       "semantic_video_hit": true,
       "time_advisory_labels": [
@@ -12070,10 +11374,7 @@
             "scope": "individual"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-936cab4c2444327c8d0d",
@@ -12098,10 +11399,7 @@
             "scope": "individual"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-61720e93e3305c17d1da",
@@ -12126,10 +11424,7 @@
             "scope": "individual"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-d4ee7b563a700167d00a",
@@ -12157,10 +11452,7 @@
             "R1",
             "R2"
           ],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-8a6a5130f01982992e0a",
@@ -12185,10 +11477,7 @@
             "scope": "individual"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-e7c264e7c65e8ec6ac17",
@@ -12213,10 +11502,7 @@
             "scope": "part"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-f9036a477f1d299ce7df",
@@ -12241,10 +11527,7 @@
             "scope": "individual"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-eaf99872c9310aa626e1",
@@ -12271,10 +11554,7 @@
           "semantic_references": [
             "R2"
           ],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-fb6833fb757ae6686724",
@@ -12299,10 +11579,7 @@
             "scope": "individual"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         }
       ],
       "pairs": [
@@ -12377,6 +11654,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -12452,6 +11731,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -12527,6 +11808,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -12588,6 +11871,8 @@
             "R1.S1"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -12663,6 +11948,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -12738,6 +12025,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -12813,6 +12102,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -12876,6 +12167,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -12951,6 +12244,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -13026,6 +12321,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -13101,6 +12398,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -13176,6 +12475,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -13237,6 +12538,8 @@
             "R2.S1"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -13312,6 +12615,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -13387,6 +12692,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -13462,6 +12769,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -13523,6 +12832,8 @@
             "R2.S1"
           ],
           "semantic_correspondence": true,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": false
@@ -13598,6 +12909,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -13607,110 +12920,31 @@
       "localized_reference_count": 0,
       "human_verified": false,
       "visual_truth": "not_assessed",
-      "source_contributions": {
-        "gemini_visual": {
-          "candidate_count": 8,
-          "matched_candidates": [
-            "C4",
-            "C8"
-          ],
-          "labeled_correspondence": true,
-          "status": "evaluated"
-        },
-        "claude_visual": {
-          "candidate_count": 1,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "evaluated"
-        },
-        "prompt": {
-          "candidate_count": 0,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "evaluated"
-        }
-      },
-      "detection_modules": [
-        {
-          "source": "v4.temporal_context",
-          "stage": null,
-          "status": "completed",
-          "reason": null,
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "overview",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-overview",
-          "stage": "overview",
-          "status": "completed",
-          "reason": null,
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-0",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-0",
-          "stage": "focus-0",
-          "status": "completed",
-          "reason": null,
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-1",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-1",
-          "stage": "focus-1",
-          "status": "completed",
-          "reason": null,
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-2",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": null,
-          "candidates": 1
-        },
-        {
-          "source": "vertex-gemini-prompt",
-          "stage": null,
-          "status": "completed",
-          "reason": "",
-          "candidates": 0
-        }
-      ],
-      "previous_automatic_hit": null
+      "previous_automatic_hit": true,
+      "previous_automatic_status": "hit"
     },
     {
       "asset_id": "sid_079_ltx2",
       "generator": "ltx2",
       "media_sha256": "c10d61722b081e3542fa5a5686722a37fe7b68e71188df792e91ebb774065eea",
       "judge_version": "event-claims-6",
+      "aggregation_version": "event-aggregation-2",
       "inference_complete": true,
+      "detection_execution_status": "completed",
+      "detection_stage_counts": {
+        "completed": 11
+      },
       "evaluation_status": "invalid_response",
+      "evaluation_validity": "invalid",
+      "evaluation_issues": [
+        {
+          "status": "invalid_response",
+          "reason": "Candidate event atoms must be exact source substrings"
+        }
+      ],
+      "valid_pair_count": 0,
+      "unavailable_pair_count": 32,
+      "semantic_status": "pending",
       "scoring_complete": false,
       "semantic_video_hit": false,
       "time_advisory_labels": [],
@@ -13830,10 +13064,7 @@
           "summary_ko": "During the toast, the wine glasses merge, distort, and duplicate temporarily in the cluster.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-ea3bdd24ec0d41ba29ae",
@@ -13851,10 +13082,7 @@
           "summary_ko": "초반에는 파란셔츠 남성 영역에 와인잔이 하나로 보이지만, 약 3초 이후 프레임들에서 서로 겹친 두 개의 잔 윤곽이 나타나 잔의 개수가 불안정하게 변동한다.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-d800aa5c0f9d792be5cd",
@@ -13872,10 +13100,7 @@
           "summary_ko": "초반 프레임 하단에 반쯤 보이던 작은 와인잔이 후반 건배 구도로 전환되면서 명확한 연속성 없이 사라진다.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-8781a88e2098dedf0095",
@@ -13893,10 +13118,7 @@
           "summary_ko": "Wine glasses duplicate and morph in the center area during the toast sequence, fluctuating in number and stem alignment.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-fabe60cf62de27a78594",
@@ -13914,10 +13136,7 @@
           "summary_ko": "The woman in the red shirt abruptly switches her hand configuration, showing inconsistent fingers grasping and releasing near her glass stem.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-77f51b6c999f33ee4084",
@@ -13935,10 +13154,7 @@
           "summary_ko": "중앙에 모인 와인잔들이 프레임마다 서로 겹치며 윤곽과 개수가 불안정하게 보인다. 특정 프레임(예: 4.16, 4.32초)에서는 잔의 테두리가 이중으로 그려지거나 뒤틀린 형태로 나타나 잔의 개수를 명확히 셀 수 없다. 샘플 간 잔의 경계가 일관되지 않다.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-562e68d4da4e5c64d670",
@@ -13956,10 +13172,7 @@
           "summary_ko": "4.16~4.32초 프레임에서 중앙의 와인잔 테두리가 접히거나 찌그러진 비자연스러운 형태로 보인다. 잔 림이 매끄러운 곡선이 아니라 꺾이거나 이중으로 겹친 윤곽으로 렌더링되어 형태 왜곡이 관찰된다.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-0700a4cc4505c8614f21",
@@ -13977,10 +13190,7 @@
           "summary_ko": "Wine glasses multiply and morph unrealistically as characters initiate a toast.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-2ed42a7a99f3d3170f47",
@@ -13998,10 +13208,7 @@
           "summary_ko": "Woman's hand dissolves and reappears awkwardly while holding her glass.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-a6a3d2ccc805a24568e2",
@@ -14019,10 +13226,7 @@
           "summary_ko": "Wine glass held by the man in blue shifts form and contents inconsistently before drinking.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-b43b919e71ba6895b31d",
@@ -14040,10 +13244,7 @@
           "summary_ko": "중앙 영역에서 처음에는 와인잔 하나(그리고 뒤쪽에 낮은 잔)로 보이다가 이후 프레임에서 나란히 두 개의 긴 와인잔이 명확히 존재하는 등 잔의 개수와 형태가 프레임마다 불안정하게 변동함. 손과 잔의 접촉 구성도 일관되지 않음.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-0ef72c7b547d8322c945",
@@ -14061,10 +13262,7 @@
           "summary_ko": "초기 프레임(2.4~2.96초)에서는 큰 잔 옆에 낮고 둥근 작은 잔이 보이나, 이후 프레임에서는 동일 위치에 길쭉한 와인잔으로 형태가 전환되어 잔의 종류/형태가 불일치함.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-061ce1aa92c4e742983e",
@@ -14082,10 +13280,7 @@
           "summary_ko": "The wine glass held by the man in blue shifts form, gaining a stem and changing bowl dimensions dynamically.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-d6c2e25cad98da44f57e",
@@ -14103,10 +13298,7 @@
           "summary_ko": "The woman in the red shirt is seated with her glass on her lap, but as the toast progresses another hand or glass interacts unnaturally before she drinks.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-87c7681c502aa13d7f6c",
@@ -14124,10 +13316,7 @@
           "summary_ko": "초반 프레임(0.0~2.36초)에서 남성이 들고 있는 두 번째 잔은 작고 둥근 브랜디/스니프터형 잔으로 보이며 다리(스템)가 거의 없는 형태였다. 그러나 2.76초 이후 프레임에서 이 잔이 긴 스템을 가진 일반 와인잔 형태로 바뀌어 나타난다. 동일 위치의 잔 형태가 둥근 작은 잔에서 길쭉한 와인잔으로 변형되는 것이 관찰된다.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-6d534e069ad07c5df593",
@@ -14145,10 +13334,7 @@
           "summary_ko": "초반~중반 프레임에서 작은 둥근 잔 하단 테두리에 매달린 반짝이는 금속/보석 장식(참)이 반복적으로 관찰되나, 후반 프레임(2.76초 이후)에서는 잔 형태 변화와 함께 해당 장식이 더 이상 명확히 보이지 않는다.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         }
       ],
       "pairs": [],
@@ -14156,108 +13342,28 @@
       "localized_reference_count": 0,
       "human_verified": false,
       "visual_truth": "not_assessed",
-      "source_contributions": {
-        "gemini_visual": {
-          "candidate_count": 8,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "not_evaluated"
-        },
-        "claude_visual": {
-          "candidate_count": 8,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "not_evaluated"
-        },
-        "prompt": {
-          "candidate_count": 0,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "not_evaluated"
-        }
-      },
-      "detection_modules": [
-        {
-          "source": "v4.temporal_context",
-          "stage": null,
-          "status": "completed",
-          "reason": null,
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "overview",
-          "status": "completed",
-          "reason": "",
-          "candidates": 1
-        },
-        {
-          "source": "claude-overview",
-          "stage": "overview",
-          "status": "completed",
-          "reason": null,
-          "candidates": 2
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-0",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-0",
-          "stage": "focus-0",
-          "status": "completed",
-          "reason": null,
-          "candidates": 2
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-1",
-          "status": "completed",
-          "reason": "",
-          "candidates": 3
-        },
-        {
-          "source": "claude-focus-1",
-          "stage": "focus-1",
-          "status": "completed",
-          "reason": null,
-          "candidates": 2
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-2",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": null,
-          "candidates": 2
-        },
-        {
-          "source": "vertex-gemini-prompt",
-          "stage": null,
-          "status": "completed",
-          "reason": "",
-          "candidates": 0
-        }
-      ],
-      "previous_automatic_hit": null
+      "previous_automatic_hit": false,
+      "previous_automatic_status": "pending"
     },
     {
       "asset_id": "sid_079_seedance",
       "generator": "seedance",
       "media_sha256": "284e58177ada390dc119e95936795aba848654ba1b36d48587a6a7aefb9dd168",
       "judge_version": "event-claims-6",
+      "aggregation_version": "event-aggregation-2",
       "inference_complete": false,
+      "detection_execution_status": "partial",
+      "detection_stage_counts": {
+        "completed": 10,
+        "failed": 1
+      },
       "evaluation_status": "completed",
-      "scoring_complete": false,
+      "evaluation_validity": "valid",
+      "evaluation_issues": [],
+      "valid_pair_count": 20,
+      "unavailable_pair_count": 0,
+      "semantic_status": "not_matched",
+      "scoring_complete": true,
       "semantic_video_hit": false,
       "time_advisory_labels": [],
       "localized_video_hit": false,
@@ -14621,10 +13727,7 @@
             "scope": "individual"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-ce77741def7a931fa286",
@@ -14649,10 +13752,7 @@
             "scope": "group"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-3a3d0ee373feba006ab5",
@@ -14677,10 +13777,7 @@
             "scope": "individual"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-11f883fd330a2fac91b2",
@@ -14705,10 +13802,7 @@
             "scope": "group"
           },
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         }
       ],
       "pairs": [
@@ -14785,6 +13879,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -14860,6 +13956,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -14937,6 +14035,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -15014,6 +14114,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -15089,6 +14191,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -15164,6 +14268,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -15239,6 +14345,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -15314,6 +14422,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -15389,6 +14499,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -15464,6 +14576,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -15539,6 +14653,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -15614,6 +14730,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -15689,6 +14807,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -15764,6 +14884,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -15839,6 +14961,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -15914,6 +15038,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -15989,6 +15115,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -16064,6 +15192,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -16139,6 +15269,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -16214,6 +15346,8 @@
           "event_supported": false,
           "matched_claim_ids": [],
           "semantic_correspondence": false,
+          "evaluation_validity": "valid",
+          "validation_reason": null,
           "localized_correspondence": false,
           "visual_truth": "not_assessed",
           "needs_human_review": true
@@ -16223,107 +15357,32 @@
       "localized_reference_count": 0,
       "human_verified": false,
       "visual_truth": "not_assessed",
-      "source_contributions": {
-        "gemini_visual": {
-          "candidate_count": 4,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "evaluated"
-        },
-        "claude_visual": {
-          "candidate_count": 0,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "evaluated"
-        },
-        "prompt": {
-          "candidate_count": 0,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "evaluated"
-        }
-      },
-      "detection_modules": [
-        {
-          "source": "v4.temporal_context",
-          "stage": null,
-          "status": "completed",
-          "reason": null,
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "overview",
-          "status": "completed",
-          "reason": "",
-          "candidates": 0
-        },
-        {
-          "source": "claude-overview",
-          "stage": "overview",
-          "status": "completed",
-          "reason": null,
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-0",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-0",
-          "stage": "focus-0",
-          "status": "completed",
-          "reason": null,
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-1",
-          "status": "completed",
-          "reason": "",
-          "candidates": 1
-        },
-        {
-          "source": "claude-focus-1",
-          "stage": "focus-1",
-          "status": "completed",
-          "reason": null,
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": "",
-          "candidates": 1
-        },
-        {
-          "source": "claude-focus-2",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": null,
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini-prompt",
-          "stage": null,
-          "status": "failed",
-          "reason": "Provider transport failure/timeout",
-          "candidates": 0
-        }
-      ],
-      "previous_automatic_hit": null
+      "previous_automatic_hit": false,
+      "previous_automatic_status": "pending"
     },
     {
       "asset_id": "sid_079_veo3",
       "generator": "veo3",
       "media_sha256": "8c897181070f559cca92987c028d547a1d22a4d0434752096954800d4f3b742c",
       "judge_version": "event-claims-6",
+      "aggregation_version": "event-aggregation-2",
       "inference_complete": false,
+      "detection_execution_status": "partial",
+      "detection_stage_counts": {
+        "completed": 10,
+        "invalid_response": 1
+      },
       "evaluation_status": "invalid_response",
+      "evaluation_validity": "invalid",
+      "evaluation_issues": [
+        {
+          "status": "invalid_response",
+          "reason": "Entity separation requires explicitly different targets"
+        }
+      ],
+      "valid_pair_count": 0,
+      "unavailable_pair_count": 11,
+      "semantic_status": "pending",
       "scoring_complete": false,
       "semantic_video_hit": false,
       "time_advisory_labels": [],
@@ -16404,10 +15463,7 @@
           "summary_ko": "Wine glass repeatedly shifts position and teleports downward into the woman's hand.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-cc2d4081e3a76dfe283d",
@@ -16425,10 +15481,7 @@
           "summary_ko": "남성의 와인잔이 프레임마다 마시는 동작/내리는 동작 사이에서 일관성 없이 위치와 기울기가 급변하여 자연스러운 연속 동작으로 보기 어려움. 잔의 각도와 높이가 비연속적으로 변함.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-62061cb2871b1aed2f01",
@@ -16446,10 +15499,7 @@
           "summary_ko": "초반에는 테이블 위 와인잔이 세 개로 보이나 4초 이후 가운데 영역에 네 번째 와인잔이 나타나 잔 개수가 증가하는 것으로 관찰됨.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-overview"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-621272b867708f4441eb",
@@ -16467,10 +15517,7 @@
           "summary_ko": "The wine glass held by the blonde woman rapidly changes shape and size while she lifts it to drink, morphing into an exaggerated angular form before shrinking and stabilizing back into a standard shape.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-74f2df61e00e23fd7a31",
@@ -16488,10 +15535,7 @@
           "summary_ko": "The woman's hand holding the wine glass stem shifts shape unnaturally, with fingers blending and detaching from the stem as the glass tilts.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-0"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-f9d8a30f6e67e3a918e9",
@@ -16509,10 +15553,7 @@
           "summary_ko": "Around 00:03.5 to 00:04.5, the wine glass held by the blonde woman morphs, shifts, and changes relative position and shape unnaturally before resting back down.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-8a3f8de37ed73dcc7477",
@@ -16530,10 +15571,7 @@
           "summary_ko": "The Asian man's hands shift abruptly between gestures and holding his glass around 00:01.5 to 00:02.5 with unnatural finger deformation.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-8fc204dade6179720753",
@@ -16551,10 +15589,7 @@
           "summary_ko": "3.5초 프레임에서 남성이 손에 든 와인잔이 입 근처로 올라가 있으나 직후 프레임에서 손에 든 잔이 사라지고 두 손이 테이블 위에서 맞잡은 자세로 전환됨. 손과 잔의 상태 변화가 급격함",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-1"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-5d5fc00ed661599d71dc",
@@ -16572,10 +15607,7 @@
           "summary_ko": "The wine glass held by the blonde woman morphs rapidly in size and shape, at one point appearing stemless before lowering to the table.",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "gemini-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-ace1b8d30dbbb8f438dc",
@@ -16593,10 +15625,7 @@
           "summary_ko": "3.08~3.83초 프레임에서 남성이 손에 들고 들어올리던 와인잔이 4.08초 이후 프레임에서 손에서 사라지고, 대신 테이블 앞쪽에 와인잔이 추가로 나타나 잔의 개수와 위치가 불안정하게 변함",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         },
         {
           "id": "candidate-da7bb33f483832374523",
@@ -16614,10 +15643,7 @@
           "summary_ko": "초반에는 테이블 위에 두 개의 와인잔과 들려있는 한 개가 보이나, 후반 프레임에서는 테이블 위 와인잔이 세 개로 늘어난 것처럼 보여 개수가 불일치함",
           "event_atoms": null,
           "semantic_references": [],
-          "visual_truth": "not_assessed",
-          "sources": [
-            "claude-focus-2"
-          ]
+          "visual_truth": "not_assessed"
         }
       ],
       "pairs": [],
@@ -16625,321 +15651,40 @@
       "localized_reference_count": 0,
       "human_verified": false,
       "visual_truth": "not_assessed",
-      "source_contributions": {
-        "gemini_visual": {
-          "candidate_count": 6,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "not_evaluated"
-        },
-        "claude_visual": {
-          "candidate_count": 5,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "not_evaluated"
-        },
-        "prompt": {
-          "candidate_count": 0,
-          "matched_candidates": [],
-          "labeled_correspondence": false,
-          "status": "not_evaluated"
-        }
-      },
-      "detection_modules": [
-        {
-          "source": "v4.temporal_context",
-          "stage": null,
-          "status": "completed",
-          "reason": null,
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "overview",
-          "status": "completed",
-          "reason": "",
-          "candidates": 1
-        },
-        {
-          "source": "claude-overview",
-          "stage": "overview",
-          "status": "completed",
-          "reason": null,
-          "candidates": 2
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-0",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-0",
-          "stage": "focus-0",
-          "status": "invalid_response",
-          "reason": "Claude output validation failed",
-          "candidates": 0
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-1",
-          "status": "completed",
-          "reason": "",
-          "candidates": 2
-        },
-        {
-          "source": "claude-focus-1",
-          "stage": "focus-1",
-          "status": "completed",
-          "reason": null,
-          "candidates": 1
-        },
-        {
-          "source": "vertex-gemini",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": "",
-          "candidates": 1
-        },
-        {
-          "source": "claude-focus-2",
-          "stage": "focus-2",
-          "status": "completed",
-          "reason": null,
-          "candidates": 2
-        },
-        {
-          "source": "vertex-gemini-prompt",
-          "stage": null,
-          "status": "completed",
-          "reason": "",
-          "candidates": 0
-        }
-      ],
-      "previous_automatic_hit": null
+      "previous_automatic_hit": false,
+      "previous_automatic_status": "pending"
     }
   ],
   "freeze": {
-    "asset_ids": [
-      "sid_013_ltx2",
-      "sid_013_seedance",
-      "sid_013_veo3",
-      "sid_040_ltx2",
-      "sid_040_seedance",
-      "sid_040_veo3",
-      "sid_053_ltx2",
-      "sid_053_seedance",
-      "sid_053_veo3",
-      "sid_079_ltx2",
-      "sid_079_seedance",
-      "sid_079_veo3"
-    ],
-    "execution_order": [
-      "sid_013_ltx2",
-      "sid_040_seedance",
-      "sid_053_veo3",
-      "sid_013_seedance",
-      "sid_013_veo3",
-      "sid_040_ltx2",
-      "sid_040_veo3",
-      "sid_053_ltx2",
-      "sid_053_seedance",
-      "sid_079_ltx2",
-      "sid_079_seedance",
-      "sid_079_veo3"
-    ],
-    "smoke_ids": [
-      "sid_013_ltx2",
-      "sid_040_seedance",
-      "sid_053_veo3"
-    ],
-    "inputs": {
-      "sid_013_ltx2": {
-        "asset_id": "sid_013_ltx2",
-        "media_path": "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/benchmarks/datasets/spotlight/raw/test/spotlight/ltx2/sid_013.mp4",
-        "expected_sha256": "9d4b2236bfa2b9552974937300631f7784ac47ec21b4f34f50f2fb8c9fd8f977",
-        "media_kind": "video",
-        "generation_prompt": "A chef tosses vegetables into the air, they arrange themselves into a salad, and then land back in the bowl.",
-        "input_profile": "with_prompt"
-      },
-      "sid_013_seedance": {
-        "asset_id": "sid_013_seedance",
-        "media_path": "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/benchmarks/datasets/spotlight/raw/test/spotlight/seedance/sid_013.mp4",
-        "expected_sha256": "975626694a24322126959db43625d69b7dbe40d364d38265a78f73d608130fad",
-        "media_kind": "video",
-        "generation_prompt": "A chef tosses vegetables into the air, they arrange themselves into a salad, and then land back in the bowl.",
-        "input_profile": "with_prompt"
-      },
-      "sid_013_veo3": {
-        "asset_id": "sid_013_veo3",
-        "media_path": "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/benchmarks/datasets/spotlight/raw/test/spotlight/veo3/sid_013.mp4",
-        "expected_sha256": "c9606dc11095386c4616e4453fcc7d737cf193c1eafab5515787bdc1403e3098",
-        "media_kind": "video",
-        "generation_prompt": "A chef tosses vegetables into the air, they arrange themselves into a salad, and then land back in the bowl.",
-        "input_profile": "with_prompt"
-      },
-      "sid_040_ltx2": {
-        "asset_id": "sid_040_ltx2",
-        "media_path": "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/benchmarks/datasets/spotlight/raw/test/spotlight/ltx2/sid_040.mp4",
-        "expected_sha256": "6f140515b8c4d0f9b8b27ab8822da234b8533c4c755122200561d4f248b4a6a9",
-        "media_kind": "video",
-        "generation_prompt": "A person is drinking a glass of water, then they suddenly start cleaning the windows.",
-        "input_profile": "with_prompt"
-      },
-      "sid_040_seedance": {
-        "asset_id": "sid_040_seedance",
-        "media_path": "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/benchmarks/datasets/spotlight/raw/test/spotlight/seedance/sid_040.mp4",
-        "expected_sha256": "ff3b8535a1d813c28030281234f77ed459e1b394acc2b4c4310ba79101e84bb5",
-        "media_kind": "video",
-        "generation_prompt": "A person is drinking a glass of water, then they suddenly start cleaning the windows.",
-        "input_profile": "with_prompt"
-      },
-      "sid_040_veo3": {
-        "asset_id": "sid_040_veo3",
-        "media_path": "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/benchmarks/datasets/spotlight/raw/test/spotlight/veo3/sid_040.mp4",
-        "expected_sha256": "8863691a5073d363c7027e0cc3c160d5a1271d80c3205d3ae5340da490dcdba0",
-        "media_kind": "video",
-        "generation_prompt": "A person is drinking a glass of water, then they suddenly start cleaning the windows.",
-        "input_profile": "with_prompt"
-      },
-      "sid_053_ltx2": {
-        "asset_id": "sid_053_ltx2",
-        "media_path": "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/benchmarks/datasets/spotlight/raw/test/spotlight/ltx2/sid_053.mp4",
-        "expected_sha256": "e8869467a0224cb22cc6e3cf9476a6c41bf049a1deb1972e6d4bf0c79996c9d6",
-        "media_kind": "video",
-        "generation_prompt": "A video showing a rugby ball flying in from the left foreground and hitting the ground on a sunny rugby field covered with green grass. The ball makes an irregular bounce towards the left background, highlighting the unpredictable nature of its movement. The scene is set on a bright, clear day, emphasizing the vibrancy of the green field and the dynamic motion of the rugby ball.  ",
-        "input_profile": "with_prompt"
-      },
-      "sid_053_seedance": {
-        "asset_id": "sid_053_seedance",
-        "media_path": "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/benchmarks/datasets/spotlight/raw/test/spotlight/seedance/sid_053.mp4",
-        "expected_sha256": "164a2c53bd5db8476c374c950a5c572b2b36d507cc92ede5fb9face8e717a6d2",
-        "media_kind": "video",
-        "generation_prompt": "A video showing a rugby ball flying in from the left foreground and hitting the ground on a sunny rugby field covered with green grass. The ball makes an irregular bounce towards the left background, highlighting the unpredictable nature of its movement. The scene is set on a bright, clear day, emphasizing the vibrancy of the green field and the dynamic motion of the rugby ball.  ",
-        "input_profile": "with_prompt"
-      },
-      "sid_053_veo3": {
-        "asset_id": "sid_053_veo3",
-        "media_path": "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/benchmarks/datasets/spotlight/raw/test/spotlight/veo3/sid_053.mp4",
-        "expected_sha256": "179b0ae33740af5c22b6ad5a9e1523f09f045e0e8b6d69030e68a2943d844993",
-        "media_kind": "video",
-        "generation_prompt": "A video showing a rugby ball flying in from the left foreground and hitting the ground on a sunny rugby field covered with green grass. The ball makes an irregular bounce towards the left background, highlighting the unpredictable nature of its movement. The scene is set on a bright, clear day, emphasizing the vibrancy of the green field and the dynamic motion of the rugby ball.  ",
-        "input_profile": "with_prompt"
-      },
-      "sid_079_ltx2": {
-        "asset_id": "sid_079_ltx2",
-        "media_path": "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/benchmarks/datasets/spotlight/raw/test/spotlight/ltx2/sid_079.mp4",
-        "expected_sha256": "c10d61722b081e3542fa5a5686722a37fe7b68e71188df792e91ebb774065eea",
-        "media_kind": "video",
-        "generation_prompt": "4 friends, 2 men and 2 women in a bar at night drinking wine and talking  ",
-        "input_profile": "with_prompt"
-      },
-      "sid_079_seedance": {
-        "asset_id": "sid_079_seedance",
-        "media_path": "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/benchmarks/datasets/spotlight/raw/test/spotlight/seedance/sid_079.mp4",
-        "expected_sha256": "284e58177ada390dc119e95936795aba848654ba1b36d48587a6a7aefb9dd168",
-        "media_kind": "video",
-        "generation_prompt": "4 friends, 2 men and 2 women in a bar at night drinking wine and talking  ",
-        "input_profile": "with_prompt"
-      },
-      "sid_079_veo3": {
-        "asset_id": "sid_079_veo3",
-        "media_path": "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/benchmarks/datasets/spotlight/raw/test/spotlight/veo3/sid_079.mp4",
-        "expected_sha256": "8c897181070f559cca92987c028d547a1d22a4d0434752096954800d4f3b742c",
-        "media_kind": "video",
-        "generation_prompt": "4 friends, 2 men and 2 women in a bar at night drinking wine and talking  ",
-        "input_profile": "with_prompt"
-      }
+    "source": "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112",
+    "files": {
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/rows.json": "7a202237e7184710cb6006972a7a1d343bcba4f3a7fce7ededf0a24888b1e049",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/scorecard.json": "d118b6c5dd46e8dcacd1372f15e0052d83c6f3a839b695d6d41d0710eedc6dda",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/reports/sid_013_ltx2/report.json": "9b977dc2ab010174f33b616d20f01808b0a9a26e9372761cac1c13cf15712d02",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/evaluations/sid_013_ltx2.json": "f4e5bd38494c79b1a9f30c1e45973b7b664162a19bf4fac5f248d6461ece46cb",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/reports/sid_013_seedance/report.json": "82d7eee2223e5938e50e54ce9a8cff38bc6f3b93fb25bc018b887f757babd878",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/evaluations/sid_013_seedance.json": "3ca802e42e420dc4d4cc8876464726353f1e4c1bec4f0b4c3f4d9a45b74bfd83",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/reports/sid_013_veo3/report.json": "b243cc9d126656d990dd5e747420b5f79615ae2b72435a2c9b6755f8ba38acbe",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/evaluations/sid_013_veo3.json": "2338a549168de3523716c518408cc8825e5575b56bd5d65fe2814b283f0a9b39",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/reports/sid_040_ltx2/report.json": "e5285658b76c3a01d8325a61cb9041d5a7d39dec201b6efbaf197042937ec2c1",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/evaluations/sid_040_ltx2.json": "da9c7155ef0d97117ea6a2634e0ea7e48c4329f9998ba1ca1ab08748f4c327ce",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/reports/sid_040_seedance/report.json": "ea0fbdc2cd61d5c026cfa5040cb3f2be93e2b7125082c98a4d04e74208c16192",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/evaluations/sid_040_seedance.json": "6546ad47b9f5abf20f1bd7212dd50a6f603dec052408c654491747cbbb7e5834",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/reports/sid_040_veo3/report.json": "44d6790d4574b9d1d9cfdbcb4dd09d2ff5a511f0f9cedc21b85c66d205ecac08",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/evaluations/sid_040_veo3.json": "86ed45c3833f1148f1baf130bb06bb6783421e7dcd084445793729a42f022fc3",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/reports/sid_053_ltx2/report.json": "bb1ab90561aa0ab6c5f4ba3c380d7ca6c838416e6fb681d00900a8fb66f54854",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/evaluations/sid_053_ltx2.json": "7adefaef7abed9a90c584295cf4ed09a9ed9a7c914ba7b203aa05d93e6609b2a",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/reports/sid_053_seedance/report.json": "e2609155d064853040006abcbd7c8461c2542943fb2acf5f2540524967ead1df",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/evaluations/sid_053_seedance.json": "0201aac2c3aa16fba6802c5d61082ecdc5b01bb78fa5e6a76463c94e63014571",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/reports/sid_053_veo3/report.json": "37e6b4f75b20140218aa0d91a3fbcdb73e95a530f873b10d5d48489c0adbb4c7",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/evaluations/sid_053_veo3.json": "f10cc171710c1dda7e70f64c3740688bf3af5a2a53b6f4d0a848b1f4f537929a",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/reports/sid_079_ltx2/report.json": "d5e7aeae5e6ed71ea86ca686921d44c69c6c40b7188807f7aa2c15c02a164677",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/evaluations/sid_079_ltx2.json": "0102bb460c8004e0a9e0ff4669ab8ced6e15b34a0ad4e1278ef81ac7bbba5c90",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/reports/sid_079_seedance/report.json": "da4a4bf8236efe7e8152fbae09fee7e6371b9d708d93aa7472e359c134f60e81",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/evaluations/sid_079_seedance.json": "0e1a1627cea5571eb2f32a567155ec0804dc7328baa5da1466d8e9c418024261",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/reports/sid_079_veo3/report.json": "3f117dbd0bc32eb06454455944e2986e3a449e69efbc07f03fbf67995915236f",
+      "/home/jh_marc.kim/aic-creative-assurance/backend/review_anomaly_v4/work/parallel_pilot12_20261112/evaluations/sid_079_veo3.json": "eef80000025a0a3fdfe31636dc9e634605cb337bb2149cf88f2586d6190bd583"
     },
-    "metadata_sha256": "0c273417d2a84f0221bfdee26251425b07f0d324e803a63f97c9baf8930e91d6",
-    "vertex": {
-      "project": "dev-comfyui",
-      "location": "global",
-      "primary_model": "gemini-3.8-flash",
-      "fallback_model": null,
-      "video_fps": 8.0,
-      "timeout_seconds": 180.0,
-      "retry_initial_seconds": 15.0,
-      "retry_max_seconds": 60.0,
-      "max_focus_images": 24
-    },
-    "claude": {
-      "project": "dev-comfyui",
-      "location": "global",
-      "model": "claude-opus-4-8",
-      "timeout_seconds": 180.0,
-      "max_attempts": 3,
-      "retry_initial_seconds": 15.0,
-      "max_output_tokens": 8192,
-      "max_request_bytes": 20971520
-    },
-    "frames": {
-      "overview_fps": 8.0,
-      "focus_fps": 12.0,
-      "short_window_seconds": 1.0,
-      "max_window_seconds": 2.0,
-      "max_windows": 3,
-      "long_edge": 1024,
-      "max_overview_frames": 361,
-      "max_focus_frames": 90
-    },
-    "code_hashes": {
-      "review_anomaly_v4/focused_review.py": "19363dba17ad2e6de302836f693925adb8fcb2984243b9302d70778274717b4c",
-      "review_anomaly_v4/resume_development.py": "e6a120fac10edf1822a6ee9db4acc2c20fd42d156824bb9c8184f9c506af0ff2",
-      "review_anomaly_v4/submission.py": "b8bd6b4909fdc278b8e80c87689fb4edb229f8fbcf4c1e9e96ae9649cb09ce9f",
-      "review_anomaly_v4/anatomy.py": "b4de37d6e3be3e806cb9231f4b26b5364cd1a2035a367fa5bf329487aee00fb3",
-      "review_anomaly_v4/evaluation.py": "f063e8179bb3574e0ffd6d2434d0caf72ef38adb2e378df1410cfc3c9445a739",
-      "review_anomaly_v4/poc.py": "f9aff4d47f09a0e7972aa004075b6c18b4cea6d685e206f6bf3dd02fd0581ac5",
-      "review_anomaly_v4/__init__.py": "0d0659af7ac733ea72c15586d74a46af840a0968431a5df19caadc5bf12529f2",
-      "review_anomaly_v4/video_metrics.py": "2efb4202faf89d68ebc5027f38ff074104dee68ffe48111a0981db1ce01fe694",
-      "review_anomaly_v4/event_matching_v5.py": "553e94dafa798660e30f4036737faae6bac36d9181ba5898a38bc6c08fdaedd3",
-      "review_anomaly_v4/development_comparison.py": "be4b4d5c4f2ffe7caa490ceda36378012f60077c626118399460b5983806d8c0",
-      "review_anomaly_v4/pipeline.py": "493053ad428e8fd955e290bb2e84a82294dda9f36349d220a8ead53e62d7f528",
-      "review_anomaly_v4/feedback.py": "af44cadb49b17d0b3c454d417d7332db2bde70cd284c29977b307288b1748719",
-      "review_anomaly_v4/ensemble.py": "be4ae747cd0a37ea229f9b2341718c7e7ec491f3fe65973294306920432432b1",
-      "review_anomaly_v4/report_overlay.py": "b407a91b385f5c8857d794450c5c56ac5eff5d326df45cd3b795750db7306cdf",
-      "review_anomaly_v4/event_grounding.py": "35ed8c82a329eabc7b37e3b1cc4488b88e2a378f5ae1f87389a806f848ba5466",
-      "review_anomaly_v4/cli.py": "69c627cfcb108e75e32f1213a14b1d04dadb6c631d86da69517679db7a5ff7ab",
-      "review_anomaly_v4/catalog.py": "4b02c26869ed2a5d28384affe45e7bdd323cf394569a5a217df606f8543898fd",
-      "review_anomaly_v4/report.py": "5961080d22f2f87aeb8e30d2aae53207d76fa26dd832f08ac593b9436adac80c",
-      "review_anomaly_v4/measurements.py": "4df447052f860a9c751e81c86db41e8001816b8d1252f42959bc2fa6c3222f13",
-      "review_anomaly_v4/gemini.py": "b664daa59256d514d522459c12af434419a31369ed8af1fae785bbb405d1d8e7",
-      "review_anomaly_v4/media.py": "91bea9753fdb2d0a5d8d74a0b70735bf54345dd84998f18d7d6bb537aeee7ae6",
-      "review_anomaly_v4/event_evaluation.py": "0970e6d6681677e391b519e0f9ccd758f1ccdf9dcfad706b8a21c3333074f8ae",
-      "review_anomaly_v4/prompt_alignment.py": "bd474dc9fb6ea5965620e8a6fdd7b3116f2981c56caf24acec3734f00fb5dc83",
-      "review_anomaly_v4/anatomy_worker.py": "1e9183e807d22f3a4264a722f3895e6effe862f616cb3901d31508acc338c989",
-      "review_anomaly_v4/visual_frames.py": "989ee97f4ced9e0460f3c3c4fba07046fb9661b0d1bde592a52b894d997ea901",
-      "review_anomaly_v4/benchmark.py": "6ffba4dbb3a0f07c24eeaa0ed671868ea23a6210c2cf7291b96eedf52b71f20a",
-      "review_anomaly_v4/presentation.py": "56316ed40d72ecbdf799553bdba49d02cebb761a906011c9d997ba7619212797",
-      "review_anomaly_v4/candidates.py": "517340e116ab5df1f30066ef9bf4f5f53c7c0c33a9ee0c6fb174791887b34fe8",
-      "review_anomaly_v4/event_matching.py": "19b43fdd7bf525ac0bad589eb7529f7fb274610cbe3982571f6f6224662c9b03",
-      "review_anomaly_v4/models.py": "dd20207792a4f0b629a75f6934dba16085e565518d2c9af32ae9f69a474e14b1",
-      "review_anomaly_v4/new_sample_evaluation.py": "d6e3dad236054b66b522a18aea17e61ae370438dc5c38f5f7234ed3ddbab00f2",
-      "review_anomaly_v4/event_grounding_v5.py": "00b4560759b1b1716e2f57017bbfb299147b0d1bf70acf47ba116bfbd5cc2865",
-      "review_anomaly_v4/temporal.py": "8a4345cdc679114e8b11daf7ec7213be2f52518a943bb812fe3e2e2ded81e674",
-      "review_anomaly_v4/stage1_review.py": "0616538b2b0dd6b29a5b0de9f45dd41573376a7b94b534e33dc6ee36d335c949",
-      "review_anomaly_v4/poc_scorecard.py": "1c18f655148bec242368672e17a10731a944e3192cc8ef776ee9a8f15cb06ff2",
-      "review_anomaly_v4/spotlight_comparison.py": "d37c7e385116c297dc1144d6c95c6c3a60373bc564e047648cc4eb1449c0012a",
-      "review_anomaly_v4/vertex.py": "b376b3f3e537f5af916cd746a36139526f03f74ef47bd220a62fb0d9ac31af37",
-      "review_anomaly_v4/runner.py": "9392d54ed46164ce9ed0c4e8f14c5bf1c8bad3fbf7766051798e42dc7bf5849d",
-      "review_anomaly_v4/claude.py": "c98f3762bd79c783cfaf3ee627baaad5b67dc716710b541fce3abbd0a26d9ed1",
-      "review_anomaly_v4/vendor/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "review_anomaly_v4/datasets/__init__.py": "5dedeba8065e0996c4b3055a04232aff65a07bc535d6dd779299e5082df876bd",
-      "review_anomaly_v4/datasets/spotlight.py": "0c1e31de47fbca48991c27cd9976cbbd5a9a02d429352760bce9d7d0b87c283a",
-      "review_anomaly_v4/datasets/splits.py": "6d932bf8ccbf21d79ca565f57b9c5b0b58f2032ce573919a36434c698457e4b7",
-      "review_anomaly_v4/review/__init__.py": "5260187a34df21943d02a257271b57597bb93006fd96b0edbfaf64d2a89fa35f",
-      "review_anomaly_v4/review/forms.py": "66661b5833d4fc83ce72271372d76bd206926f0d2aa1cd3d61f58814348b8a9f",
-      "review_anomaly_v4/vendor/dino/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "review_anomaly_v4/vendor/dino/vision_transformer.py": "524c1065756b4c5d77f8aa90d78b15323bad80f223f5ac3b5769ddef7be34f22"
-    },
-    "git_head": "93018f48b22c918afc74b3379f969d7527a285bc",
-    "sample_role": "seen_development_pilot_not_independent_holdout",
-    "reference_labels_to_detector": false,
-    "judge_version": "event-claims-6",
-    "prompt_check": "separate Gemini pass; distinguish from visual comparison",
-    "fps_sweep_performed": false,
-    "model_request_concurrency": 2,
-    "video_concurrency": 1
+    "remote_calls": 0
   }
 }
