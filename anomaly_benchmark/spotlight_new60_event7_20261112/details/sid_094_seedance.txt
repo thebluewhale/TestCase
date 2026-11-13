@@ -1,0 +1,40 @@
+sid_094_seedance
+신규 60개 · Gemini 단독 판정: hit
+R–C 의미 대응: 대응 있음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+a human boy drinks water sitting next to a dining table with abundant stacked noodle crackers that looks like uncooked instant noodles, aspect ratio 4:3  
+
+원본 라벨 R
+R1 (hard, 0.000–5.000초): 소년이 테이블 옆이 아닌 테이블에 앉아 있음.
+원문: The boy is sitting at the table not next to it.
+R2 (easy, 0.500–4.600초): 소년이 컵의 물을 마신 후 물이 다시 나타남.
+원문: The water in the cup reappears after the boy drinks it.
+
+검출 후보 C
+C1 (0.000–2.500초): [Gemini] 소년이 물을 마시지만 플라스틱 컵 안의 물의 양이 거의 그대로 유지됨.
+원문: Water volume in the plastic cup remains largely static despite the boy drinking from it.
+종류: model_proposal / bbox: [0.474, 0.183, 0.558, 0.366]
+C2 (0.000–5.040초): [프롬프트 검사] 요구된 4:3 대신 약 16:9 화면비로 영상이 출력됨.
+원문: 4:3 화면비가 요구되었으나 실제 영상은 약 16:9 화면비임
+종류: model_proposal / bbox: None
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 소년의 착석 위치(테이블 옆이 아닌 테이블 위에 앉음)에 관한 결함인 반면, 후보는 소년이 컵의 물을 마심에도 물의 양이 정지해 있는 물리적 불일치에 관한 내용으로 대상과 상호작용이 명확히 다릅니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 소년의 착석 위치에 관한 시각적 결함인 반면, 후보는 영상 자체의 가로세로 화면비 규격에 관한 내용으로 완전히 다른 대상 및 사안을 다루고 있습니다.
+R2 ↔ C1 / 의미 대응 / 시간도 일치
+소년이 물을 마시는 동일한 상호작용 속에서 컵 속 물의 비정상적 변화(마신 후 재등장하여 결과적으로 양이 유지됨)를 다루고 있어 동일 사건의 다른 측면 기술에 해당합니다.
+두 설명의 양립 근거: 물을 마시는 과정에서 컵 속의 물이 소모되어야 함에도 물이 다시 나타나 결국 수위/양이 줄어들지 않고 정적으로 유지되는 현상으로 양측 기술이 동일한 상황의 다른 측면(재출현 vs 양의 불변)으로 양립할 수 있습니다.
+minor_discrepancy / matched_claim 허용 규칙 적용 · 이번 영상은 사람 미검수
+R2 ↔ C2 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조 주장은 소년이 컵의 물을 마신 후 물이 다시 나타나는 시각적 생성 이상을 다루는 반면, 후보 설명은 영상 전체의 화면비 규격 문제를 다루고 있어 대상 개체와 상호작용이 완전히 다른 별개의 문제입니다.
+
+채점 검증 상태
+유효 쌍 4 / 미사용 쌍 0

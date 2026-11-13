@@ -1,0 +1,59 @@
+sid_023_veo3
+신규 60개 · Gemini 단독 판정: hit
+R–C 의미 대응: 대응 있음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+A whale breaches the surface, spouts water, and then dives deep.
+
+원본 라벨 R
+R1 (hard, 3.200–4.200초): 고래가 물을 뿜지 않음.
+원문: The whale does not spout water.
+R2 (hard, 1.500–5.100초): 고래가 수면 위로 솟아오르기는 하지만 물을 뿜어내지 않아 프롬프트를 제대로 따르지 않음
+원문: the video does not follow the prompt properly. The whale does breach the surface however it does not spout out water. 
+
+검출 후보 C
+C1 (0.333–1.167초): [측정 제안 · 결함 미확정] 픽셀 및 형태 변화 감지 제안
+원문: 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+종류: measurement_proposal / bbox: [0.0, 0.07407407407407407, 1.0, 0.9259259259259259]
+C2 (0.330–1.250초): [Gemini] 고래 머리가 부자연스럽게 확장됨
+원문: The whale head expands unnaturally fast from the water without proportionate fluid displacement or continuous scale expansion.
+종류: model_proposal / bbox: [0.41, 0.13, 0.59, 0.58]
+C3 (5.750–7.250초): [Gemini] 고래 몸통이 갑자기 줄어들며 꼬리지느러미로 변형됨
+원문: The whale's body abruptly shrinks and morphs from a large horizontal torso directly into a small upright tail fluke.
+종류: model_proposal / bbox: [0.4, 0.42, 0.67, 0.58]
+C4 (6.200–7.800초): [Gemini] 고래 꼬리가 동일한 진입 지점에서 비정상적으로 수면 위로 솟아오름
+원문: The whale rotates and re-enters the water while moving forward, but its tail unexpectedly surfaces from the exact same entry point upright and flukes downwards instead of following normal continuous momentum.
+종류: model_proposal / bbox: None
+C5 (1.000–5.000초): [프롬프트 검사] 고래가 숨구멍으로 물을 뿜는 장면이 확인되지 않음
+원문: 고래가 숨구멍으로 물을 뿜어내는 장면이 명확히 확인되지 않음
+종류: model_proposal / bbox: [0.1, 0.3, 0.9, 0.7]
+
+자동 의미 대응
+R1 ↔ C1 / 판단 보류 / 시간 차이 있음
+동일 사건 여부/불일치 확정 보류: C1은 단순 측정 제안으로 구체적인 결함 사건을 다루지 않습니다.
+R1 ↔ C2 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 기준 불만은 고래가 물을 뿜지 않는 특정 기능/동작의 부재에 관한 것이고, 후보는 고래 머리가 비정상적인 속도로 팽창하는 외형 변형 및 유체 변위에 관한 내용으로 다루는 상호작용 및 이상 현상이 완전히 다릅니다.
+R1 ↔ C3 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 기준 불만은 물을 뿜지 않는 동작 결여에 대한 것이며, 후보는 고래 몸통이 꼬리지느러미로 축소 및 변형되는 형태적 이상 현상이므로 상호작용 및 현상이 명확히 구별됩니다.
+R1 ↔ C4 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 기준 불만은 물을 뿜지 않는 현상에 한정된 반면, 후보는 고래의 회전/입수 및 꼬리의 비정상적 출현 궤적에 대한 물리적 오류를 지적하고 있어 상호작용이 전혀 다릅니다.
+R1 ↔ C5 / 의미 대응 / 시간도 일치
+양쪽 모두 고래가 물을 뿜는 동작을 하지 않는다는 동일한 결함을 지적합니다.
+R2 ↔ C1 / 판단 보류 / 시간 차이 있음
+동일 사건 여부/불일치 확정 보류: C1은 단순 측정 제안으로 구체적인 결함 내용을 기술하지 않습니다.
+R2 ↔ C2 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조 진술은 수면 위로 올라온 고래가 물을 뿜지 않는 프롬프트 미준수(행동 부재)에 대한 불만인 반면, 후보 C2는 고래 머리가 비정상적으로 빠르게 팽창하는 외형/크기 변형 왜곡을 지적하고 있어 서로 완전히 다른 상호작용 및 결함을 다룹니다.
+R2 ↔ C3 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조 진술은 고래가 물을 뿜어내지 않는다는 점을 지적하지만, 후보 C3은 고래 몸통이 급격히 줄어들며 꼬리 지느러미로 모핑되는 신체 변형 현상을 지적하므로 문제의 핵심 상호작용이 전혀 다릅니다.
+R2 ↔ C4 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조 진술은 물을 뿜어내는 행위의 결여를 지적하는 반면, 후보 C4는 고래 꼬리가 입수 지점에서 부자연스럽게 다시 솟아오르는 운동 역학/모멘텀 오류를 지적하고 있어 상호작용 및 결함 현상이 서로 구별됩니다.
+R2 ↔ C5 / 의미 대응 / 시간도 일치
+양쪽 모두 고래가 물을 뿜지 않는다는 동일한 핵심 결함을 지적합니다.
+
+채점 검증 상태
+유효 쌍 10 / 미사용 쌍 0

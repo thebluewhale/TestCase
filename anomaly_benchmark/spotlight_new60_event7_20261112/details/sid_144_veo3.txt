@@ -1,0 +1,37 @@
+sid_144_veo3
+신규 60개 · Gemini 단독 판정: hit
+R–C 의미 대응: 대응 있음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+A round cake with vanilla-colored buttercream frosting sits on a flat surface in an indoor setting with soft lighting. The camera shows the cake's top and frosting texture from different angles.
+
+원본 라벨 R
+R1 (hard, 0.500–5.300초): 질감과 조명이 약간 변하는 것처럼 보임
+원문: The texture and lighting seems to change slightly 
+
+검출 후보 C
+C1 (0.000–6.000초): [Gemini] 케이크가 회전하는 동안 프로스팅 표면 질감이 일관되지 않게 왜곡되고 이동함
+원문: Frosting surface textures warp and shift inconsistently while the cake rotates slowly.
+종류: model_proposal / bbox: [0.088, 0.083, 0.932, 0.992]
+C2 (1.500–6.000초): [Gemini] 카메라가 회전할 때 프로스팅된 케이크 질감과 능선이 비정상적으로 변형되고 표류함
+원문: The frosted cake texture and ridges exhibit unnatural morphing and drifting inconsistencies across its surface as the camera rotates.
+종류: model_proposal / bbox: None
+C3 (0.000–6.000초): [프롬프트 검사] 카메라가 정적 앵글만 유지되어 다양한 각도 회전 요구를 불만족함
+원문: 카메라가 다양한 각도에서 케이크를 비추도록 요구되었으나, 영상 전체에서 동일한 구도의 정적 앵글만 유지됨
+종류: model_proposal / bbox: None
+
+자동 의미 대응
+R1 ↔ C1 / 의미 대응 / 시간도 일치
+참조의 질감 변화 불만과 후보의 프로스팅 질감 왜곡/이동 불만은 동일한 표면 텍스처 불안정성을 서로 다른 구체도로 기술한 호환 가능한 관찰입니다.
+R1 ↔ C2 / 의미 대응 / 시간도 일치
+참조의 질감 변화 관찰과 후보의 케이크 텍스처 변형 및 드리프팅 불만은 동일한 질감 이상 현상을 설명하고 있어 호환됩니다.
+R1 ↔ C3 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 질감 및 조명의 미세한 변화를 문제 삼는 반면, 후보는 카메라 각도가 변하지 않고 정적 앵글로 유지되는 프롬프트 불일치를 지적하고 있어 문제의 대상과 발생 현상이 서로 완전히 다릅니다.
+
+채점 검증 상태
+유효 쌍 3 / 미사용 쌍 0

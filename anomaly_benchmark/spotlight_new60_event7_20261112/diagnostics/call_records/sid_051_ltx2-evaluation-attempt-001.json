@@ -1,0 +1,137 @@
+[
+  {
+    "model": "gemini-3.8-flash",
+    "phase": "evaluation",
+    "attempt": "attempt-001",
+    "request_sha256": "2ab14395d732ce2e46762ec9fc417159df41b154b1005b58ff1360577e42060f",
+    "status": "received",
+    "raw_response": {
+      "candidates": [
+        {
+          "content": {
+            "role": "model",
+            "parts": [
+              {
+                "text": "{\n  \"id\": \"R1\",\n  \"summary_ko\": \"배에 폴란드 국기가 게양되어 있다는 지적\",\n  \"claims\": [\n    {\n      \"id\": \"R1.S1\",\n      \"evidence\": \"there is a polish flag on the ship\",\n      \"symptom_ko\": \"배에 폴란드 국기가 있음\",\n      \"role\": \"complaint\",\n      \"specificity\": \"specific\",\n      \"target_evidence\": \"the ship\",\n      \"interaction_evidence\": \"\",\n      \"change_evidence\": \"there is a polish flag\",\n      \"scope\": \"part\",\n      \"explicit_detail_evidence\": [\n        \"polish flag\",\n        \"on the ship\"\n      ],\n      \"missing_details_ko\": \"\"\n    }\n  ]\n}",
+                "thoughtSignature": "AY89a19eMnJfZcAo2+l7TRU7Q/6khW6ubqWXzul7iMflJSf2kZgwTTJ0G5tkzbiwZ8WnmCSkEPHzwIW/HFfpzNFiZkfP3xCpQbxPrTefFjRakAOBP+LT"
+              }
+            ]
+          },
+          "finishReason": "STOP"
+        }
+      ],
+      "usageMetadata": {
+        "promptTokenCount": 973,
+        "candidatesTokenCount": 187,
+        "totalTokenCount": 1160,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 973
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 187
+          }
+        ]
+      },
+      "modelVersion": "gemini-3.8-flash",
+      "createTime": "2026-11-12T09:04:15.629951Z",
+      "responseId": "D4H1ar-5JsWXvdAP7aKDmAE"
+    },
+    "elapsed_seconds": 77.3764358949993
+  },
+  {
+    "model": "gemini-3.8-flash",
+    "phase": "evaluation",
+    "attempt": "attempt-001",
+    "request_sha256": "b92ca2f3c0af2f5c9eb96d1bd6c89a941b7e739068cdc2c8e666a5a362f8063d",
+    "status": "received",
+    "raw_response": {
+      "candidates": [
+        {
+          "content": {
+            "role": "model",
+            "parts": [
+              {
+                "text": "{\n  \"references\": [\n    {\n      \"id\": \"R1\",\n      \"summary_ko\": \"배에 폴란드 국기가 게양되어 있다는 지적\",\n      \"claims\": [\n        {\n          \"id\": \"R1.S1\",\n          \"evidence\": \"there is a polish flag on the ship\",\n          \"symptom_ko\": \"배에 폴란드 국기가 있음\",\n          \"role\": \"complaint\"\n        }\n      ]\n    }\n  ],\n  \"candidates\": [\n    {\n      \"id\": \"C1\",\n      \"summary_ko\": \"영상 특징 및 픽셀 구조 변화 감지\",\n      \"target_evidence\": \"영상 특징과 픽셀 구조\",\n      \"interaction_evidence\": \"함께 변한\",\n      \"change_evidence\": \"형태·존재 변화 가능성\",\n      \"scope\": \"unknown\"\n    },\n    {\n      \"id\": \"C2\",\n      \"summary_ko\": \"함선들이 수면에서 점진적으로 구체화되어 나타남\",\n      \"target_evidence\": \"A fleet of sailing ships\",\n      \"interaction_evidence\": \"from the open water\",\n      \"change_evidence\": \"gradually materializes\",\n      \"scope\": \"group\"\n    },\n    {\n      \"id\": \"C3\",\n      \"summary_ko\": \"항해 함선들이 프레임 상단에 갑자기 나타남\",\n      \"target_evidence\": \"The sailing fleet\",\n      \"interaction_evidence\": \"enters the top of the frame\",\n      \"change_evidence\": \"appearing suddenly\",\n      \"scope\": \"group\"\n    }\n  ],\n  \"pairs\": [\n    {\n      \"reference_id\": \"R1\",\n      \"candidate_id\": \"C1\",\n      \"target_relation\": \"different\",\n      \"event_relation\": \"different\",\n      \"description_consistency\": \"insufficient\",\n      \"conflict_scope\": \"uncertain\",\n      \"reference_claim_ids\": [\n        \"R1.S1\"\n      ],\n      \"reference_evidence\": \"\",\n      \"candidate_evidence\": \"\",\n      \"shared_event_ko\": \"\",\n      \"coexistence_explanation_ko\": \"\",\n      \"conflicts_ko\": [\n        \"일반적인 영상 특징 변화 감지와 배 위의 폴란드 국기 존재 여부 지적의 불일치\"\n      ],\n      \"reason_ko\": \"C1은 단순 측정 제안으로 대상 및 현상이 전혀 일치하지 않습니다.\",\n      \"event_link\": \"distinct_events\",\n      \"separation_basis\": \"different_entity\"\n    },\n    {\n      \"reference_id\": \"R1\",\n      \"candidate_id\": \"C2\",\n      \"target_relation\": \"different\",\n      \"event_relation\": \"different\",\n      \"description_consistency\": \"core_conflict\",\n      \"conflict_scope\": \"matched_claim\",\n      \"reference_claim_ids\": [\n        \"R1.S1\"\n      ],\n      \"reference_evidence\": \"there is a polish flag on the ship\",\n      \"candidate_evidence\": \"A fleet of sailing ships gradually materializes from the open water\",\n      \"shared_event_ko\": \"\",\n      \"coexistence_explanation_ko\": \"\",\n      \"conflicts_ko\": [\n        \"배의 폴란드 국기 존재 지적과 함선의 비정상적 생성/출현 현상 차이\"\n      ],\n      \"reason_ko\": \"참조는 배에 달린 폴란드 국기에 대한 지적인 반면, 후보는 수면에서 함선들이 갑자기 구체화되어 나타나는 생성 이상을 다루므로 서로 무관한 별개의 현상입니다.\",\n      \"event_link\": \"distinct_events\",\n      \"separation_basis\": \"different_interaction\"\n    },\n    {\n      \"reference_id\": \"R1\",\n      \"candidate_id\": \"C3\",\n      \"target_relation\": \"different\",\n      \"event_relation\": \"different\",\n      \"description_consistency\": \"core_conflict\",\n      \"conflict_scope\": \"matched_claim\",\n      \"reference_claim_ids\": [\n        \"R1.S1\"\n      ],\n      \"reference_evidence\": \"there is a polish flag on the ship\",\n      \"candidate_evidence\": \"appearing suddenly as the camera tilts up\",\n      \"shared_event_ko\": \"\",\n      \"coexistence_explanation_ko\": \"\",\n      \"conflicts_ko\": [\n        \"배의 폴란드 국기 존재 지적과 함선의 돌연한 출현 현상 차이\"\n      ],\n      \"reason_ko\": \"참조는 국기의 존재를 지적하는 반면, 후보는 돛/돛대 없이 함선이 화면에 갑자기 나타나는 출현 현상을 다루어 대상 및 이상 내용이 완전히 다릅니다.\",\n      \"event_link\": \"distinct_events\",\n      \"separation_basis\": \"different_interaction\"\n    }\n  ]\n}",
+                "thoughtSignature": "AY89a19y8ZalI2ZaMvADz8kkPflE20bxqGNZ0wWs4JutdP7gWOzAi7zbwSKa5yEJf9r7cz/6xZAjTDZDnUdqhX4+D8nZ2RbU/9exHkU9UV/4dH+j+szc"
+              }
+            ]
+          },
+          "finishReason": "STOP"
+        }
+      ],
+      "usageMetadata": {
+        "promptTokenCount": 2682,
+        "candidatesTokenCount": 1150,
+        "totalTokenCount": 3832,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2682
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1150
+          }
+        ]
+      },
+      "modelVersion": "gemini-3.8-flash",
+      "createTime": "2026-11-12T09:05:32.909672Z",
+      "responseId": "XIH1aujCN7ycvdAPkvC2mQE"
+    },
+    "elapsed_seconds": 53.7082366020004
+  },
+  {
+    "model": "gemini-3.8-flash",
+    "phase": "evaluation",
+    "attempt": "attempt-001",
+    "request_sha256": "6097f12448630a6bf1a7677f0ef86078a438a1449d52503f21ad6ad6839aebe8",
+    "status": "received",
+    "raw_response": {
+      "candidates": [
+        {
+          "content": {
+            "role": "model",
+            "parts": [
+              {
+                "text": "{\n  \"pairs\": [\n    {\n      \"reference_id\": \"R1\",\n      \"candidate_id\": \"C2\",\n      \"target_relation\": \"different\",\n      \"reference_claim_ids\": [\"R1.S1\"],\n      \"reference_evidence\": \"there is a polish flag on the ship\",\n      \"candidate_evidence\": \"A fleet of sailing ships gradually materializes from the open water as the camera tilts upward, rather than being naturally revealed over the horizon line.\",\n      \"basis\": \"explicit_separation\",\n      \"reason_ko\": \"참조는 배에 폴란드 국기가 게양되어 있다는 세부 속성에 대한 지적이지만, 후보 C2는 함선 함대 전체가 수면에서 비정상적으로 구체화되어 나타나는 생성 이상을 다루므로 대상과 문제 현상이 완전히 다릅니다.\",\n      \"separation_basis\": \"different_interaction\"\n    },\n    {\n      \"reference_id\": \"R1\",\n      \"candidate_id\": \"C3\",\n      \"target_relation\": \"different\",\n      \"reference_claim_ids\": [\"R1.S1\"],\n      \"reference_evidence\": \"there is a polish flag on the ship\",\n      \"candidate_evidence\": \"The sailing fleet enters the top of the frame around 2 seconds without masts or sails extending into the sky beforehand, appearing suddenly as the camera tilts up.\",\n      \"basis\": \"explicit_separation\",\n      \"reason_ko\": \"참조는 배의 폴란드 국기 존재 여부에 관한 논리적 오류를 지적하는 반면, 후보 C3는 카메라 이동 시 돛이나 돛대 없이 함선 함대가 갑자기 나타나는 렌더링/출현 이상을 다루고 있어 서로 다른 현상입니다.\",\n      \"separation_basis\": \"different_interaction\"\n    }\n  ]\n}",
+                "thoughtSignature": "AY89a1+FUkNXc3hYpjEo9LMzF1oIkz+GQf/8N15wWAFoJKdYKZG8GfxRz3d65mCqWhmNZ7hTse2Yt7qAdR0n0UUh9M0KSCL41WXKjYtRvtn984opOlo8"
+              }
+            ]
+          },
+          "finishReason": "STOP"
+        }
+      ],
+      "usageMetadata": {
+        "promptTokenCount": 1622,
+        "candidatesTokenCount": 416,
+        "totalTokenCount": 2038,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1622
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 416
+          }
+        ]
+      },
+      "modelVersion": "gemini-3.8-flash",
+      "createTime": "2026-11-12T09:06:26.628172Z",
+      "responseId": "koH1asyrJrWXvdAPvbfb-AY"
+    },
+    "elapsed_seconds": 24.49664909800049
+  }
+]

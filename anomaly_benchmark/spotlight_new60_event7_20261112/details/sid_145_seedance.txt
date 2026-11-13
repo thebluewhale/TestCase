@@ -1,0 +1,54 @@
+sid_145_seedance
+신규 60개 · Gemini 단독 판정: hit
+R–C 의미 대응: 대응 있음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+People play and interact with a public water feature, jumping, splashing, and engaging with each other. The scene is set in a well-maintained outdoor public space with trees and a clear sky. The camera captures the activity from a consistent side-angle perspective.
+
+원본 라벨 R
+R1 (easy, 1.000–3.100초): 파란 셔츠를 입은 남성이 회색 셔츠를 입은 여성으로 무작위로 바뀜.
+원문: The blue shirt man randomly turns into a women with a grey shirt.
+R2 (easy, 4.300–4.800초): 파란 옷을 입은 남자가 물 뒤로 사라짐
+원문: one guy in blue disappeared behind the water
+
+검출 후보 C
+C1 (1.400–4.700초): [Gemini] 운동복을 입은 여성이 다른 사람들 뒤에서 자연 발생하여 분수대 주변에서 사라지거나 비일관적으로 병합됨.
+원문: A woman in athletic wear spontaneously materializes from behind other people and vanishes or merges inconsistently around the fountain pool.
+종류: model_proposal / bbox: [0.47, 0.36, 0.61, 0.72]
+C2 (1.100–2.500초): [Gemini] 분수를 통과해 걷는 여러 사람이 병합되고 변형되며 팔다리와 몸통 구조가 급격하게 복제됨.
+원문: Multiple people walking through the fountain merge, deform, and duplicate limbs/torso structures abruptly.
+종류: model_proposal / bbox: [0.34, 0.35, 0.67, 0.73]
+C3 (1.500–2.600초): [Gemini] 회색 상의와 어두운 반바지를 입은 인물이 중앙 분수 뒤에서 갑자기 나타나 물을 가로질러 왼쪽으로 이동함.
+원문: Person in grey top and dark shorts spontaneously appears behind the central fountain and moves leftward across the water.
+종류: model_proposal / bbox: [0.48, 0.38, 0.58, 0.7]
+C4 (1.300–2.500초): [Gemini] 파란 셔츠를 입은 남성과 흰 셔츠를 입은 인물이 물줄기 뒤와 주변을 움직일 때 신원과 외형이 비일관적으로 바뀜.
+원문: Man in blue shirt and white-shirted figure shift identity and appearance inconsistently when moving behind and around the jet.
+종류: model_proposal / bbox: [0.46, 0.31, 0.67, 0.72]
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간도 일치
+명시적 별개 사건: R1은 파란 셔츠 남성이 회색 셔츠 여성으로 변하는 현상을 명시하고 있으나, C1은 운동복 차림의 여성이 사람들 뒤에서 나타났다가 사라지거나 병합되는 별개의 상호작용 및 개체를 기술하므로 명확히 분리됩니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+명시적 별개 사건: R1은 특정 파란 셔츠 남성이 여성으로 변환되는 문제를 다루는 반면, C2는 분수를 걷는 다수의 사람들이 병합, 변형 및 사지/몸통 구조가 복제되는 전반적인 신체 기형 결함을 설명하여 서로 다른 현상입니다.
+R1 ↔ C3 / 의미 대응 / 시간도 일치
+R1의 변환 결과로 생성된 '회색 셔츠 여성'과 C3의 '갑자기 나타난 회색 상의 인물'이 일치하며, 변환(turn into) 과정과 돌발 출현(spontaneously appears)은 동일 사건의 서로 다른 측면이자 결과적 출현을 포괄하므로 부분 사건/동일 사건의 다른 측면으로 성립합니다.
+두 설명의 양립 근거: R1은 이전 인물(파란 셔츠 남성)이 회색 셔츠 여성으로 변환되는 전체 과정 관점에서 기술했고, C3은 그 결과로 회색 상의를 입은 인물이 갑자기 출현한 국면을 기술하여 두 설명이 동일한 이상 현상의 전후/부분 국면으로 공존할 수 있습니다.
+minor_discrepancy / matched_claim 허용 규칙 적용 · 이번 영상은 사람 미검수
+R1 ↔ C4 / 의미 대응 / 시간도 일치
+파란 셔츠 남성이 물줄기 주변에서 신원과 외형이 변한다는 점에서 동일한 신원 불안정 현상의 다른 측면을 설명하고 있습니다.
+R2 ↔ C1 / 미대응 / 시간도 일치
+명시적 별개 사건: 기준 설명은 물 뒤로 사라진 파란 옷을 입은 남자를 대상으로 하지만, 후보 설명은 다른 사람들 뒤에서 나타나 사라지거나 병합되는 운동복 차림의 여성을 지칭하므로 대상 인물과 사건이 명확히 분리됩니다.
+R2 ↔ C2 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 기준 설명은 파란 옷을 입은 특정 남성이 물 뒤로 사라지는 단일 인물의 소멸 현상인 반면, 후보 설명은 분수를 지나가는 여러 사람의 사지 및 몸통이 병합, 변형, 복제되는 상이한 상호작용 및 이상 현상을 기술하고 있습니다.
+R2 ↔ C3 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 기준 설명은 파란 옷을 입은 남자가 물 뒤에서 사라지는 사건인 반면, 후보 설명은 회색 상의와 어두운 반바지를 입은 인물이 중앙 분수 뒤에서 나타나 이동하는 사건으로, 인물의 외양 및 소멸과 생성이라는 사건 자체가 명확히 구분되는 별개의 현상입니다.
+R2 ↔ C4 / 의미 대응 / 시간 차이 있음
+물줄기 뒤로 이동하면서 파란 옷 남자가 사라지거나 신원이 바뀌는 현상을 각각 사라짐과 신원 변환으로 서술한 동일 사건의 다른 측면입니다.
+
+채점 검증 상태
+유효 쌍 8 / 미사용 쌍 0

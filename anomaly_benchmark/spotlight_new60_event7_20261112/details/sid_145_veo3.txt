@@ -1,0 +1,41 @@
+sid_145_veo3
+신규 60개 · Gemini 단독 판정: hit
+R–C 의미 대응: 대응 있음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+People play and interact with a public water feature, jumping, splashing, and engaging with each other. The scene is set in a well-maintained outdoor public space with trees and a clear sky. The camera captures the activity from a consistent side-angle perspective.
+
+원본 라벨 R
+R1 (easy, 2.800–3.400초): 얼굴과 손이 왜곡되어 알아볼 수 없음
+원문: Face and hands distort and are un recognizable 
+R2 (medium, 6.100–6.500초): 발이 물속으로 가라앉지 않고 떠 있는 것처럼 보임.
+원문: Foot does not sink in to water seems to be floating 
+R3 (easy, 0.800–1.700초): 노란색 수영복을 입은 아이의 얼굴이 심하게 왜곡됨.
+원문: fece of child in yellow swim suit distorted horribly 
+R4 (easy, 0.000–1.500초): 얕은 곳임에도 불구하고 물이 지나치게 크게 튐
+원문: a large splash, for something that is shallow
+
+검출 후보 C
+C1 (0.125–0.625초): [Gemini] 노란 수영복을 입은 소녀가 물보라 속에서 일시적으로 흐려지고 흩어짐
+원문: The girl in yellow partially dissipates and becomes faint amidst heavy water spray before re-solidifying.
+종류: model_proposal / bbox: [0.49, 0.44, 0.58, 0.74]
+
+자동 의미 대응
+R1 ↔ C1 / 판단 보류 / 시간 차이 있음
+동일 사건 여부/불일치 확정 보류: R1은 얼굴과 손의 왜곡을 지적하나 C1은 노란 옷을 입은 소녀가 물보라 속에서 사라졌다가 다시 굳어지는 현상을 지적하여 동일 인물이나 동일 사건인지 불확실함.
+R2 ↔ C1 / 미대응 / 시간 차이 있음
+명시적 별개 사건: R2는 발이 물에 가라앉지 않고 떠 있는 물리적 상호작용 문제를 설명하고 있는 반면, C1은 노란 옷을 입은 소녀가 물보라 속에서 사라지고 흐려졌다가 다시 나타나는 렌더링/소실 현상을 기술하고 있어 대상 및 상호작용이 명확히 서로 다릅니다.
+R3 ↔ C1 / 의미 대응 / 시간 차이 있음
+동일한 노란색 수영복을 입은 아이의 신체 외형이 무너지는 현상을 각각 얼굴 왜곡과 신체 소실/희미화로 기술한 동일 사건의 다른 측면 관찰임.
+두 설명의 양립 근거: 동일 인물(노란 수영복의 아이)에 대해 R3는 얼굴이 심하게 일그러지는 왜곡으로 표현하였고, C1은 물보라 속에서 부분적으로 흩어지고 희미해지는 붕괴 현상으로 설명하여 한 사건의 상이한 관점 기술로 양립 가능함.
+minor_discrepancy / matched_claim 허용 규칙 적용 · 이번 영상은 사람 미검수
+R4 ↔ C1 / 미대응 / 시간도 일치
+명시적 별개 사건: R4는 얕은 수심에 비해 물이 과도하게 크게 튀는 물리적 이상 현상 자체를 결함으로 지적하고 있는 반면, C1은 노란 옷을 입은 소녀가 물보라 속에서 사라졌다가 다시 나타나는 형체 변형 결함을 지적하고 있어 서로 대상 및 상호작용이 명확히 구별되는 별개의 사건입니다.
+
+채점 검증 상태
+유효 쌍 4 / 미사용 쌍 0

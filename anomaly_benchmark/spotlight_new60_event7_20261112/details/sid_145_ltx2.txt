@@ -1,0 +1,61 @@
+sid_145_ltx2
+신규 60개 · Gemini 단독 판정: hit
+R–C 의미 대응: 대응 있음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+People play and interact with a public water feature, jumping, splashing, and engaging with each other. The scene is set in a well-maintained outdoor public space with trees and a clear sky. The camera captures the activity from a consistent side-angle perspective.
+
+원본 라벨 R
+R1 (hard, 5.600–6.100초): 화면에 등장하는 여성의 손이 없거나 한쪽 팔이 너무 짧아 보임
+원문: woman who comes on screen seems like she might be lacking a hand or one arm is too short
+R2 (medium, 5.200–5.400초): 여성이 물줄기를 그대로 통과하며 걸어가는데 양쪽 모두 아무런 영향을 받지 않음
+원문: woman walking straight through the water spout without either being affected
+R3 (easy, 0.500–1.100초): 조깅하는 사람이 분수 사이에서 왼쪽으로 가며 오른쪽에서 왼쪽으로 달리는 것처럼 보임
+원문: The jogger seems to go from between the fountain to the left as if she was running from right to left
+R4 (easy, 1.300–1.700초): 주자가 물을 통과하지만 물에 영향이 없고 반대편에 단순히 나타남
+원문: The runner goes through the water, the water is not affected and she simply appears on the other side
+
+검출 후보 C
+C1 (1.200–4.500초): [Gemini] 분수 물줄기를 가로지르는 주자들 사이에서 인물 형태의 불일치 및 형태학적 깜빡임 발생
+원문: Inconsistent crowd figures and morphological flickering occur among runners crossing the fountain jets.
+종류: model_proposal / bbox: [0.24, 0.3, 0.85, 0.95]
+C2 (0.500–6.120초): [Gemini] 전경과 배경을 가로질러 달리는 인물들이 분수 제트 및 인접 인물과 불규칙하게 병합, 변형, 뒤틀림
+원문: Figures running across foreground and background merge, morph, or deform irregularly into fountain jets and neighboring bodies.
+종류: model_proposal / bbox: None
+C3 (0.000–6.120초): [Gemini] 분수 물줄기가 떨리고 두께가 부자연스럽게 변동하며 프레임에 걸쳐 잘리거나 찢어짐
+원문: Fountain water jets jitter, fluctuate unnaturally in thickness, and periodically clip or tear across frames.
+종류: model_proposal / bbox: None
+
+자동 의미 대응
+R1 ↔ C1 / 판단 보류 / 시간 차이 있음
+동일 사건 여부/불일치 확정 보류: 화면에 등장하는 특정 여성의 팔/손 결함과 군중 주자들의 형태 깜빡임 현상이 동일 인물/현상인지 특정할 수 없습니다.
+R1 ↔ C2 / 판단 보류 / 시간 차이 있음
+동일 사건 여부/불일치 확정 보류: 특정 여성의 팔/손 신체 이상과 분수대 주변 달리는 인물들의 불규칙한 변형/병합 현상이 동일 사건인지 확인할 수 없습니다.
+R1 ↔ C3 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조 설명은 등장하는 여성의 손 결손 및 팔 길이 문제를 다루는 반면, 후보 설명은 분수 물줄기의 떨림 및 클리핑 현상을 다루고 있어 대상 엔터티가 완전히 다릅니다.
+R2 ↔ C1 / 의미 대응 / 시간 차이 있음
+참조의 여성이 물줄기를 영향 없이 뚫고 지나가는 현상과 후보의 분수 제트를 가로지르는 인물들의 깜빡임/불일치 현상은 분수대를 통과하는 인물의 상호작용 이상을 공유합니다.
+R2 ↔ C2 / 의미 대응 / 시간 차이 있음
+물줄기를 그냥 뚫고 지나가는 현상과 인물이 분수 제트와 병합/변형되는 현상은 분수 통과 시 발생하는 신체 및 물리적 상호작용 이상이라는 동일 현상의 다른 측면입니다.
+R2 ↔ C3 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조 설명은 여성이 물줄기를 뚫고 걸어감에도 상호작용이 전혀 발생하지 않는 물리적 관통 현상을 지적하고 있는 반면, 후보 설명은 여성과의 상호작용 없이 분수 물줄기 자체의 두께 떨림, 변동, 프레임 클리핑/찢김 등의 렌더링 결함을 다루고 있어 서로 다른 개체 및 상호작용에 관한 명확히 구별되는 사건입니다.
+R3 ↔ C1 / 판단 보류 / 시간 차이 있음
+동일 사건 여부/불일치 확정 보류: 참조의 조깅하는 사람의 비정상적인 이동 경로/방향 문제와 후보의 분수대를 건너는 주자들의 형태 깜빡임 현상이 동일한 문제를 설명하는지 불확실합니다.
+R3 ↔ C2 / 판단 보류 / 시간도 일치
+동일 사건 여부/불일치 확정 보류: 참조의 조깅하는 사람의 이동 궤적 이상과 후보의 달리는 인물들의 변형/병합 결함이 동일 사건인지 확정할 수 없습니다.
+R3 ↔ C3 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조 설명은 조깅하는 사람(the jogger)의 이동 방향 및 위치 궤적에 대한 문제인 반면, 후보 설명은 분수 물줄기(fountain water jets) 자체의 떨림, 두께 변동, 찢어짐 등 렌더링 결함을 다루고 있어 대상(entity)과 현상이 완전히 구별됩니다.
+R4 ↔ C1 / 의미 대응 / 시간도 일치
+주자가 물을 관통하여 반대편에 갑자기 나타나는 현상과 분수 물줄기를 건너는 주자들의 불일치 및 형태 깜빡임 현상은 동일한 비정상적 관통/출현 사건을 설명합니다.
+R4 ↔ C2 / 의미 대응 / 시간 차이 있음
+주자가 물을 뚫고 지나가면서 반대편에 나타나는 현상과 분수 제트와 비정상적으로 병합/변형되는 현상은 분수를 통과하는 인물의 비정상적 렌더링 과정을 서로 다른 측면에서 기술합니다.
+R4 ↔ C3 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 주자가 물을 통과할 때 물에 영향이 없이 반대편에 나타나는 상호작용 및 물성 결함을 지적하는 반면, 후보는 주자와 무관하게 분수 물줄기 자체가 떨리거나 두께가 변하고 프레임에 걸쳐 찢어지는 자체 결함을 서술하므로 서로 다른 상호작용과 대상을 다루는 별개의 현상입니다.
+
+채점 검증 상태
+유효 쌍 12 / 미사용 쌍 0

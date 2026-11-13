@@ -1,0 +1,51 @@
+sid_009_veo3
+신규 60개 · Gemini 단독 판정: pending
+R–C 의미 대응: 판단 보류
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 무효 · 원시 상태: invalid_response
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+A cat knocks a plant off a windowsill, and then runs away.
+
+원본 라벨 R
+R1 (hard, 4.100–5.200초): 창턱 위로 흙이 허공에서 갑자기 나타남
+원문: dirt comes from thin air onto the windowsill 
+R2 (easy, 6.200–7.800초): 고양이가 떠날 때 보이지 않는 무언가 위를 걷는 문제와 화분이 떨어졌는데도 고양이는 떨어지지 않은 논리적 모순을 지적함.
+원문: cat walks on something invisible when leaving, if the pot fell off, why didn't the cat
+
+검출 후보 C
+C1 (6.583–7.750초): [측정 제안 · 결함 미확정] 영상 특징 및 픽셀 구조 변화 탐지
+원문: 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+종류: measurement_proposal / bbox: [0.0, 0.12962962962962962, 1.0, 1.0]
+C2 (4.880–5.750초): [Gemini] 기울어진 화분이 창턱 아래로 가라앉으며 갑자기 사라짐
+원문: The tipped potted plant sinks downwards below the window sill edge and abruptly vanishes rather than remaining visible or falling naturally.
+종류: model_proposal / bbox: [0.47, 0.65, 0.84, 1.0]
+C3 (6.880–7.750초): [Gemini] 오른쪽으로 나간 고양이가 이상한 자세와 움직임으로 뒤로 미끄러지며 재등장함
+원문: After exiting rightward, the cat reappears rapidly sliding backwards/leftwards across the bottom frame with inconsistent pose and motion.
+종류: model_proposal / bbox: [0.0, 0.64, 0.99, 1.0]
+C4 (4.900–5.400초): [Gemini] 고양이가 지나갈 때 넘어진 화분이 갑자기 사라짐
+원문: The tipped-over potted plant suddenly vanishes as the cat walks past it.
+종류: model_proposal / bbox: [0.43, 0.7, 0.82, 1.0]
+C5 (6.800–7.800초): [Gemini] 오른쪽으로 퇴장한 검은 고양이가 즉시 다시 나타나 왼쪽으로 질주함
+원문: The black cat exits right, but immediately reappears entering from the right and dashes left.
+종류: model_proposal / bbox: [0.0, 0.1, 1.0, 0.95]
+
+자동 의미 대응
+유효한 채점 쌍 없음.
+
+채점 검증 상태
+유효 쌍 0 / 미사용 쌍 10
+{"status": "invalid_response", "reason": "Underspecified relation requires same target, evidence and uncertainty"}
+{"scope": "pair", "reference_id": "R1", "candidate_id": "C1", "reason": "Underspecified relation requires same target, evidence and uncertainty"}
+{"scope": "pair", "reference_id": "R1", "candidate_id": "C2", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R1", "candidate_id": "C3", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R1", "candidate_id": "C4", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R1", "candidate_id": "C5", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R2", "candidate_id": "C1", "reason": "Underspecified relation requires same target, evidence and uncertainty"}
+{"scope": "pair", "reference_id": "R2", "candidate_id": "C2", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R2", "candidate_id": "C3", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R2", "candidate_id": "C4", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R2", "candidate_id": "C5", "reason": "required_review_incomplete"}

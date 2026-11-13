@@ -1,0 +1,62 @@
+sid_114_veo3
+신규 60개 · Gemini 단독 판정: no_hit
+R–C 의미 대응: 대응 없음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+The baby continues to make chomping moves with her mouth while her eye constantly open and close due to tiredness. The mother then takes a spoon full of baby food and tries to put it in the baby's mouth as the baby starts falling asleep.
+
+원본 라벨 R
+R1 (medium, 0.500–2.500초): 아기의 얼굴은 영아에 가까워 보이나 앞뒤로 쉽게 기울어지는 등 목을 가누지 못하는 어린아이의 발달 특성과 맞지 않아 아기의 나이를 가늠하기 어려움
+원문: Hard to tell what age the baby is. Face looks closer to infant, but they lean forwards and backwards easily while younger kids can't support their neck
+R2 (medium, 0.500–3.500초): 아기의 눈가에 웃음 주름이 있어 무언가 어색해 보임
+원문: Baby has laugh lines around eyes, something about it looks wrong
+R3 (medium, 0.200–1.700초): 아기에게 나이 들어 보이는 눈가 주름이 있다가 영상이 진행되며 사라짐
+원문: Almost perfect, right here the baby still has eye crinkles like she's much older, which fade as the video continues
+
+검출 후보 C
+C1 (4.500–5.750초): [Gemini] 숟가락 위의 퓌레가 입에 들어갈 때 자연스러운 이동 역학 없이 즉시 사라짐.
+원문: Puree on the spoon vanishes immediately upon entering the mouth without standard transfer dynamics.
+종류: model_proposal / bbox: [0.428, 0.498, 0.536, 0.638]
+C2 (3.100–3.600초): [Gemini] 퓌레가 담긴 파란 숟가락이 손이나 팔 없이 나타난 뒤 손이 뒤늦게 부착됨.
+원문: A blue spoon bearing purée spontaneously fades into existence over the yellow sweater background without an arm or hand holding it, before a hand attaches to it shortly after.
+종류: model_proposal / bbox: None
+C3 (3.600–4.500초): [Gemini] 숟가락 위의 퓌레가 고정되거나 흐르지 않고 공중에 뜨며 부자연스럽게 형태가 변형됨.
+원문: The purée food on the spoon dynamically alters shape, floating and morphing unnaturally rather than resting solidly or flowing like real liquid food.
+종류: model_proposal / bbox: None
+C4 (4.600–6.800초): [Gemini] 숟가락이 입에 들어갈 때 입술 경계와 숟가락 손잡이에서 블렌딩 및 뒤틀림 아티팩트가 발생함.
+원문: As the spoon enters the infant's mouth, the lip boundaries and the spoon handle exhibit inconsistent blending and warping artifacts.
+종류: model_proposal / bbox: None
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 아기가 목을 가누지 못하는 연령대임에도 쉽게 앞뒤로 기울어지는 등 신체 자세 및 발달 특성에 관련된 문제를 지적하는 반면, 후보는 숟가락에 담긴 퓌레가 입에 들어갈 때 소멸하는 현상을 다루고 있어 대상과 사건 자체가 완전히 다릅니다.
+R1 ↔ C2 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 아기의 목 지지 및 자세 제어의 부자연스러움을 설명하는 반면, 후보는 숟가락과 손이 허공에 자연스럽지 않게 나타나는 객체 생성 결함을 다루고 있으므로 서로 다른 대상 및 상호작용입니다.
+R1 ↔ C3 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 아기의 몸/목 움직임과 자세에 관한 것이며, 후보는 숟가락 위의 퓌레 음식이 비정상적으로 형태를 바꾸고 떠다니는 현상을 지적하여 불만의 대상과 현상이 명확히 분리됩니다.
+R1 ↔ C4 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 아기가 목을 가누는 자세적 발달 이상을 문제 삼고 있으나, 후보는 숟가락이 입에 들어갈 때 입술 경계와 숟가락 손잡이의 그래픽 왜곡 및 블렌딩 오류를 지적하므로 구체적 불만 대상과 발생 사건이 다릅니다.
+R2 ↔ C1 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 아기의 눈가에 생긴 웃음 주름의 이상에 대한 문제 제기인 반면, 후보는 숟가락의 퓌레가 입에 들어갈 때 사라지는 현상을 다루고 있어 대상 부위와 현상이 완전히 다릅니다.
+R2 ↔ C2 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 아기 눈가의 주름 문제이며, 후보는 숟가락과 손이 배경에서 부자연스럽게 나타나는 현상을 다루므로 서로 다른 엔티티와 상호작용에 관한 것입니다.
+R2 ↔ C3 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 아기 눈가 주변의 얼굴 주름에 관한 것이고, 후보는 숟가락 위 음식(퓌레)의 부자연스러운 형태 변형에 관한 것이므로 관련 대상이 명확히 다릅니다.
+R2 ↔ C4 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 아기 눈가의 웃음 주름을 특정하여 문제를 지적하고 있으나, 후보는 숟가락이 입에 들어갈 때의 입술 경계와 숟가락 손잡이의 블렌딩 및 워핑 아티팩트에 관한 것이므로 대상 부위 및 상호작용이 전혀 다릅니다.
+R3 ↔ C1 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 아기의 눈가 주름이 서서히 사라지는 안면부 신체 특성에 대한 불만인 반면, 후보는 숟가락 위의 퓌레가 입으로 들어갈 때 사라지는 음식물 전이 동역학 오류를 다루고 있어 대상과 현상이 명확히 구분됩니다.
+R3 ↔ C2 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 아기의 눈가 주름에 관한 것이고, 후보는 숟가락과 손이 허공에서 나타나는 물체 생성 이상에 관한 것이므로 대상과 현상이 전혀 다른 별개의 사건입니다.
+R3 ↔ C3 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 아기의 눈가 주름 변화에 대한 지적이며 후보는 숟가락에 놓인 퓌레 음식의 형태 변형 및 부유 현상에 대한 것으로 관련 대상이 상이합니다.
+R3 ↔ C4 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 아기의 눈가 주름(eye crinkles)에 관한 불만이며 후보는 숟가락이 입에 들어갈 때의 입술 경계와 숟가락 손잡이의 워핑/블렌딩 문제이므로 관찰되는 신체 부위 및 상호작용 대상이 명확히 다릅니다.
+
+채점 검증 상태
+유효 쌍 12 / 미사용 쌍 0

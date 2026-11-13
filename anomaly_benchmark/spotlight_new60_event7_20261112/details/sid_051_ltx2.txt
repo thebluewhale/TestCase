@@ -1,0 +1,37 @@
+sid_051_ltx2
+신규 60개 · Gemini 단독 판정: pending
+R–C 의미 대응: 판단 보류
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+The camera shoots above the sea waves and goes to film ships from the Napoleonic era
+
+원본 라벨 R
+R1 (medium, 4.000–5.800초): 배에 폴란드 국기가 게양되어 있다는 지적
+원문: there is a polish flag on the ship
+
+검출 후보 C
+C1 (1.320–3.560초): [측정 제안 · 결함 미확정] 영상 특징 및 픽셀 구조 변화 감지
+원문: 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+종류: measurement_proposal / bbox: [0.0, 0.0, 1.0, 1.0]
+C2 (1.380–3.400초): [Gemini] 함선들이 수면에서 점진적으로 구체화되어 나타남
+원문: A fleet of sailing ships gradually materializes from the open water as the camera tilts upward, rather than being naturally revealed over the horizon line.
+종류: model_proposal / bbox: [0.07, 0.0, 0.88, 0.65]
+C3 (1.900–3.500초): [Gemini] 항해 함선들이 프레임 상단에 갑자기 나타남
+원문: The sailing fleet enters the top of the frame around 2 seconds without masts or sails extending into the sky beforehand, appearing suddenly as the camera tilts up.
+종류: model_proposal / bbox: None
+
+자동 의미 대응
+R1 ↔ C1 / 판단 보류 / 시간 차이 있음
+동일 사건 여부/불일치 확정 보류: C1은 단순 측정 제안으로 대상 및 현상이 전혀 일치하지 않습니다.
+R1 ↔ C2 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 배에 폴란드 국기가 게양되어 있다는 세부 속성에 대한 지적이지만, 후보 C2는 함선 함대 전체가 수면에서 비정상적으로 구체화되어 나타나는 생성 이상을 다루므로 대상과 문제 현상이 완전히 다릅니다.
+R1 ↔ C3 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 배의 폴란드 국기 존재 여부에 관한 논리적 오류를 지적하는 반면, 후보 C3는 카메라 이동 시 돛이나 돛대 없이 함선 함대가 갑자기 나타나는 렌더링/출현 이상을 다루고 있어 서로 다른 현상입니다.
+
+채점 검증 상태
+유효 쌍 3 / 미사용 쌍 0

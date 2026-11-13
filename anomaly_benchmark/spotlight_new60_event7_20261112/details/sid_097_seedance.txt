@@ -1,0 +1,32 @@
+sid_097_seedance
+신규 60개 · Gemini 단독 판정: hit
+R–C 의미 대응: 대응 있음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+The modern hotel lobby is filled with artistic and technological elements, and a huge sculpture stands in the center.2K,16:9  
+
+원본 라벨 R
+R1 (easy, 0.500–4.500초): 구조물 상단이 불투명한 고체 재질이라 아래에서 천장으로 빛이 통과하여 비출 수 있는 경로가 없음에도 천장에 빛이 비치는 물리적 모순을 지적함.
+원문: there is no path for light to travel from underneath to the ceiling this way. the upper part of the structure is not transparent, so the solid material would not allow light to pass and shine on the ceiling this way
+
+검출 후보 C
+C1 (0.880–5.040초): [Gemini] 움직이는 광원 없이 천장에 밝은 커스틱 유사 빛 패턴이 나타나 깜빡거림.
+원문: Bright caustic-like light patterns materialize and flicker on the ceiling without an explicit moving light source.
+종류: model_proposal / bbox: [0.264, 0.05, 0.732, 0.28]
+C2 (0.542–5.042초): [Gemini] 반사성 조각품의 움직임 없이 천장에 기하학적 커스틱 반사광이 나타나 위치와 강도가 변함.
+원문: Geometric light caustic reflections appear on the ceiling and shift position and intensity over time without visible movement from the reflective sculpture.
+종류: model_proposal / bbox: [0.245, 0.026, 0.741, 0.316]
+
+자동 의미 대응
+R1 ↔ C1 / 의미 대응 / 시간도 일치
+레퍼런스는 구조물 상단이 불투명하여 천장으로 빛이 갈 수 없는 경로 문제를 지적하고, 후보는 명시적 광원 없이 천장에 빛 패턴이 나타난다고 지적하여 동일한 천장 조명 이상 현상의 서로 다른 물리적 측면을 설명하고 있습니다.
+R1 ↔ C2 / 의미 대응 / 시간도 일치
+레퍼런스는 구조물의 불투명성으로 인해 천장에 빛이 도달할 수 없음을 지적하고, 후보 C2는 조각품의 움직임 없이 천장 반사광이 변화하고 나타나는 점을 지적하여 동일한 구조물-천장 간 비정상적 조명 현상을 다루고 있습니다.
+
+채점 검증 상태
+유효 쌍 2 / 미사용 쌍 0

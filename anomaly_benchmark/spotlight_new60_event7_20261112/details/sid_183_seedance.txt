@@ -1,0 +1,52 @@
+sid_183_seedance
+신규 60개 · Gemini 단독 판정: hit
+R–C 의미 대응: 대응 있음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+A man in a black helmet and jacket stands in a dirt field with trees in the background. A motorcycle is visible behind him. He assumes various poses and expressions, showing a range of emotions. The camera captures him from a slightly elevated angle, focusing on his face and upper body. The dirt field and trees remain in the background throughout.
+
+원본 라벨 R
+R1 (hard, 0.500–5.000초): 남성이 프롬프트에 묘사된 대로 감정을 실제로 바꾸지 않으며 표정이 단조로움.
+원문: the man doesn't really change his emotions as described in the prompt. his face is monotone.
+
+검출 후보 C
+C1 (1.125–4.875초): [Gemini] 머리 움직임 중 헬멧 로고 텍스트와 바이저 윤곽이 불규칙하게 변형됨.
+원문: Helmet logo text and visor contours shift irregularly during head movement.
+종류: model_proposal / bbox: [0.438, 0.125, 0.58, 0.36]
+C2 (0.875–2.250초): [Gemini] 오토바이 디테일과 프레임 기하구조가 배경에 대해 미세하게 변형되고 이동함.
+원문: Motorcycle details and frame geometry slightly morph and shift against the background.
+종류: model_proposal / bbox: [0.518, 0.675, 0.795, 0.95]
+C3 (1.000–2.500초): [Gemini] 인물 뒤 오토바이 차체에 주황색 패널과 구조적 요소가 저절로 나타나 변형된 후 구성이 바뀜.
+원문: Orange panels and structural elements spontaneously emerge and transform on the motorcycle body behind the subject, before shifting configuration.
+종류: model_proposal / bbox: None
+C4 (2.200–4.900초): [Gemini] 손 동작과 팔짱 끼는 동작 중 손, 소매, 재킷 지퍼가 일관되지 않게 변형됨.
+원문: Subject's hands, sleeves, and jacket zipper morph inconsistently during hand motions and arm crossing gestures.
+종류: model_proposal / bbox: None
+C5 (0.000–5.040초): [프롬프트 검사] 남성의 표정이 거의 변하지 않고 다양한 감정을 보여주지 않음.
+원문: 남성의 표정이 거의 변하지 않고 다양한 감정을 보여주지 않음
+종류: model_proposal / bbox: [0.12, 0.44, 0.36, 0.58]
+C6 (0.000–5.040초): [프롬프트 검사] 카메라가 약간 높은 각도가 아닌 수평에 가까운 각도로 촬영함.
+원문: 카메라가 약간 높은 각도가 아닌 수평에 가까운 각도로 촬영함
+종류: model_proposal / bbox: None
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조 주장은 남성의 얼굴 표정과 감정 변화 결여를 문제 삼는 반면, 후보는 헬멧 로고 텍스트와 바이저 윤곽의 불규칙한 변형을 설명하여 대상과 문제가 서로 다른 개체 및 현상에 해당합니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조 주장은 남성의 얼굴 표정 및 감정 표현에 관한 불만인 반면, 후보는 오토바이 세부 사항 및 프레임 형상의 변형에 관한 것으로 대상 개체가 전혀 다릅니다.
+R1 ↔ C3 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조 주장은 인물의 얼굴 감정 표현 부재를 지적하지만, 후보는 오토바이 차체에 주황색 패널 및 구조 요소가 나타나고 변형되는 현상을 다루어 대상 개체가 명확히 분리됩니다.
+R1 ↔ C4 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조 주장은 남성의 감정 변화 결여 및 단조로운 얼굴 표정에 관한 것이며, 후보는 손, 소매, 재킷 지퍼의 불일치한 모핑 현상을 지적하여 신체 부위 및 대상 개체와 현상이 서로 다릅니다.
+R1 ↔ C5 / 의미 대응 / 시간도 일치
+참조의 남성이 감정을 바꾸지 않고 표정이 단조롭다는 불만과 후보의 표정이 거의 변하지 않고 다양한 감정을 보여주지 않는다는 관찰은 동일한 현상을 설명합니다.
+R1 ↔ C6 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조 주장은 피사체 인물의 얼굴 표정과 감정 표현 문제를 다루지만, 후보는 카메라 촬영 각도에 대한 불만을 서술하고 있어 대상과 문제가 명확히 구별됩니다.
+
+채점 검증 상태
+유효 쌍 6 / 미사용 쌍 0

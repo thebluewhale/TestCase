@@ -1,0 +1,227 @@
+[
+  {
+    "model": "gemini-3.8-flash",
+    "phase": "evaluation",
+    "attempt": "attempt-001",
+    "request_sha256": "3aec61824c50886d4178aaaae9ca2636990e6c95e6c9978c1650bf23008db09a",
+    "status": "received",
+    "raw_response": {
+      "candidates": [
+        {
+          "content": {
+            "role": "model",
+            "parts": [
+              {
+                "text": "{\n  \"id\": \"R1\",\n  \"summary_ko\": \"원숭이가 사과 뒤에서 한 번 점프하기보다는 이리저리 뛰며 폴짝거림\",\n  \"claims\": [\n    {\n      \"id\": \"R1.S1\",\n      \"evidence\": \"the monkey is more hopping about than jumping once behind the apple\",\n      \"symptom_ko\": \"원숭이가 사과 뒤에서 한 번 점프하는 대신 이리저리 폴짝거림\",\n      \"role\": \"complaint\",\n      \"specificity\": \"specific\",\n      \"target_evidence\": \"the monkey\",\n      \"interaction_evidence\": \"behind the apple\",\n      \"change_evidence\": \"more hopping about than jumping once\",\n      \"scope\": \"individual\",\n      \"explicit_detail_evidence\": [\n        \"hopping about\",\n        \"jumping once behind the apple\"\n      ],\n      \"missing_details_ko\": \"\"\n    }\n  ]\n}",
+                "thoughtSignature": "AY89a18ry1D3ZIVI0KGwZDrfsmjZx9W8nA//OiyzKi18Dn+WJk9pg1eJ81SuOmbUvIMGSD8fQjPo7DbNMn/YPerTXuCDLcAiZZGI6IV2+8d3Hzgsyq86"
+              }
+            ]
+          },
+          "finishReason": "STOP"
+        }
+      ],
+      "usageMetadata": {
+        "promptTokenCount": 982,
+        "candidatesTokenCount": 223,
+        "totalTokenCount": 1205,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 982
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 223
+          }
+        ]
+      },
+      "modelVersion": "gemini-3.8-flash",
+      "createTime": "2026-11-12T09:40:45.671169Z",
+      "responseId": "nYn1asH7KIyWvdAPxt2R8AY"
+    },
+    "elapsed_seconds": 3.5319487460001255
+  },
+  {
+    "model": "gemini-3.8-flash",
+    "phase": "evaluation",
+    "attempt": "attempt-001",
+    "request_sha256": "9a0166f573749327bbedb02c5761699904ebe47d0433f2ef00d0e5edc2a7f7f2",
+    "status": "received",
+    "raw_response": {
+      "candidates": [
+        {
+          "content": {
+            "role": "model",
+            "parts": [
+              {
+                "text": "{\n  \"references\": [\n    {\n      \"id\": \"R1\",\n      \"summary_ko\": \"원숭이가 사과 뒤에서 한 번 점프하기보다는 이리저리 뛰며 폴짝거림\",\n      \"claims\": [\n        {\n          \"id\": \"R1.S1\",\n          \"evidence\": \"the monkey is more hopping about than jumping once behind the apple\",\n          \"symptom_ko\": \"원숭이가 사과 뒤에서 한 번 점프하는 대신 이리저리 폴짝거림\",\n          \"role\": \"complaint\"\n        }\n      ]\n    }\n  ],\n  \"candidates\": [\n    {\n      \"id\": \"C1\",\n      \"summary_ko\": \"사과가 왼쪽 가장자리에서 이전 진입 동작 없이 부분적으로 나타남\",\n      \"target_evidence\": \"An apple\",\n      \"interaction_evidence\": \"from the left edge\",\n      \"change_evidence\": \"partially materializes into the frame without prior entry motion\",\n      \"scope\": \"individual\"\n    },\n    {\n      \"id\": \"C2\",\n      \"summary_ko\": \"두 번째 사과가 명확한 공간적 기원 없이 왼쪽 가장자리에 나타남\",\n      \"target_evidence\": \"A second apple\",\n      \"interaction_evidence\": \"on the left edge\",\n      \"change_evidence\": \"appears without clear spatial origin\",\n      \"scope\": \"individual\"\n    },\n    {\n      \"id\": \"C3\",\n      \"summary_ko\": \"원숭이가 중앙 사과 주변을 움직이는 동안 해부학적 비율이 일정하지 않고 부자연스러운 팔다리 움직임을 보임\",\n      \"target_evidence\": \"The monkey\",\n      \"interaction_evidence\": \"shifting around the central apple\",\n      \"change_evidence\": \"exhibits inconsistent anatomical proportions and unnatural limb movements\",\n      \"scope\": \"individual\"\n    },\n    {\n      \"id\": \"C4\",\n      \"summary_ko\": \"원숭이가 점프하여 이동할 것으로 예상되었으나 걸어서 사과 뒤로 이동함\",\n      \"target_evidence\": \"원숭이가\",\n      \"interaction_evidence\": \"사과 뒤로 이동함\",\n      \"change_evidence\": \"점프하여 이동할 것으로 예상되었으나 걸어서\",\n      \"scope\": \"individual\"\n    }\n  ],\n  \"pairs\": [\n    {\n      \"reference_id\": \"R1\",\n      \"candidate_id\": \"C1\",\n      \"target_relation\": \"different\",\n      \"event_relation\": \"different\",\n      \"description_consistency\": \"insufficient\",\n      \"conflict_scope\": \"uncertain\",\n      \"reference_claim_ids\": [],\n      \"reference_evidence\": \"\",\n      \"candidate_evidence\": \"\",\n      \"shared_event_ko\": \"\",\n      \"coexistence_explanation_ko\": \"\",\n      \"conflicts_ko\": [],\n      \"reason_ko\": \"참조는 원숭이의 점프/폴짝거림 동작에 관한 내용인 반면, 후보는 왼쪽 가장자리 사과의 출현 결함에 대한 내용으로 대상 및 사건이 완전히 다릅니다.\",\n      \"event_link\": \"distinct_events\",\n      \"separation_basis\": \"different_entity\"\n    },\n    {\n      \"reference_id\": \"R1\",\n      \"candidate_id\": \"C2\",\n      \"target_relation\": \"different\",\n      \"event_relation\": \"different\",\n      \"description_consistency\": \"insufficient\",\n      \"conflict_scope\": \"uncertain\",\n      \"reference_claim_ids\": [],\n      \"reference_evidence\": \"\",\n      \"candidate_evidence\": \"\",\n      \"shared_event_ko\": \"\",\n      \"coexistence_explanation_ko\": \"\",\n      \"conflicts_ko\": [],\n      \"reason_ko\": \"참조는 원숭이의 행동 양태에 관한 것이고, 후보는 추가 사과의 생성 결함에 관한 것이므로 관련 없는 별개의 사건입니다.\",\n      \"event_link\": \"distinct_events\",\n      \"separation_basis\": \"different_entity\"\n    },\n    {\n      \"reference_id\": \"R1\",\n      \"candidate_id\": \"C3\",\n      \"target_relation\": \"same\",\n      \"event_relation\": \"related_only\",\n      \"description_consistency\": \"compatible\",\n      \"conflict_scope\": \"none\",\n      \"reference_claim_ids\": [\n        \"R1.S1\"\n      ],\n      \"reference_evidence\": \"the monkey is more hopping about than jumping once behind the apple\",\n      \"candidate_evidence\": \"The monkey exhibits inconsistent anatomical proportions and unnatural limb movements while shifting around the central apple.\",\n      \"shared_event_ko\": \"사과 주변/뒤에서 원숭이가 이동하는 상황\",\n      \"coexistence_explanation_ko\": \"\",\n      \"conflicts_ko\": [],\n      \"reason_ko\": \"동일한 원숭이와 사과 주변 이동 맥락을 공유하지만, 참조는 한 번의 점프 대신 여러 번 폴짝거리는 지시 불이행/동작 패턴에 대한 불만인 반면, 후보는 해부학적 신체 비율 불일치와 팔다리의 부자연스러운 변형에 주목하여 서로 다른 결함 측면만을 다룹니다.\",\n      \"event_link\": \"partial_event\",\n      \"separation_basis\": \"different_interaction\"\n    },\n    {\n      \"reference_id\": \"R1\",\n      \"candidate_id\": \"C4\",\n      \"target_relation\": \"same\",\n      \"event_relation\": \"different\",\n      \"description_consistency\": \"core_conflict\",\n      \"conflict_scope\": \"matched_claim\",\n      \"reference_claim_ids\": [\n        \"R1.S1\"\n      ],\n      \"reference_evidence\": \"the monkey is more hopping about than jumping once behind the apple\",\n      \"candidate_evidence\": \"원숭이가 점프하여 이동할 것으로 예상되었으나 걸어서 사과 뒤로 이동함\",\n      \"shared_event_ko\": \"사과 뒤에서 원숭이가 점프 대신 수행한 이동 동작\",\n      \"coexistence_explanation_ko\": \"\",\n      \"conflicts_ko\": [\n        \"참조는 원숭이가 한 번 점프하는 대신 이리저리 폴짝거렸다(hopping about)고 기술하나, 후보는 점프하지 않고 걸어서(walking) 이동했다고 기술함\"\n      ],\n      \"reason_ko\": \"참조와 후보 모두 사과 뒤 원숭이의 동작에 관해 언급하지만, 참조는 폴짝폴짝 뛰었다(hopping about)고 하는 반면 후보는 걸어서 이동했다고 하여 관찰된 동작 양상이 상충됩니다.\",\n      \"event_link\": \"distinct_events\",\n      \"separation_basis\": \"contradictory_claim\"\n    }\n  ]\n}",
+                "thoughtSignature": "AY89a1+Wshco7QZhcG+B6Lxmqf0G1HJNpscf1yH3sxt0VnTCL+tmGYS+k8O7icQR31Xk/Ft8c6Es+TDwnpxXqyqi4tpybS2H2EtCPMRVxvgdueil9nOB"
+              }
+            ]
+          },
+          "finishReason": "STOP"
+        }
+      ],
+      "usageMetadata": {
+        "promptTokenCount": 2738,
+        "candidatesTokenCount": 1568,
+        "totalTokenCount": 4306,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2738
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1568
+          }
+        ]
+      },
+      "modelVersion": "gemini-3.8-flash",
+      "createTime": "2026-11-12T09:40:49.095319Z",
+      "responseId": "oYn1atfoBYCVvdAP2OLQEQ"
+    },
+    "elapsed_seconds": 11.870634251998126
+  },
+  {
+    "model": "gemini-3.8-flash",
+    "phase": "evaluation",
+    "attempt": "attempt-001",
+    "request_sha256": "d2f6d51a6b26f46aeece97e3c7307b79645ee6c50bad0643784d067ce9a442d4",
+    "status": "received",
+    "raw_response": {
+      "candidates": [
+        {
+          "content": {
+            "role": "model",
+            "parts": [
+              {
+                "text": "{\n  \"references\": [\n    {\n      \"id\": \"R1\",\n      \"summary_ko\": \"원숭이가 사과 뒤에서 한 번 점프하기보다는 이리저리 뛰며 폴짝거림\",\n      \"claims\": [\n        {\n          \"id\": \"R1.S1\",\n          \"evidence\": \"the monkey is more hopping about than jumping once behind the apple\",\n          \"symptom_ko\": \"원숭이가 사과 뒤에서 한 번 점프하는 대신 이리저리 폴짝거림\",\n          \"role\": \"complaint\"\n        }\n      ]\n    }\n  ],\n  \"candidates\": [\n    {\n      \"id\": \"C1\",\n      \"summary_ko\": \"사과가 왼쪽 프레임 가장자리에서 나타남\",\n      \"target_evidence\": \"An apple\",\n      \"interaction_evidence\": \"\",\n      \"change_evidence\": \"partially materializes into the frame from the left edge without prior entry motion\",\n      \"scope\": \"individual\"\n    },\n    {\n      \"id\": \"C2\",\n      \"summary_ko\": \"두 번째 사과가 왼쪽 가장자리에 나타남\",\n      \"target_evidence\": \"A second apple\",\n      \"interaction_evidence\": \"\",\n      \"change_evidence\": \"appears on the left edge without clear spatial origin\",\n      \"scope\": \"individual\"\n    },\n    {\n      \"id\": \"C3\",\n      \"summary_ko\": \"중앙 사과 주변에서 원숭이의 신체 비율 및 사지 움직임이 부자연스러움\",\n      \"target_evidence\": \"The monkey\",\n      \"interaction_evidence\": \"while shifting around the central apple\",\n      \"change_evidence\": \"exhibits inconsistent anatomical proportions and unnatural limb movements\",\n      \"scope\": \"individual\"\n    },\n    {\n      \"id\": \"C4\",\n      \"summary_ko\": \"원숭이가 점프하지 않고 걸어서 사과 뒤로 이동함\",\n      \"target_evidence\": \"원숭이\",\n      \"interaction_evidence\": \"사과 뒤로 이동함\",\n      \"change_evidence\": \"점프하여 이동할 것으로 예상되었으나 걸어서\",\n      \"scope\": \"individual\"\n    }\n  ],\n  \"pairs\": [\n    {\n      \"reference_id\": \"R1\",\n      \"candidate_id\": \"C1\",\n      \"target_relation\": \"different\",\n      \"event_relation\": \"different\",\n      \"description_consistency\": \"insufficient\",\n      \"conflict_scope\": \"uncertain\",\n      \"reference_claim_ids\": [\n        \"R1.S1\"\n      ],\n      \"reference_evidence\": \"\",\n      \"candidate_evidence\": \"\",\n      \"shared_event_ko\": \"\",\n      \"coexistence_explanation_ko\": \"\",\n      \"conflicts_ko\": [],\n      \"reason_ko\": \"참조는 원숭이의 점프/홉 동작에 관한 것이며, 후보는 사과가 프레임에 나타나는 현상이므로 대상과 사건이 완전히 다릅니다.\",\n      \"event_link\": \"distinct_events\",\n      \"separation_basis\": \"different_entity\"\n    },\n    {\n      \"reference_id\": \"R1\",\n      \"candidate_id\": \"C2\",\n      \"target_relation\": \"different\",\n      \"event_relation\": \"different\",\n      \"description_consistency\": \"insufficient\",\n      \"conflict_scope\": \"uncertain\",\n      \"reference_claim_ids\": [\n        \"R1.S1\"\n      ],\n      \"reference_evidence\": \"\",\n      \"candidate_evidence\": \"\",\n      \"shared_event_ko\": \"\",\n      \"coexistence_explanation_ko\": \"\",\n      \"conflicts_ko\": [],\n      \"reason_ko\": \"참조는 원숭이의 동작 문제이고 후보는 사과의 출현 문제로 대상 및 사건이 다릅니다.\",\n      \"event_link\": \"distinct_events\",\n      \"separation_basis\": \"different_entity\"\n    },\n    {\n      \"reference_id\": \"R1\",\n      \"candidate_id\": \"C3\",\n      \"target_relation\": \"same_interaction\",\n      \"event_relation\": \"related_only\",\n      \"description_consistency\": \"compatible\",\n      \"conflict_scope\": \"none\",\n      \"reference_claim_ids\": [\n        \"R1.S1\"\n      ],\n      \"reference_evidence\": \"the monkey is more hopping about than jumping once behind the apple\",\n      \"candidate_evidence\": \"The monkey exhibits inconsistent anatomical proportions and unnatural limb movements while shifting around the central apple\",\n      \"shared_event_ko\": \"사과 주변에서 원숭이가 움직이는 동작\",\n      \"coexistence_explanation_ko\": \"\",\n      \"conflicts_ko\": [],\n      \"reason_ko\": \"동일한 원숭이와 사과 상호작용 상황이지만, 참조는 한 번 점프하는 대신 폴짝거리는 지시 미준수에 대한 것이고 후보는 해부학적 비율과 사지 동작의 부자연스러움(왜곡)을 지적하여 초점이 관련에 그칩니다.\",\n      \"event_link\": \"partial_event\",\n      \"separation_basis\": \"description_only\"\n    },\n    {\n      \"reference_id\": \"R1\",\n      \"candidate_id\": \"C4\",\n      \"target_relation\": \"same\",\n      \"event_relation\": \"same_event_different_aspect\",\n      \"description_consistency\": \"minor_discrepancy\",\n      \"conflict_scope\": \"matched_claim\",\n      \"reference_claim_ids\": [\n        \"R1.S1\"\n      ],\n      \"reference_evidence\": \"the monkey is more hopping about than jumping once behind the apple\",\n      \"candidate_evidence\": \"원숭이가 점프하여 이동할 것으로 예상되었으나 걸어서 사과 뒤로 이동함\",\n      \"shared_event_ko\": \"사과 뒤에서 원숭이가 한 번 점프하지 않고 다른 방식으로 움직인 동작\",\n      \"coexistence_explanation_ko\": \"둘 다 기대된 단일 점프 동작 대신 다른 이동 방식(폴짝거리며 돌아다님 vs 걸어서 이동함)을 취했음을 기술한 것으로 동일한 이동 동작에 대한 묘사 차이로 양립할 수 있습니다.\",\n      \"conflicts_ko\": [\n        \"참조는 원숭이가 이리저리 뛰며 폴짝거렸다고 표현했으나, 후보는 걸어서 이동했다고 기술함\"\n      ],\n      \"reason_ko\": \"사과 뒤에서 원숭이가 기대된 점프 대신 다른 이동을 보인 동일한 상황을 지적하고 있으며, 구체적 이동 양태(폴짝거림 vs 걸음)에 미세한 기술 차이가 있습니다.\",\n      \"event_link\": \"same_observation\",\n      \"separation_basis\": \"none\"\n    }\n  ]\n}",
+                "thoughtSignature": "AY89a1+he5d8JlHIqESCgTNkZ8GXipIFCesS2ZEg9nb6ro2qhr57YoC/bOsgC/9h2yGg/nZDMxTswBCnTW+bprWZ96aU5aw/O/htRbpBbIIuXCd/ay+d"
+              }
+            ]
+          },
+          "finishReason": "STOP"
+        }
+      ],
+      "usageMetadata": {
+        "promptTokenCount": 2770,
+        "candidatesTokenCount": 1583,
+        "totalTokenCount": 4353,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2770
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1583
+          }
+        ]
+      },
+      "modelVersion": "gemini-3.8-flash",
+      "createTime": "2026-11-12T09:41:16.105621Z",
+      "responseId": "vIn1apW5BoyWvdAPxt2R8AY"
+    },
+    "elapsed_seconds": 16.53362344999914
+  },
+  {
+    "model": "gemini-3.8-flash",
+    "phase": "evaluation",
+    "attempt": "attempt-001",
+    "request_sha256": "8c1a9a13b13da0cd8b8d01946b087240f8b4452263adcc1ce2fb4ba1d0db46ac",
+    "status": "received",
+    "raw_response": {
+      "candidates": [
+        {
+          "content": {
+            "role": "model",
+            "parts": [
+              {
+                "text": "{\n  \"pairs\": [\n    {\n      \"reference_id\": \"R1\",\n      \"candidate_id\": \"C1\",\n      \"target_relation\": \"different\",\n      \"reference_claim_ids\": [\"R1.S1\"],\n      \"reference_evidence\": \"the monkey is more hopping about than jumping once behind the apple\",\n      \"candidate_evidence\": \"An apple partially materializes into the frame from the left edge without prior entry motion.\",\n      \"basis\": \"explicit_separation\",\n      \"reason_ko\": \"참조 설명은 사과 뒤에서 움직이는 원숭이의 동작(한 번 점프하지 않고 폴짝거림)에 대한 불만인 반면, 후보 설명은 프레임 왼쪽 가장자리에서 사과가 출현하는 현상에 관한 것으로 대상 엔티티와 상호작용이 명확히 다릅니다.\",\n      \"separation_basis\": \"different_entity\"\n    },\n    {\n      \"reference_id\": \"R1\",\n      \"candidate_id\": \"C2\",\n      \"target_relation\": \"different\",\n      \"reference_claim_ids\": [\"R1.S1\"],\n      \"reference_evidence\": \"the monkey is more hopping about than jumping once behind the apple\",\n      \"candidate_evidence\": \"A second apple appears on the left edge without clear spatial origin.\",\n      \"basis\": \"explicit_separation\",\n      \"reason_ko\": \"참조 설명은 원숭이의 점프/홉 동작에 대한 불만을 제기하는 반면, 후보 설명은 왼쪽 가장자리에 두 번째 사과가 나타나는 현상에 대한 것으로 대상 엔티티와 발생 사건이 명확히 구분됩니다.\",\n      \"separation_basis\": \"different_entity\"\n    },\n    {\n      \"reference_id\": \"R1\",\n      \"candidate_id\": \"C3\",\n      \"target_relation\": \"same_interaction\",\n      \"reference_claim_ids\": [\"R1.S1\"],\n      \"reference_evidence\": \"the monkey is more hopping about than jumping once behind the apple\",\n      \"candidate_evidence\": \"The monkey exhibits inconsistent anatomical proportions and unnatural limb movements while shifting around the central apple.\",\n      \"basis\": \"recompare\",\n      \"reason_ko\": \"참조는 원숭이가 사과 뒤에서 한 번 점프하는 대신 이리저리 폴짝거리는 동작 문제를 지적하고, 후보는 원숭이가 중앙 사과 주변을 움직일 때 나타나는 부자연스러운 사지 움직임을 지적하고 있어, 동일한 원숭이의 움직임 사건 및 상호작용을 서로 다른 관점에서 묘사한 것인지 재비교가 필요합니다.\",\n      \"separation_basis\": \"none\"\n    }\n  ]\n}",
+                "thoughtSignature": "AY89a1/eHFiZgUfIyoxxqF+hsYHL00QSd9dPMN9cJNxE0FTFZoWfI5+U5tYBRD3QDTGN7udncjDP+HA61oNMHqmFhYtU9ztKvqxa9/ZOM9S/KkWgtAwh"
+              }
+            ]
+          },
+          "finishReason": "STOP"
+        }
+      ],
+      "usageMetadata": {
+        "promptTokenCount": 1808,
+        "candidatesTokenCount": 616,
+        "totalTokenCount": 2424,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1808
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 616
+          }
+        ]
+      },
+      "modelVersion": "gemini-3.8-flash",
+      "createTime": "2026-11-12T09:41:32.454426Z",
+      "responseId": "zIn1apreG7ybvdAPisbICA"
+    },
+    "elapsed_seconds": 5.571193755000422
+  },
+  {
+    "model": "gemini-3.8-flash",
+    "phase": "evaluation",
+    "attempt": "attempt-001",
+    "request_sha256": "1cd5fa97f209e180850db6a62fcf0a261d121306d645bedaea86c6660fe83d84",
+    "status": "received",
+    "raw_response": {
+      "candidates": [
+        {
+          "content": {
+            "role": "model",
+            "parts": [
+              {
+                "text": "{\n  \"references\": [\n    {\n      \"id\": \"R1\",\n      \"summary_ko\": \"원숭이가 사과 뒤에서 한 번 점프하기보다는 이리저리 뛰며 폴짝거림\",\n      \"claims\": [\n        {\n          \"id\": \"R1.S1\",\n          \"evidence\": \"the monkey is more hopping about than jumping once behind the apple\",\n          \"symptom_ko\": \"원숭이가 사과 뒤에서 한 번 점프하는 대신 이리저리 폴짝거림\",\n          \"role\": \"complaint\"\n        }\n      ]\n    }\n  ],\n  \"candidates\": [\n    {\n      \"id\": \"C3\",\n      \"summary_ko\": \"원숭이가 중앙 사과 주위를 이동할 때 일관되지 않은 신체 비율과 부자연스러운 사지 움직임을 보임\",\n      \"target_evidence\": \"The monkey\",\n      \"interaction_evidence\": \"shifting around the central apple\",\n      \"change_evidence\": \"exhibits inconsistent anatomical proportions and unnatural limb movements\",\n      \"scope\": \"individual\"\n    }\n  ],\n  \"pairs\": [\n    {\n      \"reference_id\": \"R1\",\n      \"candidate_id\": \"C3\",\n      \"target_relation\": \"same_interaction\",\n      \"event_relation\": \"same_event_different_aspect\",\n      \"description_consistency\": \"compatible\",\n      \"conflict_scope\": \"none\",\n      \"reference_claim_ids\": [\n        \"R1.S1\"\n      ],\n      \"reference_evidence\": \"the monkey is more hopping about than jumping once behind the apple\",\n      \"candidate_evidence\": \"The monkey exhibits inconsistent anatomical proportions and unnatural limb movements while shifting around the central apple.\",\n      \"shared_event_ko\": \"원숭이가 사과 근처에서 의도된 한 번의 점프 대신 이리저리 이동하며 부자연스러운 움직임을 보이는 동일한 동작 구간을 다루고 있습니다.\",\n      \"coexistence_explanation_ko\": \"\",\n      \"conflicts_ko\": [],\n      \"reason_ko\": \"참조는 원숭이가 사과 뒤에서 단일 점프를 하지 않고 이리저리 폴짝거리는 이상 동작을 지적했고, 후보는 사과 주변을 이동할 때 나타나는 사지의 부자연스러운 움직임 및 신체 비율 문제를 지적하고 있어 동일한 이동/점프 동작의 서로 다른 측면을 설명한 호환 가능한 관찰입니다.\",\n      \"event_link\": \"same_observation\",\n      \"separation_basis\": \"none\"\n    }\n  ]\n}",
+                "thoughtSignature": "AY89a1/WXRzq8lNAsxxr0GBdqaU8p/oH1dO7gWtY0BqNnPsdi0drVvv+gsk5Wv7MBUQ77grJXGqF0QnZ7KZnr4+FwtvJxIUOyGA9SXx4T1e50eSPYd/Y"
+              }
+            ]
+          },
+          "finishReason": "STOP"
+        }
+      ],
+      "usageMetadata": {
+        "promptTokenCount": 2887,
+        "candidatesTokenCount": 595,
+        "totalTokenCount": 3482,
+        "trafficType": "ON_DEMAND",
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2887
+          }
+        ],
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 595
+          }
+        ]
+      },
+      "modelVersion": "gemini-3.8-flash",
+      "createTime": "2026-11-12T09:41:38.091592Z",
+      "responseId": "0on1asjLBdmdvdAPgP3MmAE"
+    },
+    "elapsed_seconds": 6.118608380998921
+  }
+]

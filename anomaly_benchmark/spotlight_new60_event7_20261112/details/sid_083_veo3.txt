@@ -1,0 +1,46 @@
+sid_083_veo3
+신규 60개 · Gemini 단독 판정: hit
+R–C 의미 대응: 대응 있음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+3rd person view. Man from behind. Lots of Marshall amps out of focus in the backround. Light from above.
+
+원본 라벨 R
+R1 (hard, 0.500–4.400초): 손가락이 약간 부자연스러워 보임
+원문: Fingers looks slightly unnatural
+R2 (hard, 3.600–4.200초): 데님 재킷이 너무 고무 재질처럼 보임
+원문: Demin jacket looks too rubbery
+R3 (medium, 2.400–3.800초): 재킷이 비현실적인 방식으로 늘어났다가 되돌아옴
+원문: the jacket stretches and comes back in an unreal way
+
+검출 후보 C
+C1 (3.000–4.500초): [Gemini] 남자의 팔이 옆으로 퍼지며 변형되고 재킷이 줄어들면서 사라지거나 몸통에 융합됨
+원문: The man's arms flare out laterally, morph, and then vanish or blend back into his torso as the jacket shrinks.
+종류: model_proposal / bbox: [0.22, 0.44, 0.77, 0.99]
+C2 (3.300–4.500초): [Gemini] 손과 아래 팔의 자세가 급격히 바뀌고 엉덩이 부근에서 변형 및 융합된 후 원래대로 돌아옴
+원문: The person's hands and lower arms abruptly alter posture and partially merge or deform awkwardly against the hips before returning to a straight stance.
+종류: model_proposal / bbox: None
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 손가락(Fingers)의 부자연스러움에 국한된 이상을 지적하는 반면, 후보는 남성의 팔(man's arms)이 양옆으로 벌어지고 변형된 후 사라지거나 몸통으로 흡수되는 전체적인 팔 및 재킷의 거대한 형태 변형 이상을 서술하고 있어 대상 부위 및 상호작용/현상이 완전히 구분됩니다.
+R1 ↔ C2 / 판단 보류 / 시간도 일치
+동일 사건 여부/불일치 확정 보류: 손가락의 미세한 부자연스러움과 손/하완의 자세 급변 및 융합 현상이 동일한 사건에 기인한 것인지 설명만으로는 판단하기에 정보가 부족합니다.
+R2 ↔ C1 / 판단 보류 / 시간도 일치
+동일 사건 여부/불일치 확정 보류: 참조의 데님 재킷이 고무처럼 보인다는 질감/물성 불만과 후보의 재킷 수축 현상이 동일한 물리적 변형 현상에서 기인한 것인지 아니면 전혀 별개의 현상인지 텍스트 정보만으로는 확정할 수 없습니다.
+R2 ↔ C2 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 데님 재킷의 고무 같은 비정상적 질감/동작을 지적하는 반면, 후보는 인물의 손과 하완이 자세를 바꾸며 엉덩이 쪽과 어색하게 융합/변형되는 신체 관절 및 자세 문제를 기술하고 있어 대상 및 상호작용 현상이 명확히 분리됩니다.
+R3 ↔ C1 / 의미 대응 / 시간도 일치
+재킷의 비현실적인 신축 및 복원 과정 중 수축하는 양상을 기술한 것으로 동일한 재킷 변형 현상의 다른 측면을 기술하고 있습니다.
+두 설명의 양립 근거: 참조는 재킷이 비현실적으로 늘어났다가 되돌아오는 전체적인 탄성 변형을 묘사하고, 후보는 팔이 변형되면서 재킷이 줄어드는(수축/복원) 국면을 기술하여 하나의 비현실적 재킷 변형 사건의 서로 다른 측면을 설명합니다.
+minor_discrepancy / matched_claim 허용 규칙 적용 · 이번 영상은 사람 미검수
+R3 ↔ C2 / 판단 보류 / 시간도 일치
+동일 사건 여부/불일치 확정 보류: 참조는 재킷이 비현실적으로 늘어났다 돌아오는 현상을 지적하고, 후보는 손과 아래 팔이 엉덩이 쪽에서 어색하게 변형/병합되었다가 원래 자세로 돌아오는 현상(target에 jacket 소매 포함)을 설명합니다. 팔과 소매/재킷 부위의 왜곡 현상이 동일한 물리적 변형에 대한 관점 차이일 가능성을 배제할 명확한 분리 증거가 부족하므로 description_only에 따른 불충분으로 분류합니다.
+
+채점 검증 상태
+유효 쌍 6 / 미사용 쌍 0

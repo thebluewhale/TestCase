@@ -1,0 +1,54 @@
+sid_020_ltx2
+신규 60개 · Gemini 단독 판정: hit
+R–C 의미 대응: 대응 있음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+A waiter clears a table, wipes it clean, and then sets new place settings.
+
+원본 라벨 R
+R1 (easy, 2.800–3.500초): 냅킨이 허공에서 갑자기 나타남
+원문: napkin appears out of nowhere
+R2 (easy, 0.000–8.000초): 웨이터가 테이블을 전혀 치우지 않고 새 천만 얹은 채 더러운 접시를 그대로 남겨둠
+원문: the waiter does not clear the table at all, only puts new cloths on it and leaves a dirty plate there
+
+검출 후보 C
+C1 (0.750–2.750초): [Gemini] 와인잔이 나타났다가 사라진 자리에 천 냅킨이 대신 나타남
+원문: A wine glass appears in the waiter's right hand and is set down, then vanishes while being handled before a cloth napkin takes its place.
+종류: model_proposal / bbox: [0.413, 0.068, 0.724, 0.288]
+C2 (3.200–6.800초): [Gemini] 웨이터 손에 천 복제 형태가 갑자기 나타남
+원문: The waiter picks up a white cloth from the table and shakes it, but the folded napkin on the right side of the table remains untouched and suddenly duplicate cloth forms appear in his hands.
+종류: model_proposal / bbox: None
+C3 (0.000–8.040초): [프롬프트 검사] 웨이터가 테이블의 접시나 기물을 치우지 않고 그대로 둠
+원문: 웨이터가 테이블의 접시나 기물을 치우지 않고 그대로 둠
+종류: model_proposal / bbox: [0.0, 0.5, 1.0, 1.0]
+C4 (0.000–8.040초): [프롬프트 검사] 테이블 표면을 닦는 동작이 나타나지 않음
+원문: 테이블 표면을 닦는 동작이 나타나지 않음
+종류: model_proposal / bbox: [0.0, 0.5, 1.0, 1.0]
+
+자동 의미 대응
+R1 ↔ C1 / 의미 대응 / 시간 차이 있음
+동일한 냅킨의 갑작스러운 출현 현상을 기술하며, 대체 출현과 허공 출현이라는 관점 차이가 공존 가능한 경미한 차이입니다.
+두 설명의 양립 근거: 참조는 냅킨이 난데없이 나타났다는 점에 집중하여 서술했고, 후보는 와인잔이 사라진 직후 냅킨이 그 자리를 대체하여 나타나는 과정을 기술하여 같은 출현 사건의 다른 측면을 표현할 수 있습니다.
+minor_discrepancy / matched_claim 허용 규칙 적용 · 이번 영상은 사람 미검수
+R1 ↔ C2 / 판단 보류 / 시간 차이 있음
+동일 사건 여부/불일치 확정 보류: 후보의 복제된 천 출현과 참조의 냅킨 출현이 동일한 대상을 지칭하는지 증거가 충분하지 않아 불확실합니다.
+R1 ↔ C3 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조 주장은 냅킨이 갑자기 출현하는 이상 현상을 지적하는 반면, 후보는 웨이터가 접시나 기물을 치우지 않는 미동작 문제를 지적하고 있어 대상 객체와 상호작용 자체가 완전히 상이합니다.
+R1 ↔ C4 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조 주장은 냅킨이 갑자기 나타나는 출현 현상을 다루고 있으나, 후보는 테이블 표면을 닦는 동작의 결여를 지적하므로 문제의 본질과 대상 상호작용이 전혀 다른 별개의 사건입니다.
+R2 ↔ C1 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 웨이터가 테이블을 치우지 않고 더러운 접시를 남겨두는 불만을 기술한 반면, 후보 C1은 웨이터 손에서 와인잔이 나타났다 사라지고 냅킨으로 바뀌는 물리적 이상 현상을 설명하므로 상호작용 및 대상이 완전히 다릅니다.
+R2 ↔ C2 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 테이블을 치우지 않고 접시를 그대로 둔 채 새 천만 얹은 것에 대한 불만인 반면, 후보 C2는 웨이터의 손에 복제된 천 형태가 갑자기 나타나는 시각적 이상을 기술하고 있어 서로 다른 발생 사건입니다.
+R2 ↔ C3 / 의미 대응 / 시간도 일치
+참조의 '웨이터가 테이블을 치우지 않고 접시를 그대로 둠'과 후보의 '웨이터가 테이블의 접시나 기물을 치우지 않고 그대로 둠'은 동일한 대상 및 행위 누락을 정확히 일치하여 설명합니다.
+R2 ↔ C4 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조의 핵심 불만은 더러운 접시를 치우지 않고 그대로 둔 채 새 천만 얹었다는 구체적인 식기 정리 미이행인 반면, 후보 C4는 테이블 표면을 닦는 행위(wipe)의 결여를 지적하므로 구체적인 대상과 상호작용이 구별됩니다.
+
+채점 검증 상태
+유효 쌍 8 / 미사용 쌍 0

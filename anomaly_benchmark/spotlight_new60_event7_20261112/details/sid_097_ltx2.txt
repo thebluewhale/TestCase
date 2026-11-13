@@ -1,0 +1,37 @@
+sid_097_ltx2
+신규 60개 · Gemini 단독 판정: hit
+R–C 의미 대응: 대응 있음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+The modern hotel lobby is filled with artistic and technological elements, and a huge sculpture stands in the center.2K,16:9  
+
+원본 라벨 R
+R1 (easy, 4.500–6.000초): 사람이 조각상 중앙을 걸어갈 때 은색 막대가 서서히 나타나며, 다른 은색 막대들이 사라지는 현상도 발생함.
+원문: A silver bar appears gradually as the person walks in the middle of the sculpture. There are other instances of silver bars disappearing too
+
+검출 후보 C
+C1 (0.000–1.120초): [Gemini] 카메라가 앞으로 팬할 때 전경의 좌석 가구가 저절로 사라짐.
+원문: Foreground seating furniture spontaneously disappears as the camera pans forward.
+종류: model_proposal / bbox: [0.63, 0.72, 0.94, 0.85]
+C2 (0.400–1.500초): [Gemini] 카메라가 앞으로 이동함에 따라 전경 우측의 갈색 안락의자들이 갑자기 사라짐.
+원문: The brown armchairs in the foreground on the right vanish suddenly as the camera pans forward.
+종류: model_proposal / bbox: None
+C3 (2.000–8.000초): [Gemini] 카메라 움직임 동안 중앙 구체 조각상의 내부 격자 구조와 기하학적 막대들이 지속적으로 변형되고 연결이 바뀜.
+원문: Internal lattice structure and geometric bars of the central sphere continually morph and shift connections during camera motion.
+종류: model_proposal / bbox: None
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조 주장은 은색 막대(silver bars)가 사라지는 현상을 지적하는 반면, 후보는 전경 좌석 가구(Foreground seating furniture)가 사라지는 현상을 설명하므로 대상 엔티티가 명확히 분리됩니다.
+R1 ↔ C2 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조 주장은 은색 막대(silver bars)가 사라지는 현상을 다루고 있으나, 후보는 우측 전경의 갈색 안락의자(The brown armchairs in the foreground on the right)가 사라지는 현상을 다루고 있어 서로 다른 대상에 관한 불만입니다.
+R1 ↔ C3 / 의미 대응 / 시간도 일치
+참조의 조각상 내 은색 막대가 나타나고 사라지는 결함과 후보의 중앙 구체 내부 기하학적 막대들의 변형 및 연결 변경은 동일한 구조물 막대 아티팩트의 다른 측면 기술에 해당합니다.
+
+채점 검증 상태
+유효 쌍 3 / 미사용 쌍 0

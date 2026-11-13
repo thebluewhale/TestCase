@@ -1,0 +1,53 @@
+sid_144_seedance
+신규 60개 · Gemini 단독 판정: hit
+R–C 의미 대응: 대응 있음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+A round cake with vanilla-colored buttercream frosting sits on a flat surface in an indoor setting with soft lighting. The camera shows the cake's top and frosting texture from different angles.
+
+원본 라벨 R
+R1 (hard, 1.300–2.700초): 종이가 케이크가 회전하는 속도보다 더 빠르게 회전함.
+원문: The paper rotates correctly, but faster than the cake is rotating? 
+R2 (hard, 0.700–1.100초): 케이크의 모든 면을 보여주지만 한 가지 각도로만 보여주어 의도된 것인지 확실하지 않다고 지적함
+원문: While it shows all sides of the cake, it only shows one angle on the cake, unsure if that's what was intended 
+R3 (medium, 0.500–4.200초): 케이크가 회전하는 도중 가운데에 있던 구멍이 마법처럼 저절로 채워짐.
+원문: The hole in the middle of the cake is magically filled in while it is spinning.
+
+검출 후보 C
+C1 (0.000–5.042초): [Gemini] 회전하는 케이크 상단의 프로스팅 소용돌이가 회전과 무관하게 계속 형태가 변하고 흐려짐.
+원문: The textured frosting swirls on top of the rotating cake constantly morph, blur, and reshape independently of rotation.
+종류: model_proposal / bbox: [0.117, 0.141, 0.908, 0.771]
+C2 (0.000–5.040초): [Gemini] 케이크 상단의 프로스팅 소용돌이와 질감이 회전함에 따라 이동하고 녹으며 변형됨.
+원문: The frosting swirls and texture ridges on top of the cake shift, melt, and continually morph shape as the cake rotates.
+종류: model_proposal / bbox: None
+C3 (0.000–5.042초): [프롬프트 검사] 카메라가 다양한 각도를 보여주지 못하고 단일 고정 시점만 유지됨.
+원문: 카메라가 케이크 윗면과 프로스팅 질감을 여러 각도에서 보여주어야 하나 단일한 고정 시점만 유지됨
+종류: model_proposal / bbox: None
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 종이가 케이크보다 빠르게 회전하는 회전 속도 불일치를 문제 삼는 반면, 후보는 케이크 상단 프로스팅 소용돌이의 형태 변형 및 흐릿해짐을 문제 삼으므로 대상 개체와 현상이 완전히 다릅니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 종이의 회전 속도 문제를 다루는 반면, 후보는 케이크 상단 프로스팅이 녹고 형태가 변형되는 현상을 다루고 있어 대상 개체와 발생 현상이 완전히 구분됩니다.
+R1 ↔ C3 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 종이의 물리적 회전 속도 결함을 지적하는 반면, 후보는 카메라 시점의 고정 문제를 지적하고 있어 문제 대상과 사안이 완전히 다릅니다.
+R2 ↔ C1 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 케이크를 촬영한 카메라 각도가 단 하나뿐이라는 영상 구도 및 시점상의 문제를 불만으로 삼고 있는 반면, 후보는 케이크 상단 프로스팅 질감이 변형되고 뭉개지는 물리적 그래픽 결함을 지적하고 있어 문제의 대상과 현상이 명확히 구분됩니다.
+R2 ↔ C2 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 영상이 단 한 각도로만 케이크를 보여준다는 카메라 시점 문제를 제기하는 반면, 후보는 케이크 상단의 프로스팅이 녹아내리고 형태가 변형된다는 물리적 생성 오류를 기술하므로 서로 완전히 다른 현상입니다.
+R2 ↔ C3 / 의미 대응 / 시간 차이 있음
+참조의 핵심 불만 사항(케이크를 한 가지 각도로만 보여줌)과 후보의 관찰(단일한 고정 시점만 유지됨)이 동일한 카메라 시점 제한 현상을 설명하고 있습니다.
+R3 ↔ C1 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 케이크 중앙의 구멍이 저절로 메워지는 현상을 다루지만, 후보는 케이크 상단에 있는 프로스팅 소용돌이의 블러 및 형태 변형을 다루므로 대상 부위와 이상 현상이 명확히 다릅니다.
+R3 ↔ C2 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 케이크 한가운데의 구멍이 채워져 사라지는 현상인 반면, 후보는 상단 프로스팅 질감과 능선이 녹거나 변형되는 현상으로 문제의 대상과 상호작용이 전혀 다릅니다.
+R3 ↔ C3 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 케이크 중앙 구멍의 비정상적 소멸을 지적하지만, 후보는 카메라 시점의 고정 및 다양성 부재를 지적하므로 전혀 다른 내용입니다.
+
+채점 검증 상태
+유효 쌍 9 / 미사용 쌍 0

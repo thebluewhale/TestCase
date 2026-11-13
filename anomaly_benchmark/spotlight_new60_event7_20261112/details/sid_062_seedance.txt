@@ -1,0 +1,37 @@
+sid_062_seedance
+신규 60개 · Gemini 단독 판정: no_hit
+R–C 의미 대응: 대응 없음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+an Australian aborigine standing in the middle of the winter field and watching around amazed
+
+원본 라벨 R
+R1 (hard, 0.100–3.500초): 사람의 발 아래 눈에 실제처럼 발자국/눌린 자국이 생기지 않음.
+원문: the snow under the persons feet does not make any impressions as it would in real life
+
+검출 후보 C
+C1 (0.000–5.042초): [Gemini] 스커트의 프린지 장식이 움직임에 따라 부자연스럽게 변형되고 일관성이 변화함.
+원문: The fringe elements on the skirt dynamically shift, morph, and change consistency unnaturally throughout the movement.
+종류: model_proposal / bbox: [0.428, 0.638, 0.603, 0.822]
+C2 (1.250–4.880초): [Gemini] 프린지 하의가 자연스러운 움직임과 무관하게 불규칙하게 뒤틀리고 이동함.
+원문: Fringed lower garment shifts and warps irregularly across frames independent of natural motion.
+종류: model_proposal / bbox: [0.38, 0.63, 0.58, 0.85]
+C3 (2.000–4.500초): [Gemini] 인물이 움직일 때 가슴 부분의 장식 패널 기하구조 및 패턴 일관성이 약간 변경됨.
+원문: Decorative patterned panel on the chest alters geometry and pattern consistency slightly as the figure moves.
+종류: model_proposal / bbox: [0.49, 0.22, 0.58, 0.6]
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 발 아래 눈에 자국이 남지 않는 지면 상호작용 문제를 지적하지만, 후보는 스커트 프린지 장식이 비정상적으로 변형되는 의상 문제를 설명하므로 대상과 상호작용이 완전히 다릅니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 발 아래 눈에 눌린 자국이 생기지 않는 환경 접촉 현상을 지적하는 반면, 후보는 하의 의복이 불규칙하게 왜곡되는 현상을 지적하므로 관련 엔티티와 사건이 완전히 분리됩니다.
+R1 ↔ C3 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 발 아래 눈 표면의 흔적 미발생 문제를 다루는 반면, 후보는 상체 가슴 부위의 장식 패턴 패널 변형을 다루므로 대상 부위와 이상 현상 모두 명백히 다른 독립된 사건입니다.
+
+채점 검증 상태
+유효 쌍 3 / 미사용 쌍 0

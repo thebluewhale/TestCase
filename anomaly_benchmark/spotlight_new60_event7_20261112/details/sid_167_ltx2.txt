@@ -1,0 +1,41 @@
+sid_167_ltx2
+신규 60개 · Gemini 단독 판정: pending
+R–C 의미 대응: 판단 보류
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 무효 · 원시 상태: invalid_response
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+A nighttime scene features a large, illuminated structure resembling a mythical dragon or similar creature. The orange and yellow structure, made of lights or lanterns, is reflected in a body of water.
+
+원본 라벨 R
+R1 (hard, 0.200–4.000초): 차량들의 움직임이 현실적인 만큼 사실적으로 보이지 않음.
+원문: The cars do not appear to be moving as realistic as they could
+R2 (hard, 3.700–4.900초): 왼쪽 차가 사라졌다가 다시 나타남.
+원문: Car on the left disappears and reappears.
+
+검출 후보 C
+C1 (4.680–4.800초): [측정 제안 · 결함 미확정] 밝기·구조가 바뀌었다가 돌아오는 패턴 및 깜빡임/순간 변형 탐지 제안.
+원문: 밝기·구조가 바뀌었다가 돌아오는 패턴입니다. 깜빡임·순간 변형을 확인하세요.
+종류: measurement_proposal / bbox: [0.0, 0.0, 1.0, 1.0]
+C2 (4.620–4.880초): [Gemini] 조명 구조물의 수면 반사가 갑자기 이동하고 떨림.
+원문: The water reflection of the illuminated structure abruptly shifts and jitters briefly.
+종류: model_proposal / bbox: [0.12, 0.77, 0.89, 0.98]
+C3 (4.500–7.000초): [Gemini] 불타는 용 조각상의 머리와 뿔 구조가 등장하면서 지속적으로 형태가 변형되고 재구성됨.
+원문: The fiery dragon sculpture grows upwards into frame as the camera tilts up, but its top head and horn structures continually reform and shift in shape as they emerge.
+종류: model_proposal / bbox: None
+
+자동 의미 대응
+유효한 채점 쌍 없음.
+
+채점 검증 상태
+유효 쌍 0 / 미사용 쌍 6
+{"status": "invalid_response", "reason": "Underspecified relation requires same target, evidence and uncertainty"}
+{"scope": "pair", "reference_id": "R1", "candidate_id": "C1", "reason": "Underspecified relation requires same target, evidence and uncertainty"}
+{"scope": "pair", "reference_id": "R1", "candidate_id": "C2", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R1", "candidate_id": "C3", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R2", "candidate_id": "C1", "reason": "Underspecified relation requires same target, evidence and uncertainty"}
+{"scope": "pair", "reference_id": "R2", "candidate_id": "C2", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R2", "candidate_id": "C3", "reason": "required_review_incomplete"}

@@ -1,0 +1,45 @@
+sid_167_seedance
+신규 60개 · Gemini 단독 판정: no_hit
+R–C 의미 대응: 대응 없음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+A nighttime scene features a large, illuminated structure resembling a mythical dragon or similar creature. The orange and yellow structure, made of lights or lanterns, is reflected in a body of water.
+
+원본 라벨 R
+R1 (hard, 2.200–2.700초): 용의 왼쪽 배경에서 자동차가 갑자기 나타나 언덕을 오르기 시작함.
+원문: A car suddenly appears in the background to the left of the dragon and begins driving up the hill.
+R2 (hard, 0.100–5.000초): 지상 동작(용의 흔들림, 배경의 자동차 이동)에 비해 별들이 너무 빠르게 움직임
+원문: The stars are moving too fast in comparison to the terrestrial action (dragon bobbing and cars moving in background). 
+
+검출 후보 C
+C1 (0.000–5.000초): [Gemini] 용의 머리 뿔과 수염 구조가 시간에 따라 미세하게 변형됨.
+원문: Dragon head subtly morphs horns and whiskers structure over time.
+종류: model_proposal / bbox: [0.24, 0.01, 0.52, 0.56]
+C2 (0.000–5.040초): [Gemini] 용의 머리와 뿔이 구조적 형태, 크기, 특징 비율 등에서 지속적으로 변형됨.
+원문: The dragon head and horns continuously morph in structural shape, scale, and feature proportions throughout the movement.
+종류: model_proposal / bbox: [0.15, 0.02, 0.5, 0.36]
+C3 (0.000–5.040초): [Gemini] 용의 몸통 표면 패널 라인과 비늘이 미끄러지듯 이동할 때 늘어나고 일그러짐.
+원문: Grid-like lantern panel lines and scales across the dragon's body stretch, warp, and inconsistently shift as it glides.
+종류: model_proposal / bbox: [0.24, 0.25, 0.86, 0.55]
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조 내용은 배경에서 갑자기 나타나 언덕을 오르는 자동차에 대한 문제 제기인 반면, 후보 내용은 용 머리의 뿔과 수염 구조가 서서히 변형되는 현상에 관한 것으로 대상 개체와 발생하는 사건 자체가 완전히 다릅니다.
+R1 ↔ C2 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조 내용은 배경의 자동차가 불쑥 나타나 주행하는 이상 현상인 반면, 후보 내용은 용의 머리와 뿔 형태 및 비율 변형을 지적하고 있어 관찰 대상과 사건이 서로 명백히 구분됩니다.
+R1 ↔ C3 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조 내용은 배경에서 등장하는 자동차에 대한 지적이며, 후보 내용은 용 몸통의 격자무늬 패널 선과 비늘이 늘어나고 왜곡되는 표면 텍스처 이상에 대한 것으로 서로 완전히 다른 개체와 사건입니다.
+R2 ↔ C1 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 지상 동작 대비 하늘의 별들이 너무 빠르게 이동하는 물리적 속도 이상을 지적하는 반면, 후보는 용 머리의 뿔과 수염 구조가 서서히 모핑/변형되는 형태 변형을 지적하므로 문제의 대상 및 상호작용이 전혀 다른 별개의 현상입니다.
+R2 ↔ C2 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 별들의 지나치게 빠른 이동 속도에 대한 불만인 반면, 후보는 용 머리와 뿔의 구조적 형태, 크기, 비율 변형에 대한 불만으로 서로 다른 대상에 대한 상이한 이상 현상입니다.
+R2 ↔ C3 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 별들의 비정상적 이동 속도를 지적하는 반면, 후보는 용 몸통 표면의 격자 선 및 비늘의 뒤틀림과 늘어남을 지적하고 있어 대상과 발생하는 현상이 완전히 구별됩니다.
+
+채점 검증 상태
+유효 쌍 6 / 미사용 쌍 0

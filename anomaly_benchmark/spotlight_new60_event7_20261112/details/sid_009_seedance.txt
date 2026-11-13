@@ -1,0 +1,61 @@
+sid_009_seedance
+신규 60개 · Gemini 단독 판정: hit
+R–C 의미 대응: 대응 있음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 일부 유효 · 원시 상태: invalid_response
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+A cat knocks a plant off a windowsill, and then runs away.
+
+원본 라벨 R
+R1 (hard, 3.400–4.100초): 식물이 지나간 후 흙이 남아 있어야 한다는 지적
+원문: Dirt should be left over after the plant.
+R2 (medium, 1.100–2.100초): 고양이가 식물을 넘어뜨릴 때의 움직임이 지나치게 유연하고 부자연스럽다는 지적.
+원문: When the cat knocks over the plant the motion is way too fluid and not natural. 
+R3 (medium, 2.400–3.900초): 식물이 떨어질 때의 움직임이 부자연스럽고, 고양이의 팔 움직임 또한 부자연스럽다고 지적함.
+원문: When the plant falls the motion is not natural and the cats arm movement isn't natural. 
+
+검출 후보 C
+C1 (3.083–3.958초): [측정 제안 · 결함 미확정] 영상 특징과 픽셀 구조 변화 구간 감지 제안
+원문: 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+종류: measurement_proposal / bbox: [0.010416666666666666, 0.13761467889908258, 0.625, 1.0]
+C2 (2.880–3.420초): [Gemini] 식물과 흙 덩어리가 앞으로 쓰러지며 화면 밖으로 갑자기 사라짐
+원문: The potted plant and soil mass fall forward and abruptly vanish or dissolve off the frame inconsistently.
+종류: model_proposal / bbox: [0.43, 0.44, 0.94, 0.99]
+C3 (2.800–3.400초): [Gemini] 화분 없는 식물이 쓰러진 뒤 창틀에서 완전히 사라짐
+원문: The potted plant without a pot tips over and then completely vanishes from the windowsill as the kitten moves past it.
+종류: model_proposal / bbox: None
+C4 (1.700–2.800초): [Gemini] 아기 고양이 몸통이 흙 덩어리에 기대며 비정상적으로 늘어남
+원문: The kitten's body unnaturally elongates and stretches horizontally while leaning on the root ball before jumping down.
+종류: model_proposal / bbox: None
+C5 (0.380–2.880초): [프롬프트 검사] 고양이가 식물을 창틀 아래로 떨어뜨리지 않고 쓰러뜨리기만 함
+원문: 고양이가 식물을 창틀 아래로 떨어뜨리지 않고 창틀 위에 쓰러뜨리기만 함.
+종류: model_proposal / bbox: [0.43, 0.46, 0.99, 0.86]
+
+자동 의미 대응
+R2 ↔ C4 / 의미 대응 / 시간도 일치
+R2에서 고양이가 식물을 넘어뜨릴 때 움직임이 지나치게 유연하고 부자연스럽다는 지적은, C4에서 고양이의 몸통이 비정상적으로 늘어나고 왜곡된다는 구체적 관찰과 동일 사건의 양상을 설명합니다.
+R3 ↔ C2 / 의미 대응 / 시간도 일치
+R3.S1의 식물이 떨어질 때 움직임이 부자연스럽다는 지적과 C2의 식물/흙이 앞으로 쓰러지며 갑자기 소멸하는 부자연스러운 현상은 동일 사건의 구체적 설명입니다.
+R3 ↔ C3 / 의미 대응 / 시간도 일치
+R3.S1의 식물 낙하 시 부자연스러운 움직임은 C3의 식물이 쓰러진 뒤 완전히 사라지는 현상과 부합합니다.
+R3 ↔ C4 / 의미 대응 / 시간도 일치
+R3.S2의 고양이 팔 움직임이 부자연스럽다는 지적은 C4에서 고양이가 흙 덩어리를 짚고 넘어갈 때 몸이 부자연스럽게 늘어나는 동작과 동일한 고양이 신체 동작 오류를 설명합니다.
+
+채점 검증 상태
+유효 쌍 4 / 미사용 쌍 11
+{"status": "invalid_response", "reason": "Underspecified relation requires same target, evidence and uncertainty"}
+{"scope": "pair", "reference_id": "R1", "candidate_id": "C1", "reason": "Underspecified relation requires same target, evidence and uncertainty"}
+{"scope": "pair", "reference_id": "R1", "candidate_id": "C2", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R1", "candidate_id": "C3", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R1", "candidate_id": "C4", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R1", "candidate_id": "C5", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R2", "candidate_id": "C1", "reason": "Underspecified relation requires same target, evidence and uncertainty"}
+{"scope": "pair", "reference_id": "R2", "candidate_id": "C2", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R2", "candidate_id": "C3", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R2", "candidate_id": "C5", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R3", "candidate_id": "C1", "reason": "Underspecified relation requires same target, evidence and uncertainty"}
+{"scope": "pair", "reference_id": "R3", "candidate_id": "C5", "reason": "required_review_incomplete"}

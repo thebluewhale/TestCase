@@ -1,0 +1,52 @@
+sid_047_seedance
+신규 60개 · Gemini 단독 판정: hit
+R–C 의미 대응: 대응 있음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+A rabbit is on the left of a table, then the rabbit jumps to the front of the table.
+
+원본 라벨 R
+R1 (medium, 0.200–2.000초): 토끼가 테이블 앞에서 점프하지 않음
+원문: The rabbit does not jump infront of the table
+R2 (hard, 0.500–5.000초): 토끼가 점프하지 않으며 테이블 앞쪽의 위치 해석이 모호함
+원문: Rabbit does not "jump." Where the "front of the table" is is also up for interpretation
+
+검출 후보 C
+C1 (0.500–1.750초): [Gemini] 멈출 때 토끼의 귀가 길어지고 변형됨
+원문: The rabbit's ears morph, elongating and significantly increasing in proportional size as it comes to a stop.
+종류: model_proposal / bbox: [0.49, 0.32, 0.72, 0.55]
+C2 (0.000–1.700초): [Gemini] 홉 이동 중 토끼의 사지 및 체형이 변형되고 미끄러짐
+원문: The rabbit's limbs, body morphology, and movement unnaturally deform, slide, and morph during its hop across the surface before settling into a largely static pose.
+종류: model_proposal / bbox: None
+C3 (1.750–5.040초): [Gemini] 정지 후 토끼가 굳어 있고 미세한 떨림이 발생함
+원문: After coming to a stop, the rabbit remains almost frozen with subtle, inconsistent breathing micro-jitters along its fur silhouette.
+종류: model_proposal / bbox: None
+C4 (0.000–1.500초): [프롬프트 검사] 토끼가 테이블 앞쪽으로 점프하지 않고 우측 가장자리로 이동함
+원문: 토끼가 테이블 앞쪽으로 점프하지 않고 테이블 우측 가장자리로 이동하여 머무름
+종류: model_proposal / bbox: [0.08, 0.35, 0.9, 0.72]
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 테이블 앞에서 토끼가 점프하지 않는다는 동작의 부재를 문제 삼고 있으나, 후보는 토끼 귀가 길어지고 비율이 커지는 형태 왜곡을 지적하고 있어 상이한 상호작용 및 결함 현상을 다룹니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 토끼가 점프하지 않는다고 명시적으로 지적하는 반면, 후보는 표면을 건너는 도약(hop) 동작 중에 발생하는 신체 변형을 명시적으로 서술하여 동작 수행 여부 자체가 양립할 수 없습니다.
+R1 ↔ C3 / 미대응 / 시간 차이 있음
+명시적 별개 사건: 참조는 점프 동작이 수행되지 않는 점을 지적하지만, 후보는 이동을 멈춘 이후 거의 정지된 상태에서 발생하는 털의 미세한 떨림을 다루고 있어 서로 구분되는 별개의 현상입니다.
+R1 ↔ C4 / 의미 대응 / 시간도 일치
+참조와 후보 모두 토끼가 테이블 앞쪽으로 점프하지 않는다는 동일한 결함 내용을 일치하게 지적하고 있습니다.
+R2 ↔ C1 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 토끼가 점프 동작을 수행하지 않는다는 지시 불이행을 지적하지만, 후보는 정지 시 귀가 비정상적으로 길어지고 커지는 형태학적 변형을 지적하여 지적 대상과 상호작용이 전혀 다릅니다.
+R2 ↔ C2 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조는 토끼가 점프하지 않는다고 명시적으로 지적하는 반면, 후보는 토끼가 표면을 도약(hop)하는 동안 사지와 신체가 비정상적으로 변형되고 미끄러진다고 설명하여 핵심 진술이 정면으로 충돌합니다.
+R2 ↔ C3 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조의 점프 동작 부재 불만과 후보의 멈춘 후 털 윤곽의 미세한 호흡 떨림 및 동결 상태 지적은 전혀 다른 시점과 세부 현상을 다루는 별개의 사건입니다.
+R2 ↔ C4 / 의미 대응 / 시간도 일치
+참조의 점프 미수행 불만 및 앞쪽 위치 해석 문제를 후보가 테이블 앞쪽으로 점프하지 않고 우측 가장자리로 이동했다는 구체적 설명으로 일관되게 공유합니다.
+
+채점 검증 상태
+유효 쌍 8 / 미사용 쌍 0

@@ -1,0 +1,44 @@
+sid_043_seedance
+신규 60개 · Gemini 단독 판정: hit
+R–C 의미 대응: 대응 있음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+A monkey is on the right of a apple, then the monkey jumps to the behind of the apple.
+
+원본 라벨 R
+R1 (hard, 0.700–3.200초): 원숭이가 사과 뒤에서 한 번 점프하기보다는 이리저리 뛰며 폴짝거림
+원문: Almost perfect, but the monkey is more hopping about than jumping once behind the apple
+
+검출 후보 C
+C1 (1.750–2.250초): [Gemini] 사과가 왼쪽 프레임 가장자리에서 나타남
+원문: An apple partially materializes into the frame from the left edge without prior entry motion.
+종류: model_proposal / bbox: [0.0, 0.618, 0.057, 0.887]
+C2 (1.750–2.210초): [Gemini] 두 번째 사과가 왼쪽 가장자리에 나타남
+원문: A second apple appears on the left edge without clear spatial origin.
+종류: model_proposal / bbox: [0.0, 0.58, 0.06, 0.92]
+C3 (0.350–1.750초): [Gemini] 중앙 사과 주변에서 원숭이의 신체 비율 및 사지 움직임이 부자연스러움
+원문: The monkey exhibits inconsistent anatomical proportions and unnatural limb movements while shifting around the central apple.
+종류: model_proposal / bbox: [0.05, 0.05, 0.98, 0.88]
+C4 (0.125–3.000초): [프롬프트 검사] 원숭이가 점프하지 않고 걸어서 사과 뒤로 이동함
+원문: 원숭이가 점프하여 이동할 것으로 예상되었으나 걸어서 사과 뒤로 이동함
+종류: model_proposal / bbox: [0.038, 0.024, 0.941, 0.887]
+
+자동 의미 대응
+R1 ↔ C1 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조 설명은 사과 뒤에서 움직이는 원숭이의 동작(한 번 점프하지 않고 폴짝거림)에 대한 불만인 반면, 후보 설명은 프레임 왼쪽 가장자리에서 사과가 출현하는 현상에 관한 것으로 대상 엔티티와 상호작용이 명확히 다릅니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+명시적 별개 사건: 참조 설명은 원숭이의 점프/홉 동작에 대한 불만을 제기하는 반면, 후보 설명은 왼쪽 가장자리에 두 번째 사과가 나타나는 현상에 대한 것으로 대상 엔티티와 발생 사건이 명확히 구분됩니다.
+R1 ↔ C3 / 의미 대응 / 시간도 일치
+참조는 원숭이가 사과 뒤에서 단일 점프를 하지 않고 이리저리 폴짝거리는 이상 동작을 지적했고, 후보는 사과 주변을 이동할 때 나타나는 사지의 부자연스러운 움직임 및 신체 비율 문제를 지적하고 있어 동일한 이동/점프 동작의 서로 다른 측면을 설명한 호환 가능한 관찰입니다.
+R1 ↔ C4 / 의미 대응 / 시간도 일치
+사과 뒤에서 원숭이가 기대된 점프 대신 다른 이동을 보인 동일한 상황을 지적하고 있으며, 구체적 이동 양태(폴짝거림 vs 걸음)에 미세한 기술 차이가 있습니다.
+두 설명의 양립 근거: 둘 다 기대된 단일 점프 동작 대신 다른 이동 방식(폴짝거리며 돌아다님 vs 걸어서 이동함)을 취했음을 기술한 것으로 동일한 이동 동작에 대한 묘사 차이로 양립할 수 있습니다.
+minor_discrepancy / matched_claim 허용 규칙 적용 · 이번 영상은 사람 미검수
+
+채점 검증 상태
+유효 쌍 4 / 미사용 쌍 0

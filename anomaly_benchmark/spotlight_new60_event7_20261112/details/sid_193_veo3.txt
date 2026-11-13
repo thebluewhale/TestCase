@@ -1,0 +1,44 @@
+sid_193_veo3
+신규 60개 · Gemini 단독 판정: hit
+R–C 의미 대응: 대응 있음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 일부 유효 · 원시 상태: invalid_response
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+A male character rides a horse across a grassy field with trees in the background, holding a bow and arrow. The camera shows a first-person perspective, following the character as they ride and prepare to shoot.
+
+원본 라벨 R
+R1 (medium, 5.800–6.800초): 활과 화살을 잘못 잡고 있음.
+원문: Bow and arrow held incorrectly.
+R2 (easy, 4.700–6.200초): 활을 당기는 도중에 활시위가 끊어짐
+원문: the string of the bow breaks while being drawn
+
+검출 후보 C
+C1 (4.208–5.792초): [측정 제안 · 결함 미확정] 영상 특징과 픽셀 구조 변화가 감지된 영역.
+원문: 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+종류: measurement_proposal / bbox: [0.0, 0.0, 1.0, 1.0]
+C2 (4.200–5.800초): [Gemini] 말 위에서 활을 당기는 중 화살대와 활 몸통이 클리핑, 소실 및 재구성됨.
+원문: An arrow shaft and bow limbs spontaneously clip, disappear, and reconfigure while being drawn on horseback.
+종류: model_proposal / bbox: [0.47, 0.44, 0.77, 0.99]
+C3 (4.500–6.800초): [Gemini] 활과 화살이 기수의 손에 대해 급격하게 스내핑 및 부자연스럽게 재정렬됨.
+원문: The bow and arrow undergo rapid spatial snapping and unnatural realignment relative to the rider's hands.
+종류: model_proposal / bbox: None
+
+자동 의미 대응
+R1 ↔ C1 / 판단 보류 / 시간 차이 있음
+동일 사건 여부/불일치 확정 보류: C1은 일반적인 화면 측정 변화 감지 제안으로 특정 엔티티나 잘못된 파지 결함과 연결되지 않습니다.
+R1 ↔ C2 / 판단 보류 / 시간 차이 있음
+동일 사건 여부/불일치 확정 보류: 활과 화살을 조작하는 동일 대상군을 다루고 있으나, 잘못된 파지와 활 몸통/화살대의 클리핑/소실/재구성이 동일 사건을 기술하는지 확인하기 어렵습니다.
+R1 ↔ C3 / 의미 대응 / 시간도 일치
+활과 화살을 손으로 잡고 있는 상황에서 손에 상대적인 부자연스러운 정렬/스내핑 현상은 잘못 파지된 상태에 대응합니다.
+R2 ↔ C1 / 판단 보류 / 시간도 일치
+동일 사건 여부/불일치 확정 보류: C1은 일반적인 화면 변화 탐지 제안으로 활시위가 끊어지는 구체적 결함과 연관성이 없습니다.
+
+채점 검증 상태
+유효 쌍 4 / 미사용 쌍 2
+{"status": "invalid_response", "reason": "Entity separation requires explicitly different targets"}
+{"scope": "pair", "reference_id": "R2", "candidate_id": "C2", "reason": "Entity separation requires explicitly different targets"}
+{"scope": "pair", "reference_id": "R2", "candidate_id": "C3", "reason": "required_review_incomplete"}

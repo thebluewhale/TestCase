@@ -1,0 +1,47 @@
+sid_047_ltx2
+신규 60개 · Gemini 단독 판정: hit
+R–C 의미 대응: 대응 있음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 일부 유효 · 원시 상태: invalid_response
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+A rabbit is on the left of a table, then the rabbit jumps to the front of the table.
+
+원본 라벨 R
+R1 (easy, 2.300–5.300초): 토끼가 프롬프트에 명시된 테이블 앞쪽이 아닌 테이블 오른쪽으로 점프함.
+원문: The rabbit jumps to the right of the table, not the front of the table as the prompt states.
+R2 (hard, 5.400–6.100초): 토끼 얼굴 오른쪽 수염이 누락됨
+원문: Wiskers on the right side of the rabbit's face are missing
+
+검출 후보 C
+C1 (1.720–2.240초): [측정 제안 · 결함 미확정] 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+원문: 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+종류: measurement_proposal / bbox: [0.21354166666666666, 0.027777777777777776, 0.953125, 0.8518518518518519]
+C2 (1.750–2.700초): [Gemini] 토끼 몸이 늘어나고 형태가 왜곡되며 벤치를 부자연스럽게 도약함
+원문: The rabbit's body stretches, distorts morphologically, and hops unnaturally across the bench with shifting limbs and anatomy.
+종류: model_proposal / bbox: [0.14, 0.08, 0.69, 0.77]
+C3 (1.900–2.700초): [Gemini] 점프 및 착지 과정에서 토끼가 늘어나고 부자연스럽게 변형되며 회전함
+원문: During the jump and landing sequence, the rabbit stretches, deforms unnaturally, and rotates inconsistently before settling.
+종류: model_proposal / bbox: None
+C4 (2.000–3.000초): [프롬프트 검사] 토끼가 테이블 앞쪽이 아닌 우측 영역으로 점프하여 착지함
+원문: 토끼가 테이블 앞쪽이 아닌 우측 영역으로 점프하여 착지함
+종류: model_proposal / bbox: [0.42, 0.58, 0.78, 0.75]
+
+자동 의미 대응
+R1 ↔ C4 / 의미 대응 / 시간도 일치
+대상(토끼)과 상호작용(테이블 앞쪽이 아닌 우측으로 점프/착지)이 R1의 불만 사항과 완전히 일치합니다.
+
+채점 검증 상태
+유효 쌍 1 / 미사용 쌍 7
+{"status": "invalid_response", "reason": "Candidate event atoms must be exact source substrings"}
+{"scope": "candidate", "candidate_id": "C1", "reason": "Candidate event atoms must be exact source substrings"}
+{"scope": "pair", "reference_id": "R1", "candidate_id": "C1", "reason": "candidate_validation_failed"}
+{"scope": "pair", "reference_id": "R1", "candidate_id": "C2", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R1", "candidate_id": "C3", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R2", "candidate_id": "C1", "reason": "candidate_validation_failed"}
+{"scope": "pair", "reference_id": "R2", "candidate_id": "C2", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R2", "candidate_id": "C3", "reason": "required_review_incomplete"}
+{"scope": "pair", "reference_id": "R2", "candidate_id": "C4", "reason": "required_review_incomplete"}

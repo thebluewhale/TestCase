@@ -1,0 +1,47 @@
+sid_023_seedance
+신규 60개 · Gemini 단독 판정: hit
+R–C 의미 대응: 대응 있음
+검출 실행 상태: 전체 완료
+채점 응답 유효성: 유효 · 원시 상태: completed
+이전 평가 40개 프롬프트 그룹 제외. 원본 정답 라벨은 검출 입력에 제공하지 않았습니다.
+시간은 보조 정보이며, 측정 제안이나 라벨에 없는 현상만으로 hit 처리하지 않습니다.
+검출 모듈: v4.temporal_context=completed, vertex-gemini=completed, vertex-gemini-focused=completed, vertex-gemini-prompt=completed
+
+생성 프롬프트
+A whale breaches the surface, spouts water, and then dives deep.
+
+원본 라벨 R
+R1 (easy, 0.500–4.500초): 물에서 나온 후 물줄기(water spout)가 나타나지 않음.
+원문: There is no water spout after emerging from the water. 
+
+검출 후보 C
+C1 (3.792–4.917초): [측정 제안 · 결함 미확정] 영상 특징 및 픽셀 구조 변화 구간에 대한 일반적 측정 제안.
+원문: 영상 특징과 픽셀 구조가 함께 변한 구간입니다. 형태·존재 변화 가능성을 확인하세요.
+종류: measurement_proposal / bbox: [0.0, 0.1926605504587156, 1.0, 1.0]
+C2 (0.000–4.900초): [Gemini] 고래의 형태가 다른 종으로 지속적으로 변하고 꼬리가 가늘고 뾰족하게 변함.
+원문: The whale's morphology changes continuously from a minke/fin-like whale to a humpback and its tail morphs into a thin pointed shape as it re-enters the water.
+종류: model_proposal / bbox: [0.15, 0.25, 0.95, 0.75]
+C3 (0.200–4.800초): [Gemini] 도약 과정에서 고래 종의 형태가 여러 종으로 지속적으로 모핑됨.
+원문: The breaching marine creature undergoes noticeable species-morphing across the jump, beginning as a slender rorqual-like whale, swelling into a humpback whale with white ventral grooves and pectoral fins, and then shifting into a dolphin/pilot-whale shape with a prominent curved dorsal fin and disappearing head/flippers as it re-enters.
+종류: model_proposal / bbox: None
+C4 (2.900–3.800초): [Gemini] 동물이 물속으로 다시 들어갈 때 가슴지느러미가 수축하여 사라짐.
+원문: The large pectoral flipper visible on the animal's side completely shrinks and vanishes into the flank as the creature arcs back down into the water.
+종류: model_proposal / bbox: None
+C5 (0.500–3.500초): [프롬프트 검사] 고래가 물을 뿜는 장면이 없이 브리칭 후 바로 입수함.
+원문: 고래가 물을 뿜는(spouts water) 장면이 나타나지 않고 브리칭 후 바로 입수함
+종류: model_proposal / bbox: [0.18, 0.2, 0.85, 0.9]
+
+자동 의미 대응
+R1 ↔ C1 / 판단 보류 / 시간도 일치
+동일 사건 여부/불일치 확정 보류: C1은 구체적 대상이나 현상이 명시되지 않은 단순 측정 제안으로, 물줄기 미발생 현상과 비교할 수 없습니다.
+R1 ↔ C2 / 미대응 / 시간도 일치
+명시적 별개 사건: 레퍼런스는 물 위로 나온 후 물줄기(water spout)가 분출되지 않는 현상에 대한 불만인 반면, 후보 C2는 고래의 신체 외형과 꼬리가 변형되는 형태 변형을 다루므로 대상 개체와 상호작용이 명확히 다릅니다.
+R1 ↔ C3 / 미대응 / 시간도 일치
+명시적 별개 사건: 레퍼런스는 물줄기 분출 부재라는 현상을 문제 삼는 반면, 후보 C3는 점프 중 고래의 종 형태 자체가 변화하는 모핑 현상을 다루므로 서로 완전히 다른 현상입니다.
+R1 ↔ C4 / 미대응 / 시간도 일치
+명시적 별개 사건: 레퍼런스는 물줄기가 뿜어져 나오지 않는 점에 대한 진술인 반면, 후보 C4는 가슴지느러미가 옆구리로 수축하여 사라지는 현상을 다루므로 대상 개체와 발생 사건이 명확히 구별됩니다.
+R1 ↔ C5 / 의미 대응 / 시간도 일치
+두 설명 모두 고래가 물 밖으로 나온(emerging / 브리칭) 후 물줄기/물뿜음(water spout)이 나타나지 않는다는 동일한 관찰 대상을 일치하게 설명하고 있습니다.
+
+채점 검증 상태
+유효 쌍 5 / 미사용 쌍 0
