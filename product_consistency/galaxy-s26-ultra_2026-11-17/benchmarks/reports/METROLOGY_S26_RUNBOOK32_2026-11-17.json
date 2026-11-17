@@ -1,0 +1,1443 @@
+{
+  "resume": {
+    "started_at": "2026-11-17T01:55:59.291022+00:00",
+    "retained_records": 14,
+    "remaining_records": 18,
+    "engine_sha256": "4b09d9fcccb92f8362ce79fde478d41acd24b9b78da9c8668c744033acbf7b78",
+    "pid": 249004,
+    "status": "completed",
+    "background_process": true,
+    "finished_at": "2026-11-17T02:03:27.783153+00:00",
+    "total_records": 32
+  },
+  "product_id": "galaxy-s26-ultra",
+  "scope": "Assisted product boxes and visual view hints, per revised supplied runbook; same 32 development images; not an autonomous or blind benchmark",
+  "engine_sha256": "4b09d9fcccb92f8362ce79fde478d41acd24b9b78da9c8668c744033acbf7b78",
+  "initial_hashes": {
+    "schemas/reference.schema.json": "2b0d2835d8b4973037242683568f11f738daf54afeb84bf738c1d889bfc17375",
+    "product_library/galaxy-s26-ultra/reference.json": "435140a04d54d83d6f2c861bb5c025a9c67ec64d34d00aa44b902aff5692e5de",
+    "product_library/galaxy-s26-ultra/metrology.json": "59f0507ca4167da69ab1393a119d0ce3f1aa7644acc38e37d2be661940ebcf81",
+    "benchmarks/datasets/s26_ultra_manifest.jsonl": "e2b88329c63d08086c0b8a00ea47a6b9e80982daf171ca045932e4f0cc974d6d",
+    "benchmarks/datasets/s26_ultra_regions.json": "38380303ceb83f0a0fee65b9414e4ee393fcea8ff54abcb1af01705e41f1c0b2",
+    "benchmarks/incoming/galaxy-s26-ultra/ng/label.json": "9830d8ab81f029ef81e689ee0d544b772fed2128f1da67356247ffa8124729e1",
+    "scripts/evaluate_metrology.py": "347986f164b33675cf3031a026555d24f666aad84402d92b811a35357c65d805"
+  },
+  "conditions": {
+    "assisted_boxes": 22,
+    "alpha_inputs": 10,
+    "visually_confirmed_unsupported_views": 3,
+    "foreground_boxes": 0,
+    "skin_removal_disabled_for_pink_body": 1,
+    "side_strip": false,
+    "external_inference": false,
+    "sequential": true,
+    "timeout_seconds": 120,
+    "OPENBLAS_NUM_THREADS": 1,
+    "OMP_NUM_THREADS": 1
+  },
+  "regression_tests": 76,
+  "external_calls": 0,
+  "all_images": {
+    "images": 32,
+    "counts": {
+      "good": 21,
+      "ng": 11
+    },
+    "confusion": {
+      "good": {
+        "good": 0,
+        "ng": 0,
+        "unknown": 21
+      },
+      "ng": {
+        "good": 0,
+        "ng": 4,
+        "unknown": 7
+      }
+    },
+    "mean_seconds": 23.733031728377682,
+    "sum_seconds": 759.4570153080858,
+    "fastest": {
+      "file": "Official_S26U_RightSide.png",
+      "seconds": 1.5253287380328402,
+      "prediction": "unknown",
+      "failure_reason": "back_face_engine_does_not_assess_requested_view"
+    },
+    "slowest": {
+      "file": "Good_02.png",
+      "seconds": 73.87148413801333,
+      "prediction": "unknown",
+      "failure_reason": null
+    },
+    "segmentation_successes": 29,
+    "fit_successes": 28,
+    "decided_check_count": 90,
+    "failures": {
+      "back_face_engine_does_not_assess_requested_view": 3,
+      "IndexError": 1
+    }
+  },
+  "reference_disjoint_images": {
+    "images": 30,
+    "counts": {
+      "good": 19,
+      "ng": 11
+    },
+    "confusion": {
+      "good": {
+        "good": 0,
+        "ng": 0,
+        "unknown": 19
+      },
+      "ng": {
+        "good": 0,
+        "ng": 4,
+        "unknown": 7
+      }
+    },
+    "mean_seconds": 24.443952243637373,
+    "sum_seconds": 733.3185673091211,
+    "fastest": {
+      "file": "Official_S26U_RightSide.png",
+      "seconds": 1.5253287380328402,
+      "prediction": "unknown",
+      "failure_reason": "back_face_engine_does_not_assess_requested_view"
+    },
+    "slowest": {
+      "file": "Good_02.png",
+      "seconds": 73.87148413801333,
+      "prediction": "unknown",
+      "failure_reason": null
+    },
+    "segmentation_successes": 28,
+    "fit_successes": 27,
+    "decided_check_count": 83,
+    "failures": {
+      "back_face_engine_does_not_assess_requested_view": 2,
+      "IndexError": 1
+    }
+  },
+  "previous_automatic_run": {
+    "images": 32,
+    "counts": {
+      "good": 21,
+      "ng": 11
+    },
+    "confusion": {
+      "good": {
+        "good": 0,
+        "ng": 0,
+        "unknown": 21
+      },
+      "ng": {
+        "good": 0,
+        "ng": 2,
+        "unknown": 9
+      }
+    },
+    "mean_seconds": 11.378273182026533,
+    "sum_seconds": 364.10474182484904,
+    "fastest": {
+      "file": "Failed_06.png",
+      "seconds": 1.834192224952858,
+      "prediction": "unknown",
+      "failure_reason": "complex_background_requires_box_or_mask"
+    },
+    "slowest": {
+      "file": "Failed_02.png",
+      "seconds": 39.02058339101495,
+      "prediction": "unknown",
+      "failure_reason": null
+    },
+    "fit_successes": 12,
+    "failures": {
+      "complex_background_requires_box_or_mask": 16,
+      "insufficient_landmarks_or_edges": 3,
+      "multiple_product_regions_require_box": 1
+    }
+  },
+  "comparison_warning": "Previous run did not receive product boxes or visual view hints; not a controlled pure-code improvement comparison.",
+  "validation": {
+    "report_schemas": 32,
+    "source_images_and_bytes_preserved": 32,
+    "reference_source_files_unchanged": 56,
+    "evidence_crops_checked": 272,
+    "mask_pairs_checked": 29,
+    "html_links_checked": 540,
+    "isolation_passed": true
+  },
+  "timing_definition": "Per-image input processing through report/assets save. Includes repeated segmentation in engine; excludes assistant box selection and preflight mask review, common runner initialization and cumulative records.json serialization. Interrupted waiting time is excluded; 14 retained measurements and 18 resumed measurements are combined.",
+  "records": [
+    {
+      "file": "Good_01.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/good/Good_01.png",
+      "truth": "good",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 29.69616594503168,
+      "pipeline_seconds": 21.179039479000494,
+      "decided_count": 6,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": null,
+      "input_guidance": {
+        "box": [
+          960,
+          80,
+          1600,
+          1345
+        ],
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "MATCH",
+        "C02": "MATCH",
+        "C03": "UNKNOWN",
+        "C04": "MATCH",
+        "C05": "MATCH",
+        "C06": "MATCH",
+        "C07": "UNKNOWN",
+        "C08": "MATCH",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Good_01/report.html"
+    },
+    {
+      "file": "Good_02.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/good/Good_02.png",
+      "truth": "good",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 73.87148413801333,
+      "pipeline_seconds": 36.57915027299896,
+      "decided_count": 5,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": null,
+      "input_guidance": {
+        "box": [
+          2130,
+          130,
+          3340,
+          2900
+        ],
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "MATCH",
+        "C02": "MATCH",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "MATCH",
+        "C06": "MATCH",
+        "C07": "UNKNOWN",
+        "C08": "MATCH",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Good_02/report.html"
+    },
+    {
+      "file": "Official_S26U_Back.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/good/Official_S26U_Back.png",
+      "truth": "good",
+      "prediction": "unknown",
+      "inventory_eligible": false,
+      "seconds": 24.067714159958996,
+      "pipeline_seconds": 16.503674687992316,
+      "decided_count": 7,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": null,
+      "input_guidance": {
+        "box": null,
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "MATCH",
+        "C02": "MATCH",
+        "C03": "UNKNOWN",
+        "C04": "MATCH",
+        "C05": "MATCH",
+        "C06": "MATCH",
+        "C07": "UNKNOWN",
+        "C08": "MATCH",
+        "C09": "MATCH",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Official_S26U_Back/report.html"
+    },
+    {
+      "file": "Official_S26U_BackLeft30.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/good/Official_S26U_BackLeft30.png",
+      "truth": "good",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 21.135395067045465,
+      "pipeline_seconds": 14.639222346013412,
+      "decided_count": 5,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": null,
+      "input_guidance": {
+        "box": null,
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "MATCH",
+        "C02": "MATCH",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "MATCH",
+        "C06": "MATCH",
+        "C07": "UNKNOWN",
+        "C08": "MATCH",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Official_S26U_BackLeft30/report.html"
+    },
+    {
+      "file": "Official_S26U_BackLeft30_Black.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/good/Official_S26U_BackLeft30_Black.png",
+      "truth": "good",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 21.919600802997593,
+      "pipeline_seconds": 14.579756952007301,
+      "decided_count": 5,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": null,
+      "input_guidance": {
+        "box": null,
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "MATCH",
+        "C02": "MATCH",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "MATCH",
+        "C06": "MATCH",
+        "C07": "UNKNOWN",
+        "C08": "MATCH",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Official_S26U_BackLeft30_Black/report.html"
+    },
+    {
+      "file": "Official_S26U_BackLeft30_White.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/good/Official_S26U_BackLeft30_White.png",
+      "truth": "good",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 20.37347170797875,
+      "pipeline_seconds": 15.13256017601816,
+      "decided_count": 5,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": null,
+      "input_guidance": {
+        "box": null,
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "MATCH",
+        "C02": "MATCH",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "MATCH",
+        "C06": "MATCH",
+        "C07": "UNKNOWN",
+        "C08": "MATCH",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Official_S26U_BackLeft30_White/report.html"
+    },
+    {
+      "file": "Official_S26U_BackRight30.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/good/Official_S26U_BackRight30.png",
+      "truth": "good",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 18.835470827994868,
+      "pipeline_seconds": 12.352477149979677,
+      "decided_count": 5,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": null,
+      "input_guidance": {
+        "box": null,
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "MATCH",
+        "C02": "MATCH",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "MATCH",
+        "C06": "MATCH",
+        "C07": "UNKNOWN",
+        "C08": "MATCH",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Official_S26U_BackRight30/report.html"
+    },
+    {
+      "file": "Official_S26U_Back_Black.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/good/Official_S26U_Back_Black.png",
+      "truth": "good",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 26.57829923997633,
+      "pipeline_seconds": 17.908435589983128,
+      "decided_count": 7,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": null,
+      "input_guidance": {
+        "box": null,
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "MATCH",
+        "C02": "MATCH",
+        "C03": "UNKNOWN",
+        "C04": "MATCH",
+        "C05": "MATCH",
+        "C06": "MATCH",
+        "C07": "UNKNOWN",
+        "C08": "MATCH",
+        "C09": "MATCH",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Official_S26U_Back_Black/report.html"
+    },
+    {
+      "file": "Official_S26U_Back_White.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/good/Official_S26U_Back_White.png",
+      "truth": "good",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 25.6005288179731,
+      "pipeline_seconds": 19.600936272006948,
+      "decided_count": 7,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": null,
+      "input_guidance": {
+        "box": null,
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "MATCH",
+        "C02": "MATCH",
+        "C03": "UNKNOWN",
+        "C04": "MATCH",
+        "C05": "MATCH",
+        "C06": "MATCH",
+        "C07": "UNKNOWN",
+        "C08": "MATCH",
+        "C09": "MATCH",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Official_S26U_Back_White/report.html"
+    },
+    {
+      "file": "Official_S26U_Front.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/good/Official_S26U_Front.png",
+      "truth": "good",
+      "prediction": "unknown",
+      "inventory_eligible": false,
+      "seconds": 2.0707338390056975,
+      "pipeline_seconds": 0.17302789696259424,
+      "decided_count": 0,
+      "mismatch_checks": [],
+      "metrology_ok": false,
+      "segmentation_completed": false,
+      "failure_reason": "back_face_engine_does_not_assess_requested_view",
+      "user_label_text": null,
+      "input_guidance": {
+        "box": null,
+        "foreground_box": null,
+        "deskin": true,
+        "view": "front"
+      },
+      "checks": {
+        "C01": "UNKNOWN",
+        "C02": "UNKNOWN",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "UNKNOWN",
+        "C06": "UNKNOWN",
+        "C07": "UNKNOWN",
+        "C08": "UNKNOWN",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Official_S26U_Front/report.html"
+    },
+    {
+      "file": "Official_S26U_LeftSide.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/good/Official_S26U_LeftSide.png",
+      "truth": "good",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 1.5292310239747167,
+      "pipeline_seconds": 0.15715733903925866,
+      "decided_count": 0,
+      "mismatch_checks": [],
+      "metrology_ok": false,
+      "segmentation_completed": false,
+      "failure_reason": "back_face_engine_does_not_assess_requested_view",
+      "user_label_text": null,
+      "input_guidance": {
+        "box": null,
+        "foreground_box": null,
+        "deskin": true,
+        "view": "left_side"
+      },
+      "checks": {
+        "C01": "UNKNOWN",
+        "C02": "UNKNOWN",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "UNKNOWN",
+        "C06": "UNKNOWN",
+        "C07": "UNKNOWN",
+        "C08": "UNKNOWN",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Official_S26U_LeftSide/report.html"
+    },
+    {
+      "file": "Official_S26U_RightSide.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/good/Official_S26U_RightSide.png",
+      "truth": "good",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 1.5253287380328402,
+      "pipeline_seconds": 0.16743088501971215,
+      "decided_count": 0,
+      "mismatch_checks": [],
+      "metrology_ok": false,
+      "segmentation_completed": false,
+      "failure_reason": "back_face_engine_does_not_assess_requested_view",
+      "user_label_text": null,
+      "input_guidance": {
+        "box": null,
+        "foreground_box": null,
+        "deskin": true,
+        "view": "right_side"
+      },
+      "checks": {
+        "C01": "UNKNOWN",
+        "C02": "UNKNOWN",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "UNKNOWN",
+        "C06": "UNKNOWN",
+        "C07": "UNKNOWN",
+        "C08": "UNKNOWN",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Official_S26U_RightSide/report.html"
+    },
+    {
+      "file": "Test_01.jpg",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/good/Test_01.jpg",
+      "truth": "good",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 22.791102243005298,
+      "pipeline_seconds": 20.965895596018527,
+      "decided_count": 1,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": null,
+      "input_guidance": {
+        "box": [
+          515,
+          80,
+          780,
+          575
+        ],
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "UNKNOWN",
+        "C02": "UNKNOWN",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "MATCH",
+        "C06": "UNKNOWN",
+        "C07": "UNKNOWN",
+        "C08": "UNKNOWN",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Test_01/report.html"
+    },
+    {
+      "file": "Test_02.jpg",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/good/Test_02.jpg",
+      "truth": "good",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 22.460518524982035,
+      "pipeline_seconds": 20.175436999008525,
+      "decided_count": 4,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": null,
+      "input_guidance": {
+        "box": [
+          565,
+          145,
+          715,
+          545
+        ],
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "MATCH",
+        "C02": "MATCH",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "MATCH",
+        "C06": "UNKNOWN",
+        "C07": "UNKNOWN",
+        "C08": "MATCH",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Test_02/report.html"
+    },
+    {
+      "file": "Test_03.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/good/Test_03.png",
+      "truth": "good",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 28.41549931402551,
+      "pipeline_seconds": 21.664665488991886,
+      "decided_count": 1,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": null,
+      "input_guidance": {
+        "box": [
+          1040,
+          225,
+          1545,
+          1200
+        ],
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "MATCH",
+        "C02": "UNKNOWN",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "UNKNOWN",
+        "C06": "UNKNOWN",
+        "C07": "UNKNOWN",
+        "C08": "UNKNOWN",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Test_03/report.html"
+    },
+    {
+      "file": "Test_04.jpg",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/good/Test_04.jpg",
+      "truth": "good",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 24.981630619964562,
+      "pipeline_seconds": 22.850907945015933,
+      "decided_count": 0,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": null,
+      "input_guidance": {
+        "box": [
+          820,
+          125,
+          1065,
+          580
+        ],
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "UNKNOWN",
+        "C02": "UNKNOWN",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "UNKNOWN",
+        "C06": "UNKNOWN",
+        "C07": "UNKNOWN",
+        "C08": "UNKNOWN",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Test_04/report.html"
+    },
+    {
+      "file": "Test_06.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/good/Test_06.png",
+      "truth": "good",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 27.845051266020164,
+      "pipeline_seconds": 24.991316077008378,
+      "decided_count": 0,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": null,
+      "input_guidance": {
+        "box": [
+          550,
+          90,
+          825,
+          615
+        ],
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "UNKNOWN",
+        "C02": "UNKNOWN",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "UNKNOWN",
+        "C06": "UNKNOWN",
+        "C07": "UNKNOWN",
+        "C08": "UNKNOWN",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Test_06/report.html"
+    },
+    {
+      "file": "Test_16.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/good/Test_16.png",
+      "truth": "good",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 23.57838552398607,
+      "pipeline_seconds": 16.574036979000084,
+      "decided_count": 4,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": null,
+      "input_guidance": {
+        "box": [
+          1030,
+          255,
+          1535,
+          1190
+        ],
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "MATCH",
+        "C02": "MATCH",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "MATCH",
+        "C06": "MATCH",
+        "C07": "UNKNOWN",
+        "C08": "UNKNOWN",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Test_16/report.html"
+    },
+    {
+      "file": "Test_17.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/good/Test_17.png",
+      "truth": "good",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 21.5880675590015,
+      "pipeline_seconds": 17.595729881024454,
+      "decided_count": 5,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": null,
+      "input_guidance": {
+        "box": [
+          298,
+          243,
+          752,
+          1050
+        ],
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "MATCH",
+        "C02": "MATCH",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "MATCH",
+        "C06": "MATCH",
+        "C07": "UNKNOWN",
+        "C08": "MATCH",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Test_17/report.html"
+    },
+    {
+      "file": "final.png.1280 (1).jpg",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/good/final.png.1280 (1).jpg",
+      "truth": "good",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 25.535823829006404,
+      "pipeline_seconds": 23.373547772003803,
+      "decided_count": 0,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": null,
+      "input_guidance": {
+        "box": [
+          510,
+          200,
+          815,
+          485
+        ],
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "UNKNOWN",
+        "C02": "UNKNOWN",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "UNKNOWN",
+        "C06": "UNKNOWN",
+        "C07": "UNKNOWN",
+        "C08": "UNKNOWN",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/final.png.1280 (1)/report.html"
+    },
+    {
+      "file": "final.png.1280.jpg",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/good/final.png.1280.jpg",
+      "truth": "good",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 18.578987990040332,
+      "pipeline_seconds": 16.34044369996991,
+      "decided_count": 0,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": null,
+      "input_guidance": {
+        "box": [
+          500,
+          120,
+          760,
+          610
+        ],
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "UNKNOWN",
+        "C02": "UNKNOWN",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "UNKNOWN",
+        "C06": "UNKNOWN",
+        "C07": "UNKNOWN",
+        "C08": "UNKNOWN",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/final.png.1280/report.html"
+    },
+    {
+      "file": "Failed_01.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/ng/Failed_01.png",
+      "truth": "ng",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 6.417072726995684,
+      "pipeline_seconds": 5.04666901298333,
+      "decided_count": 0,
+      "mismatch_checks": [],
+      "metrology_ok": false,
+      "segmentation_completed": true,
+      "failure_reason": "IndexError",
+      "user_label_text": "other model",
+      "input_guidance": {
+        "box": [
+          445,
+          42,
+          820,
+          805
+        ],
+        "foreground_box": null,
+        "deskin": false,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "UNKNOWN",
+        "C02": "UNKNOWN",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "UNKNOWN",
+        "C06": "UNKNOWN",
+        "C07": "UNKNOWN",
+        "C08": "UNKNOWN",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Failed_01/report.html"
+    },
+    {
+      "file": "Failed_02.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/ng/Failed_02.png",
+      "truth": "ng",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 38.04748018702958,
+      "pipeline_seconds": 36.06265130301472,
+      "decided_count": 0,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": "lack of lens",
+      "input_guidance": {
+        "box": [
+          455,
+          75,
+          805,
+          770
+        ],
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "UNKNOWN",
+        "C02": "UNKNOWN",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "UNKNOWN",
+        "C06": "UNKNOWN",
+        "C07": "UNKNOWN",
+        "C08": "UNKNOWN",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Failed_02/report.html"
+    },
+    {
+      "file": "Failed_03.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/ng/Failed_03.png",
+      "truth": "ng",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 21.355519952019677,
+      "pipeline_seconds": 19.399330950982403,
+      "decided_count": 0,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": "lack of lens",
+      "input_guidance": {
+        "box": [
+          455,
+          75,
+          805,
+          770
+        ],
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "UNKNOWN",
+        "C02": "UNKNOWN",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "UNKNOWN",
+        "C06": "UNKNOWN",
+        "C07": "UNKNOWN",
+        "C08": "UNKNOWN",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Failed_03/report.html"
+    },
+    {
+      "file": "Failed_04.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/ng/Failed_04.png",
+      "truth": "ng",
+      "prediction": "ng",
+      "inventory_eligible": true,
+      "seconds": 23.15663558401866,
+      "pipeline_seconds": 20.22874925704673,
+      "decided_count": 7,
+      "mismatch_checks": [
+        "C01"
+      ],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": "lack of lens",
+      "input_guidance": {
+        "box": [
+          445,
+          40,
+          820,
+          805
+        ],
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "MISMATCH",
+        "C02": "MATCH",
+        "C03": "UNKNOWN",
+        "C04": "MATCH",
+        "C05": "MATCH",
+        "C06": "MATCH",
+        "C07": "UNKNOWN",
+        "C08": "MATCH",
+        "C09": "MATCH",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Failed_04/report.html"
+    },
+    {
+      "file": "Failed_05.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/ng/Failed_05.png",
+      "truth": "ng",
+      "prediction": "ng",
+      "inventory_eligible": true,
+      "seconds": 23.117423532006796,
+      "pipeline_seconds": 20.174022694001906,
+      "decided_count": 7,
+      "mismatch_checks": [
+        "C01"
+      ],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": "lack of lens",
+      "input_guidance": {
+        "box": [
+          445,
+          40,
+          820,
+          805
+        ],
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "MISMATCH",
+        "C02": "MATCH",
+        "C03": "UNKNOWN",
+        "C04": "MATCH",
+        "C05": "MATCH",
+        "C06": "MATCH",
+        "C07": "UNKNOWN",
+        "C08": "MATCH",
+        "C09": "MATCH",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Failed_05/report.html"
+    },
+    {
+      "file": "Failed_06.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/ng/Failed_06.png",
+      "truth": "ng",
+      "prediction": "ng",
+      "inventory_eligible": true,
+      "seconds": 17.204285033978522,
+      "pipeline_seconds": 16.047352410969324,
+      "decided_count": 4,
+      "mismatch_checks": [
+        "C02"
+      ],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": "bigger camera lens size",
+      "input_guidance": {
+        "box": [
+          225,
+          5,
+          445,
+          410
+        ],
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "MATCH",
+        "C02": "MISMATCH",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "MATCH",
+        "C06": "UNKNOWN",
+        "C07": "UNKNOWN",
+        "C08": "MATCH",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Failed_06/report.html"
+    },
+    {
+      "file": "Failed_07.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/ng/Failed_07.png",
+      "truth": "ng",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 27.885225783044007,
+      "pipeline_seconds": 26.68941856897436,
+      "decided_count": 0,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": "no camera island",
+      "input_guidance": {
+        "box": [
+          250,
+          20,
+          470,
+          405
+        ],
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "UNKNOWN",
+        "C02": "UNKNOWN",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "UNKNOWN",
+        "C06": "UNKNOWN",
+        "C07": "UNKNOWN",
+        "C08": "UNKNOWN",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Failed_07/report.html"
+    },
+    {
+      "file": "Failed_08.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/ng/Failed_08.png",
+      "truth": "ng",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 27.34559005702613,
+      "pipeline_seconds": 25.825349878985435,
+      "decided_count": 0,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": "no camera island",
+      "input_guidance": {
+        "box": [
+          35,
+          30,
+          430,
+          600
+        ],
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "UNKNOWN",
+        "C02": "UNKNOWN",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "UNKNOWN",
+        "C06": "UNKNOWN",
+        "C07": "UNKNOWN",
+        "C08": "UNKNOWN",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Failed_08/report.html"
+    },
+    {
+      "file": "Failed_09.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/ng/Failed_09.png",
+      "truth": "ng",
+      "prediction": "ng",
+      "inventory_eligible": true,
+      "seconds": 51.938593986968044,
+      "pipeline_seconds": 19.561377784993965,
+      "decided_count": 4,
+      "mismatch_checks": [
+        "C02"
+      ],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": "no camera island, wrong R value",
+      "input_guidance": {
+        "box": [
+          2260,
+          360,
+          3250,
+          2780
+        ],
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "UNKNOWN",
+        "C02": "MISMATCH",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "MATCH",
+        "C06": "MATCH",
+        "C07": "UNKNOWN",
+        "C08": "MATCH",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Failed_09/report.html"
+    },
+    {
+      "file": "Test_08.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/ng/Test_08.png",
+      "truth": "ng",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 17.940111136995256,
+      "pipeline_seconds": 14.915673954994418,
+      "decided_count": 1,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": "widen body",
+      "input_guidance": {
+        "box": [
+          540,
+          110,
+          845,
+          650
+        ],
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "UNKNOWN",
+        "C02": "UNKNOWN",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "MATCH",
+        "C06": "UNKNOWN",
+        "C07": "UNKNOWN",
+        "C08": "UNKNOWN",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Test_08/report.html"
+    },
+    {
+      "file": "Test_15.png",
+      "path": "benchmarks/incoming/galaxy-s26-ultra/ng/Test_15.png",
+      "truth": "ng",
+      "prediction": "unknown",
+      "inventory_eligible": true,
+      "seconds": 22.07058614998823,
+      "pipeline_seconds": 19.20877892296994,
+      "decided_count": 0,
+      "mismatch_checks": [],
+      "metrology_ok": true,
+      "segmentation_completed": true,
+      "failure_reason": null,
+      "user_label_text": null,
+      "input_guidance": {
+        "box": [
+          540,
+          105,
+          860,
+          650
+        ],
+        "foreground_box": null,
+        "deskin": true,
+        "view": "back"
+      },
+      "checks": {
+        "C01": "UNKNOWN",
+        "C02": "UNKNOWN",
+        "C03": "UNKNOWN",
+        "C04": "UNKNOWN",
+        "C05": "UNKNOWN",
+        "C06": "UNKNOWN",
+        "C07": "UNKNOWN",
+        "C08": "UNKNOWN",
+        "C09": "UNKNOWN",
+        "C10": "UNKNOWN",
+        "C11": "UNKNOWN",
+        "C12": "UNKNOWN"
+      },
+      "report": "outputs/metrology_s26_runbook32_2026-11-16/Test_15/report.html"
+    }
+  ],
+  "label_alignment_warning": "NG 경보 4장은 이미지 수준 집계다. Failed_04/05는 C01(렌즈 누락), Failed_09는 C02(아일랜드 경계 이상)에서 경보가 발생했다. Failed_06의 정답은 렌즈 크기 증가지만 검출 항목은 C02(아일랜드 경계 이상)이므로, 정답 결함을 정확히 검출한 사례로 계산하지 않는다. 따라서 4/11을 항목별 결함 검출률로 해석하면 안 된다."
+}
