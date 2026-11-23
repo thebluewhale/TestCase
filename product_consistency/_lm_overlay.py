@@ -21,6 +21,8 @@ from review_product_consistency_v3.core.ortho import load_ortho  # noqa: E402
 from review_product_consistency_v3.formfactors.bar import landmarks as L  # noqa: E402
 
 FACES = ("bottom", "top", "right", "left")
+_MP = Path.home() / "TestCase/product_consistency/manual_sim/manual_sim.json"
+MANUAL = json.loads(_MP.read_text())["items"] if _MP.exists() else {}
 ROLES = ("hole", "usb", "seam", "button", "anchor")
 # A 시리즈 — 재질 역할(그림으로 확인한 제안). depth: 정사영 깊이로 구멍·홈을 hole에 더한다
 A_MAP = {
@@ -141,6 +143,31 @@ def extract_product(spec_id: str, cfg):
                     best = min(cand, key=lambda f: abs(f["center"][0] - port["position"]))
                     if abs(best["center"][0] - port["position"]) < 0.05:
                         best["type"] = "usb_c"
+        man = MANUAL.get(spec_id)
+        if man and man["face"] == fid:
+            # 사람이 준 SIM 트레이 상자 — 상자 안 자동 조각(테두리 조각·핀 구멍을 마이크로 본 것)을 SIM 하나로
+            Hh, Ww = of.matid.shape
+            ppw = of.px_per_w
+            x0, y0, x1, y1 = man["box_px"]
+            fx = lambda c: (c - Ww / 2) / ppw
+            fy = lambda rr: (Hh / 2 - rr) / ppw
+            bx0, bx1, by0, by1 = fx(x0), fx(x1), fy(y1), fy(y0)
+            inside = [f for f in feats if bx0 <= f["center"][0] <= bx1 and by0 <= f["center"][1] <= by1]
+            feats = [f for f in feats if f not in inside]
+            pins = [f for f in inside if max(f["size"]) < 0.02]
+            rad = min(bx1 - bx0, by1 - by0) / 2
+            t = np.linspace(0, np.pi / 2, 8)
+            cx0, cx1, cy0, cy1 = bx0 + rad, bx1 - rad, by0 + rad, by1 - rad
+            outline = ([[cx1 + rad * np.cos(a), cy1 + rad * np.sin(a)] for a in t]
+                       + [[cx0 - rad * np.sin(a), cy1 + rad * np.cos(a)] for a in t]
+                       + [[cx0 - rad * np.cos(a), cy0 - rad * np.sin(a)] for a in t]
+                       + [[cx1 + rad * np.sin(a), cy0 - rad * np.cos(a)] for a in t])
+            feats.append({"face": fid, "type": "sim_tray", "manual": True,
+                          "center": [round((bx0 + bx1) / 2, 5), round((by0 + by1) / 2, 5)],
+                          "size": [round(bx1 - bx0, 5), round(by1 - by0, 5)],
+                          "outline": [[round(float(x), 5), round(float(y), 5)] for x, y in outline],
+                          "children": [{"type": "pin_hole", "center": p["center"]} for p in pins]})
+            feats.sort(key=lambda f: tuple(f["center"]))
         out[fid] = (of.rgb, of.px_per_w, feats, anchors, r)
     return spec, out
 
