@@ -1,0 +1,2697 @@
+{
+  "protocol": {
+    "version": "object-comparison-v1",
+    "split": "development",
+    "time_tolerance_sec": 0.25,
+    "minimum_roi_iou": 0.2,
+    "matching": "one event per clip; one displayed candidate per event; extra candidates retained",
+    "primary": "end-to-end displayed candidate recall, regardless of candidate code",
+    "secondary": "matching candidate with expected code; partial/failed/unrun stay in denominator",
+    "max_new_requests": 18,
+    "max_new_video_sec": 108,
+    "normal_scope": "controlled transitions only; LaSOT originals are unlabeled review burden",
+    "native_lasot_fps": null,
+    "actual_ai_defects": 0
+  },
+  "plan_sha256": "f1aae997e042f6511184f656bb3b0180db5a77d73f1b6a0c8b921274934101f6",
+  "config_sha256": "a32dc8e1c8f2be8b0c2697d4b58c7e1943984565d97d076f5198b001be760a03",
+  "samples": 18,
+  "evaluator_sha256": "a11597ba41badaf2936c2eaf011dede25248d5001d992a7a7d9f7540805e7d80",
+  "scope_status_counts": {
+    "synthetic_positive": {
+      "clips": 8,
+      "api_completed": 8,
+      "object_completed": 8,
+      "object_not_verifiable": 0,
+      "no_report": 0
+    },
+    "synthetic_control": {
+      "clips": 8,
+      "api_completed": 8,
+      "object_completed": 7,
+      "object_not_verifiable": 1,
+      "no_report": 0
+    },
+    "lasot_original": {
+      "clips": 2,
+      "api_completed": 2,
+      "object_completed": 0,
+      "object_not_verifiable": 2,
+      "no_report": 0
+    }
+  },
+  "synthetic_events": 8,
+  "detected_events": 5,
+  "event_recall_end_to_end": 0.625,
+  "by_kind": {
+    "disappear": {
+      "events": 2,
+      "detected": 2,
+      "code_detected": 2
+    },
+    "position": {
+      "events": 2,
+      "detected": 0,
+      "code_detected": 0
+    },
+    "area": {
+      "events": 2,
+      "detected": 2,
+      "code_detected": 2
+    },
+    "aspect": {
+      "events": 2,
+      "detected": 1,
+      "code_detected": 1
+    }
+  },
+  "synthetic_controls": 8,
+  "control_candidates": 1,
+  "control_clips_with_candidates": 1,
+  "control_candidates_per_clip": 0.125,
+  "original_review_candidates": 1,
+  "execution_counts": {
+    "partial": 3,
+    "succeeded": 15
+  },
+  "api_status_counts": {
+    "completed": 18
+  },
+  "new_logical_requests": 0,
+  "reused_original_requests": 18,
+  "results": [
+    {
+      "id": "original-cup-1",
+      "stratum": "lasot_original",
+      "kind": "visible",
+      "lineage": "lasot:cup-1",
+      "api_reused": true,
+      "api_status": "completed",
+      "execution": "partial",
+      "displayed_candidates": 1,
+      "candidate_events": [
+        {
+          "track_id": "annotation-0-track-32",
+          "kind": "change",
+          "shot_id": 0,
+          "codes": [
+            "OBJECT_AREA_JUMP",
+            "OBJECT_POSITION_JUMP"
+          ],
+          "start_sec": 5.0,
+          "end_sec": 5.1,
+          "bbox_xywh": [
+            735.4757632000001,
+            171.5439744,
+            218.41274880000003,
+            493.06044959999997
+          ],
+          "context_times": [
+            5.0,
+            5.1
+          ],
+          "guards": [],
+          "related_tracks": [],
+          "metrics": {
+            "delta_sec": 0.09999999999999964,
+            "area_change": 0.7375677507486188,
+            "aspect_change": 0.1536380870074937,
+            "center_speed_diagonals": 8.796578296557364,
+            "iou": 0.0,
+            "iou_drop": 0.0
+          },
+          "id": "object-000",
+          "status": "candidate",
+          "context_frame_times_sec": [
+            5.0,
+            5.1
+          ],
+          "image_context": {
+            "state": "measured",
+            "patch_mae": 46.41817186644773,
+            "background_static_mae": 51.04936305732484,
+            "background_fit_mae": 27.633757961783438,
+            "scale": 1.0,
+            "dx_thumb_px": 0,
+            "dy_thumb_px": -4,
+            "camera_motion_possible": false,
+            "background_stable": false
+          },
+          "temporal_context": {
+            "state": "measured",
+            "times_sec": [
+              5.0,
+              5.033333333333333,
+              5.066666666666666,
+              5.1
+            ],
+            "step_mae": [
+              33.1875,
+              22.798789978027344,
+              22.488489151000977
+            ],
+            "peak_share": 0.4229065775871277,
+            "active_steps": 3,
+            "tile_count": 112,
+            "abrupt_tiles": 4,
+            "distributed_change": false
+          },
+          "recovery_context": {
+            "state": "measured",
+            "times_sec": [
+              4.2,
+              4.233333333333333,
+              4.266666666666667,
+              4.3,
+              4.333333333333333,
+              4.366666666666666,
+              4.4,
+              4.433333333333334,
+              4.466666666666667,
+              4.5,
+              4.533333333333333,
+              4.566666666666666,
+              4.6,
+              4.633333333333334,
+              4.666666666666667,
+              4.7,
+              4.733333333333333,
+              4.766666666666667,
+              4.8,
+              4.833333333333333,
+              4.866666666666666,
+              4.9,
+              4.933333333333334,
+              4.966666666666667,
+              5.0,
+              5.033333333333333,
+              5.066666666666666,
+              5.1,
+              5.133333333333334,
+              5.166666666666667,
+              5.2,
+              5.233333333333333,
+              5.266666666666667,
+              5.3,
+              5.333333333333333,
+              5.366666666666666,
+              5.4,
+              5.433333333333334,
+              5.466666666666667,
+              5.5,
+              5.533333333333333,
+              5.566666666666666,
+              5.6,
+              5.633333333333334,
+              5.666666666666667,
+              5.7,
+              5.733333333333333,
+              5.766666666666667,
+              5.8,
+              5.833333333333333,
+              5.866666666666666,
+              5.9
+            ],
+            "return_mae": 81.07556915283203,
+            "return_max_tile_mae": 179.53515625,
+            "anchor_mae": 45.28571319580078,
+            "texture_std": 71.09021759033203,
+            "return_correlation": 0.05431722350325437,
+            "active_frames": 52,
+            "active_frames_in_event": 4,
+            "active_duration_sec": 1.7000000000000002,
+            "active_max_gap_sec": 0.0333333333333341,
+            "changed_fraction_peak": 0.7521428571428571,
+            "centroid_sweep_diagonals": 0.043802331642484836,
+            "centroid_max_step_diagonals": 0.01918003395117609,
+            "appearance_restored": false,
+            "moving_change_region": false,
+            "recovered_moving_occlusion_possible": false
+          },
+          "raw_ids": [
+            "object-raw-0046"
+          ],
+          "displayed": true
+        }
+      ],
+      "raw_status_counts": {
+        "deferred": 54,
+        "unresolved": 12,
+        "candidate": 1
+      },
+      "target_pre_event_observed_fraction": null,
+      "coverage": {
+        "check_id": "object_temporal",
+        "required": true,
+        "execution": "skipped",
+        "observability": "not_verifiable",
+        "reason": "OBJECT_CONTEXT_UNRESOLVED;SEED_APPEARANCE_UNRESOLVED",
+        "inspected_times_sec": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.3,
+          1.4,
+          1.5,
+          1.6,
+          1.7,
+          1.8,
+          1.9,
+          2.0,
+          2.1,
+          2.2,
+          2.3,
+          2.4,
+          2.5,
+          2.6,
+          2.7,
+          2.8,
+          2.9,
+          3.0,
+          3.1,
+          3.2,
+          3.3,
+          3.4,
+          3.5,
+          3.6,
+          3.7,
+          3.8,
+          3.9,
+          4.0,
+          4.1,
+          4.2,
+          4.3,
+          4.4,
+          4.5,
+          4.6,
+          4.7,
+          4.8,
+          4.9,
+          5.0,
+          5.1,
+          5.2,
+          5.3,
+          5.4,
+          5.5,
+          5.6,
+          5.7,
+          5.8,
+          5.9
+        ]
+      },
+      "api_total_session_sec": 43.88200679793954,
+      "logical_requests": 1,
+      "actual_cost_usd": null,
+      "report_sha256": "ea19da9edace8e10b7ce55aec39b2bf3171ac3ea9df7ebb041e635269656a391",
+      "local_timings_sec": {
+        "decode": 2.6854267339222133,
+        "evidence": 5.953013896942139e-06,
+        "object_analysis": 8.905332257039845,
+        "render": 0.08028064598329365,
+        "total_before_publication": 11.671587961958721
+      },
+      "track_count": 41,
+      "events": [],
+      "unmatched_displayed_candidates": 1,
+      "event_nearby_raw_statuses": [],
+      "miss_diagnostics": []
+    },
+    {
+      "id": "synthetic-cup-1-steady",
+      "stratum": "controlled_synthetic",
+      "kind": "steady",
+      "lineage": "lasot:cup-1",
+      "api_reused": true,
+      "api_status": "completed",
+      "execution": "succeeded",
+      "displayed_candidates": 0,
+      "candidate_events": [],
+      "raw_status_counts": {
+        "deferred": 1
+      },
+      "target_pre_event_observed_fraction": 0.9333333333333333,
+      "coverage": {
+        "check_id": "object_temporal",
+        "required": true,
+        "execution": "completed",
+        "observability": "verifiable",
+        "reason": "OBJECT_TRACK_CANDIDATES_ONLY",
+        "inspected_times_sec": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.3,
+          1.4,
+          1.5,
+          1.6,
+          1.7,
+          1.8,
+          1.9,
+          2.0,
+          2.1,
+          2.2,
+          2.3,
+          2.4,
+          2.5,
+          2.6,
+          2.7,
+          2.8,
+          2.9,
+          3.0,
+          3.1,
+          3.2,
+          3.3,
+          3.4,
+          3.5,
+          3.6,
+          3.7,
+          3.8,
+          3.9,
+          4.0,
+          4.1,
+          4.2,
+          4.3,
+          4.4,
+          4.5,
+          4.6,
+          4.7,
+          4.8,
+          4.9,
+          5.0,
+          5.1,
+          5.2,
+          5.3,
+          5.4,
+          5.5,
+          5.6,
+          5.7,
+          5.8,
+          5.9
+        ]
+      },
+      "api_total_session_sec": 37.64164450298995,
+      "logical_requests": 1,
+      "actual_cost_usd": null,
+      "report_sha256": "882d5f29815065bfecc3e7af1fdd9d13b9d1edc10698690d53b1cf0824cc1b36",
+      "local_timings_sec": {
+        "decode": 0.29275972000323236,
+        "evidence": 5.066161975264549e-06,
+        "object_analysis": 0.0067047670017927885,
+        "render": 0.0032272650860249996,
+        "total_before_publication": 0.30307404906488955
+      },
+      "track_count": 1,
+      "events": [],
+      "unmatched_displayed_candidates": 0,
+      "event_nearby_raw_statuses": [],
+      "miss_diagnostics": []
+    },
+    {
+      "id": "synthetic-cup-1-occlusion",
+      "stratum": "controlled_synthetic",
+      "kind": "occlusion",
+      "lineage": "lasot:cup-1",
+      "api_reused": true,
+      "api_status": "completed",
+      "execution": "succeeded",
+      "displayed_candidates": 0,
+      "candidate_events": [],
+      "raw_status_counts": {
+        "deferred": 3
+      },
+      "target_pre_event_observed_fraction": 0.6,
+      "coverage": {
+        "check_id": "object_temporal",
+        "required": true,
+        "execution": "completed",
+        "observability": "verifiable",
+        "reason": "OBJECT_TRACK_CANDIDATES_ONLY",
+        "inspected_times_sec": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.3,
+          1.4,
+          1.5,
+          1.6,
+          1.7,
+          1.8,
+          1.9,
+          2.0,
+          2.1,
+          2.2,
+          2.3,
+          2.4,
+          2.6,
+          2.7,
+          2.8,
+          2.9,
+          3.0,
+          3.1,
+          3.2,
+          3.3,
+          3.4,
+          3.5,
+          3.6,
+          3.7,
+          3.8,
+          3.9,
+          4.0,
+          4.1,
+          4.2,
+          4.3,
+          4.4,
+          4.5,
+          4.6,
+          4.7,
+          4.8,
+          4.9,
+          5.0,
+          5.1,
+          5.2,
+          5.3,
+          5.4,
+          5.5,
+          5.6,
+          5.7,
+          5.8,
+          5.9
+        ]
+      },
+      "api_total_session_sec": 31.06025271001272,
+      "logical_requests": 1,
+      "actual_cost_usd": null,
+      "report_sha256": "57449d624f1f09628025c2b7b69be0093845e1256a3964d2f0897b3f775e8362",
+      "local_timings_sec": {
+        "decode": 0.280487003037706,
+        "evidence": 2.9848888516426086e-06,
+        "object_analysis": 0.8383984351530671,
+        "render": 0.0028956031892448664,
+        "total_before_publication": 1.1222505550831556
+      },
+      "track_count": 4,
+      "events": [],
+      "unmatched_displayed_candidates": 0,
+      "event_nearby_raw_statuses": [],
+      "miss_diagnostics": []
+    },
+    {
+      "id": "synthetic-cup-1-exit",
+      "stratum": "controlled_synthetic",
+      "kind": "exit",
+      "lineage": "lasot:cup-1",
+      "api_reused": true,
+      "api_status": "completed",
+      "execution": "succeeded",
+      "displayed_candidates": 1,
+      "candidate_events": [
+        {
+          "track_id": "annotation-0-track-0",
+          "kind": "termination",
+          "shot_id": 0,
+          "codes": [
+            "OBJECT_TRACK_END"
+          ],
+          "start_sec": 2.0,
+          "end_sec": 2.2,
+          "bbox_xywh": [
+            194.688448,
+            110.3108544,
+            88.11695360000002,
+            140.0967468
+          ],
+          "context_times": [
+            2.0,
+            2.2
+          ],
+          "guards": [],
+          "related_tracks": [],
+          "metrics": {
+            "track_samples": 21,
+            "track_confidence": 0.71729344
+          },
+          "id": "object-000",
+          "status": "candidate",
+          "context_frame_times_sec": [
+            2.0,
+            2.2
+          ],
+          "image_context": {
+            "state": "measured",
+            "patch_mae": 44.19202898550725,
+            "background_static_mae": 0.5549295774647888,
+            "background_fit_mae": 0.5549295774647888,
+            "scale": 1.0,
+            "dx_thumb_px": 0,
+            "dy_thumb_px": 0,
+            "camera_motion_possible": false,
+            "background_stable": true
+          },
+          "raw_ids": [
+            "object-raw-0000"
+          ],
+          "termination_refinement": {
+            "state": "unresolved",
+            "reason": "REACQUIRE_UNSTABLE_SUCCESSOR",
+            "matches": [
+              {
+                "state": "matched",
+                "score": 0.9606203436851501,
+                "competitor_score": 0.5377320051193237,
+                "bbox_xywh": [
+                  172,
+                  110,
+                  89,
+                  141
+                ],
+                "evaluations": 135,
+                "reverse_score": 0.9606177806854248,
+                "reverse_iou": 1.0,
+                "source_bbox_xywh": [
+                  172.0,
+                  110.0,
+                  89.0,
+                  141.0
+                ]
+              },
+              {
+                "state": "matched",
+                "score": 0.9665554761886597,
+                "competitor_score": 0.5116055607795715,
+                "bbox_xywh": [
+                  150,
+                  110,
+                  89,
+                  141
+                ],
+                "evaluations": 135,
+                "reverse_score": 0.9665529727935791,
+                "reverse_iou": 1.0,
+                "source_bbox_xywh": [
+                  150.0,
+                  110.0,
+                  89.0,
+                  141.0
+                ]
+              }
+            ],
+            "reference_time_sec": 1.9
+          },
+          "displayed": true
+        }
+      ],
+      "raw_status_counts": {
+        "candidate": 1
+      },
+      "target_pre_event_observed_fraction": 0.23076923076923078,
+      "coverage": {
+        "check_id": "object_temporal",
+        "required": true,
+        "execution": "completed",
+        "observability": "verifiable",
+        "reason": "OBJECT_TRACK_CANDIDATES_ONLY",
+        "inspected_times_sec": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.3,
+          1.4,
+          1.5,
+          1.6,
+          1.7,
+          1.8,
+          1.9,
+          2.0,
+          2.7
+        ]
+      },
+      "api_total_session_sec": 44.27049605012871,
+      "logical_requests": 1,
+      "actual_cost_usd": null,
+      "report_sha256": "4ffb549cd7767da95b132f82822526f11adaec748927c1e100c5472dccd010d5",
+      "local_timings_sec": {
+        "decode": 0.2911742269061506,
+        "evidence": 2.457061782479286e-06,
+        "object_analysis": 1.9078726070001721,
+        "render": 0.0065186729189008474,
+        "total_before_publication": 2.205984727013856
+      },
+      "track_count": 2,
+      "events": [],
+      "unmatched_displayed_candidates": 1,
+      "event_nearby_raw_statuses": [],
+      "miss_diagnostics": []
+    },
+    {
+      "id": "synthetic-cup-1-camera",
+      "stratum": "controlled_synthetic",
+      "kind": "camera",
+      "lineage": "lasot:cup-1",
+      "api_reused": true,
+      "api_status": "completed",
+      "execution": "partial",
+      "displayed_candidates": 0,
+      "candidate_events": [],
+      "raw_status_counts": {
+        "unresolved": 4,
+        "deferred": 1
+      },
+      "target_pre_event_observed_fraction": 0.4,
+      "coverage": {
+        "check_id": "object_temporal",
+        "required": true,
+        "execution": "skipped",
+        "observability": "not_verifiable",
+        "reason": "OBJECT_CONTEXT_UNRESOLVED",
+        "inspected_times_sec": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.8,
+          1.9,
+          2.0,
+          2.1,
+          2.2,
+          2.8,
+          2.9,
+          3.0,
+          3.1,
+          3.2,
+          3.3,
+          3.4,
+          3.9,
+          4.0,
+          4.1,
+          4.2,
+          5.0,
+          5.1,
+          5.2,
+          5.3,
+          5.4,
+          5.5,
+          5.6,
+          5.7
+        ]
+      },
+      "api_total_session_sec": 17.23128985799849,
+      "logical_requests": 1,
+      "actual_cost_usd": null,
+      "report_sha256": "a7b9b2d9e3a126bf913744c3141ced95f9eb31778db595f46b848f27df2f3c87",
+      "local_timings_sec": {
+        "decode": 0.2947647371329367,
+        "evidence": 3.43983992934227e-06,
+        "object_analysis": 0.1253499819431454,
+        "render": 0.003499632002785802,
+        "total_before_publication": 0.4240571381524205
+      },
+      "track_count": 5,
+      "events": [],
+      "unmatched_displayed_candidates": 0,
+      "event_nearby_raw_statuses": [],
+      "miss_diagnostics": []
+    },
+    {
+      "id": "synthetic-cup-1-disappear",
+      "stratum": "controlled_synthetic",
+      "kind": "disappear",
+      "lineage": "lasot:cup-1",
+      "api_reused": true,
+      "api_status": "completed",
+      "execution": "succeeded",
+      "displayed_candidates": 1,
+      "candidate_events": [
+        {
+          "track_id": "annotation-0-track-0",
+          "kind": "termination",
+          "shot_id": 0,
+          "codes": [
+            "OBJECT_TRACK_END"
+          ],
+          "start_sec": 2.9,
+          "end_sec": 3.1,
+          "bbox_xywh": [
+            194.70649600000002,
+            110.31246,
+            88.11333119999998,
+            140.09389199999998
+          ],
+          "context_times": [
+            2.9,
+            3.1
+          ],
+          "guards": [],
+          "related_tracks": [],
+          "metrics": {
+            "track_samples": 30,
+            "track_confidence": 0.71740484
+          },
+          "id": "object-000",
+          "status": "candidate",
+          "context_frame_times_sec": [
+            2.9,
+            3.1
+          ],
+          "image_context": {
+            "state": "measured",
+            "patch_mae": 49.679951690821255,
+            "background_static_mae": 0.0,
+            "background_fit_mae": 0.0,
+            "scale": 1.0,
+            "dx_thumb_px": 0,
+            "dy_thumb_px": 0,
+            "camera_motion_possible": false,
+            "background_stable": true
+          },
+          "raw_ids": [
+            "object-raw-0000"
+          ],
+          "termination_refinement": {
+            "state": "unresolved",
+            "reason": "REACQUIRE_NO_UNIQUE_MATCH",
+            "matches": [
+              {
+                "state": "no_match",
+                "score": 0.6598608493804932,
+                "competitor_score": 0.6501615643501282,
+                "bbox_xywh": [
+                  140,
+                  211,
+                  52,
+                  90
+                ],
+                "evaluations": 138,
+                "source_bbox_xywh": [
+                  140.0,
+                  211.0,
+                  52.0,
+                  90.0
+                ]
+              }
+            ],
+            "reference_time_sec": 2.8
+          },
+          "displayed": true
+        }
+      ],
+      "raw_status_counts": {
+        "candidate": 1
+      },
+      "target_pre_event_observed_fraction": 0.9333333333333333,
+      "coverage": {
+        "check_id": "object_temporal",
+        "required": true,
+        "execution": "completed",
+        "observability": "verifiable",
+        "reason": "OBJECT_TRACK_CANDIDATES_ONLY",
+        "inspected_times_sec": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.3,
+          1.4,
+          1.5,
+          1.6,
+          1.7,
+          1.8,
+          1.9,
+          2.0,
+          2.1,
+          2.2,
+          2.3,
+          2.4,
+          2.5,
+          2.6,
+          2.7,
+          2.8,
+          2.9
+        ]
+      },
+      "api_total_session_sec": 33.14620925602503,
+      "logical_requests": 1,
+      "actual_cost_usd": null,
+      "report_sha256": "609b93c88e6a2e5e5e42a27331b4ded93b584643d1bae2903ea90871b98d445f",
+      "local_timings_sec": {
+        "decode": 0.29005736601538956,
+        "evidence": 2.6659108698368073e-06,
+        "object_analysis": 1.080690260976553,
+        "render": 0.0071142001543194056,
+        "total_before_publication": 1.3784469538368285
+      },
+      "track_count": 1,
+      "events": [
+        {
+          "event_id": "synthetic-cup-1-disappear-event",
+          "detected": true,
+          "code_detected": true,
+          "candidate_id": "object-000",
+          "roi_iou": 0.8319737472125237,
+          "onset_error_sec": -0.10000000000000009
+        }
+      ],
+      "unmatched_displayed_candidates": 0,
+      "event_nearby_raw_statuses": [
+        {
+          "candidate": 1
+        }
+      ],
+      "miss_diagnostics": [
+        []
+      ]
+    },
+    {
+      "id": "synthetic-cup-1-position",
+      "stratum": "controlled_synthetic",
+      "kind": "position",
+      "lineage": "lasot:cup-1",
+      "api_reused": true,
+      "api_status": "completed",
+      "execution": "succeeded",
+      "displayed_candidates": 0,
+      "candidate_events": [],
+      "raw_status_counts": {
+        "deferred": 2
+      },
+      "target_pre_event_observed_fraction": 0.9333333333333333,
+      "coverage": {
+        "check_id": "object_temporal",
+        "required": true,
+        "execution": "completed",
+        "observability": "verifiable",
+        "reason": "OBJECT_TRACK_CANDIDATES_ONLY",
+        "inspected_times_sec": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.3,
+          1.4,
+          1.5,
+          1.6,
+          1.7,
+          1.8,
+          1.9,
+          2.0,
+          2.1,
+          2.2,
+          2.3,
+          2.4,
+          2.5,
+          2.6,
+          2.7,
+          2.8,
+          2.9,
+          3.0,
+          3.1,
+          3.2,
+          3.3,
+          3.4,
+          3.5,
+          3.6,
+          3.7,
+          3.8,
+          3.9,
+          4.0,
+          4.1,
+          4.2,
+          4.3,
+          4.4,
+          4.5,
+          4.6,
+          4.7,
+          4.8,
+          4.9,
+          5.0,
+          5.1,
+          5.2,
+          5.3,
+          5.4,
+          5.5,
+          5.6,
+          5.7,
+          5.8,
+          5.9
+        ]
+      },
+      "api_total_session_sec": 32.93891332508065,
+      "logical_requests": 1,
+      "actual_cost_usd": null,
+      "report_sha256": "8f016b64a8f6f7506a9fd37e8ffef962ed589c229af7a15473827c52d9d73607",
+      "local_timings_sec": {
+        "decode": 0.2982845548540354,
+        "evidence": 2.55717895925045e-06,
+        "object_analysis": 0.006701224949210882,
+        "render": 0.0031918699387460947,
+        "total_before_publication": 0.3085538907907903
+      },
+      "track_count": 2,
+      "events": [
+        {
+          "event_id": "synthetic-cup-1-position-event",
+          "detected": false,
+          "code_detected": false,
+          "candidate_id": null,
+          "roi_iou": null,
+          "onset_error_sec": null
+        }
+      ],
+      "unmatched_displayed_candidates": 0,
+      "event_nearby_raw_statuses": [
+        {
+          "deferred": 1
+        }
+      ],
+      "miss_diagnostics": [
+        [
+          "RAW_DEFERRED"
+        ]
+      ]
+    },
+    {
+      "id": "synthetic-cup-1-area",
+      "stratum": "controlled_synthetic",
+      "kind": "area",
+      "lineage": "lasot:cup-1",
+      "api_reused": true,
+      "api_status": "completed",
+      "execution": "succeeded",
+      "displayed_candidates": 1,
+      "candidate_events": [
+        {
+          "track_id": "annotation-0-track-0",
+          "kind": "termination",
+          "shot_id": 0,
+          "codes": [
+            "OBJECT_AREA_JUMP"
+          ],
+          "start_sec": 2.9,
+          "end_sec": 3.1,
+          "bbox_xywh": [
+            194.67767680000003,
+            110.29405320000001,
+            88.11250559999998,
+            140.0744088
+          ],
+          "context_times": [
+            2.9,
+            3.1
+          ],
+          "guards": [],
+          "related_tracks": [],
+          "metrics": {
+            "track_samples": 30,
+            "track_confidence": 0.7172298,
+            "reacquisition_min_score": 0.9528231024742126
+          },
+          "id": "object-000",
+          "status": "candidate",
+          "context_frame_times_sec": [
+            2.9,
+            3.1
+          ],
+          "image_context": {
+            "state": "measured",
+            "patch_mae": 26.92149758454106,
+            "background_static_mae": 0.028169014084507043,
+            "background_fit_mae": 0.028169014084507043,
+            "scale": 1.0,
+            "dx_thumb_px": 0,
+            "dy_thumb_px": 0,
+            "camera_motion_possible": false,
+            "background_stable": true
+          },
+          "raw_ids": [
+            "object-raw-0000"
+          ],
+          "termination_refinement": {
+            "state": "reclassified",
+            "original_codes": [
+              "OBJECT_TRACK_END"
+            ],
+            "codes": [
+              "OBJECT_AREA_JUMP"
+            ],
+            "reference_score": 0.9999994039535522,
+            "matches": [
+              {
+                "state": "matched",
+                "score": 0.9528231024742126,
+                "competitor_score": 0.6482028961181641,
+                "bbox_xywh": [
+                  176,
+                  82,
+                  125,
+                  197
+                ],
+                "evaluations": 143,
+                "reverse_score": 0.9563621282577515,
+                "reverse_iou": 1.0,
+                "source_bbox_xywh": [
+                  176.0,
+                  82.0,
+                  125.0,
+                  197.0
+                ]
+              },
+              {
+                "state": "matched",
+                "score": 0.9528286457061768,
+                "competitor_score": 0.6482028961181641,
+                "bbox_xywh": [
+                  176,
+                  82,
+                  125,
+                  197
+                ],
+                "evaluations": 143,
+                "reverse_score": 0.9563677310943604,
+                "reverse_iou": 1.0,
+                "source_bbox_xywh": [
+                  176.0,
+                  82.0,
+                  125.0,
+                  197.0
+                ]
+              }
+            ],
+            "geometry": [
+              {
+                "area_change": 0.9623077536058651,
+                "aspect_change": 0.005247248046540864,
+                "center_speed_diagonals": 0.0
+              },
+              {
+                "area_change": 0.9623077536058651,
+                "aspect_change": 0.005247248046540864,
+                "center_speed_diagonals": 0.0
+              }
+            ],
+            "frame_times_sec": [
+              2.9,
+              3.0,
+              3.1
+            ],
+            "scope": "Appearance correspondence, not identity confirmation",
+            "reference_time_sec": 2.8
+          },
+          "displayed": true
+        }
+      ],
+      "raw_status_counts": {
+        "candidate": 1,
+        "deferred": 1
+      },
+      "target_pre_event_observed_fraction": 0.9333333333333333,
+      "coverage": {
+        "check_id": "object_temporal",
+        "required": true,
+        "execution": "completed",
+        "observability": "verifiable",
+        "reason": "OBJECT_TRACK_CANDIDATES_ONLY",
+        "inspected_times_sec": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.3,
+          1.4,
+          1.5,
+          1.6,
+          1.7,
+          1.8,
+          1.9,
+          2.0,
+          2.1,
+          2.2,
+          2.3,
+          2.4,
+          2.5,
+          2.6,
+          2.7,
+          2.8,
+          2.9,
+          3.1,
+          3.2,
+          3.3,
+          3.4,
+          3.5,
+          3.6,
+          3.7,
+          3.8,
+          3.9,
+          4.0,
+          4.1,
+          4.2,
+          4.3,
+          4.4,
+          4.5,
+          4.6,
+          4.7,
+          4.8,
+          4.9,
+          5.0,
+          5.1,
+          5.2,
+          5.3,
+          5.4,
+          5.5,
+          5.6,
+          5.7,
+          5.8
+        ]
+      },
+      "api_total_session_sec": 43.619329965207726,
+      "logical_requests": 1,
+      "actual_cost_usd": null,
+      "report_sha256": "5cc5b80ec297143d52f8b95c08b4f71ff637b09f87589ed740ca3b7ecfc7e82e",
+      "local_timings_sec": {
+        "decode": 0.29761761613190174,
+        "evidence": 2.6370398700237274e-06,
+        "object_analysis": 2.1213566879741848,
+        "render": 0.007997412933036685,
+        "total_before_publication": 2.4273945970926434
+      },
+      "track_count": 2,
+      "events": [
+        {
+          "event_id": "synthetic-cup-1-area-event",
+          "detected": true,
+          "code_detected": true,
+          "candidate_id": "object-000",
+          "roi_iou": 0.8320972644731824,
+          "onset_error_sec": -0.10000000000000009
+        }
+      ],
+      "unmatched_displayed_candidates": 0,
+      "event_nearby_raw_statuses": [
+        {
+          "candidate": 1
+        }
+      ],
+      "miss_diagnostics": [
+        []
+      ]
+    },
+    {
+      "id": "synthetic-cup-1-aspect",
+      "stratum": "controlled_synthetic",
+      "kind": "aspect",
+      "lineage": "lasot:cup-1",
+      "api_reused": true,
+      "api_status": "completed",
+      "execution": "succeeded",
+      "displayed_candidates": 1,
+      "candidate_events": [
+        {
+          "track_id": "annotation-0-track-0",
+          "kind": "change",
+          "shot_id": 0,
+          "codes": [
+            "OBJECT_ASPECT_JUMP",
+            "OBJECT_IOU_DROP"
+          ],
+          "start_sec": 2.9,
+          "end_sec": 3.0,
+          "bbox_xywh": [
+            173.33482879999997,
+            110.300004,
+            131.96853120000003,
+            140.107392
+          ],
+          "context_times": [
+            2.9,
+            3.0
+          ],
+          "guards": [],
+          "related_tracks": [],
+          "metrics": {
+            "delta_sec": 0.10000000000000009,
+            "area_change": 0.017500065609030502,
+            "aspect_change": 1.2831411163055182,
+            "center_speed_diagonals": 0.044121116042990155,
+            "iou": 0.49452778821360494,
+            "iou_drop": 0.50543738419998
+          },
+          "id": "object-000",
+          "status": "candidate",
+          "context_frame_times_sec": [
+            2.9,
+            3.0
+          ],
+          "image_context": {
+            "state": "measured",
+            "patch_mae": 37.41830065359477,
+            "background_static_mae": 0.0014771048744460858,
+            "background_fit_mae": 0.0014771048744460858,
+            "scale": 1.0,
+            "dx_thumb_px": 0,
+            "dy_thumb_px": 0,
+            "camera_motion_possible": false,
+            "background_stable": true
+          },
+          "temporal_context": {
+            "state": "measured",
+            "times_sec": [
+              2.9,
+              2.933333333333333,
+              2.966666666666667,
+              3.0
+            ],
+            "step_mae": [
+              0.0,
+              0.06073695048689842,
+              40.256813049316406
+            ],
+            "peak_share": 0.998493492603302,
+            "active_steps": 1,
+            "tile_count": 72,
+            "abrupt_tiles": 60,
+            "distributed_change": false
+          },
+          "recovery_context": {
+            "state": "unavailable",
+            "reason": "RECOVERY_ABRUPT_OR_UNMEASURED"
+          },
+          "raw_ids": [
+            "object-raw-0000"
+          ],
+          "displayed": true
+        }
+      ],
+      "raw_status_counts": {
+        "candidate": 1,
+        "deferred": 1
+      },
+      "target_pre_event_observed_fraction": 0.9333333333333333,
+      "coverage": {
+        "check_id": "object_temporal",
+        "required": true,
+        "execution": "completed",
+        "observability": "verifiable",
+        "reason": "OBJECT_TRACK_CANDIDATES_ONLY",
+        "inspected_times_sec": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.3,
+          1.4,
+          1.5,
+          1.6,
+          1.7,
+          1.8,
+          1.9,
+          2.0,
+          2.1,
+          2.2,
+          2.3,
+          2.4,
+          2.5,
+          2.6,
+          2.7,
+          2.8,
+          2.9,
+          3.0,
+          3.1,
+          3.2,
+          3.3,
+          3.4,
+          3.5,
+          3.6,
+          3.7,
+          3.8,
+          3.9,
+          4.0,
+          4.1,
+          4.2,
+          4.3,
+          4.4,
+          4.5,
+          4.6,
+          4.7,
+          4.8,
+          4.9,
+          5.0,
+          5.1,
+          5.2,
+          5.3,
+          5.4,
+          5.5,
+          5.6,
+          5.7,
+          5.8,
+          5.9
+        ]
+      },
+      "api_total_session_sec": 22.47053644899279,
+      "logical_requests": 1,
+      "actual_cost_usd": null,
+      "report_sha256": "73084202fa95a3dd7c8267cca0609bd780507188e00025e5c019244732706b61",
+      "local_timings_sec": {
+        "decode": 0.29853390296921134,
+        "evidence": 2.7481000870466232e-06,
+        "object_analysis": 0.2629801060538739,
+        "render": 0.006590297911316156,
+        "total_before_publication": 0.5685229119844735
+      },
+      "track_count": 1,
+      "events": [
+        {
+          "event_id": "synthetic-cup-1-aspect-event",
+          "detected": true,
+          "code_detected": true,
+          "candidate_id": "object-000",
+          "roi_iou": 0.5554423778611907,
+          "onset_error_sec": -0.10000000000000009
+        }
+      ],
+      "unmatched_displayed_candidates": 0,
+      "event_nearby_raw_statuses": [
+        {
+          "candidate": 1
+        }
+      ],
+      "miss_diagnostics": [
+        []
+      ]
+    },
+    {
+      "id": "original-hand-2",
+      "stratum": "lasot_original",
+      "kind": "visible",
+      "lineage": "lasot:hand-2",
+      "api_reused": true,
+      "api_status": "completed",
+      "execution": "partial",
+      "displayed_candidates": 0,
+      "candidate_events": [],
+      "raw_status_counts": {
+        "deferred": 3,
+        "unresolved": 1
+      },
+      "target_pre_event_observed_fraction": null,
+      "coverage": {
+        "check_id": "object_temporal",
+        "required": true,
+        "execution": "skipped",
+        "observability": "not_verifiable",
+        "reason": "OBJECT_CONTEXT_UNRESOLVED;SEED_APPEARANCE_UNRESOLVED",
+        "inspected_times_sec": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.3,
+          1.4,
+          1.5,
+          1.6,
+          1.7,
+          1.8,
+          1.9,
+          2.0,
+          2.1,
+          2.2,
+          2.3,
+          2.4,
+          2.5,
+          2.6,
+          2.7,
+          2.8,
+          2.9,
+          3.0,
+          3.1,
+          3.2,
+          3.3,
+          3.4,
+          3.5,
+          3.6,
+          3.7,
+          3.8,
+          3.9,
+          4.0,
+          4.1,
+          4.2,
+          4.3,
+          4.4,
+          4.5,
+          4.6,
+          4.7,
+          4.8,
+          4.9,
+          5.0,
+          5.1,
+          5.2,
+          5.3,
+          5.4,
+          5.5,
+          5.6,
+          5.7,
+          5.8,
+          5.9
+        ]
+      },
+      "api_total_session_sec": 27.071315743029118,
+      "logical_requests": 1,
+      "actual_cost_usd": null,
+      "report_sha256": "8ea17ab285d593456e426c25d4147ac54824734141d5f10cd6357df392c78c14",
+      "local_timings_sec": {
+        "decode": 0.31836166698485613,
+        "evidence": 2.507120370864868e-06,
+        "object_analysis": 1.9302999980282038,
+        "render": 0.0027118970174342394,
+        "total_before_publication": 2.251849896972999
+      },
+      "track_count": 3,
+      "events": [],
+      "unmatched_displayed_candidates": 0,
+      "event_nearby_raw_statuses": [],
+      "miss_diagnostics": []
+    },
+    {
+      "id": "synthetic-hand-2-steady",
+      "stratum": "controlled_synthetic",
+      "kind": "steady",
+      "lineage": "lasot:hand-2",
+      "api_reused": true,
+      "api_status": "completed",
+      "execution": "succeeded",
+      "displayed_candidates": 0,
+      "candidate_events": [],
+      "raw_status_counts": {
+        "deferred": 1
+      },
+      "target_pre_event_observed_fraction": 0.9333333333333333,
+      "coverage": {
+        "check_id": "object_temporal",
+        "required": true,
+        "execution": "completed",
+        "observability": "verifiable",
+        "reason": "OBJECT_TRACK_CANDIDATES_ONLY",
+        "inspected_times_sec": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.3,
+          1.4,
+          1.5,
+          1.6,
+          1.7,
+          1.8,
+          1.9,
+          2.0,
+          2.1,
+          2.2,
+          2.3,
+          2.4,
+          2.5,
+          2.6,
+          2.7,
+          2.8,
+          2.9,
+          3.0,
+          3.1,
+          3.2,
+          3.3,
+          3.4,
+          3.5,
+          3.6,
+          3.7,
+          3.8,
+          3.9,
+          4.0,
+          4.1,
+          4.2,
+          4.3,
+          4.4,
+          4.5,
+          4.6,
+          4.7,
+          4.8,
+          4.9,
+          5.0,
+          5.1,
+          5.2,
+          5.3,
+          5.4,
+          5.5,
+          5.6,
+          5.7,
+          5.8,
+          5.9
+        ]
+      },
+      "api_total_session_sec": 25.589278070954606,
+      "logical_requests": 1,
+      "actual_cost_usd": null,
+      "report_sha256": "11423cd102c9427a4b71a342f5850781fc174cda953351bed2a75bcd25a799d8",
+      "local_timings_sec": {
+        "decode": 0.29889924079179764,
+        "evidence": 2.642860636115074e-06,
+        "object_analysis": 0.006792300147935748,
+        "render": 0.0032745059579610825,
+        "total_before_publication": 0.3093563439324498
+      },
+      "track_count": 1,
+      "events": [],
+      "unmatched_displayed_candidates": 0,
+      "event_nearby_raw_statuses": [],
+      "miss_diagnostics": []
+    },
+    {
+      "id": "synthetic-hand-2-occlusion",
+      "stratum": "controlled_synthetic",
+      "kind": "occlusion",
+      "lineage": "lasot:hand-2",
+      "api_reused": true,
+      "api_status": "completed",
+      "execution": "succeeded",
+      "displayed_candidates": 0,
+      "candidate_events": [],
+      "raw_status_counts": {
+        "deferred": 4
+      },
+      "target_pre_event_observed_fraction": 1.0,
+      "coverage": {
+        "check_id": "object_temporal",
+        "required": true,
+        "execution": "completed",
+        "observability": "verifiable",
+        "reason": "OBJECT_TRACK_CANDIDATES_ONLY",
+        "inspected_times_sec": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.3,
+          1.4,
+          1.5,
+          1.6,
+          1.7,
+          1.8,
+          1.9,
+          2.0,
+          2.1,
+          2.2,
+          2.3,
+          2.4,
+          2.5,
+          2.6,
+          2.7,
+          2.8,
+          2.9,
+          3.0,
+          3.1,
+          3.2,
+          3.3,
+          3.4,
+          3.5,
+          3.6,
+          3.7,
+          3.8,
+          3.9,
+          4.0,
+          4.1,
+          4.2,
+          4.3,
+          4.4,
+          4.5,
+          4.6,
+          4.7,
+          4.8,
+          4.9,
+          5.0,
+          5.1,
+          5.2,
+          5.3,
+          5.4,
+          5.5,
+          5.6,
+          5.7,
+          5.8,
+          5.9
+        ]
+      },
+      "api_total_session_sec": 38.20652240188792,
+      "logical_requests": 1,
+      "actual_cost_usd": null,
+      "report_sha256": "0ffcd79393d6b692d295dec56657c8783fa404084bacd0276dc66ca62838aa83",
+      "local_timings_sec": {
+        "decode": 0.3187003000639379,
+        "evidence": 2.8901267796754837e-06,
+        "object_analysis": 0.9160787130240351,
+        "render": 0.0029971220064908266,
+        "total_before_publication": 1.2383216270245612
+      },
+      "track_count": 4,
+      "events": [],
+      "unmatched_displayed_candidates": 0,
+      "event_nearby_raw_statuses": [],
+      "miss_diagnostics": []
+    },
+    {
+      "id": "synthetic-hand-2-exit",
+      "stratum": "controlled_synthetic",
+      "kind": "exit",
+      "lineage": "lasot:hand-2",
+      "api_reused": true,
+      "api_status": "completed",
+      "execution": "succeeded",
+      "displayed_candidates": 0,
+      "candidate_events": [],
+      "raw_status_counts": {
+        "deferred": 1
+      },
+      "target_pre_event_observed_fraction": 1.0,
+      "coverage": {
+        "check_id": "object_temporal",
+        "required": true,
+        "execution": "completed",
+        "observability": "verifiable",
+        "reason": "OBJECT_TRACK_CANDIDATES_ONLY",
+        "inspected_times_sec": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.3,
+          1.4,
+          1.5,
+          1.6,
+          1.7,
+          1.8,
+          1.9,
+          2.0,
+          2.1,
+          2.2,
+          2.3,
+          2.4,
+          2.5,
+          2.6,
+          2.7,
+          2.8,
+          2.9,
+          3.0,
+          3.1
+        ]
+      },
+      "api_total_session_sec": 30.93522667582147,
+      "logical_requests": 1,
+      "actual_cost_usd": null,
+      "report_sha256": "acb32c1ab0ba3f680a79bc68e248a8054988a09134da1a02a685ed7af49a70bc",
+      "local_timings_sec": {
+        "decode": 0.31721697212196887,
+        "evidence": 2.7141068130731583e-06,
+        "object_analysis": 0.0053332948591560125,
+        "render": 0.0032758580055087805,
+        "total_before_publication": 0.326253310078755
+      },
+      "track_count": 2,
+      "events": [],
+      "unmatched_displayed_candidates": 0,
+      "event_nearby_raw_statuses": [],
+      "miss_diagnostics": []
+    },
+    {
+      "id": "synthetic-hand-2-camera",
+      "stratum": "controlled_synthetic",
+      "kind": "camera",
+      "lineage": "lasot:hand-2",
+      "api_reused": true,
+      "api_status": "completed",
+      "execution": "succeeded",
+      "displayed_candidates": 0,
+      "candidate_events": [],
+      "raw_status_counts": {
+        "deferred": 1
+      },
+      "target_pre_event_observed_fraction": 0.9333333333333333,
+      "coverage": {
+        "check_id": "object_temporal",
+        "required": true,
+        "execution": "completed",
+        "observability": "verifiable",
+        "reason": "OBJECT_TRACK_CANDIDATES_ONLY",
+        "inspected_times_sec": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.3,
+          1.4,
+          1.5,
+          1.6,
+          1.7,
+          1.8,
+          1.9,
+          2.0,
+          2.1,
+          2.2,
+          2.3,
+          2.4,
+          2.5,
+          2.6,
+          2.7,
+          2.8,
+          2.9,
+          3.0,
+          3.1,
+          3.2,
+          3.3,
+          3.4,
+          3.5,
+          3.6,
+          3.7,
+          3.8,
+          3.9,
+          4.0,
+          4.1,
+          4.2,
+          4.3,
+          4.4,
+          4.5,
+          4.6,
+          4.7,
+          4.8,
+          4.9,
+          5.0,
+          5.1,
+          5.2,
+          5.3,
+          5.4,
+          5.5,
+          5.6,
+          5.7,
+          5.8,
+          5.9
+        ]
+      },
+      "api_total_session_sec": 27.86299585690722,
+      "logical_requests": 1,
+      "actual_cost_usd": null,
+      "report_sha256": "592af588467327703b0d34cda0f83df3d41e3834415d7e05987320ec1ae9b6d9",
+      "local_timings_sec": {
+        "decode": 0.32601356809027493,
+        "evidence": 2.7311034500598907e-06,
+        "object_analysis": 0.006877460051327944,
+        "render": 0.0035230349749326706,
+        "total_before_publication": 0.3368489791173488
+      },
+      "track_count": 2,
+      "events": [],
+      "unmatched_displayed_candidates": 0,
+      "event_nearby_raw_statuses": [],
+      "miss_diagnostics": []
+    },
+    {
+      "id": "synthetic-hand-2-disappear",
+      "stratum": "controlled_synthetic",
+      "kind": "disappear",
+      "lineage": "lasot:hand-2",
+      "api_reused": true,
+      "api_status": "completed",
+      "execution": "succeeded",
+      "displayed_candidates": 1,
+      "candidate_events": [
+        {
+          "track_id": "annotation-0-track-0",
+          "kind": "termination",
+          "shot_id": 0,
+          "codes": [
+            "OBJECT_TRACK_END"
+          ],
+          "start_sec": 2.966666666666667,
+          "end_sec": 3.0,
+          "bbox_xywh": [
+            188.7869248,
+            115.6839228,
+            103.02585599999998,
+            133.0622892
+          ],
+          "context_times": [
+            2.966666666666667,
+            3.0
+          ],
+          "guards": [],
+          "related_tracks": [],
+          "metrics": {
+            "track_samples": 32,
+            "track_confidence": 0.8086015
+          },
+          "id": "object-000",
+          "status": "candidate",
+          "context_frame_times_sec": [
+            2.966666666666667,
+            3.0
+          ],
+          "image_context": {
+            "state": "measured",
+            "patch_mae": 38.55494505494506,
+            "background_static_mae": 0.002861230329041488,
+            "background_fit_mae": 0.002861230329041488,
+            "scale": 1.0,
+            "dx_thumb_px": 0,
+            "dy_thumb_px": 0,
+            "camera_motion_possible": false,
+            "background_stable": true
+          },
+          "onset_refinement": {
+            "state": "localized",
+            "reason": "ONSET_STABLE_ABRUPT_CHANGE",
+            "times_sec": [
+              2.7,
+              2.7333333333333334,
+              2.7666666666666666,
+              2.8,
+              2.8333333333333335,
+              2.8666666666666667,
+              2.9,
+              2.933333333333333,
+              2.966666666666667,
+              3.0,
+              3.033333333333333,
+              3.066666666666667,
+              3.1,
+              3.1333333333333333,
+              3.1666666666666665,
+              3.2,
+              3.2333333333333334,
+              3.2666666666666666,
+              3.3
+            ],
+            "step_mae": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              38.834842681884766,
+              0.0,
+              0.0,
+              0.013574660755693913,
+              0.009049774147570133,
+              0.003393665188923478,
+              0.010180995799601078,
+              0.005656108725816011,
+              0.003393665188923478,
+              0.0022624435368925333
+            ],
+            "peak_share": 0.9987779855728149,
+            "stable_mae": 0.02375565655529499,
+            "image_context": {
+              "state": "measured",
+              "patch_mae": 38.55494505494506,
+              "background_static_mae": 0.002861230329041488,
+              "background_fit_mae": 0.002861230329041488,
+              "scale": 1.0,
+              "dx_thumb_px": 0,
+              "dy_thumb_px": 0,
+              "camera_motion_possible": false,
+              "background_stable": true
+            },
+            "before_sec": 2.966666666666667,
+            "after_sec": 3.0,
+            "original": {
+              "start_sec": 3.1,
+              "end_sec": 3.3000000000000003,
+              "context_times": [
+                3.1,
+                3.3000000000000003
+              ],
+              "context_frame_times_sec": [
+                3.1,
+                3.3
+              ],
+              "bbox_xywh": [
+                188.4290304,
+                117.7557228,
+                103.00018560000001,
+                133.0004412
+              ],
+              "status": "deferred",
+              "guards": [
+                "LOCAL_CONTENT_PRESERVED"
+              ],
+              "image_context": {
+                "state": "measured",
+                "patch_mae": 0.020361990950226245,
+                "background_static_mae": 0.0,
+                "background_fit_mae": 0.0,
+                "scale": 1.0,
+                "dx_thumb_px": 0,
+                "dy_thumb_px": 0,
+                "camera_motion_possible": false,
+                "background_stable": true
+              }
+            }
+          },
+          "raw_ids": [
+            "object-raw-0000"
+          ],
+          "termination_refinement": {
+            "state": "unresolved",
+            "reason": "REACQUIRE_NO_UNIQUE_MATCH",
+            "matches": [
+              {
+                "state": "no_match",
+                "score": 0.7162550687789917,
+                "competitor_score": 0.7144466042518616,
+                "bbox_xywh": [
+                  439,
+                  193,
+                  55,
+                  73
+                ],
+                "evaluations": 132,
+                "source_bbox_xywh": [
+                  439.0,
+                  193.0,
+                  55.0,
+                  73.0
+                ]
+              }
+            ],
+            "reference_time_sec": 2.8666666666666667
+          },
+          "displayed": true
+        }
+      ],
+      "raw_status_counts": {
+        "candidate": 1
+      },
+      "target_pre_event_observed_fraction": 0.9333333333333333,
+      "coverage": {
+        "check_id": "object_temporal",
+        "required": true,
+        "execution": "completed",
+        "observability": "verifiable",
+        "reason": "OBJECT_TRACK_CANDIDATES_ONLY",
+        "inspected_times_sec": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.3,
+          1.4,
+          1.5,
+          1.6,
+          1.7,
+          1.8,
+          1.9,
+          2.0,
+          2.1,
+          2.2,
+          2.3,
+          2.4,
+          2.5,
+          2.6,
+          2.7,
+          2.8,
+          2.9,
+          3.0,
+          3.1
+        ]
+      },
+      "api_total_session_sec": 24.598029347136617,
+      "logical_requests": 1,
+      "actual_cost_usd": null,
+      "report_sha256": "aacbbdedbff331d786217ce3083a1132c8bcb6352e75c455afca87438786e749",
+      "local_timings_sec": {
+        "decode": 0.30666400003246963,
+        "evidence": 2.424931153655052e-06,
+        "object_analysis": 1.218471054919064,
+        "render": 0.006735323928296566,
+        "total_before_publication": 1.5323548901360482
+      },
+      "track_count": 1,
+      "events": [
+        {
+          "event_id": "synthetic-hand-2-disappear-event",
+          "detected": true,
+          "code_detected": true,
+          "candidate_id": "object-000",
+          "roi_iou": 0.9522177493405586,
+          "onset_error_sec": -0.033333333333333215
+        }
+      ],
+      "unmatched_displayed_candidates": 0,
+      "event_nearby_raw_statuses": [
+        {
+          "candidate": 1
+        }
+      ],
+      "miss_diagnostics": [
+        []
+      ]
+    },
+    {
+      "id": "synthetic-hand-2-position",
+      "stratum": "controlled_synthetic",
+      "kind": "position",
+      "lineage": "lasot:hand-2",
+      "api_reused": true,
+      "api_status": "completed",
+      "execution": "succeeded",
+      "displayed_candidates": 0,
+      "candidate_events": [],
+      "raw_status_counts": {
+        "deferred": 1
+      },
+      "target_pre_event_observed_fraction": 0.9333333333333333,
+      "coverage": {
+        "check_id": "object_temporal",
+        "required": true,
+        "execution": "completed",
+        "observability": "verifiable",
+        "reason": "OBJECT_TRACK_CANDIDATES_ONLY",
+        "inspected_times_sec": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.3,
+          1.4,
+          1.5,
+          1.6,
+          1.7,
+          1.8,
+          1.9,
+          2.0,
+          2.1,
+          2.2,
+          2.3,
+          2.4,
+          2.5,
+          2.6,
+          2.7,
+          2.8,
+          2.9,
+          3.0,
+          3.1
+        ]
+      },
+      "api_total_session_sec": 31.34257075912319,
+      "logical_requests": 1,
+      "actual_cost_usd": null,
+      "report_sha256": "0681ba8ad8556ccff23681ea4770b70ca91282c603197e7acd69518703cde7ef",
+      "local_timings_sec": {
+        "decode": 0.2986553271766752,
+        "evidence": 2.805842086672783e-06,
+        "object_analysis": 0.06050396407954395,
+        "render": 0.0034289180766791105,
+        "total_before_publication": 0.36308462801389396
+      },
+      "track_count": 1,
+      "events": [
+        {
+          "event_id": "synthetic-hand-2-position-event",
+          "detected": false,
+          "code_detected": false,
+          "candidate_id": null,
+          "roi_iou": null,
+          "onset_error_sec": null
+        }
+      ],
+      "unmatched_displayed_candidates": 0,
+      "event_nearby_raw_statuses": [
+        {
+          "deferred": 1
+        }
+      ],
+      "miss_diagnostics": [
+        [
+          "RAW_DEFERRED"
+        ]
+      ]
+    },
+    {
+      "id": "synthetic-hand-2-area",
+      "stratum": "controlled_synthetic",
+      "kind": "area",
+      "lineage": "lasot:hand-2",
+      "api_reused": true,
+      "api_status": "completed",
+      "execution": "succeeded",
+      "displayed_candidates": 1,
+      "candidate_events": [
+        {
+          "track_id": "annotation-0-track-0",
+          "kind": "termination",
+          "shot_id": 0,
+          "codes": [
+            "OBJECT_AREA_JUMP"
+          ],
+          "start_sec": 2.966666666666667,
+          "end_sec": 3.0,
+          "bbox_xywh": [
+            188.8011712,
+            115.69789080000001,
+            103.0343104,
+            133.04785320000002
+          ],
+          "context_times": [
+            2.966666666666667,
+            3.0
+          ],
+          "guards": [],
+          "related_tracks": [],
+          "metrics": {
+            "track_samples": 32,
+            "track_confidence": 0.8108217,
+            "reacquisition_min_score": 0.98798006772995
+          },
+          "id": "object-000",
+          "status": "candidate",
+          "context_frame_times_sec": [
+            2.966666666666667,
+            3.0
+          ],
+          "image_context": {
+            "state": "measured",
+            "patch_mae": 30.746153846153845,
+            "background_static_mae": 0.0357653791130186,
+            "background_fit_mae": 0.0357653791130186,
+            "scale": 1.0,
+            "dx_thumb_px": 0,
+            "dy_thumb_px": 0,
+            "camera_motion_possible": false,
+            "background_stable": true
+          },
+          "onset_refinement": {
+            "state": "localized",
+            "reason": "ONSET_STABLE_ABRUPT_CHANGE",
+            "times_sec": [
+              2.7,
+              2.7333333333333334,
+              2.7666666666666666,
+              2.8,
+              2.8333333333333335,
+              2.8666666666666667,
+              2.9,
+              2.933333333333333,
+              2.966666666666667,
+              3.0,
+              3.033333333333333,
+              3.066666666666667,
+              3.1,
+              3.1333333333333333,
+              3.1666666666666665,
+              3.2,
+              3.2333333333333334,
+              3.2666666666666666,
+              3.3
+            ],
+            "step_mae": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0045045046135783195,
+              0.0,
+              34.43603515625,
+              0.0009009009227156639,
+              0.0009009009227156639,
+              0.02432432398200035,
+              0.008108108304440975,
+              0.0009009009227156639,
+              0.01171171199530363,
+              0.0036036036908626556,
+              0.0,
+              0.0
+            ],
+            "peak_share": 0.998406708240509,
+            "stable_mae": 0.02432432398200035,
+            "image_context": {
+              "state": "measured",
+              "patch_mae": 30.746153846153845,
+              "background_static_mae": 0.0357653791130186,
+              "background_fit_mae": 0.0357653791130186,
+              "scale": 1.0,
+              "dx_thumb_px": 0,
+              "dy_thumb_px": 0,
+              "camera_motion_possible": false,
+              "background_stable": true
+            },
+            "before_sec": 2.966666666666667,
+            "after_sec": 3.0,
+            "original": {
+              "start_sec": 3.1,
+              "end_sec": 3.3000000000000003,
+              "context_times": [
+                3.1,
+                3.3000000000000003
+              ],
+              "context_frame_times_sec": [
+                3.1,
+                3.3
+              ],
+              "bbox_xywh": [
+                182.7842688,
+                109.47229200000001,
+                113.4536576,
+                146.3543136
+              ],
+              "status": "deferred",
+              "guards": [
+                "LOCAL_CONTENT_PRESERVED"
+              ],
+              "image_context": {
+                "state": "measured",
+                "patch_mae": 0.02072072072072072,
+                "background_static_mae": 0.0,
+                "background_fit_mae": 0.0,
+                "scale": 1.0,
+                "dx_thumb_px": 0,
+                "dy_thumb_px": 0,
+                "camera_motion_possible": false,
+                "background_stable": true
+              }
+            }
+          },
+          "raw_ids": [
+            "object-raw-0000"
+          ],
+          "termination_refinement": {
+            "state": "reclassified",
+            "original_codes": [
+              "OBJECT_TRACK_END"
+            ],
+            "codes": [
+              "OBJECT_AREA_JUMP"
+            ],
+            "reference_score": 0.9999986886978149,
+            "matches": [
+              {
+                "state": "matched",
+                "score": 0.9879820346832275,
+                "competitor_score": 0.6990888118743896,
+                "bbox_xywh": [
+                  168,
+                  89,
+                  145,
+                  187
+                ],
+                "evaluations": 144,
+                "reverse_score": 0.9916971325874329,
+                "reverse_iou": 1.0,
+                "source_bbox_xywh": [
+                  168.0,
+                  89.0,
+                  145.0,
+                  187.0
+                ]
+              },
+              {
+                "state": "matched",
+                "score": 0.98798006772995,
+                "competitor_score": 0.6990888118743896,
+                "bbox_xywh": [
+                  168,
+                  89,
+                  145,
+                  187
+                ],
+                "evaluations": 144,
+                "reverse_score": 0.9916990399360657,
+                "reverse_iou": 1.0,
+                "source_bbox_xywh": [
+                  168.0,
+                  89.0,
+                  145.0,
+                  187.0
+                ]
+              }
+            ],
+            "geometry": [
+              {
+                "area_change": 0.9456802525832377,
+                "aspect_change": 0.0009255450431920886,
+                "center_speed_diagonals": 0.04168693607727284
+              },
+              {
+                "area_change": 0.9456802525832377,
+                "aspect_change": 0.0009255450431920886,
+                "center_speed_diagonals": 0.02084346803863647
+              }
+            ],
+            "frame_times_sec": [
+              2.966666666666667,
+              3.066666666666667,
+              3.1666666666666665
+            ],
+            "scope": "Appearance correspondence, not identity confirmation",
+            "reference_time_sec": 2.8666666666666667
+          },
+          "displayed": true
+        }
+      ],
+      "raw_status_counts": {
+        "candidate": 1
+      },
+      "target_pre_event_observed_fraction": 0.9333333333333333,
+      "coverage": {
+        "check_id": "object_temporal",
+        "required": true,
+        "execution": "completed",
+        "observability": "verifiable",
+        "reason": "OBJECT_TRACK_CANDIDATES_ONLY",
+        "inspected_times_sec": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.3,
+          1.4,
+          1.5,
+          1.6,
+          1.7,
+          1.8,
+          1.9,
+          2.0,
+          2.1,
+          2.2,
+          2.3,
+          2.4,
+          2.5,
+          2.6,
+          2.7,
+          2.8,
+          2.9,
+          3.0,
+          3.1
+        ]
+      },
+      "api_total_session_sec": 28.592964073177427,
+      "logical_requests": 1,
+      "actual_cost_usd": null,
+      "report_sha256": "8823b3b97d2d794e42b57fb6f3827ddaf77deced6053fd97486d7346fafe01d6",
+      "local_timings_sec": {
+        "decode": 0.3016171809285879,
+        "evidence": 2.595130354166031e-06,
+        "object_analysis": 2.4006159009877592,
+        "render": 0.009361833101138473,
+        "total_before_publication": 2.7120575590524822
+      },
+      "track_count": 1,
+      "events": [
+        {
+          "event_id": "synthetic-hand-2-area-event",
+          "detected": true,
+          "code_detected": true,
+          "candidate_id": "object-000",
+          "roi_iou": 0.9517828418870595,
+          "onset_error_sec": -0.033333333333333215
+        }
+      ],
+      "unmatched_displayed_candidates": 0,
+      "event_nearby_raw_statuses": [
+        {
+          "candidate": 1
+        }
+      ],
+      "miss_diagnostics": [
+        []
+      ]
+    },
+    {
+      "id": "synthetic-hand-2-aspect",
+      "stratum": "controlled_synthetic",
+      "kind": "aspect",
+      "lineage": "lasot:hand-2",
+      "api_reused": true,
+      "api_status": "completed",
+      "execution": "succeeded",
+      "displayed_candidates": 0,
+      "candidate_events": [],
+      "raw_status_counts": {
+        "deferred": 2
+      },
+      "target_pre_event_observed_fraction": 0.9333333333333333,
+      "coverage": {
+        "check_id": "object_temporal",
+        "required": true,
+        "execution": "completed",
+        "observability": "verifiable",
+        "reason": "OBJECT_TRACK_CANDIDATES_ONLY",
+        "inspected_times_sec": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.3,
+          1.4,
+          1.5,
+          1.6,
+          1.7,
+          1.8,
+          1.9,
+          2.0,
+          2.1,
+          2.2,
+          2.3,
+          2.4,
+          2.5,
+          2.6,
+          2.7,
+          2.8,
+          2.9,
+          3.0,
+          3.1,
+          3.2,
+          3.3,
+          3.4,
+          3.5,
+          3.6,
+          3.7,
+          3.8,
+          3.9,
+          4.0,
+          4.1,
+          4.2,
+          4.3,
+          4.4,
+          4.5,
+          4.6,
+          4.7,
+          4.8,
+          4.9,
+          5.0,
+          5.1,
+          5.2,
+          5.3,
+          5.4,
+          5.5,
+          5.6,
+          5.7,
+          5.8,
+          5.9
+        ]
+      },
+      "api_total_session_sec": 27.770627856021747,
+      "logical_requests": 1,
+      "actual_cost_usd": null,
+      "report_sha256": "d144970aa75c721319d353f5339f1fa33e69c4303f733cb87200a44576497d63",
+      "local_timings_sec": {
+        "decode": 0.30193728604353964,
+        "evidence": 2.6619527488946915e-06,
+        "object_analysis": 0.0073102242313325405,
+        "render": 0.0033015410881489515,
+        "total_before_publication": 0.3130159070715308
+      },
+      "track_count": 2,
+      "events": [
+        {
+          "event_id": "synthetic-hand-2-aspect-event",
+          "detected": false,
+          "code_detected": false,
+          "candidate_id": null,
+          "roi_iou": null,
+          "onset_error_sec": null
+        }
+      ],
+      "unmatched_displayed_candidates": 0,
+      "event_nearby_raw_statuses": [
+        {
+          "deferred": 1
+        }
+      ],
+      "miss_diagnostics": [
+        [
+          "RAW_DEFERRED"
+        ]
+      ]
+    }
+  ]
+}

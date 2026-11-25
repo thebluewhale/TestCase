@@ -1,0 +1,341 @@
+{
+  "report_type": "anomaly",
+  "engine_version": "v3",
+  "schema_version": "1.1",
+  "profile": "object_temporal",
+  "input": {
+    "name": "synthetic-hand-2-area.mp4",
+    "sha256": "22ce4b26839dfc8ec4e1f965f449fdedf7a8dabbad420ab0c28394d97e932537",
+    "size_bytes": 27120,
+    "media_type": "video",
+    "video_stream_index": 0,
+    "video_origin_sec": 0.0,
+    "video_time_base": "1/15360",
+    "duration_sec": 6.0,
+    "timeline_start_sec": 0.0,
+    "timeline_end_sec": 6.0,
+    "coded_width": 640,
+    "coded_height": 360,
+    "display_width": 640,
+    "display_height": 360,
+    "rotation_ccw_deg": 0,
+    "sample_aspect_ratio": "1:1",
+    "frame_count": 180,
+    "variable_frame_intervals": false,
+    "audio": null,
+    "limitations": []
+  },
+  "execution": {
+    "run_id": "4aae0a28701741e49ebeaa3fd0a5d1b3",
+    "pipeline_version": "0.19.0",
+    "config_sha256": "71307ebe79440478f7edc237feefaef0eb90917a2d849ee0372476734f532fb1",
+    "started_at": "2026-11-25T05:42:31.797297+00:00",
+    "status": "succeeded",
+    "timings_sec": {
+      "decode": 0.2984764070715755,
+      "evidence": 2.6780180633068085e-06,
+      "object_analysis": 2.425047906115651,
+      "render": 0.011073039146140218,
+      "total_before_publication": 2.7350588841363788
+    },
+    "error_code": null,
+    "error_message": null
+  },
+  "coverage": [
+    {
+      "check_id": "audio",
+      "required": true,
+      "execution": "completed",
+      "observability": "not_applicable",
+      "reason": "NO_AUDIO_STREAM",
+      "inspected_times_sec": []
+    },
+    {
+      "check_id": "visual_quality",
+      "required": true,
+      "execution": "unsupported",
+      "observability": "not_verifiable",
+      "reason": "DETECTOR_NOT_IMPLEMENTED",
+      "inspected_times_sec": []
+    },
+    {
+      "check_id": "object_temporal",
+      "required": true,
+      "execution": "completed",
+      "observability": "verifiable",
+      "reason": "OBJECT_TRACK_CANDIDATES_ONLY",
+      "inspected_times_sec": [
+        0.0,
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9,
+        1.0,
+        1.1,
+        1.2,
+        1.3,
+        1.4,
+        1.5,
+        1.6,
+        1.7,
+        1.8,
+        1.9,
+        2.0,
+        2.1,
+        2.2,
+        2.3,
+        2.4,
+        2.5,
+        2.6,
+        2.7,
+        2.8,
+        2.9,
+        3.0,
+        3.1
+      ]
+    },
+    {
+      "check_id": "structure",
+      "required": true,
+      "execution": "unsupported",
+      "observability": "not_verifiable",
+      "reason": "DETECTOR_NOT_IMPLEMENTED",
+      "inspected_times_sec": []
+    },
+    {
+      "check_id": "texture",
+      "required": true,
+      "execution": "unsupported",
+      "observability": "not_verifiable",
+      "reason": "DETECTOR_NOT_IMPLEMENTED",
+      "inspected_times_sec": []
+    },
+    {
+      "check_id": "physical_interaction",
+      "required": true,
+      "execution": "unsupported",
+      "observability": "not_verifiable",
+      "reason": "DETECTOR_NOT_IMPLEMENTED",
+      "inspected_times_sec": []
+    },
+    {
+      "check_id": "evidence_ingest",
+      "required": false,
+      "execution": "completed",
+      "observability": "verifiable",
+      "reason": "EVIDENCE_ONLY_NOT_INSPECTION",
+      "inspected_times_sec": [
+        0.0,
+        2.0,
+        4.0
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "object-000",
+      "category": "object_temporal",
+      "code": "OBJECT_AREA_JUMP",
+      "outcome": "uncertain",
+      "severity": "warning",
+      "description_ko": "객체 박스 크기 급변 후보",
+      "time_range": {
+        "start_sec": 2.966666666666667,
+        "end_sec": 3.0
+      },
+      "bbox": {
+        "x_min": 0.29500183,
+        "y_min": 0.32138303,
+        "x_max": 0.45599293999999996,
+        "y_max": 0.6909604
+      },
+      "evidence_ids": [
+        "object-000-crop",
+        "object-000-reacquired-crop",
+        "object-frame-83",
+        "object-frame-89",
+        "object-frame-90",
+        "object-frame-92",
+        "object-frame-95"
+      ],
+      "observed": "annotation-0-track-0: OBJECT_AREA_JUMP. 종료 뒤 두 프레임에서 대응 외형과 기하 변화를 다시 확인했습니다. 동일 객체 확정은 아닙니다.",
+      "expected": "연속 객체의 움직임과 가림·퇴장·카메라 운동으로 설명되는지 확인",
+      "expected_source": "시간 정렬된 API 관측과 원본 영상; 정답 원본 없음",
+      "normal_alternative": "추적 오차·가림·재등장·카메라 운동·의도된 연출 가능성이 남아 있습니다.",
+      "stage": "candidate",
+      "metrics": {
+        "track_samples": 32.0,
+        "track_confidence": 0.8108217,
+        "reacquisition_min_score": 0.98798006772995,
+        "raw_events": 1.0
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "frame-0",
+      "kind": "frame",
+      "path": "evidence/frame-000000.png",
+      "sha256": "6a9bdca65610d591f4e96cfe6fe93da7ecb3ece06a48ef586619ac634d25ed7c",
+      "mime_type": "image/png",
+      "source_time_sec": 0.0,
+      "time_range": null,
+      "source_box": null,
+      "width": 640,
+      "height": 360,
+      "channel": null,
+      "description": "원본 표시 프레임 0, 0.000000초 (결함 판독 미수행)"
+    },
+    {
+      "id": "frame-60",
+      "kind": "frame",
+      "path": "evidence/frame-000060.png",
+      "sha256": "823c78919e2ce93d038072a9092774e4b5e76cd4f80072ede4978a861c724988",
+      "mime_type": "image/png",
+      "source_time_sec": 2.0,
+      "time_range": null,
+      "source_box": null,
+      "width": 640,
+      "height": 360,
+      "channel": null,
+      "description": "원본 표시 프레임 60, 2.000000초 (결함 판독 미수행)"
+    },
+    {
+      "id": "frame-120",
+      "kind": "frame",
+      "path": "evidence/frame-000120.png",
+      "sha256": "d6337751d0824ccc06d988e0652050e67f949da8cf0897ef2a531100a44a0d5a",
+      "mime_type": "image/png",
+      "source_time_sec": 4.0,
+      "time_range": null,
+      "source_box": null,
+      "width": 640,
+      "height": 360,
+      "channel": null,
+      "description": "원본 표시 프레임 120, 4.000000초 (결함 판독 미수행)"
+    },
+    {
+      "id": "object-frame-83",
+      "kind": "frame",
+      "path": "evidence/object-frame-000083.png",
+      "sha256": "92ce025beac90e265c21d7777319e7d189a65182ec1a11c236be6d12c76ef418",
+      "mime_type": "image/png",
+      "source_time_sec": 2.7666666666666666,
+      "time_range": null,
+      "source_box": null,
+      "width": 640,
+      "height": 360,
+      "channel": null,
+      "description": "객체 후보 전후 원본 프레임; 정답 라벨 미사용"
+    },
+    {
+      "id": "object-frame-89",
+      "kind": "frame",
+      "path": "evidence/object-frame-000089.png",
+      "sha256": "8df7910a4c3031c5c53fdeeb6b8a7a89df8c2626944052c04452d6cf2fe139fb",
+      "mime_type": "image/png",
+      "source_time_sec": 2.966666666666667,
+      "time_range": null,
+      "source_box": null,
+      "width": 640,
+      "height": 360,
+      "channel": null,
+      "description": "객체 후보 전후 원본 프레임; 정답 라벨 미사용"
+    },
+    {
+      "id": "object-frame-90",
+      "kind": "frame",
+      "path": "evidence/object-frame-000090.png",
+      "sha256": "9e7473ad12a16867578d9a2a48dc2d02b1e9863f82c553d56bd6d6d37f7bbe33",
+      "mime_type": "image/png",
+      "source_time_sec": 3.0,
+      "time_range": null,
+      "source_box": null,
+      "width": 640,
+      "height": 360,
+      "channel": null,
+      "description": "객체 후보 전후 원본 프레임; 정답 라벨 미사용"
+    },
+    {
+      "id": "object-frame-92",
+      "kind": "frame",
+      "path": "evidence/object-frame-000092.png",
+      "sha256": "53dfea14c47224b696a8cb3c158d4a344346b0b65e8df9f24073878a43e70595",
+      "mime_type": "image/png",
+      "source_time_sec": 3.066666666666667,
+      "time_range": null,
+      "source_box": null,
+      "width": 640,
+      "height": 360,
+      "channel": null,
+      "description": "객체 후보 전후 원본 프레임; 정답 라벨 미사용"
+    },
+    {
+      "id": "object-frame-95",
+      "kind": "frame",
+      "path": "evidence/object-frame-000095.png",
+      "sha256": "a284d3be2d12a7e0c78b9d74b212e72b1a76e5f8004ae31a64e5c42563aa5863",
+      "mime_type": "image/png",
+      "source_time_sec": 3.1666666666666665,
+      "time_range": null,
+      "source_box": null,
+      "width": 640,
+      "height": 360,
+      "channel": null,
+      "description": "객체 후보 전후 원본 프레임; 정답 라벨 미사용"
+    },
+    {
+      "id": "object-000-crop",
+      "kind": "crop",
+      "path": "evidence/object-000-crop.png",
+      "sha256": "6b32aeba858bb4c8a250e476ca2752187fe6cb4be982d225ea97d93d1ac6c2dc",
+      "mime_type": "image/png",
+      "source_time_sec": 2.966666666666667,
+      "time_range": null,
+      "source_box": {
+        "x_min": 0.29375,
+        "y_min": 0.3194444444444444,
+        "x_max": 0.45625,
+        "y_max": 0.6916666666666667
+      },
+      "width": 104,
+      "height": 134,
+      "channel": null,
+      "description": "자동 후보 영역의 원본 픽셀 크롭; 화면 밖 박스는 표시 범위만 잘라냄"
+    },
+    {
+      "id": "object-000-reacquired-crop",
+      "kind": "crop",
+      "path": "evidence/object-000-reacquired-crop.png",
+      "sha256": "c05b9e1bbfeed96d70b5cabb29ab678795255e6860a0c8fe3babde6f3fd7ca2d",
+      "mime_type": "image/png",
+      "source_time_sec": 3.066666666666667,
+      "time_range": null,
+      "source_box": {
+        "x_min": 0.2625,
+        "y_min": 0.24722222222222223,
+        "x_max": 0.4890625,
+        "y_max": 0.7666666666666667
+      },
+      "width": 145,
+      "height": 187,
+      "channel": null,
+      "description": "추적 종료 뒤 다시 찾은 외형 후보; 동일 객체 확정 아님"
+    }
+  ],
+  "review_status": "review_required",
+  "limitations": [
+    "시간 표본 프레임만 리포트에 포함합니다. 전체 프레임을 검사했다는 의미가 아닙니다.",
+    "API 및 요청된 첫 프레임 보조 추적의 관측 대상만 검사합니다. 결함을 확정하지 않습니다.",
+    "가림·후속 트랙·카메라 운동은 가능한 대안이며 확인된 원인이나 동일 객체 재식별이 아닙니다.",
+    "축소 휘도 영상의 제한된 이동·줌 비교입니다. 작은 변화·회전·복잡한 운동은 놓칠 수 있습니다.",
+    "정적 외형·해부학 이상은 별도 structure 검사 대상입니다.",
+    "보조 경로는 첫 프레임의 최대 6개 대상에서만 시작합니다. 고정 외형의 이동/축척 비교이며 회전·가림 이후 재식별을 보장하지 않습니다.",
+    "원시 이벤트 1건, 병합 후보 1건, 표시 1건, 맥락 미해결 0건. 보류 사유는 object_candidates.json에 보존합니다."
+  ]
+}

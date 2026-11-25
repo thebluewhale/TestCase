@@ -1,0 +1,18 @@
+..........................F....................                          [100%]
+=================================== FAILURES ===================================
+_____________ test_multiple_identical_successors_remain_ambiguous ______________
+
+    def test_multiple_identical_successors_remain_ambiguous():
+        frames, times, box = pair_sequence("position")
+        for frame in frames[9:]:
+            frame[100:140, 110:162] = frame[50:90, 180:232]
+        result = verify_geometry(frames, times, box, (280, 160), ObjectConfig(), time.monotonic() + 20)
+        assert result["state"] != "supported"
+>       assert result["appearance"]["reason"] == "REACQUIRE_NO_UNIQUE_MATCH"
+               ^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'appearance'
+
+tests/test_object_guard_review.py:211: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_object_guard_review.py::test_multiple_identical_successors_remain_ambiguous
+1 failed, 46 passed in 8.43s

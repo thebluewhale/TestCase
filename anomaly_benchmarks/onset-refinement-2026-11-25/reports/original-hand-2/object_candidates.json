@@ -1,0 +1,193 @@
+{
+  "version": "object-candidates-v1",
+  "raw_events": [
+    {
+      "track_id": "annotation-0-track-0",
+      "kind": "termination",
+      "shot_id": 0,
+      "codes": [
+        "OBJECT_TRACK_END"
+      ],
+      "start_sec": 5.9,
+      "end_sec": 5.999999,
+      "bbox_xywh": [
+        74.17305,
+        87.312564,
+        384.9999984,
+        261.0008136
+      ],
+      "context_times": [
+        5.9,
+        5.999999
+      ],
+      "guards": [
+        "VIDEO_END"
+      ],
+      "related_tracks": [],
+      "metrics": {
+        "track_samples": 60,
+        "track_confidence": 0.8639517
+      },
+      "id": "object-raw-0000",
+      "status": "deferred"
+    },
+    {
+      "track_id": "annotation-0-track-1",
+      "kind": "termination",
+      "shot_id": 0,
+      "codes": [
+        "OBJECT_TRACK_END"
+      ],
+      "start_sec": 5.9,
+      "end_sec": 5.999999,
+      "bbox_xywh": [
+        163.40092199999998,
+        256.93100999999996,
+        98.5651308,
+        47.50579800000003
+      ],
+      "context_times": [
+        5.9,
+        5.999999
+      ],
+      "guards": [
+        "OVERLAP_OCCLUSION_POSSIBLE",
+        "VIDEO_END"
+      ],
+      "related_tracks": [
+        "annotation-0-track-0"
+      ],
+      "metrics": {
+        "track_samples": 60,
+        "track_confidence": 0.7425343
+      },
+      "id": "object-raw-0001",
+      "status": "deferred"
+    },
+    {
+      "track_id": "seed-3",
+      "kind": "change",
+      "shot_id": 0,
+      "codes": [
+        "OBJECT_POSITION_JUMP"
+      ],
+      "start_sec": 0.0,
+      "end_sec": 0.1,
+      "bbox_xywh": [
+        365.0,
+        141.0,
+        27.0,
+        42.0
+      ],
+      "context_times": [
+        0.0,
+        0.1
+      ],
+      "guards": [
+        "DISTRIBUTED_LOCAL_CHANGE"
+      ],
+      "related_tracks": [],
+      "metrics": {
+        "delta_sec": 0.1,
+        "area_change": 0.11111111111111116,
+        "aspect_change": 0.09999999999999998,
+        "center_speed_diagonals": 4.525784802434279,
+        "iou": 0.20634920634920634,
+        "iou_drop": 0.0
+      },
+      "id": "seed-object-raw-0000",
+      "status": "deferred",
+      "context_frame_times_sec": [
+        0.0,
+        0.1
+      ],
+      "image_context": {
+        "state": "measured",
+        "patch_mae": 30.434343434343436,
+        "background_static_mae": 5.980595084087969,
+        "background_fit_mae": 5.980595084087969,
+        "scale": 1.0,
+        "dx_thumb_px": 0,
+        "dy_thumb_px": 0,
+        "camera_motion_possible": false,
+        "background_stable": true
+      },
+      "temporal_context": {
+        "state": "measured",
+        "times_sec": [
+          0.0,
+          0.03333333333333333,
+          0.06666666666666667,
+          0.1
+        ],
+        "step_mae": [
+          21.426807403564453,
+          0.0,
+          23.3306884765625
+        ],
+        "peak_share": 0.5212688446044922,
+        "active_steps": 2,
+        "tile_count": 6,
+        "abrupt_tiles": 0,
+        "distributed_change": true
+      }
+    },
+    {
+      "track_id": "seed-3",
+      "kind": "termination",
+      "shot_id": 0,
+      "codes": [
+        "OBJECT_TRACK_END"
+      ],
+      "start_sec": 0.5,
+      "end_sec": 0.7,
+      "bbox_xywh": [
+        358.0,
+        145.0,
+        20.0,
+        24.0
+      ],
+      "context_times": [
+        0.5,
+        0.7
+      ],
+      "guards": [
+        "SEED_APPEARANCE_UNRESOLVED"
+      ],
+      "related_tracks": [],
+      "metrics": {
+        "track_samples": 6,
+        "track_confidence": 1.0
+      },
+      "id": "seed-object-raw-0001",
+      "status": "unresolved"
+    }
+  ],
+  "diagnostics": [
+    {
+      "seed": 0,
+      "state": "API_ALREADY_OBSERVED"
+    },
+    {
+      "seed": 1,
+      "state": "API_ALREADY_OBSERVED"
+    },
+    {
+      "seed": 2,
+      "state": "API_ALREADY_OBSERVED"
+    },
+    {
+      "track_id": "seed-3",
+      "state": "appearance_lost",
+      "time_sec": 0.6,
+      "match_score": 0.756671667098999
+    }
+  ],
+  "incomplete_reasons": [
+    "OBJECT_CONTEXT_UNRESOLVED",
+    "SEED_APPEARANCE_UNRESOLVED"
+  ],
+  "events": [],
+  "displayed": 0,
+  "candidate_count": 0
+}
